@@ -1,0 +1,100 @@
+﻿.navbar {
+    background: rgba(34, 34, 34, 0.92);
+    height: 60px;
+}
+
+.nav.navbar-nav {
+    padding-right: 200px;
+}
+
+.navbar-nav > li {
+    margin-right: 20px;
+}
+
+.navbar-nav > li > a {
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 30px;
+    cursor: pointer;
+    padding-top: 18px;
+    padding-bottom: 12px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: #333333;
+    color: white;
+}
+
+.nav .open > a,
+.nav .open > a:hover {
+    background: #333333;
+}
+
+////////////////////////// DROPDOWN-MENU /////////////////////
+.dropdown-menu > li {
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu > li:last-child {
+    border-bottom:none;
+}
+
+.dropdown-menu.with-arrow {
+    background: #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.navbar-nav > li > .dropdown-menu.with-arrow {
+    -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.dropdown-menu.with-arrow > li > a {
+    padding-bottom: 15px;
+    padding-top: 18px;
+    padding-right: 35px;
+    -moz-transition: background 100ms linear;
+    -o-transition: background 100ms linear;
+    -webkit-transition: background 100ms linear;
+    transition: background 100ms linear;
+}
+
+.dropdown-menu.with-arrow > li > a > p {
+    color: #4e5758;
+    font-size: 18px;
+    margin-bottom: 2px;
+    line-height: 20px;
+}
+
+.dropdown-menu.with-arrow > li > a > small {
+    color: #7B7B7B;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+.dropdown-menu.with-arrow > li > a:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+.dropdown-menu.with-icons > li > a {
+    padding-left: 40px;
+    position: relative;
+}
+
+.dropdown-menu.with-icons > li > a > .icon {
+    position: absolute;
+    left: 22px;
+    font-size: 24px;
+    color: #3498db;
+    top: 16px;
+}

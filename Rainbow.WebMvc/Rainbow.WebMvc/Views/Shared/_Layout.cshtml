@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rainbow Day Nursery</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,200,100|Roboto:400,100,200,300" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="shortcut icon" href="~/favicon.ico?v=0.7" />
+    @Styles.Render("~/Content/css/ThirdParty",
+                   "~/Content/css/site")
+    @Scripts.Render("~/Scripts/modernizr")
+</head>
+<body>
+    <div id="rainbow">
+        @Html.Partial("_Navigation")
+
+        <!-- MAIN CONTENT -->
+        <div class="content-container" id="content-container">
+            @RenderBody()
+        </div>
+    </div>
+    @Html.Partial("_Footer")
+
+    @Scripts.Render("~/scripts/lib",
+                    "~/scripts/custom",
+                    "~/app/main.js")
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
