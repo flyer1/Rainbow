@@ -23,15 +23,15 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 173.0,
 		"selected_items":
 		[
 			[
-				"Package Control: ",
+				"Package Control: li",
 				"Package Control: List Packages"
 			],
 			[
-				"Package Control: li",
+				"Package Control: ",
 				"Package Control: List Packages"
 			],
 			[
@@ -88,12 +88,24 @@
 	],
 	"file_history":
 	[
+		"/C/Users/kroekerj/Desktop/notes",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp.sln",
+		"/C/Users/kroekerj/Downloads/download (1)",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp.v12.suo",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp/bower.json",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp/.gitignore",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp/.bowerrc",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp/ionic.project",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp/package.json",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp/gulpfile.js",
+		"/C/_OT/OTMP/DEV/Mobile/Source/DiscoverApp/config.xml",
+		"/C/Users/kroekerj/.gitconfig",
+		"/C/_RAINBOW/Source/Rainbow.WebMvc/Rainbow.WebMvc/text.html",
 		"/C/_RAINBOW/Source/Rainbow.WebMvc/Rainbow.WebMvc/test.js",
 		"/C/Users/kroekerj/AppData/Roaming/Sublime Text 3/Packages/User/JsFormat.sublime-settings",
 		"/C/Users/kroekerj/AppData/Roaming/Sublime Text 3/Packages/User/ngCtrlAs.sublime-snippet",
 		"/C/_RAINBOW/Source/Rainbow.WebMvc/Rainbow.WebMvc/App/dataaccess/dataservice.js",
 		"/C/_RAINBOW/Source/Rainbow.WebMvc/Rainbow.WebMvc/Views/Home/Home.cshtml",
-		"/C/_RAINBOW/Source/Rainbow.WebMvc/Rainbow.WebMvc/text.html",
 		"/C/_RAINBOW/Source/Rainbow.WebMvc/Rainbow.WebMvc/App/viewmodels/vm.home.js",
 		"/C/_RAINBOW/Source/Rainbow.WebMvc/Rainbow.WebMvc/Content/bootstrap/variables.less",
 		"/C/Users/kroekerj/AppData/Roaming/Sublime Text 3/Packages/JsFormat/JsFormat.sublime-settings",
@@ -134,6 +146,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"www(1)",
+			"</option>",
+			"value",
+			"<option value",
+			"value",
+			"<option value",
 			"observableArray",
 			"var",
 			"                    .",

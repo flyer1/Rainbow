@@ -6349,21 +6349,25 @@ a.attention-grabber {
 }
 .dropdown-menu.with-icons > li > a > .icon {
   position: absolute;
-  left: 22px;
-  font-size: 24px;
-  color: #3498db;
-  top: 16px;
+  left: 16px;
+  font-size: 13px;
+  color: #A8A8A8;
+  top: 31px;
 }
 .main-banner {
   margin-top: 60px;
   background: #222;
-  height: 280px;
   overflow: hidden;
   position: relative;
   padding-top: 30%;
 }
 .main-banner-background {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(23, 21, 21, 0.2) 80px);
+  background: url('../../Images/kids-group.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  height: 600px;
 }
 .main-banner img.kenburns-effect {
   -moz-animation: zoom 12s alternate infinite;
@@ -6377,34 +6381,45 @@ a.attention-grabber {
   height: 165%;
 }
 .main-banner .title {
-  color: #ffffff;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
   position: absolute;
-  top: 57px;
+  width: 100%;
+  height: 0;
+  z-index: 2;
+  background: -webkit-linear-gradient(top, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.7) 100%);
+  background: linear-gradient(to bottom, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.7) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00171717", endColorstr="#b3171717", GradientType=0);
+  -moz-transition: height 0.25s ease-in-out;
+  -o-transition: height 0.25s ease-in-out;
+  -webkit-transition: height 0.25s ease-in-out;
+  transition: height 0.25s ease-in-out;
+  height: 202px;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
 }
 .main-banner .title h1 {
+  color: white;
+  font-family: "Roboto";
   margin-bottom: 10px;
-  font-family: 'Open Sans Condensed';
   font-size: 3em;
   line-height: 1.2em;
   font-weight: bold;
 }
 .main-banner .title h1 .emphasis {
-  font-family: 'Open Sans Condensed';
   color: orange;
   font-size: 68px;
 }
 .main-banner .title h1 .normal {
   display: inline-block;
   font-size: 63px;
+  font-weight: 100;
+  word-spacing: -7px;
 }
 .main-banner .title .lead {
-  font-family: 'Roboto';
-  font-weight: 400;
-  color: #ddd;
-  font-size: 24px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 22px;
+  margin-top: 15px;
 }
 .jumbotron {
   color: rgba(255, 255, 255, 0.05);
@@ -6459,7 +6474,7 @@ a.attention-grabber {
 }
 .section-header {
   padding-bottom: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .section-header.tight {
   margin-bottom: 0;
@@ -6470,7 +6485,8 @@ a.attention-grabber {
   font-size: 42px;
   line-height: 47px;
   color: #333;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: "Roboto";
 }
 .section-header h2 .subdued {
   font-size: 18px;
@@ -6479,6 +6495,9 @@ a.attention-grabber {
 }
 .secondary-highlight .section-header h2 {
   color: rgba(255, 255, 255, 0.77);
+}
+.section-body {
+  margin-bottom: 35px;
 }
 .jumbotron {
   margin-bottom: 0;
@@ -6491,7 +6510,8 @@ a.attention-grabber {
   font-size: 21px;
   margin: 0 0 .5em;
   line-height: 28px;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: "Roboto";
 }
 .grid .grid-text {
   margin: 0 0 2em;
