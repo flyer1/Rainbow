@@ -1,6 +1,5 @@
 ﻿
 .main-banner {
-    margin-top: 60px;
     background: #222;
     overflow: hidden;
     position: relative;
@@ -9,11 +8,11 @@
 
 .main-banner-background {
     background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(23, 21, 21, 0.2) 80px);
-    background: url('../../Images/kids-group.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position-y: center;
+    background: url('../../Images/kids-group.jpg') no-repeat fixed center;
+    background-size: cover;
     height: 600px;
+    background-attachment: fixed;
 }
 
 .main-banner img.kenburns-effect {
@@ -34,16 +33,15 @@
 .main-banner .title {
     position: absolute;
     width: 100%;
-    height: 0;
     z-index: 2;
-    background: -webkit-linear-gradient(top,rgba(23,23,23,0) 0,rgba(23,23,23,.7) 100%);
-    background: linear-gradient(to bottom,rgba(23,23,23,0) 0,rgba(23,23,23,.7) 100%);
+    background: -webkit-linear-gradient(top,rgba(23,23,23,0) 0,rgba(23,23,23,.55) 100%);
+    background: linear-gradient(to bottom,rgba(23,23,23,0) 0,rgba(23,23,23,.55) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00171717", endColorstr="#b3171717", GradientType=0);
     -moz-transition: height .25s ease-in-out;
     -o-transition: height .25s ease-in-out;
     -webkit-transition: height .25s ease-in-out;
     transition: height .25s ease-in-out;
-    height: 202px;
+    height: 200px;
     left: 0;
     bottom: 0;
     padding: 20px;
@@ -56,6 +54,7 @@
     font-size: 3em;
     line-height: 1.2em;
     font-weight: bold;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
 }
 
 .main-banner .title h1 .emphasis {

@@ -6355,7 +6355,6 @@ a.attention-grabber {
   top: 31px;
 }
 .main-banner {
-  margin-top: 60px;
   background: #222;
   overflow: hidden;
   position: relative;
@@ -6363,11 +6362,11 @@ a.attention-grabber {
 }
 .main-banner-background {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(23, 21, 21, 0.2) 80px);
-  background: url('../../Images/kids-group.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position-y: center;
+  background: url('../../Images/kids-group.jpg') no-repeat fixed center;
+  background-size: cover;
   height: 600px;
+  background-attachment: fixed;
 }
 .main-banner img.kenburns-effect {
   -moz-animation: zoom 12s alternate infinite;
@@ -6383,16 +6382,15 @@ a.attention-grabber {
 .main-banner .title {
   position: absolute;
   width: 100%;
-  height: 0;
   z-index: 2;
-  background: -webkit-linear-gradient(top, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.7) 100%);
-  background: linear-gradient(to bottom, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.7) 100%);
+  background: -webkit-linear-gradient(top, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.55) 100%);
+  background: linear-gradient(to bottom, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.55) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00171717", endColorstr="#b3171717", GradientType=0);
   -moz-transition: height 0.25s ease-in-out;
   -o-transition: height 0.25s ease-in-out;
   -webkit-transition: height 0.25s ease-in-out;
   transition: height 0.25s ease-in-out;
-  height: 202px;
+  height: 200px;
   left: 0;
   bottom: 0;
   padding: 20px;
@@ -6404,6 +6402,7 @@ a.attention-grabber {
   font-size: 3em;
   line-height: 1.2em;
   font-weight: bold;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 .main-banner .title h1 .emphasis {
   color: orange;
@@ -6589,12 +6588,19 @@ a.attention-grabber {
   background: rgba(0, 0, 0, 0.14);
   border-radius: 5px;
 }
+.filter-box .title {
+  font-weight: 100;
+  font-size: 18px;
+}
 .filter-box h3 {
   font-size: 16px;
   text-transform: uppercase;
   color: rgba(119, 119, 119, 0.76);
   padding-bottom: 11px;
   font-weight: 600;
+}
+.filter-box hr {
+  border-color: rgba(255, 255, 255, 0.25);
 }
 .filter-box ul {
   margin-bottom: 30px;

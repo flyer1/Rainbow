@@ -96,6 +96,8 @@
             <div class="section-body row">
                 <!-- FILTER BOX *******************************-->
                 <div class="filter-box hidden-xs col-sm-4 col-md-3">
+                    <p class="title">Filter Sites</p>
+                    <hr />
                     <h3>Transportation To</h3>
                     <ul data-bind="foreach: schools">
                         <li class="checkbox">
@@ -106,6 +108,8 @@
                             <span class="pull-right subdued" data-bind="text:count, visible: isChecked() || $root.hasFilteredSchools()"></span>
                         </li>
                     </ul>
+
+                    <hr />
 
                     <h3>Programs Offered</h3>
                     <ul>
