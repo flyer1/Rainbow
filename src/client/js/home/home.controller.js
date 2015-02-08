@@ -1,4 +1,4 @@
-﻿define('viewmodels/vm.home', ['dataaccess/dataservice'],
+define('viewmodels/vm.home', ['dataaccess/dataservice'],
   function (dataservice) {
 
       var sites = ko.observableArray();
