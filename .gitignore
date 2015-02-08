@@ -3,3 +3,4 @@ bin/
 *.dll
 *.exe
 *.pdb
+.DS_Store
