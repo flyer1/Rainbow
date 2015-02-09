@@ -13,7 +13,7 @@
          * but this is easier to maintain.
          */
         'app.core',
-        'app.data', // needs core
+        'app.data', // needs core 
         'app.widgets', // needs core
 
         /*
