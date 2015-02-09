@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('app.shell')
-        .controller('Shell', Shell);
+        .module('app')
+        .controller('Shell', ShellController);
 
-    Shell.$inject = ['common', 'datacontext'];
+    ShellController.$inject = ['common', 'datacontext'];
 
-    function Shell(common, datacontext) {
+    function ShellController(common, datacontext) {
         /*jshint validthis: true */
         var vm = this;
 
