@@ -5,10 +5,15 @@
         .module('app.home')
         .run(routeConfig);
 
-    routeConfig.$inject = ['routehelper'];
-    /* @ngInject */
     function routeConfig(routehelper) {
-        routehelper.configureRoutes(getRoutes());
+        var routes = getRoutes();
+
+        routes.forEach(function (route) {
+            //route.config.resolve =
+            //    angular.extend(route.config.resolve || {}, routehelperConfig.config.resolveAlways);
+            $routeProvider.when(route.url, route.config);
+        });
+        $routeProvider.otherwise({ redirectTo: '/' });
     }
 
     function getRoutes() {
@@ -20,10 +25,22 @@
                     title: 'Home',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                        content: '<i class="fa fa-dashboard"></i> Home'
                     }
                 }
-            }
+            },
+             {
+                 url: '/site/:id',
+                 config: {
+                     templateUrl: 'js/site/site.html',
+                     title: 'Site',
+                     settings: {
+                         nav: 1,
+                         content: '<i class="fa fa-dashboard"></i> Site'
+                     }
+                 }
+             }
         ];
     }
 })();
+
