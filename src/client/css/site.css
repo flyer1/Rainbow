@@ -6363,7 +6363,7 @@ a.attention-grabber {
 .main-banner-background {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(23, 21, 21, 0.2) 80px);
   background-position-y: center;
-  background: url('../../Images/kids-group.jpg') no-repeat fixed center;
+  background: url('../img/kids-group.jpg') no-repeat fixed center;
   background-size: cover;
   height: 600px;
   background-attachment: fixed;

@@ -3,11 +3,12 @@
 
     angular
         .module('app.home')
-        .controller('Shell', HomeController);
+        .controller('HomeController', HomeController);
 
     HomeController.$inject = ['datacontext'];
 
     function HomeController(datacontext) {
+        console.log('yeehaw!');
         var vm = this;
         return vm;
 
