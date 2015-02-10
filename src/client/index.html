@@ -15,47 +15,48 @@
 
 <!--    <link rel="shortcut icon" href="/server/ccfavicon.ico" />-->
 
-    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/lib/toastr/toastr.css" rel="stylesheet" />
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="lib/toastr/toastr.css" rel="stylesheet" />
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300|Roboto:400,500,700" rel="stylesheet" type="text/css">
     
-    <link href="/css/site.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
     <div>
-        <div data-ng-include="'/js/layout/shell.html'"></div>
+        <div data-ng-include="'js/shell/shell.html'"></div>
     </div>
 
-    <script src="/lib/jquery/dist/jquery.js"></script>
-    <script src="/lib/angular/angular.js"></script>
-<!--    <script src="/lib/angular-animate/angular-animate.js"></script>-->
-    <script src="/lib/angular-route/angular-route.js"></script>
-<!--    <script src="/lib/angular-sanitize/angular-sanitize.js"></script>-->
-    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/lib/toastr/toastr.js"></script>
-    <script src="/lib/moment/moment.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<!--    <script src="lib/angular-animate/angular-animate.js"></script>-->
+    <!--<script src="lib/angular-route/angular-route.js"></script>-->
+<!--    <script src="lib/angular-sanitize/angular-sanitize.js"></script>-->
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/toastr/toastr.js"></script>
+    <script src="lib/moment/moment.js"></script>
 
     <!-- Bootstrapping -->
-    <script src="/js/_app.module.js"></script>
-    <script src="/js/config.route.js"></script>
+    <script src="js/_app.module.js"></script>
+    <script src="js/config.route.js"></script>
 
     <!--core-->
-    <script src="/js/core/core.module.js"></script>
+    <script src="js/core/_core.module.js"></script>
 
     <!-- App data services -->
-    <script src="/js/data/_data.module.js"></script>
-    <script src="/js/data/datacontext.js"></script>
+    <script src="js/data/_data.module.js"></script>
+    <script src="js/data/datacontext.js"></script>
 
     <!--widgets-->
     
     <!-- App - Shell -->
-    <script src="/js/shell/shell.controller.js"></script>
+    <script src="js/shell/shell.controller.js"></script>
 
     <!-- App - Home -->
-    <script src="/js/home/_home.module.js"></script>
-    <script src="js/home/home.controller.js"></script>
+    <script src="js/home/_home.module.js"></script>
+    <!--<script src="js/home/home.controller.js"></script>-->
 
 </body>
 </html>

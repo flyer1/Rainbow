@@ -5,6 +5,7 @@
         /*
          * Angular modules
          */
-        'ngAnimate', 'ngRoute'
+        //'ngAnimate',
+        'ui.router'
     ]);
 })();

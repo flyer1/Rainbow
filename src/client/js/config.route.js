@@ -3,28 +3,22 @@
 
     angular
         .module('app')
-        .run(routeConfig);
+        .config(routeConfig);
 
-    routeConfig.$inject = ['$stateProvider'];
+    routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    function routeConfig($stateProvider) {
+    function routeConfig($stateProvider, $urlRouterProvider) {
 
         var routes = getRoutes();
 
         routes.forEach(function (route) {
-            $stateProvider.when(route.name,route.config);
-        });  
+            $stateProvider.state(route.stateName, route.config);
+        });
+
+        $urlRouterProvider.otherwise("/");
     }
 
     function getRoutes() {
-        var contacts = { 
-            name: 'contacts',
-            templateUrl: 'contacts.html',
-            data: {
-                customData1: 5,
-                customData2: "blue"
-            }  
-        }
         return [
             {
                 stateName: 'home',

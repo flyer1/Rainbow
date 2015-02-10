@@ -14,12 +14,12 @@
          */
         'app.core',
         'app.data', // needs core 
-        'app.widgets', // needs core
+        //'app.widgets', // needs core
 
         /*
          * Feature areas
          */
         'app.home',
-        'app.site',
+        //'app.site',
     ]);
 })();

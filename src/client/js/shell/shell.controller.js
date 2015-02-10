@@ -5,13 +5,13 @@
         .module('app')
         .controller('Shell', ShellController);
 
-    ShellController.$inject = ['common', 'datacontext'];
+    ShellController.$inject = ['datacontext'];
 
-    function ShellController(common, datacontext) {
+    function ShellController(datacontext) {
         /*jshint validthis: true */
         var vm = this;
 
-        var logger = common.logger;
+        //var logger = common.logger;
 
         vm.busyMessage = 'Please wait ...';
         vm.isBusy = true;
@@ -20,17 +20,17 @@
         activate();
 
         function activate() {
-            logger.success('CodeCamper loaded!', null);
-//            TODO: Using a resolver on all routes or datacontext.ready in every controller
-//            return datacontext.ready([]).then(hideSplash);
-            hideSplash();
+//            logger.success('CodeCamper loaded!', null);
+////            TODO: Using a resolver on all routes or datacontext.ready in every controller
+////            return datacontext.ready([]).then(hideSplash);
+//            hideSplash();
         }
 
         function hideSplash() {
             //Force a 1 second delay so we can see the splash.
-            common.$timeout(function () {
-                vm.showSplash = false;
-            }, 1000);
+            //common.$timeout(function () {
+            //    vm.showSplash = false;
+            //}, 1000);
         }
     }
 })();
