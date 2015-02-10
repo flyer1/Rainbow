@@ -10,12 +10,13 @@
         var schools = getAllSchools();
 
         var service = {
-            getSiteRepository: getSiteRepository,
+            getSites: getSites,
+            getSchoolGroups: getSchoolGroups,
         };
 
         return service;
 
-        function getSiteRepository() {
+        function getSites() {
 
             var data = [];
 
@@ -259,8 +260,40 @@
             newSite.schools.push(newSchool);
         };
 
-    }
+        function getSchoolGroups() {
 
+            var schoolAry = [];
+            var sites = getSites();
+
+            // Flatten the list of all schools in the site repository (there will be duplicates)
+            var allSchools = _.chain(sites)
+              .map(function (site) {
+                  return site.schools;
+              })
+              .reduce(function (memo, ary) {
+                  return memo.concat(ary);
+              })
+              .value();
+
+            // Now count the duplicates and create 1 school object per unique instance and add a properties.
+            var schoolAry = _.chain(allSchools)
+              .groupBy('name')
+              .map(function (grouping) {
+                  var index = grouping[0];
+                  return {
+                      name: index.name,
+                      lat: index.lat,
+                      lng: index.lng,
+                      transportType: index.transportType,
+                      count: grouping.length,
+                      isChecked: false,
+                  };
+              })
+              .value();
+
+            return schoolAry;
+        };
+    }
 })();
 
 //var refData = {

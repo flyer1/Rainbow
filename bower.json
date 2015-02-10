@@ -19,6 +19,7 @@
     "toastr": "~2.0.3",
     "bootstrap": "~3.3.2",
     "moment": "~2.9.0",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "underscore": "~1.7.0"
   }
 }
