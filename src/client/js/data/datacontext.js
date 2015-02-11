@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular
@@ -51,6 +51,7 @@
             addSchool(newSite, schools.islandLake, 'Centre Transport');
             addSchool(newSite, schools.guyot, 'School Bus');
             addSchool(newSite, schools.shamrock, 'School Bus');
+            postProcessSite(newSite);
             data.push(newSite);
 
             /*
@@ -77,6 +78,7 @@
 
             // Add the schools that the site services
             addSchool(newSite, schools.islandLake, '???');
+            postProcessSite(newSite);
             data.push(newSite);
 
             /*
@@ -106,7 +108,8 @@
             addSchool(newSite, schools.niakwa, 'Centre Transport');
             addSchool(newSite, schools.howden, 'Centre Transport');
             addSchool(newSite, schools.frontenac, 'Centre Transport');
-
+            postProcessSite(newSite);
+            
             data.push(newSite);
 
             /*
@@ -136,7 +139,8 @@
             addSchool(newSite, schools.niakwa, 'Centre Transport');
             addSchool(newSite, schools.howden, 'Centre Transport');
             addSchool(newSite, schools.frontenac, 'Centre Transport');
-
+            postProcessSite(newSite);
+            
             data.push(newSite);
 
             /*
@@ -168,7 +172,8 @@
             addSchool(newSite, schools.frontenac, 'Centre Transport');
             addSchool(newSite, schools.guyot, 'Centre Transport');
             addSchool(newSite, schools.shamrock, 'Centre Transport');
-
+            postProcessSite(newSite);
+            
             data.push(newSite);
 
             /*
@@ -193,17 +198,34 @@
                 order: 6,
             };
 
-            data.push(newSite);
-
             // Add the schools that the site services
             addSchool(newSite, schools.vanBellegham, 'Centre Transport');
             addSchool(newSite, schools.guyot, 'Centre Transport');
             addSchool(newSite, schools.shamrock, 'Centre Transport');
+            postProcessSite(newSite);
 
+            data.push(newSite);
+            
             return data;
 
         }
 
+        // Add some computed properties onto the site object
+        function postProcessSite(site) {
+            site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
+            site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
+            
+            // Google maps API for a static map with marker
+            var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';
+            var address = site.address.number + '+' + site.address.street + ',' + site.address.city + ',' + site.address.province + ',' + site.address.postalCode;
+            var marker = '&markers=color:' + site.address.markerColor + '%7Clabel:' + site.shortName + '%7C' + site.address.lat + ' ,' + site.address.lng;
+            var args = '?center=' + address + '&zoom=14&size=450x250&maptype=roadmap' + marker;
+                
+            site.address.staticMapSrc =  baseUrl + args;
+
+            site.schoolShortNames = _.pluck(site.schools, 'shortName').join();
+        }
+        
         function getAllSchools() {
             var schools = {
                 islandLake: {

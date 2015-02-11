@@ -1,4 +1,4 @@
-﻿<div class="jumbotron main-banner">
+<div class="jumbotron main-banner">
     <div class="main-banner-background">
         a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z
         A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
@@ -96,13 +96,13 @@
             <div class="section-body row">
                 <!-- FILTER BOX *******************************-->
                 <div class="filter-box hidden-xs col-sm-4 col-md-3">
-                    <p class="title">Filter Sites</p>
+                    <p class="title">Find Options</p>
                     <hr />
-                    <h3>Transportation To</h3>
+                    <h3>Transportation To Schools</h3>
                     <ul>
                         <li ng-repeat="school in vm.schools" class="checkbox">
                             <label>
-                                <input type="checkbox" data-bind="checked: isChecked" ng-click="vm.handleFilterChanged()">
+                                <input type="checkbox" ng-click="vm.toggleSchoolFilter(school)">
                                 <span>{{school.name}}</span>
                             </label>
                             <span class="pull-right subdued" data-bind="visible: isChecked() || $root.hasFilteredSchools()">{{count}}</span>
@@ -144,7 +144,8 @@
                                 <div class="row">
                                     <div class="col-xs-12 col-md-6">
                                         <div class="list-text">
-                                            <h4>{{site.name}}</h4>
+                                            <h4>{{site.name}} {{site.isMatch}}</h4>
+
                                             <p>
                                                 <span>{{site.address.addressLine1}}</span>
                                             </p>
@@ -153,7 +154,7 @@
                                             </p>
                                             <p>{{site.phone}}</p>
                                             <p>&nbsp;</p>
-                                            <p class="secondary">With bus service to <span>{{site.schools().length}}</span> school<span ng-show="site.schools().length > 1">s</span> (<span>{{site.schoolShortNames}}</span>)</p>
+                                            <p class="secondary">With bus service to <span>{{site.schools.length}}</span> school<span ng-show="site.schools().length > 1">s</span> (<span>{{site.schoolShortNames}}</span>)                                               </p>
                                             <p class="more-info">
                                                 <a>More info</a>
                                             </p>
@@ -161,14 +162,17 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-9 col-md-6">
                                         <div class="list-img">
-                                            <img class="map map-round" data-bind="attr: {'src' : address.staticMapSrc }">
-                                            @*<img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
+                                            <img class="map map-round" ng-src="{{site.address.staticMapSrc}}" data-bind="attr: {'src' : address.staticMapSrc }">
+<!--
+                                            <img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
                                                 &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-                                                &markers=color:red%7Clabel:C%7C40.718217,-73.998284" data-bind="tooltip:{title: 'Click to open in Google Maps', placement: 'center'}">*@
-                                            @*<iframe width="400"
+                                                &markers=color:red%7Clabel:C%7C40.718217,-73.998284" data-bind="tooltip:{title: 'Click to open in Google Maps', placement: 'center'}">
+
+                                            <iframe width="400"
                                                       height="300"
                                                       frameborder="0" style="border:0"
-                                                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI&q=Rainbow+Day+Nursery,Winnipeg+Manitoba"></iframe>*@
+                                                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI&q=Rainbow+Day+Nursery,Winnipeg+Manitoba"></iframe>
+-->
                                         </div>
                                     </div>
                                 </div>

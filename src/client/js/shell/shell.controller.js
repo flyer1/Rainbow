@@ -5,20 +5,21 @@
         .module('app')
         .controller('Shell', ShellController);
 
-    ShellController.$inject = ['datacontext'];
+    ShellController.$inject = ['datacontext', '$state'];
 
-    function ShellController(datacontext) {
+    function ShellController(datacontext, $state) {
         /*jshint validthis: true */
         var vm = this;
 
         //var logger = common.logger;
 
-        vm.busyMessage = 'Please wait ...';
-        vm.isBusy = true;
-        vm.showSplash = true;
+//        vm.busyMessage = 'Please wait ...';
+//        vm.isBusy = true;
+//        vm.showSplash = true;
 
         activate();
-
+        $state.go('home');
+        
         function activate() {
 //            logger.success('CodeCamper loaded!', null);
 ////            TODO: Using a resolver on all routes or datacontext.ready in every controller
