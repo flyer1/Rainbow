@@ -73,16 +73,13 @@
 
         };
 
-        //var siteCount = ko.computed({
-        //    read: function () {
-        //        var totalLength = vm.sites().length;
-        //        var filteredLength = vm.filteredSites().length;
+        function siteCount() {
+            var totalLength = vm.sites.length;
+            var filteredLength = vm.filteredSites().length;
 
-        //        return totalLength === filteredLength ? totalLength.toString() : filteredLength.toString() + '/' + totalLength.toString();
-        //    },
-        //    deferEvaluation: true
-        //});
-
+            return totalLength === filteredLength ? totalLength.toString() : filteredLength.toString() + '/' + totalLength.toString();
+        }
+        
         //var hasFilteredSchools = ko.computed({
         //    read: function () {
         //        return _.filter(schools(), function (item) { return item.isChecked(); }).length === 0;
