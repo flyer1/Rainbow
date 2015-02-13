@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.data')
+        .module('app.core')
         .factory('datacontext', datacontext);
 
     function datacontext() {
@@ -297,7 +297,7 @@
               })
               .value();
 
-            // Now count the duplicates and create 1 school object per unique instance and add a properties.
+            // Now count the duplicates and create 1 school object per unique instance and add properties.
             var schoolAry = _.chain(allSchools)
               .groupBy('name')
               .map(function (grouping) {
