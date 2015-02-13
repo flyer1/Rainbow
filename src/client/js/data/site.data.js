@@ -1,23 +1,21 @@
-// A note to a future maintainer. Instead of hosting the data in a database, it is defined here instead in a regular javascript object.
-// Any changes made down below to values of esxisting properties will be reflected across the site via the magic of databinding. 
-
+// The core data for the site can be found here.
 (function () {
     'use strict';
 
     angular
         .module('app.data')
-        .factory('dataSites', dataSites);
+        .factory('siteData', siteData);
 
-    function dataSites() {
+    function siteData() {
 
         var service = {
-            getData: getData
+            getSites: getSites
         };
 
         return service;
 
         /************************** DATA - SITES ************************************************/
-        function getData() {
+        function getSites() {
 
             var data = [];
 
@@ -25,6 +23,7 @@
              * Define Phase I Site *********************************************
              */
             var newSite = {
+                code: 'P1',
                 shortName: '1',
                 name: 'Phase I',
                 address: {
@@ -53,6 +52,7 @@
              * Define Phase II Site **************************************************
              */
             newSite = {
+                code: 'P2',
                 shortName: '2',
                 name: 'Phase II',
                 address: {
@@ -79,6 +79,7 @@
              * Define Phase IIIA Site **********************************************************
              */
             newSite = {
+                code: 'P3A',
                 shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
                 name: 'Phase IIIA',
                 address: {
@@ -108,6 +109,7 @@
              * Define Phase IIIB Site **********************************************************************
              */
             newSite = {
+                code: 'P3B',
                 shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
                 name: 'Phase IIIB',
                 address: {
@@ -137,6 +139,7 @@
              * Define Phase IIIC Site *************************************************************************
              */
             newSite = {
+                code: 'P3C',
                 shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
                 name: 'Phase IIIC',
                 address: {
@@ -168,6 +171,7 @@
              * Define Phase IV Site **************************************************************
              */
             newSite = {
+                code: 'P4',
                 shortName: '4', // Note we can only use 1 character for the map markers so don't include the A/B/C here
                 name: 'Phase IV',
                 address: {

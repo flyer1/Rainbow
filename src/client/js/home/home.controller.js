@@ -10,6 +10,7 @@
     function HomeController(datacontext) {
         var vm = this;
 
+        vm.siteRepo = {};
         vm.sites = [];
         vm.schools = [];
         vm.hasFilteredSchools = false;
@@ -23,12 +24,13 @@
         /******************** IMPLEMENTATION **********************/
         function init() {
 
-            vm.sites = datacontext.getSites();
-            vm.filteredSites = vm.sites;
-            vm.schools = datacontext.getSchoolGroups();
+            vm.siteRepo = datacontext.getSiteRepository();
+            //vm.filteredSites = vm.sites;
+            //vm.schools = datacontext.getSchoolGroups();
 
-            console.log(vm.sites[0]); // TODO: remove later
-            console.log(vm.schools[0]); // TODO: remove later
+            console.log(vm.siteRepo); // TODO: remove later
+            debugger;
+            //console.log(vm.schools[0]); // TODO: remove later
 
         };
 

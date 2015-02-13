@@ -5,274 +5,81 @@
         .module('app.core')
         .factory('datacontext', datacontext);
 
-    function datacontext() {
+    datacontext.$inject = ['siteData', 'schoolData'];
 
-        var schools = getAllSchools();
+    function datacontext(siteData, schoolData) {
 
         var service = {
-            getSites: getSites,
-            getSchoolGroups: getSchoolGroups,
+            getSiteRepository: getSiteRepository
         };
 
         return service;
 
-        function getSites() {
+        /************************* IMPLEMENTATION ******************************/
 
-            var data = [];
+        // Return the entire data repository for the entire site. Because the data structure is so small (and future growth is not expected to ever change that to a big enough degree), the entire block of data can be returned to the client in one data structure.
+        function getSiteRepository() {
 
-            // A note to a future maintainer. Instead of hosting the data in a database, it is defined here instead in a regular javascript object.
-            // Any changes made to existing properties will be reflected on the website thru the databinding (via knockout).
-            // If you have to add or change a given property (eg: you need to add a new property called schoolType for eg), then you need to update the databinding
-            // in the views to take advantage of this change.
+            // Get the site and school data
+            var sites = siteData.getSites();
+            var schools = schoolData.getSchools();
 
-            /*
-             * Define Phase I Site *********************************************
-             */
-            var newSite = {
-                shortName: '1',
-                name: 'Phase I',
-                address: {
-                    unitNumber: '11',
-                    number: "20",
-                    street: "Island Shore Blvd.",
-                    city: "Winnipeg",
-                    province: "MB",
-                    postalCode: "R3X 1N7",
-                    lat: 49.8382149,
-                    lng: -97.0691446,
-                    markerColor: 'blue'
-                },
-                phone: '204-255-6751',
-                schools: [],
-                order: 1,
+            // Add the relationship "table" between sites and schools. Useful to generate counts of sites for a given schools for eg, or when filtering the sites via a set of schools.
+            // Basically flatten the relationship between sites and the schools they service.
+            var siteSchools = getSiteSchools(sites);
+
+            // Then add on computed properties for each site
+            addSiteComputes(sites);
+
+            // Then add on computed properties for each school
+            addSchoolComputes(schools, siteSchools);
+
+            return {
+                sites: sites,
+                schools: schools,
+                siteSchools: siteSchools
             };
-
-            // Add the schools that the site services
-            addSchool(newSite, schools.islandLake, 'Centre Transport');
-            addSchool(newSite, schools.guyot, 'School Bus');
-            addSchool(newSite, schools.shamrock, 'School Bus');
-            postProcessSite(newSite);
-            data.push(newSite);
-
-            /*
-             * Define Phase II Site **************************************************
-             */
-            newSite = {
-                shortName: '2',
-                name: 'Phase II',
-                address: {
-                    unitNumber: null,
-                    number: "445",
-                    street: "Island Shore Blvd.",
-                    city: "Winnipeg",
-                    province: "MB",
-                    postalCode: "R3X 2B4",
-                    lat: 49.8306133,
-                    lng: -97.0663465,
-                    markerColor: 'red'
-                },
-                phone: '204-256-6808',
-                schools: [],
-                order: 2,
-            };
-
-            // Add the schools that the site services
-            addSchool(newSite, schools.islandLake, '???');
-            postProcessSite(newSite);
-            data.push(newSite);
-
-            /*
-             * Define Phase IIIA Site **********************************************************
-             */
-            newSite = {
-                shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IIIA',
-                address: {
-                    unitNumber: '180',
-                    number: "50",
-                    street: "Lakewood Blvd.",
-                    city: "Winnipeg",
-                    province: "MB",
-                    postalCode: "R2J 2M7",
-                    lat: 49.853997,
-                    lng: -97.079135,
-                    markerColor: 'green'
-                },
-                phone: '204-254-2774',
-                schools: [],
-                order: 3,
-            };
-
-            // Add the schools that the site services
-            addSchool(newSite, schools.vanBellegham, 'Centre Transport');
-            addSchool(newSite, schools.niakwa, 'Centre Transport');
-            addSchool(newSite, schools.howden, 'Centre Transport');
-            addSchool(newSite, schools.frontenac, 'Centre Transport');
-            postProcessSite(newSite);
-            
-            data.push(newSite);
-
-            /*
-             * Define Phase IIIB Site **********************************************************************
-             */
-            newSite = {
-                shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IIIB',
-                address: {
-                    unitNumber: '100',
-                    number: "40",
-                    street: "Lakewood Blvd.",
-                    city: "Winnipeg",
-                    province: "MB",
-                    postalCode: "R2J 2M6",
-                    lat: 49.8545685,
-                    lng: -97.078809,
-                    markerColor: 'green'
-                },
-                phone: '204-257-6180',
-                schools: [],
-                order: 4,
-            };
-
-            // Add the schools that the site services
-            addSchool(newSite, schools.vanBellegham, 'Centre Transport');
-            addSchool(newSite, schools.niakwa, 'Centre Transport');
-            addSchool(newSite, schools.howden, 'Centre Transport');
-            addSchool(newSite, schools.frontenac, 'Centre Transport');
-            postProcessSite(newSite);
-            
-            data.push(newSite);
-
-            /*
-             * Define Phase IIIC Site *************************************************************************
-             */
-            newSite = {
-                shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IIIC',
-                address: {
-                    unitNumber: '90',
-                    number: "115",
-                    street: "Vermillion Rd.",
-                    city: "Winnipeg",
-                    province: "MB",
-                    postalCode: "R2J 4A9",
-                    lat: 49.854044,
-                    lng: -97.070653,
-                    markerColor: 'green'
-                },
-                phone: '204-255-3985',
-                schools: [],
-                order: 5,
-            };
-
-            // Add the schools that the site services
-            addSchool(newSite, schools.vanBellegham, 'Centre Transport');
-            addSchool(newSite, schools.niakwa, 'Centre Transport');
-            addSchool(newSite, schools.howden, 'Centre Transport');
-            addSchool(newSite, schools.frontenac, 'Centre Transport');
-            addSchool(newSite, schools.guyot, 'Centre Transport');
-            addSchool(newSite, schools.shamrock, 'Centre Transport');
-            postProcessSite(newSite);
-            
-            data.push(newSite);
-
-            /*
-             * Define Phase IV Site **************************************************************
-             */
-            newSite = {
-                shortName: '4', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IV',
-                address: {
-                    unitNumber: null,
-                    number: "255",
-                    street: "Vermillion Rd.",
-                    city: "Winnipeg",
-                    province: "MB",
-                    postalCode: "R2J 3Z7",
-                    lat: 49.854056,
-                    lng: -97.065906,
-                    markerColor: 'orange'
-                },
-                phone: '204-256-0672',
-                schools: [],
-                order: 6,
-            };
-
-            // Add the schools that the site services
-            addSchool(newSite, schools.vanBellegham, 'Centre Transport');
-            addSchool(newSite, schools.guyot, 'Centre Transport');
-            addSchool(newSite, schools.shamrock, 'Centre Transport');
-            postProcessSite(newSite);
-
-            data.push(newSite);
-            
-            return data;
-
         }
 
         // Add some computed properties onto the site object
-        function postProcessSite(site) {
-            site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
-            site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
-            
-            // Google maps API for a static map with marker
-            var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';
-            var address = site.address.number + '+' + site.address.street + ',' + site.address.city + ',' + site.address.province + ',' + site.address.postalCode;
-            var marker = '&markers=color:' + site.address.markerColor + '%7Clabel:' + site.shortName + '%7C' + site.address.lat + ' ,' + site.address.lng;
-            var args = '?center=' + address + '&zoom=14&size=450x250&maptype=roadmap' + marker;
-                
-            site.address.staticMapSrc =  baseUrl + args;
+        function addSiteComputes(sites) {
+            _.forEach(sites, function (site) {
+                site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
+                site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
 
-            site.schoolShortNames = _.pluck(site.schools, 'shortName').join();
+                // Google maps API for a static map with marker
+                var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';
+                var address = site.address.number + '+' + site.address.street + ',' + site.address.city + ',' + site.address.province + ',' + site.address.postalCode;
+                var marker = '&markers=color:' + site.address.markerColor + '%7Clabel:' + site.shortName + '%7C' + site.address.lat + ' ,' + site.address.lng;
+                var args = '?center=' + address + '&zoom=14&size=450x250&maptype=roadmap' + marker;
+
+                site.address.staticMapSrc = baseUrl + args;
+
+                site.schoolCodes = _.pluck(site.schools, 'code').join();
+            });
         }
         
-        function getAllSchools() {
-            var schools = {
-                islandLake: {
-                    name: 'Island Lake School',
-                    shortName: 'IL',
-                    lat: 9.829775,
-                    lng: -97.0618756,
-                },
-                guyot: {
-                    name: 'École Guyot',
-                    shortName: 'Gy',
-                    lat: 49.844541,
-                    lng: -97.084674,
-                },
-                shamrock: {
-                    name: 'Shamrock School',
-                    shortName: 'Sh',
-                    lat: 49.8465875,
-                    lng: -97.063782,
-                },
-                vanBellegham: {
-                    name: "Van Bellegham",
-                    shortName: 'VB',
-                    lat: null,
-                    lng: null,
-                },
-                niakwa: {
-                    name: "Niakwa",
-                    shortName: 'Ni',
-                    lat: null,
-                    lng: null,
-                },
-                howden: {
-                    name: "Howden",
-                    shortName: 'Ho',
-                    lat: null,
-                    lng: null,
-                },
-                frontenac: {
-                    name: "Frontenac",
-                    shortName: 'Fr',
-                    lat: null,
-                    lng: null,
-                },
-            };
+        function addSchoolComputes(schools, siteSchools) {
+            _.forEach(schools, function (school) {
+                // For each school, add a count of how many sites service it
+                school.siteCount = _.where(siteSchools, { 'schoolCode': school.code }).length;
+            });
+        }
 
-            return schools;
+        function getSiteSchools(sites) {
+            var siteSchools = [];
+
+            _.forEach(sites, function (site) {
+                _.forEach(site.schools, function (school) {
+                    var newItem = {
+                        siteCode: site.code,
+                        schoolCode: school.code
+                    };
+                    siteSchools.push(newItem);
+                });
+            });
+
+            return siteSchools;
         }
 
         function addSchool(newSite, school, transportType) {

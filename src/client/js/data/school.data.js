@@ -3,58 +3,58 @@
 
     angular
         .module('app.data')
-        .factory('dataSchools', dataSchools);
+        .factory('schoolData', schoolData);
 
-    function dataSchools() {
+    function schoolData() {
 
         var service = {
-            getData: getData,
+            getSchools: getSchools,
         };
 
         return service;
         
-        function getData() {
+        function getSchools() {
             var schools = {
                 islandLake: {
+                    code: 'IL',
                     name: 'Island Lake School',
-                    shortName: 'IL',
                     lat: 9.829775,
                     lng: -97.0618756,
                 },
                 guyot: {
+                    code: 'Gy',
                     name: 'École Guyot',
-                    shortName: 'Gy',
                     lat: 49.844541,
                     lng: -97.084674,
                 },
                 shamrock: {
+                    code: 'Sh',
                     name: 'Shamrock School',
-                    shortName: 'Sh',
                     lat: 49.8465875,
                     lng: -97.063782,
                 },
                 vanBellegham: {
+                    code: 'VB',
                     name: "Van Bellegham",
-                    shortName: 'VB',
-                    lat: null,
+                    lat: null,  // TODO: Finish up the lat/lng
                     lng: null,
                 },
                 niakwa: {
+                    code: 'Ni',
                     name: "Niakwa",
-                    shortName: 'Ni',
-                    lat: null,
+                    lat: null,  // TODO: Finish up the lat/lng
                     lng: null,
                 },
                 howden: {
+                    code: 'Ho',
                     name: "Howden",
-                    shortName: 'Ho',
-                    lat: null,
+                    lat: null,  // TODO: Finish up the lat/lng
                     lng: null,
                 },
                 frontenac: {
+                    code: 'Fr',
                     name: "Frontenac",
-                    shortName: 'Fr',
-                    lat: null,
+                    lat: null,  // TODO: Finish up the lat/lng
                     lng: null,
                 },
             };
