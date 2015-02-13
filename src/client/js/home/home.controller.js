@@ -10,13 +10,13 @@
     function HomeController(datacontext) {
         var vm = this;
 
-        vm.siteRepo = {};
         vm.sites = [];
         vm.schools = [];
         vm.hasFilteredSchools = false;
         vm.siteCount = -1;
         vm.toggleSchoolFilter = toggleSchoolFilter;
-
+        vm.hasSchoolFilter = hasSchoolFilter;
+        
         init();
 
         return vm;
@@ -24,13 +24,12 @@
         /******************** IMPLEMENTATION **********************/
         function init() {
 
-            vm.siteRepo = datacontext.getSiteRepository();
-            //vm.filteredSites = vm.sites;
-            //vm.schools = datacontext.getSchoolGroups();
+            var siteRepo = datacontext.getSiteRepository();
+            
+            vm.sites = siteRepo.sites;
+            vm.schools = siteRepo.schools;
 
-            console.log(vm.siteRepo); // TODO: remove later
-            debugger;
-            //console.log(vm.schools[0]); // TODO: remove later
+            console.log(siteRepo); // TODO: remove later
 
         };
 
@@ -54,6 +53,11 @@
             };
         };
 
+        function hasSchoolFilter() {
+            var result = _.findWhere(vm.schools, { isChecked : true});
+            return typeof result !== "undefined";
+        }
+        
         function findMatchedSites() {
             
             var findOpts = getFindOpts();
@@ -76,6 +80,7 @@
         };
 
         function siteCount() {
+
             var totalLength = vm.sites.length;
             var filteredLength = vm.filteredSites().length;
 

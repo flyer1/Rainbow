@@ -28,7 +28,7 @@
                         "contentArea": {
                             templateUrl: 'js/home/home.html',
                             controller: 'HomeController as vm'
-                        }
+                        },
                     }
                 }
             },

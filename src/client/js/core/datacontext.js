@@ -46,7 +46,7 @@
             _.forEach(sites, function (site) {
                 site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
                 site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
-
+                
                 // Google maps API for a static map with marker
                 var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';
                 var address = site.address.number + '+' + site.address.street + ',' + site.address.city + ',' + site.address.province + ',' + site.address.postalCode;
@@ -63,6 +63,7 @@
             _.forEach(schools, function (school) {
                 // For each school, add a count of how many sites service it
                 school.siteCount = _.where(siteSchools, { 'schoolCode': school.code }).length;
+                school.isChecked = false;
             });
         }
 
@@ -88,55 +89,5 @@
             });
             newSite.schools.push(newSchool);
         };
-
-        function getSchoolGroups() {
-
-            var schoolAry = [];
-            var sites = getSites();
-
-            // Flatten the list of all schools in the site repository (there will be duplicates)
-            var allSchools = _.chain(sites)
-              .map(function (site) {
-                  return site.schools;
-              })
-              .reduce(function (memo, ary) {
-                  return memo.concat(ary);
-              })
-              .value();
-
-            // Now count the duplicates and create 1 school object per unique instance and add properties.
-            var schoolAry = _.chain(allSchools)
-              .groupBy('name')
-              .map(function (grouping) {
-                  var index = grouping[0];
-                  return {
-                      name: index.name,
-                      lat: index.lat,
-                      lng: index.lng,
-                      transportType: index.transportType,
-                      count: grouping.length,
-                      isChecked: false,
-                  };
-              })
-              .value();
-
-            return schoolAry;
-        };
     }
 })();
-
-//var refData = {
-//    getSchools: function () {
-//        return $.Deferred(function (def) {
-//            var schoolAry = [];
-
-//            for (var property in schools) {
-//                if (schools.hasOwnProperty(property)) {
-//                    schoolAry.push(schools[property]);
-//                }
-//            }
-
-//            def.resolve(schoolAry);
-//        });
-//    }
-//};

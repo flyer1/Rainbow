@@ -90,11 +90,11 @@
             <div class="section-header tight">
                 <h2 class="text-center">
                     Sites
-                    <span class="subdued">(<span>{{vm.filteredSites.length}}</span> listed)</span>
+                    <span class="subdued">(<span>{{vm.sites.length}}</span>)</span>
                 </h2>
             </div>
             <div class="section-body row">
-                <!-- FILTER BOX *******************************-->
+                <!------------------- FIND OPTIONS PANEL --------------------->
                 <div class="filter-box hidden-xs col-sm-4 col-md-3">
                     <p class="title">Find Options</p>
                     <hr />
@@ -105,7 +105,7 @@
                                 <input type="checkbox" ng-click="vm.toggleSchoolFilter(school)">
                                 <span>{{school.name}}</span>
                             </label>
-                            <span class="pull-right subdued" data-bind="visible: isChecked() || $root.hasFilteredSchools()">{{count}}</span>
+                            <span class="pull-right subdued" ng-show="school.isChecked || !vm.hasSchoolFilter() ">{{school.siteCount}}</span>
                         </li>
                     </ul>
 
@@ -140,7 +140,7 @@
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <div>
                         <ul class="site-list dark">
-                            <li ng-repeat="site in vm.filteredSites">
+                            <li ng-repeat="site in vm.sites">
                                 <div class="row">
                                     <div class="col-xs-12 col-md-6">
                                         <div class="list-text">
@@ -154,7 +154,7 @@
                                             </p>
                                             <p>{{site.phone}}</p>
                                             <p>&nbsp;</p>
-                                            <p class="secondary">With bus service to <span>{{site.schools.length}}</span> school<span ng-show="site.schools().length > 1">s</span> (<span>{{site.schoolShortNames}}</span>)                                               </p>
+                                            <p class="secondary">With bus service to <span>{{site.schools.length}}</span> school<span ng-show="site.schools.length > 1">s</span> (<span>{{site.schoolCodes}}</span>)                                               </p>
                                             <p class="more-info">
                                                 <a>More info</a>
                                             </p>
@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-9 col-md-6">
                                         <div class="list-img">
-                                            <img class="map map-round" ng-src="{{site.address.staticMapSrc}}" data-bind="attr: {'src' : address.staticMapSrc }">
+                                            <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
 <!--
                                             <img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
                                                 &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
