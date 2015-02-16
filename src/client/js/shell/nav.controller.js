@@ -3,22 +3,23 @@
 
     angular
         .module('app')
-        .controller('ShellController', ShellController);
+        .controller('NavController', NavController);
 
-    ShellController.$inject = ['datacontext', '$state'];
+    NavController.$inject = ['datacontext'];
 
-    function ShellController(datacontext, $state) {
-        /*jshint validthis: true */
+    function NavController(datacontext) {
         var vm = this;
 
+        var siteRepo = datacontext.getSiteRepository();
+        debugger;
+        
         //var logger = common.logger;
 
 //        vm.busyMessage = 'Please wait ...';
 //        vm.isBusy = true;
 //        vm.showSplash = true;
 
-        activate();
-        $state.go('home');
+        
         
         function activate() {
 //            logger.success('CodeCamper loaded!', null);

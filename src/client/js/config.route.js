@@ -25,7 +25,7 @@
                 config : {
                     url: '/',
                     views: {
-                        "contentArea": {
+                        "main": {
                             templateUrl: 'js/home/home.html',
                             controller: 'HomeController as vm'
                         },
@@ -37,7 +37,7 @@
                 config: {
                     url: '/site/:id',
                     views: {
-                        "contentArea": {
+                        "main": {
                             templateUrl: 'js/site/site.html',
                             controller: 'SiteController as vm',
                         }

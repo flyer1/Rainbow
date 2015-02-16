@@ -9,6 +9,8 @@
 
     function datacontext(siteData, schoolData) {
 
+        var siteRepository = null;
+        
         var service = {
             getSiteRepository: getSiteRepository
         };
@@ -20,6 +22,11 @@
         // Return the entire data repository for the entire site. Because the data structure is so small (and future growth is not expected to ever change that to a big enough degree), the entire block of data can be returned to the client in one data structure.
         function getSiteRepository() {
 
+            if (siteRepository !== null) {
+                // If the site repo has already been generated, then return the stored value.
+                return siteRepository;
+            }
+            
             // Get the site and school data
             var sites = siteData.getSites();
             var schools = schoolData.getSchools();
@@ -34,11 +41,13 @@
             // Then add on computed properties for each school
             addSchoolComputes(schools, siteSchools);
 
-            return {
-                sites: sites,
-                schools: schools,
-                siteSchools: siteSchools
-            };
+            siteRepository = {
+                                sites: sites,
+                                schools: schools,
+                                siteSchools: siteSchools
+                            };
+            
+            return siteRepository;
         }
 
         // Add some computed properties onto the site object

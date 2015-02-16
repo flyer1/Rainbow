@@ -1,4 +1,4 @@
-<div data-ng-controller="Shell as vm">
+<div data-ng-controller="ShellController as vm">
 <!--
     <div id="splash-page" data-ng-show="vm.showSplash" class="dissolve-animation">
         <div class="page-splash">
@@ -9,11 +9,11 @@
     </div>
 -->
     <header class="clearfix">
-        <div data-ng-include="'js/shell/navbar.html'"></div>
+        <div data-ng-include="'js/shell/nav.html'"></div>
     </header>
     <section id="content" class="content">
 
-        <div ui-view="contentArea" class="shuffle-animation"></div>
+        <div ui-view="main" class="shuffle-animation"></div>
 
         <!--<div ngplus-overlay
              ngplus-overlay-delay-in="50"
