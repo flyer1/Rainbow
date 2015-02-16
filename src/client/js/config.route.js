@@ -35,7 +35,7 @@
             {
                 stateName: 'site',
                 config: {
-                    url: '/site/:id',
+                    url: '/sites/:code',
                     views: {
                         "main": {
                             templateUrl: 'js/site/site.html',

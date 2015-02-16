@@ -9,6 +9,11 @@
 
     function SiteController(datacontext) {
         var vm = this;
+        var siteRepo = datacontext.getSiteRepository();
+        vm.sites = siteRepo.sites;
+        
+        //console.log($urlParameters);
+        
         return vm;
     }
 })();
