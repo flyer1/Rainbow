@@ -141,10 +141,10 @@
                     <div>
                         <ul class="site-list dark">
                             <li ng-repeat="site in vm.sites">
-                                <div class="row">
+                                <div class="row collapse" ng-class="{ 'in' : vm.isMatchedSite(site)}">
                                     <div class="col-xs-12 col-md-6">
                                         <div class="list-text">
-                                            <h4>{{site.name}} {{site.isMatch}}</h4>
+                                            <h4>{{site.name}}</h4>
 
                                             <p>
                                                 <span>{{site.address.addressLine1}}</span>

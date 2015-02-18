@@ -14,8 +14,11 @@
         vm.schools = [];
         vm.hasFilteredSchools = false;
         vm.siteCount = -1;
+        vm.matchedSites = {};
+        
         vm.toggleSchoolFilter = toggleSchoolFilter;
         vm.hasSchoolFilter = hasSchoolFilter;
+        vm.isMatchedSite = isMatchedSite;
         
         init();
 
@@ -28,57 +31,69 @@
             
             vm.sites = siteRepo.sites;
             vm.schools = siteRepo.schools;
-
+            vm.siteSchools = siteRepo.siteSchools;
+            
+            setMatchedSites();   // Array of site codes that match the filter criteria set by the user
             console.log(siteRepo); // TODO: remove later
 
-        };
+        }
 
         function toggleSchoolFilter(school) {
             school.isChecked = !school.isChecked;
-            findMatchedSites();
-            return true;
-        };
+            // An option has been changed, re-calculate the find options
+            setMatchedSites();
+            
+        }
 
-        function getFindOpts() {
-            // Figure out which schools are checked
-            var schoolNames = _.chain(vm.schools)
-              .filter(function (item) {
-                  return item.isChecked;
-              })
-              .pluck('name')
-              .value();
-
-            return {
-                schoolNames: schoolNames
+        // Every time a find option changes, store the matched sites so they don't have to be recomputed for each site.
+        function setMatchedSites() {
+            var opts = {
+                checkedSchools: [],
+                checkedPrograms: [],
             };
-        };
+            var matchedSites = [];
+            
+            // Grab the list of the checked schools
+            opts.checkedSchools = _.chain(vm.schools)
+                                    .filter(function(item) {
+                                        return item.isChecked;
+                                    })
+                                    .pluck('code')
+                                    .value();
+            
+            if (opts.checkedSchools.length === 0) {
+                // No schools checked. Return sites for all schools.
+                opts.checkedSchools = _.pluck(vm.schools, 'code');
+            }
+            
+            _.forEach(opts.checkedSchools, function(item) {
+                var results = _.where(vm.siteSchools, { 'schoolCode' : item });
+                _.forEach(results, function(item) {
+                    // Check that the site's code has not yet been added.
+                    if (!_.contains(matchedSites, item.siteCode)) {
+                        // The site has not yet been added to the results. Add it now.
+                        matchedSites.push(item.siteCode);
+                    }
+                });
+                
+            });
 
+            // The matched sites now contains an array of site codes that match the user's find options.
+            vm.matchedSites = matchedSites;
+            console.log(matchedSites);
+            return;
+        }
+        
+        // Returns true if the find options match a given site
+        function isMatchedSite(site) {
+            return (_.contains(vm.matchedSites, site.code));
+        }
+        
         function hasSchoolFilter() {
             var result = _.findWhere(vm.schools, { isChecked : true});
             return typeof result !== "undefined";
         }
-        
-        function findMatchedSites() {
-            
-            var findOpts = getFindOpts();
-
-            // Filter the sites by school
-
-//            if (filterOpts.schoolNames.length === 0) {
-//                // no items checked therefore return all sites
-//                vm.filteredSites = vm.sites;
-//                return;
-//            }
-
-            for (var i = 0; i < vm.sites.length; i++) {
-                var currSchools = vm.sites[i].schools;
-                var schoolNames = _.pluck(currSchools, 'name');
-                var result = _.intersection(findOpts.schoolNames, schoolNames);
-                vm.sites[i].isMatch = result.length > 0 ? true : false;
-            }
-
-        };
-
+    
         function siteCount() {
 
             var totalLength = vm.sites.length;
