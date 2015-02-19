@@ -12,8 +12,8 @@
         };
 
         return service;
-        
-        
+
+
         /************************** IMPLEMENTATION ********************************/
         function getSchools() {
             var schools = [
@@ -64,5 +64,5 @@
             return schools;
         }
     }
-  
+
 })();

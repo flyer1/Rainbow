@@ -1,0 +1,21 @@
+﻿{
+  "name": "Rainbow Day Nursery",
+  "version": "0.1.0",
+  "description": "Daycare website done in AngularJS",
+  "authors": [
+    "Jon Kroeker"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyer1/Rainbow.git"
+  },
+  "scripts": {
+    "init": "npm install",
+    "install": "bower install",
+    "start": "node src/server/app.js" // TODO: what to put here...
+  },
+  "dependencies": {
+  },
+  "devDependencies": {}
+}

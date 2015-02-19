@@ -11,7 +11,7 @@
         var vm = this;
 
         var siteRepo = datacontext.getSiteRepository();
-        vm.sites = siteRepo.sites; 
-       
+        vm.sites = siteRepo.sites;
+
     }
 })();
