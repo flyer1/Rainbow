@@ -73,13 +73,13 @@ npm install gulp -g
 Gulp can help you generate site.css from all of the *.less files. Simply run:
 
 ```
-gulp styles
+gulp css
 ```
 
-Or if you prefer to have this task continously watch for changes in your less files and generate the site.css everytime it sees a change run:
+Or if you prefer to have this task continously watch for changes in your less files and generate the site.css everytime it sees a change in a less file run:
 
 ```
-gulp watch-styles
+gulp watch-less
 ```
 
 

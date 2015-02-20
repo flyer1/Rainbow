@@ -6,7 +6,7 @@ var $ = require('gulp-load-plugins')({lazy: true});
  * Compile less to css
  * @return {Stream}
  */
-gulp.task('styles', ['clean-styles'], function() {
+gulp.task('css', ['clean-css'], function() {
     console.log('Compiling Less --> CSS');
 
     return gulp
@@ -23,13 +23,16 @@ gulp.task('styles', ['clean-styles'], function() {
  * Remove all styles from the build and temp folders
  * @param  {Function} done - callback when complete
  */
-gulp.task('clean-styles', function(done) {
+gulp.task('clean-css', function(done) {
     var files = [].concat(
         './src/client/css/site.css'
     );
     clean(files, done);
 });
 
+gulp.task('watch-less', function () {
+    gulp.watch('./src/client/css/*.less', ['css']);
+});
 
 
 /////////////////
