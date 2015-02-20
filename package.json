@@ -1,21 +1,28 @@
-﻿{
-  "name": "Rainbow Day Nursery",
+{
+  "name": "Rainbow",
   "version": "0.1.0",
   "description": "Daycare website done in AngularJS",
-  "authors": [
-    "Jon Kroeker"
-  ],
-  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/flyer1/Rainbow.git"
   },
-  "scripts": {
-    "init": "npm install",
-    "install": "bower install",
-    "start": "node src/server/app.js" // TODO: what to put here...
+  "keywords": [
+    "AngularJS"
+  ],
+  "author": "Jon Kroeker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flyer1/Rainbow/issues"
   },
-  "dependencies": {
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/flyer1/Rainbow",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-less": "^3.0.0",
+    "gulp-load-plugins": "^0.8.0"
+  }
 }

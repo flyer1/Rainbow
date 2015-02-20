@@ -4,3 +4,8 @@ bin/
 *.exe
 *.pdb
 .DS_Store
+*.sublime-*
+*.sln
+./node_modules
+npm-debug.log
+
