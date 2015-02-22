@@ -62,8 +62,9 @@
                 var marker = '&markers=color:' + site.address.markerColor + '%7Clabel:' + site.shortName + '%7C' + site.address.lat + ' ,' + site.address.lng;
                 var args = '?center=' + address + '&zoom=14&size=450x250&maptype=roadmap' + marker;
 
-                site.address.staticMapSrc = baseUrl + args;
-
+                //site.address.staticMapSrc = baseUrl + args;
+                site.address.staticMapSrc = './img/staticmap.png'; // Used when working offline.
+                
                 site.schoolCodes = _.pluck(site.schools, 'code').join();
             });
         }
