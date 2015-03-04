@@ -7,7 +7,7 @@ A daycare website using AngularJS. Because websites don't like postbacks either.
 ## Required Tools
 First, make sure you have these tools:
 
-- [nodeJS](http://nodejs.org/) - Breaks javascript free from the shackles of the browser and makes it avaiable as a regular process!
+- [nodeJS](http://nodejs.org/) - Breaks javascript free from the shackles of the browser and makes it avaiable in a regular process!
 - [git](http://git-scm.com/downloads) - Super awesome distributed source code resposity system.
 
 

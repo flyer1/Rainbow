@@ -1,3 +1,6 @@
+// This route file maps a given URL to a page on the site. This routing is done on the client side so the transitions are smoother than traditional webistes 
+// where everything blanks out for a split second and then gets everything again from the server. With client side routing, only the piece that you need from
+// the server is fetched (unless it's already cached by Angular).
 (function () {
     'use strict';
 
@@ -21,6 +24,7 @@
     function getRoutes() {
         return [
             {
+                // TODO: I think I need to add an abstract state for the shell in here.
                 stateName: 'home',
                 config : {
                     url: '/',

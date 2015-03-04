@@ -7,7 +7,7 @@
         /*
          * Feature areas
          */
-        'app.home',
-        'app.site',
+        'app.home', // Main/landing page
+        'app.site', // Daycare sites
     ]);
 })();

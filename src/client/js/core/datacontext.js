@@ -1,3 +1,4 @@
+// This file retrieves the data objects from the data folder and then adds on computed properties onto the object. 
 (function () {
     'use strict';
 
@@ -19,7 +20,8 @@
 
         /************************* IMPLEMENTATION ******************************/
 
-        // Return the entire data repository for the entire site. Because the data structure is so small (and future growth is not expected to ever change that to a big enough degree), the entire block of data can be returned to the client in one data structure.
+        // Return the entire data repository for the entire site. Because the data structure is so small (and future growth is not expected to ever change that to a big enough degree),
+        // the entire block of data can be returned to the client in one data structure. It is then "caches" in a siteReposity variable for fast retrieval afterwards
         function getSiteRepository() {
 
             if (siteRepository !== null) {
