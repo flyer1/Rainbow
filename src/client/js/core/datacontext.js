@@ -36,7 +36,7 @@
             var siteSchools = getSiteSchools(sites);
 
             // Then add on computed properties for each site
-            addSiteComputes(sites);
+            addSiteComputes(sites, schools);
 
             // Then add on computed properties for each school
             addSchoolComputes(schools, siteSchools);
@@ -51,7 +51,7 @@
         }
 
         // Add some computed properties onto the site object
-        function addSiteComputes(sites) {
+        function addSiteComputes(sites, schools) {
             _.forEach(sites, function (site) {
                 site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
                 site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
@@ -65,7 +65,7 @@
                 //site.address.staticMapSrc = baseUrl + args;
                 site.address.staticMapSrc = './img/staticmap.png'; // Used when working offline.
                 
-                site.schoolCodes = _.pluck(site.schools, 'code').join();
+                addSiteSchoolComputes(site.schools, schools);
             });
         }
         
@@ -99,5 +99,17 @@
             });
             newSite.schools.push(newSchool);
         };
+        
+        // Add all of the school properties onto the array of schools associated with a given site
+        function addSiteSchoolComputes(siteSchools, schools) {
+            _.forEach(siteSchools, function(siteSchool) {
+                // Lookup the school associated with the site in the list of schools
+                var foundSchool = _.findWhere(schools, { code: siteSchool.code });
+                
+                if (foundSchool) {
+                    siteSchool.school = foundSchool;
+                }
+            });
+        }
     }
 })();
