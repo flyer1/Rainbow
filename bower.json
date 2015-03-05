@@ -28,6 +28,9 @@
     "moment": "~2.9.0",
     "font-awesome": "~4.3.0",
     "toastr": "~2.0.3",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "es5-shim": "~4.1.0",
+    "ng-parallax": "~0.1.8",
+    "angular-scroll": "~0.6.5"
   }
 }

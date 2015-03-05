@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html data-ng-app="app">
 <head>
     <meta charset="utf-8" />
@@ -9,21 +9,34 @@
         /* This helps the ng-show/ng-hide animations start at the right place. */
         /* Since Angular has this but needs to load, this gives us the class early. */
         .ng-hide {
-            display: none!important;
+            display: none !important;
+        }
+        /* This prevents any flicker that may occur while the page is loading and angular has not had a chance yet to scan the document and apply templates/etc */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
         }
     </style>
 
-<!--    <link rel="shortcut icon" href="/server/ccfavicon.ico" />-->
+    <!--    <link rel="shortcut icon" href="/server/ccfavicon.ico" />-->
 
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="lib/toastr/toastr.css" rel="stylesheet" />
 
-<!--    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300|Roboto:400,500,700" rel="stylesheet" type="text/css">-->
-    
+    <!--    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300|Roboto:400,500,700" rel="stylesheet" type="text/css">-->
+
     <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
+    <!--[if lte IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
     <div>
         <div data-ng-include="'js/shell/shell.html'"></div>
     </div>
@@ -32,13 +45,15 @@
     <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
-<!--    <script src="lib/angular-animate/angular-animate.js"></script>-->
+    <!--    <script src="lib/angular-animate/angular-animate.js"></script>-->
     <!--<script src="lib/angular-route/angular-route.js"></script>-->
-<!--    <script src="lib/angular-sanitize/angular-sanitize.js"></script>-->
+    <!--    <script src="lib/angular-sanitize/angular-sanitize.js"></script>-->
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="lib/toastr/toastr.js"></script>
     <script src="lib/moment/moment.js"></script>
     <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/angular-scroll/angular-scroll.js"></script>
+    <script src="lib/ng-parallax/angular-parallax.js"></script>
 
     <!-- Bootstrapping -->
     <script src="js/_app.module.js"></script>
@@ -61,7 +76,7 @@
     <script src="js/home/_home.module.js"></script>
     <script src="js/home/home.controller.js"></script>
 
-        <!-- App - Site  (Daycare Sites) -->
+    <!-- App - Site  (Daycare Sites) -->
     <script src="js/site/_site.module.js"></script>
     <script src="js/site/site.controller.js"></script>
 </body>

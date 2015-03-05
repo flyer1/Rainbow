@@ -18,13 +18,28 @@
     cursor: pointer;
     padding-top: 18px;
     padding-bottom: 12px;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    -webkit-transition: all .2s;
+    transition: all .2s;
 }
 
-.nav > li > a:hover,
+.navbar-nav > li > a.active {
+    background: #222;
+    color: white;
+    border-radius: 10px;
+}
+
 .nav > li > a:focus {
     text-decoration: none;
-    background-color: #333333;
     color: white;
+    background: #333;
+}
+
+.nav > li > a:hover {
+    text-decoration: none;
+    color: white;
+    background: #222;
 }
 
 .nav .open > a,

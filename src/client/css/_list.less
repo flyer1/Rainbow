@@ -39,13 +39,13 @@
 }
 
 .site-list.dark .list-text p {
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     font-size: 16px;
     color: rgba(204, 204, 204, 0.67);
 }
 
 .site-list.dark .list-text > p.secondary {
-    color: rgba(204, 204, 204, 0.39);
+    color: rgba(204, 204, 204, 0.67);
     font-size: 15px;
 }
 
@@ -57,8 +57,20 @@
     cursor: pointer;
 }
 
+.site-list .list-text ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
 .site-list .list-text ul li {
-    color:red;
+    color: rgba(204, 204, 204, 0.67);
+    border-bottom: none;
+    padding: 0;
+}
+
+.site-list .list-text ul li:hover {
+    box-shadow: none;
+    background: transparent;
 }
 
 .list h2 {

@@ -11,11 +11,11 @@ gulp.task('css', ['clean-css'], function() {
 
     return gulp
         .src('./src/client/css/site.less')
-        //.pipe($.plumber()) // exit gracefully if something fails after this
+        .pipe($.plumber()) // exit gracefully if something fails after this
         .pipe($.less())
 //        .on('error', errorLogger) // more verbose and dupe output. requires emit.
-        //.pipe($.autoprefixer())
-        //.pipe(gulp.dest('./src/client/css/'));
+        .pipe($.autoprefixer())
+        .pipe(gulp.dest('./src/client/css/'));
 });
 
 

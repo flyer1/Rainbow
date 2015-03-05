@@ -5,9 +5,9 @@
         .module('app.home')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['datacontext'];
+    HomeController.$inject = ['$scope', 'datacontext', 'parallaxHelper'];
 
-    function HomeController(datacontext) {
+    function HomeController($scope, datacontext, parallaxHelper) {
         var vm = this;
 
         vm.sites = [];
@@ -15,17 +15,20 @@
         vm.hasFilteredSchools = false;
         vm.siteCount = -1;
         vm.matchedSites = {};
-        
+        vm.background = {};
+
         vm.toggleSchoolFilter = toggleSchoolFilter;
         vm.hasSchoolFilter = hasSchoolFilter;
         vm.isMatchedSite = isMatchedSite;
         
         init();
 
+        $scope.background = parallaxHelper.createAnimator(-0.3, 150, -150);
+
         return vm;
 
         /******************** IMPLEMENTATION **********************/
-        function init() {
+        function init(parallaxHelper) {
 
             var siteRepo = datacontext.getSiteRepository();
             
@@ -35,6 +38,7 @@
             
             setMatchedSites();   // Array of site codes that match the filter criteria set by the user
             console.log(siteRepo); // TODO: remove later
+
 
         }
 

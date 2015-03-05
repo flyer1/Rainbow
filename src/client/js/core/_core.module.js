@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('app.core', [
-        /*
-         * Angular modules
-         */
+        /* 3rd Party modules */
+        'duParallax',
+        /* Angular modules */
         //'ngAnimate',
         'ui.router'
     ]);
