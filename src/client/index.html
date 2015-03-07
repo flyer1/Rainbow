@@ -29,16 +29,45 @@
 </head>
 <body>
     <!--[if lte IE 8]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-        your browser</a> to improve your experience.</p>
+    <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank"> upgrade your browser</a> to improve your experience.
+    </p>
     <![endif]-->
     <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <script src="lib/es5-shim/es5-shim.js"></script>
+    <script src="lib/json3/lib/json3.min.js"></script>
     <![endif]-->
 
     <div>
-        <div data-ng-include="'js/shell/shell.html'"></div>
+        <!--<div data-ng-include="'js/shell/shell.html'"></div>-->
+        <div data-ng-controller="ShellController as vm">
+            <!--
+                <div id="splash-page" data-ng-show="vm.showSplash" class="dissolve-animation">
+                    <div class="page-splash">
+                        <div class="page-splash-message">
+                            Rainbow Day Nursery
+                        </div>
+                    </div>
+                </div>
+            -->
+            <header class="clearfix">
+                <div data-ng-include="'js/shell/nav.html'"></div>
+            </header>
+            <div id="content" class="content">
+
+                <div ui-view class="shuffle-animation"></div>
+
+                <!--<div ngplus-overlay
+                     ngplus-overlay-delay-in="50"
+                     ngplus-overlay-delay-out="700"
+                     ngplus-overlay-animation="dissolve-animation">
+                    <img src="../../content/images/busy.gif"/>
+
+                    <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+                </div>-->
+
+            </div>
+        </div>
     </div>
 
     <!-- Vendor Libs -->

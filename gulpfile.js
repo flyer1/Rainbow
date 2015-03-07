@@ -1,37 +1,68 @@
 var gulp = require('gulp');
 var del = require('del');
-var $ = require('gulp-load-plugins')({lazy: true});
+var plugin = require('gulp-load-plugins')({lazy: true});
+var paths = {
+    less: ['./src/client/css/site.less'],
+    css: './src/client/css/'
+};
 
-/**
- * Compile less to css
- * @return {Stream}
- */
+/**********************************************************************************
+ TASK: Default task is to display list of available tasks to run (via help task)
+ **********************************************************************************/
+gulp.task('default', ['help']);
+
+
+/**********************************************************************************
+ TASK: List all gulp tasks - Run 'gulp help' from command line
+ **********************************************************************************/
+gulp.task('help', plugin.taskListing);
+
+
+/**********************************************************************************
+ TASK: Compile less to css
+ **********************************************************************************/
 gulp.task('css', ['clean-css'], function() {
     console.log('Compiling Less --> CSS');
 
     return gulp
-        .src('./src/client/css/site.less')
-        .pipe($.plumber()) // exit gracefully if something fails after this
-        .pipe($.less())
+        .src(paths.less)
+        .pipe(plugin.plumber()) // exit gracefully if something fails after this
+        .pipe(plugin.less())
 //        .on('error', errorLogger) // more verbose and dupe output. requires emit.
-        .pipe($.autoprefixer())
-        .pipe(gulp.dest('./src/client/css/'));
+        .pipe(plugin.autoprefixer())
+        .pipe(gulp.dest(paths.css));
 });
 
 
-/**
- * Remove all styles from the build and temp folders
- * @param  {Function} done - callback when complete
- */
+/**********************************************************************************
+ TASK: Remove all styles from the build and temp folders
+ **********************************************************************************/
 gulp.task('clean-css', function(done) {
-    var files = ['./src/client/css/site.css'];
+    var files = [paths.css + 'site.css'];
     clean(files, done);
 });
 
+
+/**********************************************************************************
+ TASK: Watch for changes to LESS files and recompile CSS when changes occur
+ **********************************************************************************/
 gulp.task('watch-less', function () {
     gulp.watch('./src/client/css/*.less', ['css']);
 });
 
+
+/////////////////////////////////////////// LOCAL FUNCTIONS //////////////////////////////
+/*
+ * Delete all files in a given path
+ * @param  {Array}   path - array of paths to delete
+ * @param  {Function} done - callback when complete
+ */
+function clean(path, done) {
+    console.log('Cleaning: ' + path);
+    del(path, done);
+}
+
+///////////////////////////////////////////////////////// TODO: decide which tasks to keep //////////////////////////////////////
 /**
  * Copy fonts
  * @return {Stream}
@@ -71,40 +102,40 @@ gulp.task('watch-less', function () {
 //gulp.task('optimize', ['inject', 'test'], function() {
 //    log('Optimizing the js, css, and html');
 //
-//    var assets = $.useref.assets({searchPath: './'});
+//    var assets = plugin.useref.assets({searchPath: './'});
 //    // Filters are named for the gulp-useref path
-//    var cssFilter = $.filter('**/*.css');
-//    var jsAppFilter = $.filter('**/' + config.optimized.app);
-//    var jslibFilter = $.filter('**/' + config.optimized.lib);
+//    var cssFilter = plugin.filter('**/*.css');
+//    var jsAppFilter = plugin.filter('**/' + config.optimized.app);
+//    var jslibFilter = plugin.filter('**/' + config.optimized.lib);
 //
 //    var templateCache = config.temp + config.templateCache.file;
 //
 //    return gulp
 //        .src(config.index)
-//        .pipe($.plumber())
+//        .pipe(plugin.plumber())
 //        .pipe(inject(templateCache, 'templates'))
 //        .pipe(assets) // Gather all assets from the html with useref
 //        // Get the css
 //        .pipe(cssFilter)
-//        .pipe($.csso())
+//        .pipe(plugin.csso())
 //        .pipe(cssFilter.restore())
 //        // Get the custom javascript
 //        .pipe(jsAppFilter)
-//        .pipe($.ngAnnotate({add: true}))
-//        .pipe($.uglify())
+//        .pipe(plugin.ngAnnotate({add: true}))
+//        .pipe(plugin.uglify())
 //        .pipe(getHeader())
 //        .pipe(jsAppFilter.restore())
 //        // Get the vendor javascript
 //        .pipe(jslibFilter)
-//        .pipe($.uglify()) // another option is to override wiredep to use min files
+//        .pipe(plugin.uglify()) // another option is to override wiredep to use min files
 //        .pipe(jslibFilter.restore())
 //        // Take inventory of the file names for future rev numbers
-//        .pipe($.rev())
+//        .pipe(plugin.rev())
 //        // Apply the concat and file replacement with useref
 //        .pipe(assets.restore())
-//        .pipe($.useref())
+//        .pipe(plugin.useref())
 //        // Replace the file names in the html with rev numbers
-//        .pipe($.revReplace())
+//        .pipe(plugin.revReplace())
 //        .pipe(gulp.dest(config.build));
 //});
 
@@ -115,7 +146,7 @@ gulp.task('watch-less', function () {
  */
 //gulp.task('clean', function(done) {
 //    var delconfig = [].concat(config.build, config.temp, config.report);
-//    log('Cleaning: ' + $.util.colors.blue(delconfig));
+//    log('Cleaning: ' + plugin.util.colors.blue(delconfig));
 //    del(delconfig, done);
 //});
 
@@ -162,16 +193,6 @@ gulp.task('watch-less', function () {
 //});
 //
 
-/////////////////
-/**
- * Delete all files in a given path
- * @param  {Array}   path - array of paths to delete
- * @param  {Function} done - callback when complete
- */
-function clean(path, done) {
-    console.log('Cleaning: ' + path);
-    del(path, done);
-}
 
 /**
  * Delete all files in a given path
@@ -179,7 +200,7 @@ function clean(path, done) {
  * @param  {Function} done - callback when complete
  */
 //function clean(path, done) {
-//    log('Cleaning: ' + $.util.colors.blue(path));
+//    log('Cleaning: ' + plugin.util.colors.blue(path));
 //    del(path, done);
 //}
 

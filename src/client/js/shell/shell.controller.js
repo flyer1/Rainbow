@@ -10,6 +10,6 @@
     function ShellController($state) {
         var vm = this;
         
-        //$state.go('home');
+        //$state.reload();
     }
 })();
