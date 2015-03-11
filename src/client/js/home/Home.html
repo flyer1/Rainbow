@@ -59,6 +59,21 @@
     </div>
 </div>
 
+<div class="section highlight">
+    <div class="container">
+        <div class="content">
+             <accordion close-others="false">
+                <accordion-group heading="First School" is-open="status.isFirstOpen">
+                  Some school 1
+                </accordion-group>
+                <accordion-group heading="Dynamic Body Content">
+                  <p>The body of the accordion group grows to fit the contents</p>
+                    <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+</div>
 
 <!-- REGISTRY *******************************-->
 <div class="section highlight">
@@ -133,56 +148,52 @@
                     </ul>
                 </div>
 
+                <!-- LIST OF SITES -->
                 <div class="col-xs-12 col-sm-8 col-md-9">
-                    <div>
-                        <ul class="site-list dark">
-                            <li ng-repeat="site in vm.sites">
-                                <div class="row collapse" ng-class="{ 'in' : vm.isMatchedSite(site)}">
-                                    <div class="col-xs-12 col-md-6">
-                                        <div class="list-text">
-                                            <h4>{{site.name}}</h4>
+                    <accordion class="site-list dark" close-others="false">
+                        <accordion-group ng-repeat="site in vm.sites" heading="{{site.name}}" is-open="site.isDisplayed">
+                            <div class="row collapse" ng-class="{ 'in' : vm.isMatchedSite(site)}">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="list-text">
+                                        <p>
+                                            <span>{{site.address.addressLine1}}</span>
+                                        </p>
+                                        <p>
+                                            <span>{{site.address.addressLine2}}</span>
+                                        </p>
+                                        <p>{{site.phone}}</p>
+                                        <p>&nbsp;</p>
+                                        <p class="secondary">With bus service to <span>{{site.schools.length}}</span> school<span ng-show="site.schools.length > 1">s</span> 
+                                        <ul>
+                                            <li ng-repeat="school in site.schools">
+                                                <span ng-class="{'text-positive': school.school.isChecked }">{{school.school.name}}</span>
+                                            </li>
+                                        </ul>
 
-                                            <p>
-                                                <span>{{site.address.addressLine1}}</span>
-                                            </p>
-                                            <p>
-                                                <span>{{site.address.addressLine2}}</span>
-                                            </p>
-                                            <p>{{site.phone}}</p>
-                                            <p>&nbsp;</p>
-                                            <p class="secondary">With bus service to <span>{{site.schools.length}}</span> school<span ng-show="site.schools.length > 1">s</span> 
-                                            <ul>
-                                                <li ng-repeat="school in site.schools">
-                                                    <span ng-class="{'text-positive': school.school.isChecked }">{{school.school.name}}</span>
-                                                </li>
-                                            </ul>
-                                                
-                                            </p>
-                                            <p class="more-info">
-                                                <a>More info</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-9 col-md-6">
-                                        <div class="list-img">
-                                            <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
-<!--
-                                            <img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
-                                                &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-                                                &markers=color:red%7Clabel:C%7C40.718217,-73.998284" data-bind="tooltip:{title: 'Click to open in Google Maps', placement: 'center'}">
-
-                                            <iframe width="400"
-                                                      height="300"
-                                                      frameborder="0" style="border:0"
-                                                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI&q=Rainbow+Day+Nursery,Winnipeg+Manitoba"></iframe>
--->
-                                        </div>
+                                        </p>
+                                        <p class="more-info">
+                                            <a>More info</a>
+                                        </p>
                                     </div>
                                 </div>
-                            </li>
+                                <div class="col-xs-12 col-sm-9 col-md-6">
+                                    <div class="list-img">
+                                        <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
+<!--
+                                        <img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
+                                            &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+                                            &markers=color:red%7Clabel:C%7C40.718217,-73.998284" data-bind="tooltip:{title: 'Click to open in Google Maps', placement: 'center'}">
 
-                        </ul>
-                    </div>
+                                        <iframe width="400"
+                                                  height="300"
+                                                  frameborder="0" style="border:0"
+                                                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI&q=Rainbow+Day+Nursery,Winnipeg+Manitoba"></iframe>
+-->
+                                    </div>
+                                </div>
+                            </div>
+                        </accordion-group>
+                    </accordion>
                 </div>
             </div>
         </div>

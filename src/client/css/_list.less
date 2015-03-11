@@ -1,13 +1,32 @@
 .site-list {
-    list-style-type: none;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 5px;
-    &.dark h4 {
-        color: white;
-    }
+    
 }
 
-.site-list li {
+.site-list > .panel-group .panel {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: transparent;
+}
+
+.site-list > .panel-group .panel-heading {
+    color: #CACDD1;
+    background-color: #2B3848;
+    padding: 0;
+}
+
+.site-list .panel-heading h4 {
+    font-size: 21px; 
+}
+
+.site-list .panel-heading h4 a {
+    width: 100%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-decoration: none;
+}
+
+.site-list .panel-body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.09);
     padding: 30px 20px 0 20px;
     cursor: pointer;
@@ -18,7 +37,8 @@
 
 }
  
-.site-list li:hover {
+
+.site-list .panel-body:hover { 
     background: rgba(67, 88, 113, 0.48);
     -moz-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
