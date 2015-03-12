@@ -2,10 +2,14 @@
 
 A daycare website using AngularJS. Because websites don't like postbacks either.
 
+## Primary Technology
+- [AngularJS](https://angularjs.org/) - A front end web MVC* framework that lets us do databinding, client side routing between pages, directives for allowing us to create markup in our HTML that is specific to the domain (ie: allows you to create markup that goes beyond the standard div/spans/p's etc and create something that is more specific to the problem at hand).
+- [Angular Bootstrap](http://angular-ui.github.io/bootstrap/) - An Angular-ized version of Bootstrap that makes it easier to layout responsive and rich web pages.
+- There are a handful of other libs that make this site tick but the two above do most of the heavy lifting.
 
 
 ## Required Tools
-First, make sure you have these tools:
+If you want to work on this website, first make sure you have these tools:
 
 - [nodeJS](http://nodejs.org/) - Breaks javascript free from the shackles of the browser and makes it avaiable in a regular process!
 - [git](http://git-scm.com/downloads) - Super awesome distributed source code resposity system.
@@ -20,7 +24,7 @@ Unless you are comfortable with Git command line, there are some great GUI's for
 
 Note that if you are on a MAC you may have to start each line with 'sudo' if you don't have admin priviledges to write to the target folders (there are ways to avoid having to run as sudo that are out there if this is an issue):
 
-Clone a copy of the main git repo by running in DOS or Bash (terminal).
+Clone a copy of the main git repo by running in DOS or Bash on a Mac (terminal).
 
 #### 1. Clone the Repository
 ```
@@ -28,13 +32,15 @@ git clone https://github.com/flyer1/Rainbow.git
 ```
 
 #### 2. Get NPM Packages
-Then CD to the Rainbow directory created during the clone and type the following to install the libs needed for this project (see package.json file for what dependencies are needed):
+We use npm (node package modules) to get node modules required in order to do development on the site. See the package.json file to see what is downloaded by npm when you run the following command (mainly gulp related files. gulp helps us run tasks like create our *.css file from *.less files, etc).
+CD to the Rainbow directory created during the clone and type the following:
 
 ```
 npm install 
 ```
 
 #### 3. Get Bower Packages
+Bower is like npm but it is used here to get the libs required by the website (angular, angular-bootstrap, etc). 
 Get bower and install globally (via the -g switch). 
 ```
 npm install bower -g
