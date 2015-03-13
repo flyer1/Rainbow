@@ -46,7 +46,7 @@ Get bower and install globally (via the -g switch).
 npm install bower -g
 ```
 
-Type this to download all of the libs needed by the project. See the bower.json file for all devdependencies that will be downloaded. If nothing is output, then you have all that you need. Otherwise you'll see the list of packages that are downloaded.
+Type this to download all of the libs needed by the project. See the bower.json file for all devdependencies that will be downloaded. If nothing is output, then you have all that you need (because it was already checked into the repository). Otherwise you'll see the list of packages that are downloaded.
 
 
 ```
@@ -67,6 +67,7 @@ Now you can just run this module and then browse to [http://localhost:8080](http
 http-server
 ```
 
+(or run hs for short)
 
 #### 5. Get Gulp Task Runner (Optional)
 Gulp helps you run tasks. It needs to be install locally (which happened during the npm install step) and globably. Here it is install globably.

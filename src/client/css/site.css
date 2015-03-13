@@ -1,4 +1,4 @@
-﻿body {
+body {
   font-family: "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -39,8 +39,6 @@ ul {
 a.button-lg {
   padding: 11px 23px;
   border: 1px solid #bbb;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
   border-radius: 7px;
 }
 a.button-lg:hover {
@@ -78,8 +76,6 @@ a.attention-grabber {
   margin-top: 50px;
   background: #222;
   height: 220px;
-  -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   position: relative;
@@ -137,8 +133,6 @@ a.attention-grabber {
   cursor: pointer;
   padding-top: 18px;
   padding-bottom: 12px;
-  -moz-transition: all .2s;
-  -o-transition: all .2s;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -169,25 +163,17 @@ a.attention-grabber {
 }
 .dropdown-menu.with-arrow {
   background: #fff;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
-  -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 .navbar-nav > li > .dropdown-menu.with-arrow {
-  -webkit-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  -webkit-border-top-left-radius: 10px;
   border-top-left-radius: 10px;
 }
 .dropdown-menu.with-arrow > li > a {
   padding-bottom: 15px;
   padding-top: 18px;
   padding-right: 35px;
-  -moz-transition: background 100ms linear;
-  -o-transition: background 100ms linear;
   -webkit-transition: background 100ms linear;
   transition: background 100ms linear;
 }
@@ -223,6 +209,7 @@ a.attention-grabber {
   padding-top: 30%;
 }
 .main-banner-background {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(23, 21, 21, 0.2) 80px);
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(23, 21, 21, 0.2) 80px);
   background-position-y: center;
   background: url('../img/painted.hands.png') no-repeat fixed center;
@@ -231,8 +218,6 @@ a.attention-grabber {
   background-attachment: fixed;
 }
 .main-banner img.kenburns-effect {
-  -moz-animation: zoom 12s alternate infinite;
-  -o-animation: zoom 12s alternate infinite;
   -webkit-animation: zoom 12s alternate infinite;
   animation: zoom 12s alternate infinite;
   position: absolute;
@@ -248,8 +233,6 @@ a.attention-grabber {
   background: -webkit-linear-gradient(top, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.55) 100%);
   background: linear-gradient(to bottom, rgba(23, 23, 23, 0) 0, rgba(23, 23, 23, 0.55) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00171717", endColorstr="#b3171717", GradientType=0);
-  -moz-transition: height 0.25s ease-in-out;
-  -o-transition: height 0.25s ease-in-out;
   -webkit-transition: height 0.25s ease-in-out;
   transition: height 0.25s ease-in-out;
   height: 200px;
@@ -295,8 +278,6 @@ a.attention-grabber {
 }
 .section.secondary-highlight {
   background: #2b3848;
-  -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .section.color0 {
@@ -406,8 +387,6 @@ a.attention-grabber {
   text-decoration: none;
 }
 .site-list .panel-heading {
-  -moz-transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -434,6 +413,10 @@ a.attention-grabber {
   margin-bottom: 1px;
   font-size: 16px;
   color: rgba(204, 204, 204, 0.67);
+}
+.site-list.dark .list-text .highlight-text {
+  color: white;
+  text-shadow: 0 0px 20px rgba(255, 255, 255, 0.71);
 }
 .site-list.dark .list-text > p.secondary {
   color: rgba(204, 204, 204, 0.67);
@@ -551,6 +534,11 @@ a.attention-grabber {
   border-width: 16px;
   margin-left: -16px;
 }
+/*.arrow-up:after {
+    border-bottom-color: #f3f4f6;   // TODO: how to customize the color based upon usage?
+    border-width: 10px;
+    margin-top: -10px;
+}*/
 .footer {
   height: 33px;
   padding: 5px 20px;
@@ -564,4 +552,3 @@ a.attention-grabber {
   cursor: pointer;
   border-radius: 3px;
 }
-/*# sourceMappingURL=site.css.map */

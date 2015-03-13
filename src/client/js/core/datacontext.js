@@ -67,6 +67,8 @@
                 site.address.staticMapSrc = baseUrl + args;
                 //site.address.staticMapSrc = './img/staticmap.png'; // Used when working offline.
                 
+                site.isExpanded = true;
+                
                 addSiteSchoolComputes(site.schools, schools);
             });
         }

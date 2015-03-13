@@ -10,16 +10,18 @@
     function HomeController($scope, datacontext, parallaxHelper) {
         var vm = this;
 
-        vm.sites = [];
-        vm.schools = [];
+        vm.sites = [];          // Full list of sites (centres)
+        vm.schools = [];        // Full list of schools
+        vm.checkedShools = [];  // List of school codes that has been checked off by the user.
         vm.hasFilteredSchools = false;
         vm.siteCount = -1;
-        vm.matchedSites = {};
-        vm.background = {};
+        vm.matchedSites = {};   // List of sites that match the given filter criteria set by the user
+        vm.background = {}; // TODO: remove this.
 
         vm.toggleSchoolFilter = toggleSchoolFilter;
         vm.hasSchoolFilter = hasSchoolFilter;
         vm.isMatchedSite = isMatchedSite;
+        vm.isCheckedSchool = isCheckedSchool;
         
         init();
 
@@ -51,26 +53,24 @@
 
         // Every time a find option changes, store the matched sites so they don't have to be recomputed for each site.
         function setMatchedSites() {
-            var opts = {
-                checkedSchools: [],
-                checkedPrograms: [],
-            };
+            var checkedSchools = [];
+            //var checkedPrograms = [];
             var matchedSites = [];
             
             // Grab the list of the checked schools
-            opts.checkedSchools = _.chain(vm.schools)
+            checkedSchools = _.chain(vm.schools)
                                     .filter(function(item) {
                                         return item.isChecked;
                                     })
                                     .pluck('code')
                                     .value();
             
-            if (opts.checkedSchools.length === 0) {
+            if (checkedSchools.length === 0) {
                 // No schools checked. Return sites for all schools.
-                opts.checkedSchools = _.pluck(vm.schools, 'code');
+                checkedSchools = _.pluck(vm.schools, 'code');
             }
             
-            _.forEach(opts.checkedSchools, function(item) {
+            _.forEach(checkedSchools, function(item) {
                 var results = _.where(vm.siteSchools, { 'schoolCode' : item });
                 _.forEach(results, function(item) {
                     // Check that the site's code has not yet been added.
@@ -84,6 +84,7 @@
 
             // The matched sites now contains an array of site codes that match the user's find options.
             vm.matchedSites = matchedSites;
+            vm.checkedShools = checkedSchools;
             console.log(matchedSites);
             return;
         }
@@ -93,9 +94,17 @@
             return (_.contains(vm.matchedSites, site.code));
         }
         
+        // Returns true if the passed in school is also in the list of checked schools 
+        function isCheckedSchool(school) {
+            return _.contains(vm.checkedShools, school.code);
+        }
+        
+        // Returns true if the user has checked off at least 1 school in the find options.
         function hasSchoolFilter() {
             var result = _.findWhere(vm.schools, { isChecked : true});
+            console.log( typeof result !== "undefined");
             return typeof result !== "undefined";
+            
         }
     
         function siteCount() {
