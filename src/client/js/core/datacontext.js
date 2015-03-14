@@ -62,7 +62,7 @@
                 var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';
                 var address = site.address.number + '+' + site.address.street + ',' + site.address.city + ',' + site.address.province + ',' + site.address.postalCode;
                 var marker = '&markers=color:blue%7Clabel:' + site.shortName + '%7C' + site.address.lat + ' ,' + site.address.lng;
-                var args = '?center=' + address + '&zoom=14&size=450x350&maptype=roadmap' + marker;
+                var args = '?center=' + address + '&zoom=16&size=450x350&maptype=roadmap' + marker;
 
                 site.address.staticMapSrc = baseUrl + args;
                 //site.address.staticMapSrc = './img/staticmap.png'; // Used when working offline.
