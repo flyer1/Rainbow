@@ -3,7 +3,7 @@
 A daycare website using AngularJS. Because websites don't like postbacks either.
 
 ## Primary Technology
-- [AngularJS](https://angularjs.org/) - A front end web MVC* framework that lets us do databinding, client side routing between pages, directives for allowing us to create markup in our HTML that is specific to the domain (ie: allows you to create markup that goes beyond the standard div/spans/p's etc and create something that is more specific to the problem at hand).
+- [AngularJS](https://angularjs.org/) - A front end web MV* framework that lets us do databinding, client side routing between pages, custom markup (directives) that is specific to the problem at hand, etc, etc. Basically it's the best thing to come along for web development in a long time.
 - [Angular Bootstrap](http://angular-ui.github.io/bootstrap/) - An Angular-ized version of Bootstrap that makes it easier to layout responsive and rich web pages.
 - There are a handful of other libs that make this site tick but the two above do most of the heavy lifting.
 
@@ -33,6 +33,7 @@ git clone https://github.com/flyer1/Rainbow.git
 
 #### 2. Get NPM Packages
 We use npm (node package modules) to get node modules required in order to do development on the site. See the package.json file to see what is downloaded by npm when you run the following command (mainly gulp related files. gulp helps us run tasks like create our *.css file from *.less files, etc).
+
 CD to the Rainbow directory created during the clone and type the following:
 
 ```
@@ -67,7 +68,7 @@ Now you can just run this module and then browse to [http://localhost:8080](http
 http-server
 ```
 
-(or run hs for short)
+(or run 'hs' for short)
 
 #### 5. Get Gulp Task Runner (Optional)
 Gulp helps you run tasks. It needs to be install locally (which happened during the npm install step) and globably. Here it is install globably.
