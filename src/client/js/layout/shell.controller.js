@@ -3,11 +3,11 @@
 
     angular
         .module('app')
-        .controller('NavController', NavController);
+        .controller('ShellController', ShellController);
 
-    NavController.$inject = ['datacontext'];
+    ShellController.$inject = ['datacontext'];
 
-    function NavController(datacontext) {
+    function ShellController(datacontext) {
         var vm = this;
 
         var siteRepo = datacontext.getSiteRepository();
