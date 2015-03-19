@@ -22,7 +22,7 @@
         vm.hasSchoolFilter = hasSchoolFilter;
         vm.isMatchedSite = isMatchedSite;
         vm.isCheckedSchool = isCheckedSchool;
-        
+
         init();
 
         $scope.background = parallaxHelper.createAnimator(-0.3, 150, -150);
@@ -33,11 +33,11 @@
         function init(parallaxHelper) {
 
             var siteRepo = datacontext.getSiteRepository();
-            
+
             vm.sites = siteRepo.sites;
             vm.schools = siteRepo.schools;
             vm.siteSchools = siteRepo.siteSchools;
-            
+
             setMatchedSites();   // Array of site codes that match the filter criteria set by the user
             console.log(siteRepo); // TODO: remove later
 
@@ -48,7 +48,7 @@
             school.isChecked = !school.isChecked;
             // An option has been changed, re-calculate the find options
             setMatchedSites();
-            
+
         }
 
         // Every time a find option changes, store the matched sites so they don't have to be recomputed for each site.
@@ -56,7 +56,7 @@
             var checkedSchools = [];
             //var checkedPrograms = [];
             var matchedSites = [];
-            
+
             // Grab the list of the checked schools
             checkedSchools = _.chain(vm.schools)
                                     .filter(function(item) {
@@ -64,12 +64,12 @@
                                     })
                                     .pluck('code')
                                     .value();
-            
+
             if (checkedSchools.length === 0) {
                 // No schools checked. Return sites for all schools.
                 checkedSchools = _.pluck(vm.schools, 'code');
             }
-            
+
             _.forEach(checkedSchools, function(item) {
                 var results = _.where(vm.siteSchools, { 'schoolCode' : item });
                 _.forEach(results, function(item) {
@@ -79,7 +79,7 @@
                         matchedSites.push(item.siteCode);
                     }
                 });
-                
+
             });
 
             // The matched sites now contains an array of site codes that match the user's find options.
@@ -88,25 +88,24 @@
             console.log(matchedSites);
             return;
         }
-        
+
         // Returns true if the find options match a given site
         function isMatchedSite(site) {
             return (_.contains(vm.matchedSites, site.code));
         }
-        
-        // Returns true if the passed in school is also in the list of checked schools 
+
+        // Returns true if the passed in school is also in the list of checked schools
         function isCheckedSchool(school) {
             return _.contains(vm.checkedShools, school.code);
         }
-        
+
         // Returns true if the user has checked off at least 1 school in the find options.
         function hasSchoolFilter() {
             var result = _.findWhere(vm.schools, { isChecked : true});
-            console.log( typeof result !== "undefined");
             return typeof result !== "undefined";
-            
+
         }
-    
+
         function siteCount() {
 
             var totalLength = vm.sites.length;
@@ -114,7 +113,7 @@
 
             return totalLength === filteredLength ? totalLength.toString() : filteredLength.toString() + '/' + totalLength.toString();
         }
-        
+
 
         //      src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
         //&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
