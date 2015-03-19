@@ -1,4 +1,4 @@
-#Rainbow
+#Rainbow [![Build Status](https://travis-ci.org/flyer/Rainbow.svg?branch=master)](https://travis-ci.org/flyer1/Rainbow) 
 
 A daycare website using AngularJS. Because websites don't like postbacks either.
 
@@ -15,7 +15,7 @@ If you want to work on this website, first make sure you have these tools:
 - [git](http://git-scm.com/downloads) - Super awesome distributed source code resposity system.
 
 
-Unless you are comfortable with Git command line, there are some great GUI's for GIT: 
+Unless you are comfortable with Git command line, there are some great GUI's for GIT:
 
 - [GitHub for Windows](https://windows.github.com/)
 - [GitHub for MAC](https://mac.github.com/)
@@ -37,12 +37,12 @@ We use npm (node package modules) to get node modules required in order to do de
 CD to the Rainbow directory created during the clone and type the following:
 
 ```
-npm install 
+npm install
 ```
 
 #### 3. Get Bower Packages
-Bower is like npm but it is used here to get the libs required by the website (angular, angular-bootstrap, etc). 
-Get bower and install globally (via the -g switch). 
+Bower is like npm but it is used here to get the libs required by the website (angular, angular-bootstrap, etc).
+Get bower and install globally (via the -g switch).
 ```
 npm install bower -g
 ```
@@ -51,7 +51,7 @@ Type this to download all of the libs needed by the project. See the bower.json 
 
 
 ```
-bower install 
+bower install
 ```
 
 #### 4. Get HTTP-Server for Hosting the Site
