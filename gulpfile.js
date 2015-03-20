@@ -50,6 +50,31 @@ gulp.task('watch-less', function () {
     gulp.watch('./src/client/css/*.less', ['css']);
 });
 
+/**
+ * Wire-up the bower dependencies
+ * @return {Stream}
+ */
+gulp.task('wiredep', function() {
+    // log('Wiring the bower dependencies into the html');
+    //
+    // var wiredep = require('wiredep').stream;
+    // var options = config.getWiredepDefaultOptions();
+    //
+    // // Only include stubs if flag is enabled
+    // var js = args.stubs ? [].concat(config.js, config.stubsjs) : config.js;
+    //
+    // return gulp
+    //     .src(config.index)
+    //     .pipe(wiredep(options))
+    //     .pipe(inject(js, '', config.jsOrder))
+    //     .pipe(gulp.dest(config.client));
+    return true;
+});
+
+gulp.task('test', function() {
+  // TODO:
+  return true;
+})
 
 /////////////////////////////////////////// LOCAL FUNCTIONS //////////////////////////////
 /*
