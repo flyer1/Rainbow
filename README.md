@@ -1,4 +1,5 @@
-#Rainbow [![Build Status](https://travis-ci.org/flyer/Rainbow.svg?branch=master)](https://travis-ci.org/flyer1/Rainbow) 
+#Rainbow [![Build Status](https://travis-ci.org/flyer1/Rainbow.svg?branch=master)](https://travis-ci.org/flyer1/Rainbow) 
+
 
 A daycare website using AngularJS. Because websites don't like postbacks either.
 
