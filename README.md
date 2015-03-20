@@ -1,5 +1,7 @@
 #Rainbow [![Build Status](https://travis-ci.org/flyer1/Rainbow.svg?branch=master)] (https://travis-ci.org/flyer1/Rainbow) [![devDependency Status](https://img.shields.io/david/dev/flyer1/rainbow.svg?style=flat)](https://david-dm.org/flyer1/rainbow#info=devDependencies)
 
+[![Join the chat at https://gitter.im/flyer1/Rainbow](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/flyer1/Rainbow?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A daycare website using AngularJS. Because websites don't like postbacks either.
 
 ## Primary Technology
