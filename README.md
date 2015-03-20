@@ -71,9 +71,6 @@ http-server
 (or run 'hs' for short)
 
 
-Now you should be up and running in your browser of choice (as long as you don't choose IE), hosting the website in a nice light nodeJS module (http-server), and committing your code to your local git repository which later can be pushed up to the public repository on git-hub (using GitHub for [Windows|Mac]). Isn't life grand? And all these tools are free free free. As in free beer! (is there such a thing?). Or are you confused? There is a lot to learn up there. Git, AngularJS, JavaScript, CSS, oh my! Or oh my what fun if you are tech enthusiast. Dive in. Google. Watch videos. Learn.
-
-
 #### 5. Get Gulp Task Runner (Optional)
 Gulp helps you run tasks. It needs to be install locally (which happened during the npm install step) and globably. Here it is install globably.
 
@@ -93,6 +90,9 @@ Or if you prefer to have this task continously watch for changes in your less fi
 ```
 gulp watch-less
 ```
+
+### And Away You Go!
+Now you should be up and running in your browser of choice (as long as you don't choose IE), hosting the website in a nice light nodeJS module (http-server), and committing your code to your local git repository which later can be pushed up to the public repository on git-hub (using GitHub for [Windows|Mac]). Isn't life grand? And all these tools are free free free. As in free beer! (is there such a thing?). Or, are you confused? There is a lot to learn up there. Git, AngularJS, JavaScript, CSS... Oh my! Or maybe; Oh my what fun! - if you are tech enthusiast. Dive in. Google. Watch videos. Learn.
 
 
 ##Authors
