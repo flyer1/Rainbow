@@ -1,4 +1,4 @@
-#Rainbow [![Build Status](https://travis-ci.org/flyer1/Rainbow.svg?branch=master)] (https://travis-ci.org/flyer1/Rainbow) [![devDependency Status](https://img.shields.io/david/dev/flyer1/rainbow.svg?style=flat)](https://david-dm.org/flyer1/rainbow#info=devDependencies)
+#Rainbow [![Build Status](https://travis-ci.org/flyer1/Rainbow.svg?branch=master)] (https://travis-ci.org/flyer1/Rainbow) [![devDependency Status](https://img.shields.io/david/dev/flyer1/rainbow.svg?style=flat)](https://david-dm.org/flyer1/rainbow#info=devDependencies) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/flyer1/Rainbow?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 A daycare website using AngularJS. Because websites don't like postbacks either.
 
