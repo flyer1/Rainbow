@@ -1,0 +1,36 @@
+<!-- NAVIGATION -->
+<div>
+  <div class="navbar navbar-fixed-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li>
+          <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})" ng-class="{active: vm.isActive({code: 'home'})}">Home</a>
+        </li>
+        <li class="dropdown">
+
+          <div class="btn-group" dropdown>
+            <a class="dropdown-toggle" dropdown-toggle>
+              Sites<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu with-icons with-arrow" role="menu">
+              <li role="presentation" ng-repeat="site in vm.sites">
+                <div ng-if="$index === 0" class="arrow-up-nav-dropdown"></div>
+                <a role="menuitem" tabindex="-1" href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)" ng-class="{ active: vm.isActive(site)}">
+                  <span class="fa fa-circle icon"></span>
+                  <p>
+                    <span>{{site.name}}</span>
+                  </p>
+                  <small>
+                    <span>{{site.address.addressLine1}}</span>,
+                    <span>{{site.address.city}}</span>
+                    <span>{{site.address.province}}</span>
+                  </small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -67,74 +67,41 @@ gulp.task('test', function() {
 /**********************************************************************************
  DISTRIBUTION RELATED TASKS
  **********************************************************************************/
-  /**
-  * Build everything
-  * This is separate so we can run tests on
-  * optimize before handling image or fonts
-  */
- gulp.task('build', ['optimize', 'images', 'fonts'], function() {
-     log('Building everything');
+// Copy all files required by the website to the dist folder.
+// Run this task after making changes to the site and then wanting to copy it up to the public server.
+// Then copy the contents of the dist folder to the public server.
+gulp.task('dist', ['dist-code', 'dist-css', 'dist-fonts', 'dist-images'], function() {
+     log('Copying entire website to the dist folder...');
 
-     var msg = {
-         title: 'gulp build',
-         subtitle: 'Deployed to the build folder',
-         message: 'Running `gulp serve-build`'
-     };
-     del(config.temp);
-     log(msg);
-     notify(msg);
+
  });
 
 
- /**
-  * Optimize all files, move to a build folder,
-  * and inject them into the new index.html
-  * @return {Stream}
-  */
- gulp.task('optimize', ['test'], function() {
-     log('Optimizing the js, css, and html');
+// Copy js/html to the dist folder
+gulp.task('dist-code', ['clean-code'], function() {
+   log('Copying js and html files to the dist folder');
 
+   var files = [].concat('./src/client/**/*.html',
+                         './src/client/**/*.js',
+                        '!./src/client/lib/**/*.html',
+                        '!./src/client/lib/**/*.js')
+   return gulp
+       .src(files)
+       .pipe(gulp.dest('./dist/'));
+});
 
-     var assets = plugin.useref.assets({searchPath: './'});
-     // Filters are named for the gulp-useref path
-     var cssFilter = plugin.filter('**/*.css');
-     var jsAppFilter = plugin.filter('**/app.js' );
-     var jslibFilter = plugin.filter('**/lib.js');
+// Copy css to the dist folder
+gulp.task('dist-css', ['clean-dist-css'], function() {
+   log('Copying css to the dist folder');
 
-     //var templateCache = config.temp + config.templateCache.file;
-
-     return gulp
-         .src('./src/client/index.html')
-         .pipe(plugin.plumber())
-         //.pipe(inject(templateCache, 'templates'))
-         .pipe(assets) // Gather all assets from the html with useref
-         // Get the css
-         .pipe(cssFilter)
-         .pipe(plugin.csso())
-         .pipe(cssFilter.restore())
-         // Get the custom javascript
-         .pipe(jsAppFilter)
-         //.pipe($.ngAnnotate({add: true}))
-         .pipe(plugin.uglify())
-         //.pipe(getHeader())
-         .pipe(jsAppFilter.restore())
-         // Get the vendor javascript
-         .pipe(jslibFilter)
-         .pipe(plugin.uglify()) // another option is to override wiredep to use min files
-         .pipe(jslibFilter.restore())
-         // Take inventory of the file names for future rev numbers
-         //.pipe($.rev())
-         // Apply the concat and file replacement with useref
-         .pipe(assets.restore())
-         .pipe(plugin.useref())
-         // Replace the file names in the html with rev numbers
-         //.pipe($.revReplace())
-         .pipe(gulp.dest('./dist/'));
- });
+   return gulp
+       .src('./src/client/css/site.css')
+       .pipe(gulp.dest('./dist/css/'));
+});
 
 // Copy fonts to the Dist folder
-gulp.task('fonts', ['clean-fonts'], function() {
-    log('Copying fonts');
+gulp.task('dist-fonts', ['clean-fonts'], function() {
+    log('Copying fonts to the dist folder');
 
     return gulp
         .src('./src/client/fonts/**')
@@ -142,8 +109,8 @@ gulp.task('fonts', ['clean-fonts'], function() {
 });
 
 // Copy images to the Dist folder
-gulp.task('images', ['clean-images'], function() {
-    log('Copying images');
+gulp.task('dist-images', ['clean-images'], function() {
+    log('Copying images to the dist folder');
 
     return gulp
         .src('./src/client/img/**')
