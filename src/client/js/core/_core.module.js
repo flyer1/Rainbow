@@ -4,9 +4,9 @@
     angular.module('app.core', [
         /* 3rd Party modules */
         'ui.bootstrap',
-        'duParallax',
+        // 'duParallax',
         /* Angular modules */
-        'ngAnimate',
+        // 'ngAnimate',
         'ui.router'
     ]);
 })();

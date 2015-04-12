@@ -1,21 +1,21 @@
-(function () {
+(function() {
     'use strict';
 
     angular
         .module('app.home')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'datacontext', 'parallaxHelper'];
+    HomeController.$inject = ['$scope', 'datacontext'];
 
-    function HomeController($scope, datacontext, parallaxHelper) {
+    function HomeController($scope, datacontext) {
         var vm = this;
 
-        vm.sites = [];          // Full list of sites (centres)
-        vm.schools = [];        // Full list of schools
-        vm.checkedShools = [];  // List of school codes that has been checked off by the user.
+        vm.sites = []; // Full list of sites (centres)
+        vm.schools = []; // Full list of schools
+        vm.checkedShools = []; // List of school codes that has been checked off by the user.
         vm.hasFilteredSchools = false;
         vm.siteCount = -1;
-        vm.matchedSites = {};   // List of sites that match the given filter criteria set by the user
+        vm.matchedSites = {}; // List of sites that match the given filter criteria set by the user
         vm.background = {}; // TODO: remove this.
 
         vm.toggleSchoolFilter = toggleSchoolFilter;
@@ -25,12 +25,10 @@
 
         init();
 
-        $scope.background = parallaxHelper.createAnimator(-0.3, 150, -150);
-
         return vm;
 
         /******************** IMPLEMENTATION **********************/
-        function init(parallaxHelper) {
+        function init() {
 
             var siteRepo = datacontext.getSiteRepository();
 
@@ -38,7 +36,7 @@
             vm.schools = siteRepo.schools;
             vm.siteSchools = siteRepo.siteSchools;
 
-            setMatchedSites();   // Array of site codes that match the filter criteria set by the user
+            setMatchedSites(); // Array of site codes that match the filter criteria set by the user
             console.log(siteRepo); // TODO: remove later
 
 
@@ -59,11 +57,11 @@
 
             // Grab the list of the checked schools
             checkedSchools = _.chain(vm.schools)
-                                    .filter(function(item) {
-                                        return item.isChecked;
-                                    })
-                                    .pluck('code')
-                                    .value();
+                .filter(function(item) {
+                    return item.isChecked;
+                })
+                .pluck('code')
+                .value();
 
             if (checkedSchools.length === 0) {
                 // No schools checked. Return sites for all schools.
@@ -71,7 +69,9 @@
             }
 
             _.forEach(checkedSchools, function(item) {
-                var results = _.where(vm.siteSchools, { 'schoolCode' : item });
+                var results = _.where(vm.siteSchools, {
+                    'schoolCode': item
+                });
                 _.forEach(results, function(item) {
                     // Check that the site's code has not yet been added.
                     if (!_.contains(matchedSites, item.siteCode)) {
@@ -101,7 +101,9 @@
 
         // Returns true if the user has checked off at least 1 school in the find options.
         function hasSchoolFilter() {
-            var result = _.findWhere(vm.schools, { isChecked : true});
+            var result = _.findWhere(vm.schools, {
+                isChecked: true
+            });
             return typeof result !== "undefined";
 
         }
