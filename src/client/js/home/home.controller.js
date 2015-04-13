@@ -16,7 +16,6 @@
         vm.hasFilteredSchools = false;
         vm.siteCount = -1;
         vm.matchedSites = {}; // List of sites that match the given filter criteria set by the user
-        vm.background = {}; // TODO: remove this.
 
         vm.toggleSchoolFilter = toggleSchoolFilter;
         vm.hasSchoolFilter = hasSchoolFilter;
@@ -85,13 +84,19 @@
             // The matched sites now contains an array of site codes that match the user's find options.
             vm.matchedSites = matchedSites;
             vm.checkedShools = checkedSchools;
+
+            // Also set the boolean on each site to indicate if it contains at least 1 match to the filter criteria. This helps on deciding if the site should be shown/hidden.
+            _.forEach(vm.sites, function(site) {
+              site.isChecked = isMatchedSite(site);
+            });
             console.log(matchedSites);
             return;
         }
 
         // Returns true if the find options match a given site
         function isMatchedSite(site) {
-            return (_.contains(vm.matchedSites, site.code));
+            var result = (_.contains(vm.matchedSites, site.code));
+            return result;
         }
 
         // Returns true if the passed in school is also in the list of checked schools

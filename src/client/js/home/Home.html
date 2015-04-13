@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<!-- OVERVIEW *******************************-->
+<!-- OVERVIEW -->
 <div class="section">
     <div class="container">
         <div class="content">
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<!-- REGISTRY *******************************-->
+<!-- REGISTRY -->
 <div class="section highlight">
     <div class="container">
         <div class="content">
@@ -80,7 +80,7 @@
     </div>
 </div>
 
-<!-- SITES *******************************-->
+<!-- SITES -->
 <div class="section secondary-highlight">
     <div class="container">
         <div>
@@ -92,7 +92,7 @@
                 </h2>
             </div>
             <div class="section-body row">
-                <!------------------- FIND OPTIONS PANEL --------------------->
+                <!-- FIND OPTIONS PANEL  -->
                 <div class="filter-box hidden-xs col-sm-4 col-md-3">
                     <p class="title">Find Options</p>
                     <hr />
@@ -138,7 +138,7 @@
                 <!-- LIST OF SITES -->
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <accordion class="site-list dark" close-others="false">
-                        <accordion-group ng-repeat="site in vm.sites" heading="{{site.name}}" is-open="vm.isMatchedSite(site)">
+                        <accordion-group ng-repeat="site in vm.sites" heading="{{site.name}}" is-open="site.isChecked">
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="list-text">
