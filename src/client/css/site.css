@@ -418,8 +418,8 @@ a.attention-grabber {
   border-radius: 2px;
 }
 .site-list > .panel-group .panel-heading {
-  color: #CACDD1;
-  background-color: #2B3848;
+  color: #cacdd1;
+  background-color: #2b3848;
   padding: 0;
 }
 .site-list .panel-heading h4 {
@@ -445,7 +445,6 @@ a.attention-grabber {
   border-bottom: 1px solid rgba(255, 255, 255, 0.09);
   border-top: 1px solid rgba(255, 255, 255, 0.09);
   padding: 25px 20px 0 15px;
-  cursor: pointer;
 }
 .site-list .list-text {
   padding-bottom: 15px;
@@ -464,7 +463,7 @@ a.attention-grabber {
 }
 .site-list.dark .list-text .highlight-text {
   color: white;
-  text-shadow: 0 0px 20px rgba(255, 255, 255, 0.71);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.71);
 }
 .site-list.dark .list-text > p.secondary {
   color: rgba(204, 204, 204, 0.67);
