@@ -1,16 +1,36 @@
 .navbar {
-    background: rgba(34, 34, 34, 0.92);
+    background: #3c3d3d none;
     height: 60px;
     border-bottom: 1px solid black;
 }
+
+
+.navbar .logo {
+    opacity: 0.7;
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 60px;
+}
+
+
+.navbar .logo:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #eff556;
+}
+
 
 .nav.navbar-nav {
     padding-right: 200px;
 }
 
+
 .navbar-nav > li {
     margin-right: 20px;
 }
+
 
 .navbar-nav > li a {
     font-size: 18px;
@@ -27,11 +47,13 @@
     display: inline-block;
 }
 
+
 .navbar-nav > li a.active {
     background: #222;
     color: white;
     border-radius: 10px;
 }
+
 
 .nav > li a:focus {
     text-decoration: none;
@@ -39,20 +61,25 @@
     background: #333;
 }
 
+
 .nav > li a:hover {
     text-decoration: none;
     color: white;
     background: #222;
 }
 
+
 .nav .open > a,
 .nav .open > a:hover {
     background: #333;
 }
+
+
 ////////////////////////// DROPDOWN-MENU /////////////////////
 .dropdown-menu > li:last-child {
     border-bottom: none;
 }
+
 
 .dropdown-menu.with-arrow {
     background: rgba(0, 0, 0, 0.95);
@@ -69,12 +96,14 @@
     box-shadow: 0 0 29px 18px rgba(0, 0, 0, 0.32);
 }
 
+
 .navbar-nav > li > .dropdown-menu.with-arrow {
     -webkit-border-top-right-radius: 10px;
     border-top-right-radius: 10px;
     -webkit-border-top-left-radius: 10px;
     border-top-left-radius: 10px;
 }
+
 
 .dropdown-menu.with-arrow > li > a {
     width: 100%;
@@ -89,6 +118,7 @@
     transition: background 100ms linear;
 }
 
+
 .dropdown-menu.with-arrow > li > a.active,
 .dropdown-menu.with-arrow > li > a:focus {
     color: #f9be03;
@@ -97,10 +127,12 @@
     border-radius: 0;
 }
 
+
 .dropdown-menu.with-arrow > li:first-child > a,
 .dropdown-menu.with-arrow > li:last-child > a {
     border: none;
 }
+
 
 .dropdown-menu.with-arrow > li > a > h4 {
     font-size: 18px;
@@ -109,9 +141,11 @@
     color: #ccc;
 }
 
+
 .dropdown-menu.with-arrow > li > a.active h4 {
     color: #f9be03;
 }
+
 
 .dropdown-menu.with-arrow > li > a > small {
     color: #7b7b7b;
@@ -119,24 +153,29 @@
     line-height: 20px;
 }
 
+
 .dropdown-menu.with-arrow > li > a:hover {
     background-color: #323232;
 }
+
 
 .dropdown-menu.with-arrow > li:first-child > a:hover {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 
+
 .dropdown-menu.with-arrow > li:last-child > a:hover {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
+
 .dropdown-menu.with-icons > li > a {
     padding-left: 30px;
     position: relative;
 }
+
 
 .dropdown-menu.with-icons > li > a > .icon {
     position: absolute;
