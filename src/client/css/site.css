@@ -325,7 +325,7 @@ a.attention-grabber {
   background: #f1f1f1;
 }
 .section.secondary-highlight {
-  background: #2b3848;
+  background: #191919;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .section.color0 {
@@ -352,8 +352,8 @@ a.attention-grabber {
   padding-top: 10px;
 }
 .section.color3 {
-  background: #222222;
-  background: url('../img/dark_mosaic.png');
+  background: #222;
+  background: url("../img/dark_mosaic.png");
 }
 .section.color3 p,
 .section.color3 h2 {
@@ -388,7 +388,7 @@ a.attention-grabber {
   color: #bbb;
 }
 .secondary-highlight .section-header h2 {
-  color: rgba(255, 255, 255, 0.77);
+  color: #cca300;
 }
 .section-body {
   margin-bottom: 35px;
@@ -413,13 +413,14 @@ a.attention-grabber {
   font-weight: 100;
 }
 .site-list > .panel-group .panel {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: transparent;
-  border-radius: 2px;
+  border: 8px solid #323232;
+  background-color: #202020;
+  border-radius: 1em;
+  margin-bottom: 25px;
 }
 .site-list > .panel-group .panel-heading {
-  color: #CACDD1;
-  background-color: #2B3848;
+  color: #cacdd1;
+  background-color: transparent;
   padding: 0;
 }
 .site-list .panel-heading h4 {
@@ -427,11 +428,12 @@ a.attention-grabber {
   font-weight: 400;
 }
 .site-list .panel-heading h4 a {
+  color: #ed9d13;
   width: 100%;
   display: inline-block;
-  padding-left: 15px;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-decoration: none;
 }
 .site-list .panel-heading {
@@ -444,13 +446,12 @@ a.attention-grabber {
 .site-list .panel.panel-default .panel-body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.09);
   border-top: 1px solid rgba(255, 255, 255, 0.09);
-  padding: 25px 20px 0 15px;
+  padding: 25px 25px 0;
   cursor: pointer;
 }
 .site-list .list-text {
   padding-bottom: 15px;
   padding-left: 5px;
-  margin-top: -15px;
 }
 .site-list .list-text h4 {
   font-size: 28px;
@@ -464,7 +465,7 @@ a.attention-grabber {
 }
 .site-list.dark .list-text .highlight-text {
   color: white;
-  text-shadow: 0 0px 20px rgba(255, 255, 255, 0.71);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.71);
 }
 .site-list.dark .list-text > p.secondary {
   color: rgba(204, 204, 204, 0.67);
@@ -475,6 +476,7 @@ a.attention-grabber {
 }
 .list-text .more-info a {
   cursor: pointer;
+  color: #447fcf;
 }
 .site-list .list-text ul {
   list-style-type: disc;
@@ -504,20 +506,25 @@ a.attention-grabber {
   float: left;
 }
 .filter-box {
-  padding-top: 20px;
-  padding-right: 20px;
   color: #aaa;
-  background: rgba(0, 0, 0, 0.14);
-  border-radius: 5px;
+  background: #202020;
+  padding: 20px 1em;
+  border: 8px solid #323232;
+  display: block;
+  font-size: 1.4em;
+  border-radius: 1em;
+  box-shadow: 0 0 5px #222;
+  position: relative;
 }
 .filter-box .title {
+  color: #ed9d13;
   font-weight: 100;
   font-size: 18px;
 }
 .filter-box h3 {
   font-size: 16px;
   text-transform: uppercase;
-  color: rgba(119, 119, 119, 0.76);
+  color: #6ab825;
   padding-bottom: 11px;
   font-weight: 600;
 }
