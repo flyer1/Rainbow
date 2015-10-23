@@ -74,3 +74,7 @@ Thumbs.db
 
 # Editor Files
 *.sublime-*
+
+src/client/css/site.css
+
+src/client/css/_site-list.less

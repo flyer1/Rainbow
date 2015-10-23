@@ -159,13 +159,15 @@
 
                                         </p>
                                         <p class="more-info">
-                                            <a>More info</a>
+                                            <a ng-href="#/shell/site/{{site.code}}">More info</a>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-9 col-md-6">
                                     <div class="list-img">
-                                        <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
+                                        <a ng-href="#/shell/site/{{site.code}}">
+                                            <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
+                                        </a>
                                         <!--
                                         <img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
                                             &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
