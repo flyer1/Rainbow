@@ -33,18 +33,16 @@
 
 
 .navbar-nav > li a {
-    font-size: 18px;
+    font-size: 19px;
     color: white;
     line-height: 30px;
     cursor: pointer;
-    padding: 18px 15px 12px;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
+    padding: 15px 15px 12px;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
-    font-weight: 100;
     text-decoration: none;
     display: inline-block;
+    text-transform: uppercase;
 }
 
 
@@ -65,7 +63,7 @@
 .nav > li a:hover {
     text-decoration: none;
     color: white;
-    background: #222;
+    background: #2d2d2d;
 }
 
 
@@ -82,14 +80,8 @@
 
 
 .dropdown-menu.with-arrow {
-    background: rgba(0, 0, 0, 0.95);
     padding: 0;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    -moz-box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    border-radius: 0;
     margin-top: 0;
     overflow: hidden;
     border: none;
@@ -108,9 +100,8 @@
 .dropdown-menu.with-arrow > li > a {
     width: 100%;
     color: #999;
-    border-top: 1px solid #2d2d2d;
-    padding: 17px 30px 12px 20px;
-    border-bottom: 1px solid #232323;
+    border-top: 1px solid #ddd;
+    padding: 12px 30px 8px 20px;
     text-overflow: ellipsis;
     -moz-transition: background 100ms linear;
     -o-transition: background 100ms linear;
@@ -128,8 +119,7 @@
 }
 
 
-.dropdown-menu.with-arrow > li:first-child > a,
-.dropdown-menu.with-arrow > li:last-child > a {
+.dropdown-menu.with-arrow > li:first-child > a {
     border: none;
 }
 
@@ -138,7 +128,7 @@
     font-size: 18px;
     margin: 0;
     line-height: 14px;
-    color: #ccc;
+    color: #333;
 }
 
 
@@ -148,26 +138,14 @@
 
 
 .dropdown-menu.with-arrow > li > a > small {
-    color: #7b7b7b;
-    font-size: 13px;
+    color: #666;
+    font-size: 14px;
     line-height: 20px;
 }
 
 
 .dropdown-menu.with-arrow > li > a:hover {
-    background-color: #323232;
-}
-
-
-.dropdown-menu.with-arrow > li:first-child > a:hover {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-
-.dropdown-menu.with-arrow > li:last-child > a:hover {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    background-color: #eee;
 }
 
 
@@ -179,8 +157,8 @@
 
 .dropdown-menu.with-icons > li > a > .icon {
     position: absolute;
-    left: 17px;
-    top: 21px;
-    font-size: 7px;
-    color: #3b99fc;
+    left: 14px;
+    top: 16px;
+    font-size: 8px;
+    color: #3c3d3d;
 }

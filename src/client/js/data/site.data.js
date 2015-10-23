@@ -218,6 +218,34 @@
                 schools: [
 
                 ],
+                programs: [
+                    {
+                        name: 'Infant',
+                        description: 'Under 2 years old (CHECK!)',
+                        count: 16,
+                    },
+                    {
+                        name: 'Early Years',
+                        description: '2 year olds',
+                        count: 8,
+                    },
+                    {
+                        name: 'Preschool',
+                        description: '3/4 year olds',
+                        count: 32,
+                    },
+                    {
+                        name: 'Kinders',
+                        description: '4/5 year olds',
+                        count: 10,
+                    },
+                    {
+                        name: 'School Age',
+                        description: 'Grade 1 to Grade 12',
+                        count: 30,
+                    },
+                ],
+                introduction: 'Expected opening date is January 2017',
                 order: 7,
             };
 
