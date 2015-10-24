@@ -1,18 +1,16 @@
-<div class="jumbotron main-banner">
-    <div class="main-banner-background">
-    </div>
-    <div class="container">
-        <div class="title">
-            <h1>
-                <span class="emphasis">Rainbow</span>
-                <span class="normal">Day Nursery</span>
-            </h1>
-            <p class="lead">
-                (A summary of our approach to taking
-                <br /> care of your child including the center
-                <br />and the approach taken by the workers)
-            </p>
-        </div>
+<div class="main-banner-background">
+</div>
+<div class="container">
+    <div class="title">
+        <h1>
+            <span class="emphasis">Rainbow</span>
+            <span class="normal">Day Nursery</span>
+        </h1>
+        <p class="lead">
+            (A summary of our approach to taking
+            <br /> care of your child including the center
+            <br />and the approach taken by the workers)
+        </p>
     </div>
 </div>
 
@@ -69,7 +67,7 @@
                 <h2 class="text-center">Registry</h2>
             </div>
             <div class="section-body">
-                <p class="center-text">Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
+                <h4 class="center-text">Rainbow uses the Manitoba Governments Online Child Care Registry (OCCR). You can register below</h4>
             </div>
             <div class="section-footer">
                 <p class="center-text">
@@ -84,11 +82,10 @@
 <div class="section secondary-highlight">
     <div class="container">
         <div>
-            <div class="section-header tight">
+            <div class="section-header">
                 <h2 class="text-center">
                     Sites
-                    <span class="subdued">(
-                        <span>{{vm.sites.length}}</span>)</span>
+                    <span class="subdued">(<span>{{vm.sites.length}}</span>)</span>
                 </h2>
             </div>
             <div class="section-body row">
@@ -151,8 +148,7 @@
                                         <p>{{site.phone}}</p>
                                         <p>&nbsp;</p>
                                         <p class="secondary">With bus service to
-                                            <span>{{site.schools.length}}</span> school
-                                            <span ng-show="site.schools.length > 1">s</span>
+                                            <span>{{site.schools.length}}</span> school<span ng-show="site.schools.length > 1">s</span>
                                             <ul>
                                                 <li ng-repeat="school in site.schools">
                                                     <span ng-class="{'highlight-text': vm.hasSchoolFilter() && vm.isCheckedSchool(school) }">{{school.school.name}}</span>

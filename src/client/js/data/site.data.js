@@ -25,7 +25,7 @@
             var newSite = {
                 code: 'P1',
                 shortName: '1',
-                name: 'Phase I',
+                name: 'Phase 1',
                 address: {
                     unitNumber: '11',
                     number: "20",
@@ -38,7 +38,7 @@
                     markerColor: 'blue'
                 },
                 phone: '204-255-6751',
-                schools: [ 
+                schools: [
                     { code: 'IL', transportType: 'CT' },
                     { code: 'Gy', transportType: 'SB' },
                     { code: 'Sh', transportType: 'SB' }
@@ -54,7 +54,7 @@
             newSite = {
                 code: 'P2',
                 shortName: '2',
-                name: 'Phase II',
+                name: 'Phase 2',
                 address: {
                     unitNumber: null,
                     number: "445",
@@ -81,7 +81,7 @@
             newSite = {
                 code: 'P3A',
                 shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IIIA',
+                name: 'Phase 3A',
                 address: {
                     unitNumber: '180',
                     number: "50",
@@ -111,7 +111,7 @@
             newSite = {
                 code: 'P3B',
                 shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IIIB',
+                name: 'Phase 3B',
                 address: {
                     unitNumber: '100',
                     number: "40",
@@ -132,7 +132,7 @@
                 ],
                 order: 4,
             };
-            
+
             data.push(newSite);
 
             /*
@@ -141,7 +141,7 @@
             newSite = {
                 code: 'P3C',
                 shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IIIC',
+                name: 'Phase 3C',
                 address: {
                     unitNumber: '90',
                     number: "115",
@@ -173,7 +173,7 @@
             newSite = {
                 code: 'P4',
                 shortName: '4', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase IV',
+                name: 'Phase 4',
                 address: {
                     unitNumber: null,
                     number: "255",
@@ -195,10 +195,64 @@
             };
 
             data.push(newSite);
-            
+
+            /*
+             * Define Phase V Site **************************************************
+             */
+            newSite = {
+                code: 'SC',
+                shortName: '5',
+                name: 'Phase 5',
+                address: {
+                    unitNumber: null,
+                    number: "?",
+                    street: "?.",
+                    city: "Winnipeg",
+                    province: "MB",
+                    postalCode: "X9X 9X9",
+                    lat: 49.8306133,
+                    lng: -97.0663465,
+                    markerColor: 'red'
+                },
+                phone: '204-???-????',
+                schools: [
+
+                ],
+                programs: [
+                    {
+                        name: 'Infant',
+                        description: 'Under 2 years old (CHECK!)',
+                        count: 16,
+                    },
+                    {
+                        name: 'Early Years',
+                        description: '2 year olds',
+                        count: 8,
+                    },
+                    {
+                        name: 'Preschool',
+                        description: '3/4 year olds',
+                        count: 32,
+                    },
+                    {
+                        name: 'Kinders',
+                        description: '4/5 year olds',
+                        count: 10,
+                    },
+                    {
+                        name: 'School Age',
+                        description: 'Grade 1 to Grade 12',
+                        count: 30,
+                    },
+                ],
+                introduction: 'Expected opening date is January 2017',
+                order: 7,
+            };
+
+            data.push(newSite);
+
             return data;
 
         }
     }
 })();
-

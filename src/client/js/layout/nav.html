@@ -2,10 +2,8 @@
 <div>
     <div class="navbar navbar-fixed-top">
         <div class="container">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})" ng-class="{active: vm.isActive({code: 'home'})}">Home</a>
-                </li>
+                <a ui-sref="shell.home" class="logo" ng-click="vm.setActive({code: 'home'})">Rainbow</a>
+            <ul class="nav navbar-nav pull-right">
                 <li class="dropdown">
                     <div class="btn-group" dropdown>
                         <a class="dropdown-toggle" dropdown-toggle>
