@@ -1,4 +1,4 @@
-// This file retrieves the data objects from the data folder and then adds on computed properties onto the object. 
+// This file retrieves the data objects from the data folder and then adds on computed properties onto the object.
 (function () {
     'use strict';
 
@@ -6,12 +6,12 @@
         .module('app.core')
         .factory('datacontext', datacontext);
 
-    datacontext.$inject = ['siteData', 'schoolData'];
+    datacontext.$inject = ['siteData', 'schoolData', 'messageData'];
 
-    function datacontext(siteData, schoolData) {
+    function datacontext(siteData, schoolData, messageData) {
 
         var siteRepository = null;
-        
+
         var service = {
             getSiteRepository: getSiteRepository
         };
@@ -28,10 +28,11 @@
                 // If the site repo has already been generated, then return the stored value.
                 return siteRepository;
             }
-            
+
             // Get the site and school data
             var sites = siteData.getSites();
             var schools = schoolData.getSchools();
+            var messages = messageData.getMessages();
 
             // Add the relationship "table" between sites and schools. Useful to generate counts of sites for a given schools for eg, or when filtering the sites via a set of schools.
             // Basically flatten the relationship between sites and the schools they service.
@@ -46,9 +47,10 @@
             siteRepository = {
                                 sites: sites,
                                 schools: schools,
-                                siteSchools: siteSchools
+                                siteSchools: siteSchools,
+                                messages: messages,
                             };
-            
+
             return siteRepository;
         }
 
@@ -57,7 +59,7 @@
             _.forEach(sites, function (site) {
                 site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
                 site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
-                
+
                 // Google maps API for a static map with marker
                 var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';
                 var address = site.address.number + '+' + site.address.street + ',' + site.address.city + ',' + site.address.province + ',' + site.address.postalCode;
@@ -66,13 +68,13 @@
 
                 site.address.staticMapSrc = baseUrl + args;
                 //site.address.staticMapSrc = './img/staticmap.png'; // Used when working offline.
-                
+
                 site.isExpanded = true;
-                
+
                 addSiteSchoolComputes(site.schools, schools);
             });
         }
-        
+
         function addSchoolComputes(schools, siteSchools) {
             _.forEach(schools, function (school) {
                 // For each school, add a count of how many sites service it
@@ -103,13 +105,13 @@
             });
             newSite.schools.push(newSchool);
         };
-        
+
         // Add all of the school properties onto the array of schools associated with a given site
         function addSiteSchoolComputes(siteSchools, schools) {
             _.forEach(siteSchools, function(siteSchool) {
                 // Lookup the school associated with the site in the list of schools
                 var foundSchool = _.findWhere(schools, { code: siteSchool.code });
-                
+
                 if (foundSchool) {
                     siteSchool.school = foundSchool;
                 }

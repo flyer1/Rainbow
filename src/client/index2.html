@@ -9,12 +9,12 @@
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */
         /* Since Angular has this but needs to load, this gives us the class early. */
-        
+
         .ng-hide {
             display: none !important;
         }
         /* This prevents any flicker that may occur while the page is loading and angular has not had a chance yet to scan the document and apply templates/etc */
-        
+
         [ng\:cloak],
         [ng-cloak],
         [data-ng-cloak],
@@ -78,6 +78,7 @@
 
     <!-- App data -->
     <script src="js/data/_data.module.js"></script>
+    <script src="js/data/message.data.js"></script>
     <script src="js/data/school.data.js"></script>
     <script src="js/data/site.data.js"></script>
 

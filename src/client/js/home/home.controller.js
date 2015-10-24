@@ -34,7 +34,8 @@
             vm.sites = siteRepo.sites;
             vm.schools = siteRepo.schools;
             vm.siteSchools = siteRepo.siteSchools;
-
+            vm.messages = siteRepo.messages;
+            
             setMatchedSites(); // Array of site codes that match the filter criteria set by the user
             console.log(siteRepo); // TODO: remove later
 
