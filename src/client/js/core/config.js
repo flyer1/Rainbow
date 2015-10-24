@@ -5,7 +5,6 @@
 
     core.config(toastrConfig);
 
-    /* @ngInject */
     toastrConfig.$inject = ['toastr'];
     function toastrConfig(toastr) {
         toastr.options.timeOut = 4000;
@@ -25,7 +24,6 @@
         'exceptionConfigProvider', 'routehelperConfigProvider', 'toastr'
     ];
 
-    /* @ngInject */
     function configure(
         $logProvider, $routeProvider,
         exceptionConfigProvider, routehelperConfigProvider, toastr) {
@@ -55,7 +53,7 @@
             var routeCfg = routehelperConfigProvider;
             routeCfg.config.$routeProvider = $routeProvider;
             routeCfg.config.docTitle = 'CC: ';
-            routeCfg.config.resolveAlways = { /* @ngInject */
+            routeCfg.config.resolveAlways = { 
                 ready: function(datacontext) {
                     return datacontext.ready();
                 }

@@ -21,6 +21,7 @@
 
         /////////// IMPLEMENTATION /////////////////
         function init() {
+            // Default the current nav item based upon the URL
             var urlAry = $location.url().split('/');
             var tailUrl = urlAry[urlAry.length - 1];
             vm.currNavItem = tailUrl;
@@ -28,7 +29,6 @@
 
         function setActive(navItem) {
           vm.currNavItem = navItem.code;
-          console.log('active nav is ' + vm.currNavItem );
         }
 
         function isActive(navItem) {

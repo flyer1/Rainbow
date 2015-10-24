@@ -61,7 +61,7 @@
 
         function handleRoutingErrors() {
             // Route cancellation:
-            // On routing error, go to the dashboard.
+            // On routing error, home.
             // Provide an exit clause if it tries to do it twice.
             $rootScope.$on('$routeChangeError',
                 function (event, current, previous, rejection) {
