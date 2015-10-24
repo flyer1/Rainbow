@@ -1,4 +1,7 @@
-<div class="container main-banner">
+<div class="container banner-message">
+    <p><label>Announcements:</label> {{vm.messages.bannerMessage}}</p>
+</div>
+<div class="container main-banner" ng-class="{'has-banner-message' : vm.messages.bannerMessage}">
     <div class="banner-image"></div>
     <div class="title">
         <h1>
@@ -9,7 +12,6 @@
             (A summary of our approach to taking care of your child
             <br />including the center and the approach taken by the workers)
         </p>
-        <p>{{vm.messages}}</p>
     </div>
 </div>
 

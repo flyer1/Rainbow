@@ -16,7 +16,9 @@
 
         /************************** IMPLEMENTATION ********************************/
         function getMessages() {
-            var messages = "Rainbow Daycare is coming to Sage Creek school! Expected opening January 2017";
+            var messages = {
+                bannerMessage: "Rainbow Daycare is coming to Sage Creek school! Expected opening January 2017"
+            };
             return messages;
         }
     }

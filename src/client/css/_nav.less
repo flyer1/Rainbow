@@ -2,23 +2,33 @@
     background: #3c3d3d none;
     height: 60px;
     border-bottom: 1px solid black;
+    margin-bottom: 0;
 }
 
 
 .navbar .logo {
     opacity: 0.7;
-    color: #ccc;
-    text-transform: uppercase;
-    font-size: 19px;
-    font-weight: 800;
-    line-height: 60px;
+    background-image: url("../img/rainbow-logo-white-sm.png");
+    background-size: cover;
+    filter:grayscale(100%);
+    display: inline-block;
+    height: 35px;
+    width: 110px;
+    margin-top: 13px;
+    transition: opacity 0.15s ease;
 }
 
 
 .navbar .logo:hover {
     opacity: 1;
     text-decoration: none;
-    color: #eff556;
+    filter:initial;
+}
+
+
+.navbar .logo:active {
+    opacity: 0.8;
+    transform: scale(0.97);
 }
 
 
