@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('app.site')
-        .controller('SiteController', SiteController);
+        .module('app.pages')
+        .controller('SiteDetailsController', SiteDetailsController);
 
-    SiteController.$inject = ['datacontext', '$stateParams'];
+    SiteDetailsController.$inject = ['datacontext', '$stateParams'];
 
-    function SiteController(datacontext, $stateParams) {
+    function SiteDetailsController(datacontext, $stateParams) {
         var vm = this;
         var siteRepo = datacontext.getSiteRepository();
         vm.site = {};

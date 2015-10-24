@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('app.pages')
         .controller('ShellController', ShellController);
 
     ShellController.$inject = ['$location', 'datacontext'];
