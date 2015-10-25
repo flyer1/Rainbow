@@ -10,23 +10,43 @@
     </div>
 </div>
 
+<!-- ANNOUNCEMENTS -->
+<div class="section section-orange" ng-if="vm.site.message">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-details">
+                    <h2>Announcements</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-repeat="paragraph in vm.site.message">
+                <div class="section-paragraph">
+                    <span>{{paragraph}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
 <div class="section section-light-gray">
     <div class="container">
-        <div class="content">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="section-details">
-                        <h2>Contact</h2>
-                        <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
-                        <p>{{vm.site.address.addressLine1}}</p>
-                        <p>{{vm.site.address.city}} {{vm.site.address.province}} {{vm.site.address.postalCode}}<p>
-                    </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section-details">
+                    <h2>Contact</h2>
+                    <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
+                    <p>{{vm.site.address.addressLine1}}</p>
+                    <p>{{vm.site.address.city}} {{vm.site.address.province}} {{vm.site.address.postalCode}}
+                        <p>
                 </div>
+            </div>
 
-                <div class="col-md-6">
-                    <div class="map-lg">
-                        <iframe width="{{vm.mapWidth}}" height="450" frameborder="0" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
-                    </div>
+            <div class="col-md-6">
+                <div class="map-lg">
+                    <iframe width="{{vm.mapWidth}}" height="450" frameborder="0" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
                 </div>
             </div>
         </div>
@@ -54,23 +74,24 @@
 <!-- SERVICES -->
 <div class="section section-dark-gray">
     <div class="container">
-        <div class="content">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Transportation</h2>
-                </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Transportation</h2>
+            </div>
 
-                <div class="col-md-6">
-                    <p class="secondary">With bus service to <span>{{vm.site.schools.length}}</span> school<span ng-show="vm.site.schools.length > 1">s</span>
+            <div class="col-md-6">
+                <p class="secondary">With bus service to
+                    <span>{{vm.site.schools.length}}</span> school
+                    <span ng-show="vm.site.schools.length > 1">s</span>
                     <ul>
                         <li ng-repeat="school in vm.site.schools">{{school.school.name}}</li>
                     </ul>
-                </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- HOURS -->
 <div class="section section-blue">
     <div class="container">
         <div class="content">
@@ -93,7 +114,7 @@
     </div>
 </div>
 
-
+<!-- COSTS -->
 <div class="section">
     <div class="container">
         <div class="content">
@@ -119,17 +140,6 @@
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="section">
-    <div class="container">
-        <div class="content">
-            <div class="section-header">
-                <h2 class="text-center">Contact</h2>
-            </div>
-            <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
         </div>
     </div>
 </div>
