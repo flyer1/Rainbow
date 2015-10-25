@@ -1,33 +1,31 @@
-<div class="jumbotron">
-    <div class="container">
-        <div class="title">
+<div class="site-banner">
+    <div class="site-banner-background"></div>
+    <div class="section has-navbar">
+        <div class="container">
             <h1>
-                {{vm.name}}
+                Rainbow {{vm.site.name}}
             </h1>
-            <p class="normal">{{vm.site.address.addressLine1}}</p>
+            <p class="normal">{{vm.site.address.addressLine1 + ' ' + vm.site.address.addressLine2}}</p>
         </div>
     </div>
 </div>
 
-<div class="section">
+<div class="section section-light-gray">
     <div class="container">
         <div class="content">
-            <div class="list">
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <h2>Programs</h2>
-                        <div ng-repeat="program in vm.site.programs" class="program-details">
-                            <p>Name: {{program.name}}</p>
-                            <p>Description: {{program.description}}</p>
-                            <p>Count: {{program.count}}</p>
-                        </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="section-details">
+                        <h2>Contact</h2>
+                        <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
+                        <p>{{vm.site.address.addressLine1}}</p>
+                        <p>{{vm.site.address.city}} {{vm.site.address.province}} {{vm.site.address.postalCode}}<p>
                     </div>
+                </div>
 
-                    <div class="col-md-6">
-                        <p class="list-image">
-                            <i class="fa fa-th-large"></i>
-                        </p>
+                <div class="col-md-6">
+                    <div class="map-lg">
+                        <iframe width="{{vm.mapWidth}}" height="450" frameborder="0" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
                     </div>
                 </div>
             </div>
@@ -35,8 +33,45 @@
     </div>
 </div>
 
+<!-- PROGRAMS -->
+<div class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="text-center">
+                Programs
+            </h2>
+        </div>
+        <div class="cards cards-dark">
+            <div ng-repeat="program in vm.site.programs" class="card">
+                <h4 class="card-header">{{program.name}}</h4>
+                <p>{{program.description}}</p>
+                <p>Count: {{program.count}}</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="section highlight">
+<!-- SERVICES -->
+<div class="section section-dark-gray">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Transportation</h2>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="secondary">With bus service to <span>{{vm.site.schools.length}}</span> school<span ng-show="vm.site.schools.length > 1">s</span>
+                    <ul>
+                        <li ng-repeat="school in vm.site.schools">{{school.school.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-blue">
     <div class="container">
         <div class="content">
             <div class="list">
@@ -58,30 +93,8 @@
     </div>
 </div>
 
-<div class="section color0">
-    <div class="container">
-        <div class="content">
-            <div class="row">
-                <div class="col-md-5 box">
-                    <h2>Location</h2>
-                    <p>{{vm.site.address.addressLine1}}<br/>
-                        {{vm.site.address.city}} {{vm.site.address.province}} <br/>
-                        {{vm.site.address.postalCode}}
-                    </p>
-                </div>
 
-                <div class="col-md-6">
-                    <div class="map2">
-                        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=rainbow%20day%20nursery%2C%20255%20Vermillion%20Rd%2C%20Winnipeg&amp;key=AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="section color2">
+<div class="section">
     <div class="container">
         <div class="content">
             <div class="row">
@@ -110,26 +123,7 @@
     </div>
 </div>
 
-<div class="section color0">
-    <div class="container">
-        <div class="content">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Transportation</h2>
-                </div>
-
-                <div class="col-md-6">
-                    <p class="secondary">With bus service to <span>{{vm.site.schools.length}}</span> school<span ng-show="vm.site.schools.length > 1">s</span>
-                    <ul>
-                        <li ng-repeat="school in vm.site.schools">{{school.school.name}}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="section color3">
+<div class="section">
     <div class="container">
         <div class="content">
             <div class="section-header">

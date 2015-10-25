@@ -33,8 +33,8 @@
                     city: "Winnipeg",
                     province: "MB",
                     postalCode: "R3X 1N7",
-                    lat: 49.8382149,
-                    lng: -97.0691446,
+                    lat: 49.8396928,
+                    lng: -97.0661543,
                     markerColor: 'blue'
                 },
                 phone: '204-255-6751',
@@ -42,6 +42,33 @@
                     { code: 'IL', transportType: 'CT' },
                     { code: 'Gy', transportType: 'SB' },
                     { code: 'Sh', transportType: 'SB' }
+                ],
+                programs: [
+                    {
+                        name: 'Infant',
+                        description: 'Under 2 years old (CHECK!)',
+                        count: -1,
+                    },
+                    {
+                        name: 'Early Years',
+                        description: '2 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Preschool',
+                        description: '3/4 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Kinders',
+                        description: '4/5 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'School Age',
+                        description: 'Grade 1 to Grade 12',
+                        count: -1,
+                    },
                 ],
                 order: 1,
             };
@@ -62,13 +89,40 @@
                     city: "Winnipeg",
                     province: "MB",
                     postalCode: "R3X 2B4",
-                    lat: 49.8306133,
-                    lng: -97.0663465,
+                    lat: 49.829943,
+                    lng: -97.0672877,
                     markerColor: 'red'
                 },
                 phone: '204-256-6808',
                 schools: [
                     { code: 'IL', transportType: '???' }
+                ],
+                programs: [
+                    {
+                        name: 'Infant',
+                        description: 'Under 2 years old (CHECK!)',
+                        count: -1,
+                    },
+                    {
+                        name: 'Early Years',
+                        description: '2 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Preschool',
+                        description: '3/4 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Kinders',
+                        description: '4/5 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'School Age',
+                        description: 'Grade 1 to Grade 12',
+                        count: -1,
+                    },
                 ],
                 order: 2,
             };
@@ -89,8 +143,8 @@
                     city: "Winnipeg",
                     province: "MB",
                     postalCode: "R2J 2M7",
-                    lat: 49.853997,
-                    lng: -97.079135,
+                    lat: 49.8538542,
+                    lng: -97.080153,
                     markerColor: 'green'
                 },
                 phone: '204-254-2774',
@@ -99,6 +153,33 @@
                     { code: 'Ni', transportType: 'CT' },
                     { code: 'Ho', transportType: 'CT' },
                     { code: 'Fr', transportType: 'CT' }
+                ],
+                programs: [
+                    {
+                        name: 'Infant',
+                        description: 'Under 2 years old (CHECK!)',
+                        count: -1,
+                    },
+                    {
+                        name: 'Early Years',
+                        description: '2 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Preschool',
+                        description: '3/4 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Kinders',
+                        description: '4/5 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'School Age',
+                        description: 'Grade 1 to Grade 12',
+                        count: -1,
+                    },
                 ],
                 order: 3,
             };
@@ -119,8 +200,8 @@
                     city: "Winnipeg",
                     province: "MB",
                     postalCode: "R2J 2M6",
-                    lat: 49.8545685,
-                    lng: -97.078809,
+                    lat: 49.854481,
+                    lng: -97.080346,
                     markerColor: 'green'
                 },
                 phone: '204-257-6180',
@@ -129,6 +210,33 @@
                     { code: 'Ni', transportType: 'CT' },
                     { code: 'Ho', transportType: 'CT' },
                     { code: 'Fr', transportType: 'CT' }
+                ],
+                programs: [
+                    {
+                        name: 'Infant',
+                        description: 'Under 2 years old (CHECK!)',
+                        count: -1,
+                    },
+                    {
+                        name: 'Early Years',
+                        description: '2 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Preschool',
+                        description: '3/4 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Kinders',
+                        description: '4/5 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'School Age',
+                        description: 'Grade 1 to Grade 12',
+                        count: -1,
+                    },
                 ],
                 order: 4,
             };
@@ -149,8 +257,8 @@
                     city: "Winnipeg",
                     province: "MB",
                     postalCode: "R2J 4A9",
-                    lat: 49.854044,
-                    lng: -97.070653,
+                    lat: 49.8543693,
+                    lng: -97.0734711,
                     markerColor: 'green'
                 },
                 phone: '204-255-3985',
@@ -161,7 +269,34 @@
                     { code: 'Fr', transportType: 'CT' },
                     { code: 'Gy', transportType: 'CT' },
                     { code: 'Sh', transportType: 'CT' }
-                        ],
+                    ],
+                    programs: [
+                        {
+                            name: 'Infant',
+                            description: 'Under 2 years old (CHECK!)',
+                            count: -1,
+                        },
+                        {
+                            name: 'Early Years',
+                            description: '2 year olds',
+                            count: -1,
+                        },
+                        {
+                            name: 'Preschool',
+                            description: '3/4 year olds',
+                            count: -1,
+                        },
+                        {
+                            name: 'Kinders',
+                            description: '4/5 year olds',
+                            count: -1,
+                        },
+                        {
+                            name: 'School Age',
+                            description: 'Grade 1 to Grade 12',
+                            count: -1,
+                        },
+                    ],
                 order: 5,
             };
 
@@ -181,8 +316,8 @@
                     city: "Winnipeg",
                     province: "MB",
                     postalCode: "R2J 3Z7",
-                    lat: 49.854056,
-                    lng: -97.065906,
+                    lat: 49.854024,
+                    lng: -97.0679276,
                     markerColor: 'orange'
                 },
                 phone: '204-256-0672',
@@ -190,7 +325,34 @@
                     { code: 'VB', transportType: 'CT' },
                     { code: 'Gy', transportType: 'CT' },
                     { code: 'Sh', transportType: 'CT' },
-                        ],
+                ],
+                programs: [
+                    {
+                        name: 'Infant',
+                        description: 'Under 2 years old (CHECK!)',
+                        count: -1,
+                    },
+                    {
+                        name: 'Early Years',
+                        description: '2 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Preschool',
+                        description: '3/4 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'Kinders',
+                        description: '4/5 year olds',
+                        count: -1,
+                    },
+                    {
+                        name: 'School Age',
+                        description: 'Grade 1 to Grade 12',
+                        count: -1,
+                    },
+                ],
                 order: 6,
             };
 
@@ -205,13 +367,13 @@
                 name: 'Phase 5',
                 address: {
                     unitNumber: null,
-                    number: "?",
-                    street: "?.",
+                    number: "340",
+                    street: "Sage Creek Blvd",
                     city: "Winnipeg",
                     province: "MB",
-                    postalCode: "X9X 9X9",
-                    lat: 49.8306133,
-                    lng: -97.0663465,
+                    postalCode: "R3X 0E1",
+                    lat: 49.833390,
+                    lng: -97.033599,
                     markerColor: 'red'
                 },
                 phone: '204-???-????',

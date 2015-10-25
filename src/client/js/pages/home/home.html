@@ -1,6 +1,9 @@
-<div class="container banner-message">
+<!-- BANNER MESSAGE -->
+<div class="container banner-message" ng-if="vm.messages.bannerMessage">
     <p><label>Announcements:</label> {{vm.messages.bannerMessage}}</p>
 </div>
+
+<!-- MAIN BANNER -->
 <div class="container main-banner" ng-class="{'has-banner-message' : vm.messages.bannerMessage}">
     <div class="banner-image"></div>
     <div class="title">
@@ -15,44 +18,42 @@
     </div>
 </div>
 
-<!-- OVERVIEW -->
-<div class="section">
+<!-- INTRODUCTION -->
+<div class="section section-light-gray">
     <div class="container">
-        <div class="content">
-            <div class="section-header">
-                <h2 class="text-center">Who We Are</h2>
-            </div>
-            <div class="section-body">
-                <div class="grid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>
-                                <img class="hand" src="img/hand_orange.png" />Mission Statement
-                            </h3>
-                            <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
-                        </div>
-
-                        <div class="col-md-6">
-                            <h3>
-                                <img class="hand" src="img/hand_green.png" />Our Staff</h3>
-                            <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
-                        </div>
+        <div class="section-header">
+            <h2 class="text-center">Who We Are</h2>
+        </div>
+        <div class="section-body">
+            <div class="grid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>
+                            <img class="hand" src="img/hand_orange.png" />Mission Statement
+                        </h3>
+                        <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>
-                                <img class="hand" src="img/hand_blue.png" /> Our Philosophy
-                            </h3>
-                            <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
-                        </div>
+                    <div class="col-md-6">
+                        <h3>
+                            <img class="hand" src="img/hand_green.png" />Our Staff</h3>
+                        <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
+                    </div>
+                </div>
 
-                        <div class="col-md-6">
-                            <h3>
-                                <img class="hand" src="img/hand_yellow.png" />Mission Statement / Philosophy
-                            </h3>
-                            <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
-                        </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>
+                            <img class="hand" src="img/hand_blue.png" /> Our Philosophy
+                        </h3>
+                        <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>
+                            <img class="hand" src="img/hand_yellow.png" />Mission Statement / Philosophy
+                        </h3>
+                        <p class="grid-text">Appears here. Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah </p>
                     </div>
                 </div>
             </div>
@@ -61,26 +62,24 @@
 </div>
 
 <!-- REGISTRY -->
-<div class="section highlight">
+<div class="section section-dark-gray">
     <div class="container">
-        <div class="content">
-            <div class="section-header">
-                <h2 class="text-center">Registry</h2>
-            </div>
-            <div class="section-body">
-                <h4 class="center-text">Rainbow uses the Manitoba Governments Online Child Care Registry (OCCR). You can register below</h4>
-            </div>
-            <div class="section-footer">
-                <p class="center-text">
-                    <a href="http://www.gov.mb.ca/fs/parentupdate/index.html" target="_blank" class="button-lg attention-grabber">ONLINE REGISTRY</a>
-                </p>
-            </div>
+        <div class="section-header">
+            <h2 class="text-center">Registry</h2>
+        </div>
+        <div class="section-body">
+            <h4 class="center-text">Rainbow uses the Manitoba Governments Online Child Care Registry (OCCR). You can register below</h4>
+        </div>
+        <div class="section-footer">
+            <p class="center-text">
+                <a href="http://www.gov.mb.ca/fs/parentupdate/index.html" target="_blank" class="button-lg attention-grabber">ONLINE REGISTRY</a>
+            </p>
         </div>
     </div>
 </div>
 
 <!-- SITES -->
-<div class="section secondary-highlight">
+<div class="section section-dark">
     <div class="container">
         <div>
             <div class="section-header">
@@ -90,7 +89,7 @@
                 </h2>
             </div>
             <div class="section-body row">
-                <!-- FIND OPTIONS PANEL  -->
+                <!-- FILTER BOX PANEL  -->
                 <div class="filter-box hidden-xs col-sm-4 col-md-3">
                     <p class="title">Find Options</p>
                     <hr />
@@ -114,21 +113,21 @@
                                 <input type="checkbox">
                                 <span>Infant</span>
                             </label>
-                            <span class="pull-right">2</span>
+                            <span class="pull-right">??</span>
                         </li>
                         <li class="checkbox">
                             <label>
                                 <input type="checkbox">
                                 <span>Preschool</span>
                             </label>
-                            <span class="pull-right">2</span>
+                            <span class="pull-right">??</span>
                         </li>
                         <li class="checkbox">
                             <label>
                                 <input type="checkbox">
                                 <span>School age</span>
                             </label>
-                            <span class="pull-right">2</span>
+                            <span class="pull-right">??</span>
                         </li>
                     </ul>
                 </div>
@@ -168,16 +167,6 @@
                                         <a ng-href="#/shell/site/{{site.code}}">
                                             <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
                                         </a>
-                                        <!--
-                                        <img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
-                                            &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-                                            &markers=color:red%7Clabel:C%7C40.718217,-73.998284" data-bind="tooltip:{title: 'Click to open in Google Maps', placement: 'center'}">
-
-                                        <iframe width="400"
-                                                  height="300"
-                                                  frameborder="0" style="border:0"
-                                                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI&q=Rainbow+Day+Nursery,Winnipeg+Manitoba"></iframe>
--->
                                     </div>
                                 </div>
                             </div>
@@ -188,3 +177,14 @@
         </div>
     </div>
 </div>
+
+<!--
+<img class="map map-round" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=350x350&maptype=roadmap
+    &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+    &markers=color:red%7Clabel:C%7C40.718217,-73.998284" data-bind="tooltip:{title: 'Click to open in Google Maps', placement: 'center'}">
+
+<iframe width="400"
+          height="300"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI&q=Rainbow+Day+Nursery,Winnipeg+Manitoba"></iframe>
+-->
