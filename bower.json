@@ -26,7 +26,6 @@
   "dependencies": {
     "angular": "1.4.7",
     "angular-animate": "1.4.7",
-    "angular-bootstrap": "0.12.1",
     "angular-ui-router": "0.2.15",
     "angular-scroll": "~0.6.5",
     "bootstrap": "3.3.5",
