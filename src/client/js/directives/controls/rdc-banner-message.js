@@ -5,11 +5,13 @@
         .module('app.directives')
         .directive('rdnBannerMessage', rdnBannerMessage);
 
-    function rdnBannerMessage() {
+        rdnBannerMessage.$inject = ['popoverMessageService'];
+
+    function rdnBannerMessage(popoverMessageService) {
         var directive = {
             link: link,
             scope: {
-                    'message': '=',
+                'message': '=',
             },
             templateUrl: '/js/directives/controls/rdc-banner-message.html',
             restrict: 'E'
@@ -18,17 +20,17 @@
 
         /////////////////// IMPLEMENTATION ///////////////////
         function link(scope, element, attrs) {
-            scope.showFullMessage = showFullMessage;
+            scope.showDetails = showDetails;
 
             return;
             ///////////
 
-            function showFullMessage() {
+            function showDetails() {
                 var options = {
-                        placement: 'bottom',
-                        content: 'hey mother fucker!'
+                        targetId: 'banner-message-toggle',
+                        content: scope.message.full
                 };
-                element.popover(options);
+                popoverMessageService.show(options);
             }
         }
     }

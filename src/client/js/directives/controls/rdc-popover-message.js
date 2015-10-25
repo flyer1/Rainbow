@@ -4,13 +4,13 @@
     'use strict';
     angular
         .module('app.directives')
-        .directive('cmsContextMenu', cmsContextMenu);
+        .directive('rdcPopoverMessage', rdcPopoverMessage);
 
-    function cmsContextMenu() {
+    function rdcPopoverMessage() {
         var directive = {
             restrict: 'E',
             scope: false,
-            templateUrl: '/app-ng/js/directives/controls/cms-context-menu.html',
+            templateUrl: '/js/directives/controls/rdc-popover-message.html',
             replace: true
         };
 
