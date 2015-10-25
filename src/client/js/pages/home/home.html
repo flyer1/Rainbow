@@ -1,8 +1,5 @@
 <!-- BANNER MESSAGE -->
-<div class="container banner-message" ng-if="vm.messages.bannerMessage">
-    <p><label>Announcements:</label> {{vm.messages.bannerMessage}}</p>
-</div>
-
+<rdn-banner-message message="vm.messages.bannerMessage"></rdn-banner-message>
 <!-- MAIN BANNER -->
 <div class="container main-banner" ng-class="{'has-banner-message' : vm.messages.bannerMessage}">
     <div class="banner-image"></div>

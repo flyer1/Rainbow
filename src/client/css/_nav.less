@@ -1,7 +1,7 @@
 .navbar {
     background: #3c3d3d none;
     height: 60px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #333;
     margin-bottom: 0;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.44);
 }
@@ -81,6 +81,39 @@
 .nav .open > a,
 .nav .open > a:hover {
     background: #333;
+}
+
+
+// SOCIAL MEDIA ------------------
+.navbar .social-media-group a {
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.69);
+    margin-left: 0;
+    padding-top: 14px;
+}
+
+
+.nav > li .social-media-group a:hover {
+    background: initial;
+}
+
+
+.navbar .social-media-group a:focus {
+    background: initial;
+    color: rgba(255, 255, 255, 0.69);
+}
+
+
+.nav > li .social-media-group a i {
+    transition: all 0.2s ease;
+    border-radius: 20px;
+    line-height: 23px;
+}
+
+
+.nav > li .social-media-group a:hover i {
+    color: #6883bf;
+    background-color: white;
 }
 
 
