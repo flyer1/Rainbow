@@ -131,8 +131,8 @@
 
                 <!-- LIST OF SITES -->
                 <div class="col-xs-12 col-sm-8 col-md-9">
-                    <accordion class="site-list dark" close-others="false">
-                        <accordion-group ng-repeat="site in vm.sites" heading="{{site.name}}" is-open="site.isChecked">
+                    <uib-accordion class="site-list dark" close-others="false">
+                        <uib-accordion-group ng-repeat="site in vm.sites" heading="{{site.name}}" is-open="site.isChecked">
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="list-text">
@@ -167,8 +167,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </accordion-group>
-                    </accordion>
+                        </uib-accordion-group>
+                    </uib-accordion>
                 </div>
             </div>
         </div>
