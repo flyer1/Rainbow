@@ -5,7 +5,7 @@
         //'ngAnimate',
         'app.directives',
         /* 3rd Party modules */
-        'ui.bootstrap',
+        //'ui.bootstrap',
         // 'duParallax',
         'ui.router'
     ]);

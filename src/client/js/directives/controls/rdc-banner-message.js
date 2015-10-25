@@ -11,7 +11,7 @@
             scope: {
                     'message': '=',
             },
-            templateUrl: '/js/directives/rdn-banner-message.html',
+            templateUrl: '/js/directives/controls/rdc-banner-message.html',
             restrict: 'E'
         };
         return directive;

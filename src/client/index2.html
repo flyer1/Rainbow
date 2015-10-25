@@ -56,15 +56,16 @@
 
     <!-- build:js js/lib.js -->
     <!-- Vendor Libs -->
+    <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="lib/angular-animate/angular-animate.js"></script>
-    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/bootstrap-modal-popover/src/bootstrap-modal-popover.js"></script>
     <script src="lib/toastr/toastr.js"></script>
     <script src="lib/moment/moment.js"></script>
     <script src="lib/underscore/underscore.js"></script>
     <script src="lib/angular-scroll/angular-scroll.js"></script>
-    <!-- <script src="lib/ng-parallax/angular-parallax.js"></script> -->
     <!-- endbuild -->
 
     <!-- build:js js/app.js-->
@@ -78,7 +79,8 @@
 
     <!--directives-->
     <script src="js/directives/_directives.module.js"></script>
-    <script src="js/directives/rdn-banner-message.js"></script>
+    <script src="js/directives/behaviors/rdc-collapse.js"></script>
+    <script src="js/directives/controls/rdc-banner-message.js"></script>
 
     <!-- App data -->
     <script src="js/data/_data.module.js"></script>

@@ -5,7 +5,7 @@ A daycare website using AngularJS. Because websites don't like postbacks either.
 
 ## Primary Technology
 - [AngularJS](https://angularjs.org/) - A front end web MV* framework that lets us do databinding, client side routing between pages, custom markup (directives) that is specific to the problem at hand, etc, etc. Basically it's the best thing to come along for web development in a long time.
-- [Angular Bootstrap](http://angular-ui.github.io/bootstrap/) - An Angular-ized version of Bootstrap that makes it easier to layout responsive and rich web pages.
+- [Bootstrap](http://getbootstrap.com/) - Bootstrap makes it easier to layout responsive and rich web pages.
 - There are a handful of other libs that make this site tick but the two above do most of the heavy lifting.
 
 
@@ -54,7 +54,7 @@ Get bower and install globally (via the -g switch).
 npm install bower -g
 ```
 
-Type this to download all of the libs needed by the project. See the bower.json file for all devdependencies that will be downloaded. If nothing is output, then you have all that you need (because it was already checked into the repository). Otherwise you'll see the list of packages that are downloaded.
+Type this to download all of the libs needed by the project. See the bower.json file for all devdependencies that will be downloaded. If nothing is output, then you have all that you need (because it was already checked into the repository). Otherwise you'll see the list of packages that are downloaded. NOTE: bootstrap-modal-popover lib had to be customized so make sure that you have the version that is checked into this repo.
 
 
 ```

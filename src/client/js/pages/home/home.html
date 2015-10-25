@@ -82,7 +82,8 @@
             <div class="section-header">
                 <h2 class="text-center">
                     Sites
-                    <span class="subdued">(<span>{{vm.sites.length}}</span>)</span>
+                    <span class="subdued">(
+                        <span>{{vm.sites.length}}</span>)</span>
                 </h2>
             </div>
             <div class="section-body row">
@@ -131,44 +132,55 @@
 
                 <!-- LIST OF SITES -->
                 <div class="col-xs-12 col-sm-8 col-md-9">
-                    <uib-accordion class="site-list dark" close-others="false">
-                        <uib-accordion-group ng-repeat="site in vm.sites" heading="{{site.name}}" is-open="site.isChecked">
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <div class="list-text">
-                                        <p>
-                                            <span>{{site.address.addressLine1}}</span>
-                                        </p>
-                                        <p>
-                                            <span>{{site.address.addressLine2}}</span>
-                                        </p>
-                                        <br/>
-                                        <p><a href="tel:{{site.phone}}">{{site.phone}}</a></p>
-                                        <p>&nbsp;</p>
-                                        <p class="secondary">With bus service to
-                                            <span>{{site.schools.length}}</span> school<span ng-show="site.schools.length > 1">s</span>
-                                            <ul>
-                                                <li ng-repeat="school in site.schools">
-                                                    <span ng-class="{'highlight-text': vm.hasSchoolFilter() && vm.isCheckedSchool(school) }">{{school.school.name}}</span>
-                                                </li>
-                                            </ul>
-
-                                        </p>
-                                        <p class="more-info">
-                                            <a ng-href="#/shell/site/{{site.code}}">More info</a>
-                                        </p>
-                                    </div>
+                    <div class="site-list dark">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default" ng-repeat="site in vm.sites">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a ng-click="site.isChecked = !site.isChecked">{{site.name}}</a>
+                                    </h4>
                                 </div>
-                                <div class="col-xs-12 col-sm-9 col-md-6">
-                                    <div class="list-img">
-                                        <a ng-href="#/shell/site/{{site.code}}">
-                                            <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
-                                        </a>
+                                <div class="panel-collapse collapse in" rdc-collapse="site.isChecked">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="list-text">
+                                                    <p>
+                                                        <span>{{site.address.addressLine1}}</span>
+                                                    </p>
+                                                    <p>
+                                                        <span>{{site.address.addressLine2}}</span>
+                                                    </p>
+                                                    <br/>
+                                                    <p><a href="tel:{{site.phone}}">{{site.phone}}</a></p>
+                                                    <p>&nbsp;</p>
+                                                    <p class="secondary">With bus service to
+                                                        <span>{{site.schools.length}}</span> school
+                                                        <span ng-show="site.schools.length > 1">s</span>
+                                                        <ul>
+                                                            <li ng-repeat="school in site.schools">
+                                                                <span ng-class="{'highlight-text': vm.hasSchoolFilter() && vm.isCheckedSchool(school) }">{{school.school.name}}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                    <p class="more-info">
+                                                        <a ng-href="#/shell/site/{{site.code}}">More info</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-9 col-md-6">
+                                                <div class="list-img">
+                                                    <a ng-href="#/shell/site/{{site.code}}">
+                                                        <img class="map map-round" ng-src="{{site.address.staticMapSrc}}">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </uib-accordion-group>
-                    </uib-accordion>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
