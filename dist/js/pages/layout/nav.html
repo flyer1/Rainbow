@@ -1,0 +1,40 @@
+<!-- NAVIGATION -->
+<div>
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <a ui-sref="shell.home" class="logo" ng-click="vm.setActive({code: 'home'})"></a>
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown">
+                    <div class="btn-group">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          Sites
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu with-icons with-arrow" role="menu">
+                            <li role="presentation" ng-repeat="site in vm.sites">
+                                <div ng-if="$index === 0" class="arrow-up-nav-dropdown"></div>
+                                <a role="menuitem" tabindex="-1" href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
+                                    <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
+                                    <h4>
+                                        <span>{{site.name}}</span>
+                                    </h4>
+                                    <small>
+                                        <span>{{site.address.addressLine1}}</span>,
+                                        <span>{{site.address.city}}</span>
+                                        <span>{{site.address.province}}</span>
+                                    </small>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="social-media-group">
+                        <a href="http://www.facebook.com/rainbowdaynurseryinc" target="_blank">
+                            <i class="fa fa-facebook-official"></i></a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
