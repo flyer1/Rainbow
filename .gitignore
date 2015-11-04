@@ -30,9 +30,6 @@ report
 *.ns
 journal
 
-# Ignore Web Storm #
-.idea
-
 # Compiled source #
 ###################
 *.com
@@ -72,9 +69,8 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
-# Editor Files
-*.sublime-*
-
+# Project Specific #
+####################
+dist
 src/client/css/site.css
 
-src/client/css/_site-list.less
