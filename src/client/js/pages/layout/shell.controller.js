@@ -28,11 +28,11 @@
         }
 
         function setActive(navItem) {
-          vm.currNavItem = navItem.code;
+            vm.currNavItem = navItem.code;
         }
 
         function isActive(navItem) {
-          return vm.currNavItem === navItem.code;
+            return vm.currNavItem === navItem.code;
         }
     }
 })();

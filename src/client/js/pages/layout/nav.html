@@ -1,40 +1,95 @@
-<!-- NAVIGATION -->
-<div>
-    <div class="navbar navbar-fixed-top">
-        <div class="container">
-            <a ui-sref="shell.home" class="logo" ng-click="vm.setActive({code: 'home'})"></a>
-            <ul class="nav navbar-nav pull-right">
-                <li class="dropdown">
-                    <div class="btn-group">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          Sites
-                          <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu with-icons with-arrow" role="menu">
-                            <li role="presentation" ng-repeat="site in vm.sites">
-                                <div ng-if="$index === 0" class="arrow-up-nav-dropdown"></div>
-                                <a role="menuitem" tabindex="-1" href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
-                                    <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
-                                    <h4>
-                                        <span>{{site.name}}</span>
-                                    </h4>
-                                    <small>
-                                        <span>{{site.address.addressLine1}}</span>,
-                                        <span>{{site.address.city}}</span>
-                                        <span>{{site.address.province}}</span>
-                                    </small>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <span class="social-media-group">
-                        <a href="http://www.facebook.com/rainbowdaynurseryinc" target="_blank">
-                            <i class="fa fa-facebook-official"></i></a>
-                    </span>
-                </li>
+<!--<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
             </ul>
         </div>
     </div>
-</div>
+</nav>-->
+<!-- NAVIGATION -->
+<nav class="navbar navbar-fixed-top">
+    <div class="container">
+        <a ui-sref="shell.home" class="logo" ng-click="vm.setActive({code: 'home'})"></a>
+        <ul class="nav pull-right">
+            <li>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Sites
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu has-icons" role="menu">
+                    <li role="presentation" ng-repeat="site in vm.sites">
+                        <a role="menuitem" tabindex="-1" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
+                            <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
+                            <h4>
+                                <span>{{site.name}}</span>
+                            </h4>
+                            <small>
+                                <span>{{site.address.addressLine1}}</span>,
+                                <span>{{site.address.city}}</span>
+                                <span>{{site.address.province}}</span>
+                            </small>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <rdc-hamburger-menu></rdc-hamburger-menu>
+            </li>
+            <li>
+                <span class="social-media-group">
+                    <a href="http://www.facebook.com/rainbowdaynurseryinc" target="_blank">
+                        <i class="fa fa-facebook-official"></i></a>
+                </span>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <rdc-hamburger-menu></rdc-hamburger-menu>
+        <a class="navbar-brand" href="#">Animated Burger</a>
+    </div>
+    <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Sites
+        <span class="caret"></span>
+    </a>
+    <div class="navbar-collapse collapse">
+        <ul class="dropdown-menu has-icons" role="menu">
+            <li role="presentation" ng-repeat="site in vm.sites">
+                <a role="menuitem" tabindex="-1" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
+                    <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
+                    <h4>
+                        <span>{{site.name}}</span>
+                    </h4>
+                    <small>
+                        <span>{{site.address.addressLine1}}</span>,
+                        <span>{{site.address.city}}</span>
+                        <span>{{site.address.province}}</span>
+                    </small>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>-->

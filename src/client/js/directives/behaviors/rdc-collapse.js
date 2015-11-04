@@ -8,7 +8,7 @@
         var directive = {
             restrict: 'A',
             scope: false,
-            link: link,
+            link: link
         };
 
         return directive;

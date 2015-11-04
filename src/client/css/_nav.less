@@ -6,63 +6,61 @@
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.44);
 }
 
-
 .navbar .logo {
     opacity: 0.7;
     background-image: url("../img/rainbow-logo-white-sm.png");
     background-size: cover;
-    filter:grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     display: inline-block;
     height: 35px;
     width: 110px;
     margin-top: 13px;
+    -moz-transition: opacity 0.15s ease;
+    -o-transition: opacity 0.15s ease;
+    -webkit-transition: opacity 0.15s ease;
     transition: opacity 0.15s ease;
 }
-
 
 .navbar .logo:hover {
     opacity: 1;
     text-decoration: none;
-    filter:initial;
+    filter: initial;
 }
-
 
 .navbar .logo:active {
     opacity: 0.8;
+    -moz-transform: scale(0.97);
+    -ms-transform: scale(0.97);
+    -o-transform: scale(0.97);
+    -webkit-transform: scale(0.97);
     transform: scale(0.97);
 }
 
-
-.nav.navbar-nav {
-    padding-right: 200px;
-}
-
-
-.navbar-nav > li {
+.navbar .nav > li {
     margin-right: 20px;
 }
 
-
-.navbar-nav > li a {
+.navbar .nav > li a {
     font-size: 19px;
     color: white;
     line-height: 30px;
     cursor: pointer;
     padding: 17px 15px 12px;
     -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
     text-decoration: none;
     display: inline-block;
     text-transform: uppercase;
 }
 
-
-.navbar-nav > li a.active {
+.navbar .nav > li a.active {
     background: #222;
     color: white;
     border-radius: 10px;
 }
-
 
 .nav > li a:focus {
     text-decoration: none;
@@ -70,19 +68,16 @@
     background: #333;
 }
 
-
 .nav > li a:hover {
     text-decoration: none;
     color: white;
     background: #2d2d2d;
 }
 
-
 .nav .open > a,
 .nav .open > a:hover {
     background: #333;
 }
-
 
 // SOCIAL MEDIA ------------------
 .navbar .social-media-group a {
@@ -92,118 +87,132 @@
     padding-top: 14px;
 }
 
-
 .nav > li .social-media-group a:hover {
     background: initial;
 }
-
 
 .navbar .social-media-group a:focus {
     background: initial;
     color: rgba(255, 255, 255, 0.69);
 }
 
-
 .nav > li .social-media-group a i {
+    -moz-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+    -webkit-transition: background-color 0.2s ease;
     transition: background-color 0.2s ease;
     border-radius: 20px;
     line-height: 23px;
 }
-
 
 .nav > li .social-media-group a:hover i {
     color: #6883bf;
     background-color: white;
 }
 
-
 ////////////////////////// DROPDOWN-MENU /////////////////////
 .dropdown-menu > li:last-child {
     border-bottom: none;
 }
 
+.navbar .nav {
+    .dropdown-menu {
+        right: 0;
+        left: initial;
+        padding: 0;
+        border-radius: 0;
+        margin-top: 0;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 0 29px 18px rgba(0, 0, 0, 0.32);
+    }
 
-.dropdown-menu.with-arrow {
-    padding: 0;
-    border-radius: 0;
-    margin-top: 0;
-    overflow: hidden;
-    border: none;
-    box-shadow: 0 0 29px 18px rgba(0, 0, 0, 0.32);
+    .dropdown-menu li a {
+        width: 100%;
+        color: #999;
+        border-top: 1px solid #ddd;
+        padding: 18px 30px 5px 25px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        -moz-transition: background 100ms linear;
+        -o-transition: background 100ms linear;
+        -webkit-transition: background 100ms linear;
+        transition: background 100ms linear;
+    }
+
+    .dropdown-menu > li > a > h4 {
+        font-size: 15px;
+        margin: 0;
+        line-height: 7px;
+        color: #555;
+        font-weight: 800;
+    }
+
+    .dropdown-menu > li > a.active h4 {
+        color: #f9be03;
+    }
+
+
+    .dropdown-menu > li > a > small {
+        color: #666;
+        font-size: 14px;
+        text-transform: none;
+    }
+
+    .dropdown-menu > li > a:hover {
+        background-color: #eee;
+    }
+
+    .dropdown-menu.has-icons > li > a {
+        padding-left: 35px;
+        position: relative;
+    }
+
+    .dropdown-menu.has-icons > li > a > .icon {
+        position: absolute;
+        left: 9px;
+        top: 21px;
+        font-size: 18px;
+        color: #00be39;
+    }
 }
 
-
-.navbar-nav > li > .dropdown-menu.with-arrow {
-    -webkit-border-top-right-radius: 10px;
-    border-top-right-radius: 10px;
-    -webkit-border-top-left-radius: 10px;
-    border-top-left-radius: 10px;
+/////////// NET
+.navbar-toggle .icon-bar:nth-of-type(2) {
+    top: 1px;
 }
 
-
-.dropdown-menu.with-arrow > li > a {
-    width: 100%;
-    color: #999;
-    border-top: 1px solid #ddd;
-    padding: 18px 30px 5px 25px;
-    text-overflow: ellipsis;
-    -moz-transition: background 100ms linear;
-    -o-transition: background 100ms linear;
-    -webkit-transition: background 100ms linear;
-    transition: background 100ms linear;
+.navbar-toggle .icon-bar:nth-of-type(3) {
+    top: 2px;
 }
 
-
-.dropdown-menu.with-arrow > li > a.active,
-.dropdown-menu.with-arrow > li > a:focus {
-    color: #f9be03;
-    background: transparent;
-    outline: none;
-    border-radius: 0;
-}
-
-
-.dropdown-menu.with-arrow > li:first-child > a {
-    border: none;
-}
-
-
-.dropdown-menu.with-arrow > li > a > h4 {
-    font-size: 15px;
-    margin: 0;
-    line-height: 7px;
-    color: #555;
-    font-weight: 800;
-}
-
-
-.dropdown-menu.with-arrow > li > a.active h4 {
-    color: #f9be03;
-}
-
-
-.dropdown-menu.with-arrow > li > a > small {
-    color: #666;
-    font-size: 14px;
-    text-transform: none;
-}
-
-
-.dropdown-menu.with-arrow > li > a:hover {
-    background-color: #eee;
-}
-
-
-.dropdown-menu.with-icons > li > a {
-    padding-left: 35px;
+.navbar-toggle .icon-bar {
     position: relative;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
+.navbar-toggle.active .icon-bar:nth-of-type(1) {
+    top: 6px;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 
-.dropdown-menu.with-icons > li > a > .icon {
-    position: absolute;
-    left: 9px;
-    top: 21px;
-    font-size: 18px;
-    color: #00be39;
+.navbar-toggle.active .icon-bar:nth-of-type(2) {
+    background-color: transparent;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(3) {
+    top: -6px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
