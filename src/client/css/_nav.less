@@ -6,6 +6,23 @@
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.44);
 }
 
+.navbar .navbar-header {
+    width: 100%;
+    -moz-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+    -o-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+    -webkit-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+    transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+}
+
+.navbar.mobile-menu-open .navbar-header {
+    -moz-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px);
+}
+
+// LOGO -------------------------------------
 .navbar .logo {
     opacity: 0.7;
     background-image: url("../img/rainbow-logo-white-sm.png");
@@ -15,7 +32,7 @@
     display: inline-block;
     height: 35px;
     width: 110px;
-    margin-top: 13px;
+    margin-top: 12px;
     -moz-transition: opacity 0.15s ease;
     -o-transition: opacity 0.15s ease;
     -webkit-transition: opacity 0.15s ease;
@@ -25,6 +42,7 @@
 .navbar .logo:hover {
     opacity: 1;
     text-decoration: none;
+    -webkit-filter: initial;
     filter: initial;
 }
 
@@ -37,11 +55,29 @@
     transform: scale(0.97);
 }
 
-.navbar .nav > li {
-    margin-right: 20px;
+// STANDARD MENU -------------------------------------
+.navbar .nav-menu-standard {
+    display: inline;
 }
 
-.navbar .nav > li a {
+@media (max-width: 740px) {
+    .navbar .nav-menu-standard {
+        display: none;
+    }
+}
+
+.navbar .nav-menu-standard ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+.navbar .nav-menu-standard ul > li {
+    position: relative;
+    margin-right: 20px;
+    float: left;
+}
+
+.navbar .nav-menu-standard ul > li a {
     font-size: 19px;
     color: white;
     line-height: 30px;
@@ -56,27 +92,35 @@
     text-transform: uppercase;
 }
 
-.navbar .nav > li a.active {
+.navbar .nav-menu-standard ul > li a.active {
     background: #222;
     color: white;
     border-radius: 10px;
 }
 
-.nav > li a:focus {
+.nav-menu-standard ul > li a:focus {
     text-decoration: none;
     color: white;
     background: #333;
 }
 
-.nav > li a:hover {
+.nav-menu-standard ul > li a:hover {
     text-decoration: none;
     color: white;
     background: #2d2d2d;
 }
 
-.nav .open > a,
-.nav .open > a:hover {
+.nav-menu-standard .open > a,
+.nav-menu-standard .open > a:hover {
     background: #333;
+}
+
+.navbar .nav-menu-standard ul > li a i {
+    margin-right: 10px;
+}
+
+.navbar .nav-menu-standard ul > li a i.fa-th-large {
+    font-size: 16px;
 }
 
 // SOCIAL MEDIA ------------------
@@ -110,24 +154,22 @@
     background-color: white;
 }
 
-////////////////////////// DROPDOWN-MENU /////////////////////
+// DROP DOWN MENU -------------------------------------
 .dropdown-menu > li:last-child {
     border-bottom: none;
 }
 
-.navbar .nav {
-    .dropdown-menu {
-        right: 0;
-        left: initial;
-        padding: 0;
-        border-radius: 0;
-        margin-top: 0;
-        overflow: hidden;
-        border: none;
-        box-shadow: 0 0 29px 18px rgba(0, 0, 0, 0.32);
-    }
+.navbar .nav-menu-standard .dropdown-menu {
+    right: 0;
+    left: initial;
+    padding: 0;
+    border-radius: 0;
+    margin-top: 0;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 0 29px 18px rgba(0, 0, 0, 0.32);
 
-    .dropdown-menu li a {
+    li a {
         width: 100%;
         color: #999;
         border-top: 1px solid #ddd;
@@ -141,7 +183,7 @@
         transition: background 100ms linear;
     }
 
-    .dropdown-menu > li > a > h4 {
+    > li > a > h4 {
         font-size: 15px;
         margin: 0;
         line-height: 7px;
@@ -149,27 +191,27 @@
         font-weight: 800;
     }
 
-    .dropdown-menu > li > a.active h4 {
+    > li > a.active h4 {
         color: #f9be03;
     }
 
 
-    .dropdown-menu > li > a > small {
+    > li > a > small {
         color: #666;
         font-size: 14px;
         text-transform: none;
     }
 
-    .dropdown-menu > li > a:hover {
+    > li > a:hover {
         background-color: #eee;
     }
 
-    .dropdown-menu.has-icons > li > a {
+    &.has-icons > li > a {
         padding-left: 35px;
         position: relative;
     }
 
-    .dropdown-menu.has-icons > li > a > .icon {
+    &.has-icons > li > a > .icon {
         position: absolute;
         left: 9px;
         top: 21px;
@@ -178,7 +220,56 @@
     }
 }
 
-/////////// NET
+// MOBILE MENU -------------------------------------
+.nav-menu-mobile {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    bottom: 0;
+    background: red;
+    right: 0;
+    overflow-y: scroll;
+    z-index: 100;
+    background-color: white;// #404041;
+    -moz-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    -o-transform: translateX(300px);
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+    -moz-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+    -o-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+    -webkit-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+    transition: transform .5s cubic-bezier(.16, .68, .43, .99);
+}
+
+.mobile-menu-open .nav-menu-mobile {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.nav-menu-mobile .shadow {
+    position: absolute;
+    box-shadow: 3px 0 21px #535353;
+    margin-left: -8px;
+    width: 7px;
+    height: 100%;
+}
+
+// HAMBURGER MENU TOGGLE ----------------------------------
+.navbar-toggle {
+    display: none;
+    margin-top: 0;
+}
+
+@media (max-width: 740px) {
+    .navbar-toggle {
+        display: block;
+    }
+}
+
 .navbar-toggle .icon-bar:nth-of-type(2) {
     top: 1px;
 }
@@ -189,10 +280,12 @@
 
 .navbar-toggle .icon-bar {
     position: relative;
-    -moz-transition: all 200ms ease-in-out;
-    -o-transition: all 200ms ease-in-out;
-    -webkit-transition: all 200ms ease-in-out;
-    transition: all 200ms ease-in-out;
+    background-color: white;
+    margin-top: 12px;
+    -moz-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 .navbar-toggle.active .icon-bar:nth-of-type(1) {

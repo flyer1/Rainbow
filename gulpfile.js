@@ -59,9 +59,9 @@ gulp.task('clean-css', function(done) {
  TESTING RELATED TASKS
  **********************************************************************************/
 gulp.task('test', function() {
-  // TODO:
-  return true;
-})
+    // TODO:
+    return true;
+});
 
 
 /**********************************************************************************
@@ -81,10 +81,11 @@ gulp.task('dist', ['dist-code', 'dist-css', 'dist-fonts', 'dist-images'], functi
 gulp.task('dist-code', ['clean-code'], function() {
    log('Copying js and html files to the dist folder');
 
-   var files = [].concat('./src/client/**/*.html',
-                         './src/client/**/*.js',
-                        '!./src/client/lib/**/*.html',
-                        '!./src/client/lib/**/*.js')
+    var files = [].concat('./src/client/**/*.html',
+        './src/client/**/*.js',
+        '!./src/client/lib/**/*.html',
+        '!./src/client/lib/**/*.js');
+
    return gulp
        .src(files)
        .pipe(gulp.dest('./dist/'));

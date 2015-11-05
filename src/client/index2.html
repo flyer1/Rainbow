@@ -26,17 +26,14 @@
     </style>
 
     <!--    <link rel="shortcut icon" href="/server/ccfavicon.ico" />-->
-
     <!-- build:css styles/lib.css -->
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="lib/toastr/toastr.css" rel="stylesheet" />
     <!-- endbuild -->
-
     <!-- build:css styles/app.css-->
     <link href="css/site.css" rel="stylesheet" />
     <!-- endbuild -->
-
     <!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300|Roboto:400,500,700" rel="stylesheet" type="text/css">-->
 
 </head>
@@ -54,50 +51,52 @@
 
     <div ui-view="shell"></div>
 
-    <!-- build:js js/lib.js -->
-    <!-- Vendor Libs -->
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
-    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="lib/angular-animate/angular-animate.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="lib/bootstrap-modal-popover/src/bootstrap-modal-popover.js"></script>
-    <script src="lib/toastr/toastr.js"></script>
-    <script src="lib/moment/moment.js"></script>
-    <script src="lib/underscore/underscore.js"></script>
-    <script src="lib/angular-scroll/angular-scroll.js"></script>
-    <!-- endbuild -->
+    <div>
+        <!-- build:js js/lib.js -->
+        <!-- Vendor Libs -->
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+        <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="lib/angular-animate/angular-animate.js"></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="lib/bootstrap-modal-popover/src/bootstrap-modal-popover.js"></script>
+        <script src="lib/toastr/toastr.js"></script>
+        <script src="lib/moment/moment.js"></script>
+        <script src="lib/underscore/underscore.js"></script>
+        <script src="lib/angular-scroll/angular-scroll.js"></script>
+        <!-- endbuild -->
+        <!-- build:js js/app.js-->
+        <!-- Bootstrapping -->
+        <script src="js/_app.module.js"></script>
+        <script src="js/config.route.js"></script>
 
-    <!-- build:js js/app.js-->
-    <!-- Bootstrapping -->
-    <script src="js/_app.module.js"></script>
-    <script src="js/config.route.js"></script>
+        <!--core-->
+        <script src="js/core/_core.module.js"></script>
+        <script src="js/core/common.service.js"></script>
+        <script src="js/core/datacontext.js"></script>
 
-    <!--core-->
-    <script src="js/core/_core.module.js"></script>
-    <script src="js/core/datacontext.js"></script>
+        <!--directives-->
+        <script src="js/directives/_directives.module.js"></script>
+        <script src="js/directives/behaviors/rdc-collapse.js"></script>
+        <script src="js/directives/controls/rdc-banner-message.js"></script>
+        <script src="js/directives/controls/rdc-hamburger-menu.js"></script>
+        <script src="js/directives/controls/rdc-popover-message.js"></script>
+        <script src="js/directives/dynamic-controls/popover-message.service.js"></script>
 
-    <!--directives-->
-    <script src="js/directives/_directives.module.js"></script>
-    <script src="js/directives/behaviors/rdc-collapse.js"></script>
-<script src="js/directives/controls/rdc-banner-message.js"></script>
-    <script src="js/directives/controls/rdc-hamburger-menu.js"></script>
-    <script src="js/directives/controls/rdc-popover-message.js"></script>
-    <script src="js/directives/dynamic-controls/popover-message.service.js"></script>
+        <!-- App data -->
+        <script src="js/data/_data.module.js"></script>
+        <script src="js/data/message.data.js"></script>
+        <script src="js/data/school.data.js"></script>
+        <script src="js/data/site.data.js"></script>
 
-    <!-- App data -->
-    <script src="js/data/_data.module.js"></script>
-    <script src="js/data/message.data.js"></script>
-    <script src="js/data/school.data.js"></script>
-    <script src="js/data/site.data.js"></script>
-
-    <!-- App - Pages -->
-    <script src="js/pages/_pages.module.js"></script>
-    <script src="js/pages/layout/shell.controller.js"></script>
-    <script src="js/pages/home/home.controller.js"></script>
-    <script src="js/pages/site-details/site-details.controller.js"></script>
-    <!-- endbuild -->
+        <!-- App - Pages -->
+        <script src="js/pages/_pages.module.js"></script>
+        <script src="js/pages/layout/shell.controller.js"></script>
+        <script src="js/pages/home/home.controller.js"></script>
+        <script src="js/pages/site-details/site-details.controller.js"></script>
+        <!-- endbuild -->
+    </div>
 </body>
 
 </html>
