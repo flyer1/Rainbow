@@ -1,7 +1,8 @@
 var args = require('yargs').argv;
 var gulp = require('gulp');
 var del = require('del');
-var plugin = require('gulp-load-plugins')({lazy: true});
+var plugin = require('gulp-load-plugins')({ lazy: true });
+var nodeInspector = require('gulp-node-inspector');
 var paths = {
     less: ['./src/client/css/site.less'],
     css: './src/client/css/'
@@ -27,6 +28,11 @@ var paths = {
 gulp.task('default', ['help']);
 gulp.task('help', plugin.taskListing);
 
+gulp.task('debug', function () {
+
+    gulp.src([])
+      .pipe(nodeInspector());
+});
 
 /**********************************************************************************
  CSS RELATED TASKS

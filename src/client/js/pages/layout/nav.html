@@ -62,22 +62,16 @@
             <div>
                 <ul>
                     <li>
-                        <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})"><i class="fa fa-home"></i>Home</a>
+                        <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})"><i class="nav-image fa fa-home"></i>Home</a>
                     </li>
                     <li>
-                        <span><i class="fa fa-th-large"></i>Sites</span>
+                        <span><i class="nav-image fa fa-th-large"></i>Sites</span>
                     </li>
-                    <li role="presentation" ng-repeat="site in vm.sites">
+                    <li role="presentation" ng-repeat="site in vm.sites" class="sub-nav">
                         <a role="menuitem" tabindex="-1" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
                             <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
-                            <h4>
-                                <span>{{site.name}}</span>
-                            </h4>
-                            <small>
-                                <span>{{site.address.addressLine1}}</span>,
-                                <span>{{site.address.city}}</span>
-                                <span>{{site.address.province}}</span>
-                            </small>
+                            <span class="main">{{site.name}}</span>
+                            <span class="secondary">{{site.address.addressLine1}}</span>
                         </a>
                     </li>
                 </ul>

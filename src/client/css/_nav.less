@@ -8,6 +8,7 @@
 
 .navbar .navbar-header {
     width: 100%;
+    margin: 0;
     -moz-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
     -o-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
     -webkit-transition: transform .5s cubic-bezier(.16, .68, .43, .99);
@@ -73,7 +74,7 @@
 
 .navbar .nav-menu-standard ul > li {
     position: relative;
-    margin-right: 20px;
+    margin-left: 20px;
     float: left;
 }
 
@@ -226,11 +227,13 @@
     top: 0;
     width: 300px;
     bottom: 0;
-    background: red;
     right: 0;
     overflow-y: scroll;
     z-index: 100;
-    background-color: white;// #404041;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background-color:  #404041;
     -moz-transform: translateX(300px);
     -ms-transform: translateX(300px);
     -o-transform: translateX(300px);
@@ -258,6 +261,42 @@
     height: 100%;
 }
 
+.nav-menu-mobile ul > li {
+    padding: 20px;
+    background-color: white;
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-menu-mobile ul > li.sub-nav {
+    background-color: #F9F9FB;
+    padding-left: 25px;
+}
+
+.nav-menu-mobile ul > li.sub-nav:first-child {
+    box-shadow: 1px 7px 6px rgba(223, 223, 224, 0.42) inset;
+}
+
+.nav-menu-mobile ul > li a {
+    text-decoration: none;
+    color: #3d4a50;
+}
+
+.nav-menu-mobile ul > li a .main {
+    line-height: 24px;
+    display: block;
+}
+
+.nav-menu-mobile ul > li a .secondary {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.nav-menu-mobile ul > li .nav-image {
+    margin-right: 8px;
+}
+
 // HAMBURGER MENU TOGGLE ----------------------------------
 .navbar-toggle {
     display: none;
@@ -282,10 +321,10 @@
     position: relative;
     background-color: white;
     margin-top: 12px;
-    -moz-transition: all 150ms ease-in-out;
-    -o-transition: all 150ms ease-in-out;
-    -webkit-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
 }
 
 .navbar-toggle.active .icon-bar:nth-of-type(1) {

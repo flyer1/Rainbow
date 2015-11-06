@@ -12,17 +12,14 @@
     padding-bottom: 7px;
 }
 
-
 .banner-message a {
     margin: 0;
     color: white;
 }
 
-
 .banner-message a:hover {
     cursor: pointer;
 }
-
 
 .banner-message label {
     color: rgba(19, 19, 19, 0.55);
@@ -31,36 +28,47 @@
     font-weight: 800;
 }
 
-
 // MAIN BANNER -------------------
 .main-banner {
     padding-bottom: 50px;
     margin-top: 59px;
 }
 
-
 .main-banner.has-banner-message {
     margin-top: 0;
 }
 
-
-.main-banner .banner-image {
+.main-banner .banner-image .rainbow {
     width: 100%;
 }
 
+.main-banner .banner-image .sun {
+    position: absolute;
+    top: 37px;
+    z-index: -1;
+    left: 200px;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.main-banner .banner-image:hover .sun {
+    top: -60px;
+    left: 140px;
+}
 
 .main-banner .title h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 4em;
     font-weight: bold;
     font-family: "Roboto";
+    text-transform: uppercase;
 }
-
 
 .main-banner .title h1 .emphasis {
     color: #f6883a;
 }
-
 
 .main-banner .title .lead {
     text-align: center;
@@ -70,13 +78,11 @@
     margin-top: 5px;
 }
 
-
 // SITE BANNER --------------------------
 .site-banner {
     background: repeating-linear-gradient(45deg, rgba(228, 228, 228, 0.12), rgba(228, 228, 228, 0.1) 1px, rgba(16, 19, 35, 0) 1px, rgba(22, 26, 51, 0) 13px);
     height: 350px;
 }
-
 
 .site-banner .site-banner-background {
     background-image: radial-gradient(rgba(14, 23, 36, 0.93), #000000);
@@ -85,7 +91,6 @@
     position: absolute;
     z-index: -1;
 }
-
 
 .site-banner h1 {
     font-size: 60px;
@@ -97,7 +102,6 @@
     padding-top: 70px;
     text-shadow: 1px 1px 10px black;
 }
-
 
 .site-banner p {
     text-align: center;
