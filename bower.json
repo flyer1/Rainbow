@@ -34,8 +34,7 @@
     "font-awesome": "~4.3.0",
     "toastr": "~2.0.3",
     "underscore": "~1.7.0",
-    "es5-shim": "~4.1.0",
-    "bootstrap-modal-popover": "https://github.com/scruffles/BootstrapModalPopover.git"
+    "es5-shim": "~4.1.0"
   },
   "resolutions": {
     "angular": "1.4.7"
