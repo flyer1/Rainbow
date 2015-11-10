@@ -32,7 +32,7 @@
                     abstract: true,
                     views: {
                         'shell': {
-                            templateUrl: "js/pages/layout/shell.html",
+                            templateUrl: "/js/pages/layout/shell.html",
                             controller: "ShellController as vm",
                         },
                     },
@@ -44,7 +44,7 @@
                    url: '/home',
                    views: {
                        'main': {
-                           templateUrl: 'js/pages/home/home.html',
+                           templateUrl: '/js/pages/home/home.html',
                            controller: 'HomeController as vm'
                        }
                    }
@@ -56,7 +56,7 @@
                   url: '/site/:id',
                   views: {
                       'main': {
-                          templateUrl: 'js/pages/site-details/site-details.html',
+                          templateUrl: '/js/pages/site-details/site-details.html',
                           controller: 'SiteDetailsController as vm'
                       }
                   }

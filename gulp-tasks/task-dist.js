@@ -1,23 +1,23 @@
 var runSequence = require('run-sequence');
 var inject = require('gulp-inject');
 
-module.exports = function (gulp, config, plugin, help) {
+module.exports = function (gulp, plugin, help, utils) {
 
     help.registerHelp('dist', {
-        description: 'Main distribution task. Cleans out the dist folder and then copies over js/html/css files, bundled together with cache busting in place, ready to be uploaded to public servers',
+        description: 'Copies over the js/html/css files to the dist folder. The files are bundled, minified and have cache busting in place, ready to be uploaded to public servers',
         primary: true
     });
 
-    gulp.task('dist', function (done) {
+    gulp.task('dist', ['clean'], function (done) {
 
-        logMsg('Starting distrubtion task...');
-        runSequence(['clean', 'dist-template-cache', 'dist-main'], done);
+        utils.logMsg('Starting distrubtion task...');
+        runSequence('dist-template-cache', ['dist-main', 'dist-img', 'dist-fonts'], done);
        
     });
 
     gulp.task('dist-main', function () {
         
-        logMsg('Gathering groups of files from index.html and combining and optimizing them.');
+        utils.logMsg('Gathering groups of files from index.html and combining and optimizing them.');
         /* 
          * A note about useref: it p*sses me off b/c it's so core for this type of task and the documentation is so poor. That and the names used for the methods don't tell you much about what they do.
          * Gulp wraps it here: https://www.npmjs.com/package/gulp-useref
@@ -49,14 +49,14 @@ module.exports = function (gulp, config, plugin, help) {
         var cssFilter = plugin.filter('**/*.css', { restore: true });
         var jsAppFilter = plugin.filter('**/app.js', { restore: true });
         var jslibFilter = plugin.filter('**/lib.js', { restore: true });
-        //var templateFile = gulp.src('./tmp/templates.js', { read: false });
+        var templateFile = gulp.src('./tmp/templates.js', { read: false });
 
         return gulp
             // READ INDEX.HTML FILE --------------
             .src('./src/client/index2.html')
             .pipe(plugin.plumber()) // Provide better error messaging
-            //.pipe(plugin.inject(templateFile))
-            .pipe(plugin.print(logFileProgress))
+            .pipe(plugin.inject(templateFile))
+            .pipe(plugin.print(utils.logFileProgress))
 
             // STEP 1 - Gather assets 
             .pipe(assets) //  Will change the pipeline of files to now be everything it found in the HTML comments in the index.html file
@@ -64,26 +64,26 @@ module.exports = function (gulp, config, plugin, help) {
             // STEP 2 - process the list of files found within the Build HTML Comments
             // Process CSS Files --------------
             .pipe(cssFilter)
-            .pipe(plugin.print(logFileProgress))
+            .pipe(plugin.print(utils.logFileProgress))
             .pipe(plugin.csso())
             .pipe(cssFilter.restore)        // Clear the cssFilter
 
             // Process Custom JavaScript Files --------------
             .pipe(jsAppFilter)              // Filter the pipeline to just JS files so we can do stuff with them.
-            .pipe(plugin.print(logFileProgress))
-            .pipe(plugin.uglify())
+            .pipe(plugin.print(utils.logFileProgress))
+            //.pipe(plugin.uglify())
             .pipe(getHeader())
             .pipe(jsAppFilter.restore)      // Clear the jsAppFilter
 
              // Process Vendor JavaScript Files --------
             .pipe(jslibFilter)
-            .pipe(plugin.print(logFileProgress))
+            .pipe(plugin.print(utils.logFileProgress))
             .pipe(plugin.uglify())          // another option is to override wiredep to use min files
             .pipe(jslibFilter.restore)      // Clear the jsLibFilter
 
             // Look at the files in the pipeline and add a hash onto the end of their name, according to their content (a content hash).
             .pipe(plugin.rev())
-            .pipe(plugin.print(logFileProgress))
+            .pipe(plugin.print(utils.logFileProgress))
             // Because we changed the contents of the stream above to be a bunch of files (found in index.html), restore the stream back to the original src, which is index.html
             .pipe(assets.restore())
 
@@ -97,7 +97,7 @@ module.exports = function (gulp, config, plugin, help) {
     });
 
     gulp.task('dist-template-cache', function () {
-        logMsg('Creating an AngularJS $templateCache from the apps html files...');
+        utils.logMsg('Creating an AngularJS $templateCache from the apps html files...');
 
         return gulp
             .src(['./src/client/**/*.html', '!./src/client/lib/**'])
@@ -106,21 +106,30 @@ module.exports = function (gulp, config, plugin, help) {
                 'templates.js',
                 {
                     module: 'app',
-                    root: '/dist/',
+                    root: '/',
                     standAlone: true
                 }
             ))
             .pipe(gulp.dest('./tmp'));
     });
 
-    /////////////////// HELPER FUNCTIONS ////////////////////
-    function logMsg(msg) {
-        plugin.util.log(plugin.util.colors.cyan(msg));
-    }
+    gulp.task('dist-img', function () {
+        utils.logMsg('Copying images to dist folder');
 
-    function logFileProgress(currFile) {
-        return "Processing: " + currFile;
-    }
+        return gulp
+            .src(['./src/client/img/*', '!./src/client/img/resources'])
+            .pipe(gulp.dest('./dist/img'));
+    });
+
+    gulp.task('dist-fonts', function () {
+        utils.logMsg('Copying fonts to dist folder');
+
+        return gulp
+            .src(['./src/client/lib/font-awesome/fonts/*'])
+            .pipe(gulp.dest('./dist/fonts'));
+    });
+
+    /////////////////// HELPER FUNCTIONS ////////////////////
 
     function getHeader() {
         var pkg = require('../package.json');

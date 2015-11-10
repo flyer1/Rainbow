@@ -13,8 +13,7 @@ module.exports = function (gulp) {
 
 	var service = {
 		registerHelp: registerHelp,
-		showHelp: showHelp,
-		showHelpByTask: showHelpByTask
+		showHelp: showHelp
 	};
 
 	return service;
@@ -31,7 +30,6 @@ module.exports = function (gulp) {
 	    showHelpByPriority(true);
 	    wl('');
 	    showHelpByPriority(false);
-
 	    wl('');
 	    wl('');
 	}
@@ -72,34 +70,6 @@ module.exports = function (gulp) {
             wl(chalk.bold(taskHelp.description));
         }
     }
-
-	function showHelpByTask(taskName) {
-
-	    banner();
-
-		var maxCol = 120,
-			option,
-			task;
-
-		task = help[taskName];
-		wl(chalk.green.bold(pad(task.name + ' Help ', maxCol)));
-
-		wl(chalk.bold(task.description));
-
-		if (task.options && task.options.length > 0) {
-		    wl(chalk.yellow.bold(pad('Options ', maxCol)));
-			for (var i = 0; i < task.options.length; i++) {
-				option = task.options[i];
-
-				w('     ' + chalk.green.bold(option.name));
-				w(pad('  ', 40 - option.name.length - 5, '.'));
-				wl(chalk.bold(option.description));
-			}
-		}
-
-		wl(chalk.green.bold(pad('', maxCol)));
-	}
-
 
 	function w(s) {
 		process.stdout.write(s);
