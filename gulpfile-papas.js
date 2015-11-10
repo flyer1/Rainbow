@@ -219,11 +219,12 @@ gulp.task('optimize', ['inject', 'test'], function() {
     var jslibFilter = $.filter('**/' + config.optimized.lib);
 
     var templateCache = config.temp + config.templateCache.file;
+    var templateOptions = { name: 'templates' };
 
     return gulp
         .src(config.index)
         .pipe($.plumber())
-        .pipe(inject(templateCache, 'templates'))
+        .pipe(inject(templateCache, templateOptions))
         .pipe(assets) // Gather all assets from the html with useref
         // Get the css
         .pipe(cssFilter)

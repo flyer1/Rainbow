@@ -13,7 +13,7 @@
   "keywords": [
     "AngularJS"
   ],
-  "author": "Jon Kroeker",
+  "authors": "Jon Kroeker",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/flyer1/Rainbow/issues"
@@ -24,15 +24,20 @@
     "chalk": "^1.1.1",
     "del": "^2.0.2",
     "gulp": "^3.8.11",
+    "gulp-angular-templatecache": "^1.8.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-csso": "^1.0.0",
     "gulp-filter": "^3.0.1",
+    "gulp-header": "^1.7.1",
+    "gulp-inject": "^3.0.0",
     "gulp-less": "^3.0.2",
     "gulp-load-plugins": "^1.0.0",
     "gulp-minify-html": "^1.0.1",
     "gulp-node-inspector": "^0.1.0",
     "gulp-plumber": "^1.0.0",
     "gulp-print": "^2.0.1",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-replace": "^0.4.2",
     "gulp-task-listing": "^1.0.0",
     "gulp-uglify": "^1.0.1",
     "gulp-useref": "^2.0.1",

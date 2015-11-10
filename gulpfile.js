@@ -11,7 +11,6 @@ var config = plugin.rdcConfigHelper.getConfig();
 
 // All our custom tasks
 require('./gulp-tasks/task-clean.js')(gulp, config, plugin, help);
-require('./gulp-tasks/task-compress.js')(gulp, config, plugin, help);
 require('./gulp-tasks/task-copy.js')(gulp, config, plugin, help);
 require('./gulp-tasks/task-dist.js')(gulp, config, plugin, help);
 

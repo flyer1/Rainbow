@@ -7,14 +7,14 @@ module.exports = function (gulp) {
 	var help = {};
 
 	gulp.task('help', function (done) {
-		printAllHelp();
+	    showHelp();
 		done();
 	});
 
 	var service = {
 		registerHelp: registerHelp,
-		printAllHelp: printAllHelp,
-		printHelp: printHelp
+		showHelp: showHelp,
+		showHelpByTask: showHelpByTask
 	};
 
 	return service;
@@ -24,25 +24,13 @@ module.exports = function (gulp) {
 	    help[name] = helpData;
 	}
 
-	function printAllHelp() {
-
-	    var maxCol = 120;
-	    var col1Width = 15;
+	function showHelp() {
 
 	    banner();
 
-	    var keys = Object.keys(help),
-                   i, len = keys.length;
-	    keys.sort();
-
-	    for (i = 0; i < len; i++) {
-	        var taskHelp = help[keys[i]];
-	        var dotWidth = col1Width - keys[i].length;
-	        w(chalk.green.bold('   ' + keys[i] + '  '));
-	        w(chalk.gray.bold(pad('', dotWidth, '.')));
-	        w(' ');
-	        wl(chalk.bold(taskHelp.description));
-	    }
+	    showHelpByPriority(true);
+	    wl('');
+	    showHelpByPriority(false);
 
 	    wl('');
 	    wl('');
@@ -66,7 +54,26 @@ module.exports = function (gulp) {
 	    wl('');
 	}
 
-	function printHelp(taskName) {
+    function showHelpByPriority(primary) {
+        var col1Width = 15;
+
+        var keys = Object.keys(help),
+                   i, len = keys.length;
+        keys.sort();
+
+        for (i = 0; i < len; i++) {
+            var taskHelp = help[keys[i]];
+            if (primary !== (!!taskHelp.primary)) continue;
+            if (taskHelp.isInternalTask) continue;
+            var dotWidth = col1Width - keys[i].length;
+            w(chalk.green.bold('   ' + keys[i] + '  '));
+            w(chalk.gray.bold(pad('', dotWidth, '.')));
+            w(' ');
+            wl(chalk.bold(taskHelp.description));
+        }
+    }
+
+	function showHelpByTask(taskName) {
 
 	    banner();
 

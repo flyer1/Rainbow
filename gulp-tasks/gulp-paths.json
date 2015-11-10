@@ -1,34 +1,20 @@
 {
+    "src": {
+        "js": {
+            "all": [ "src/client/**/*.js", "!src/client/lib/**" ]
+        },
+        "css": [ "src/css/app.css" ],
+        "vendorCss": [ "src/lib/ionic/release/css/ionic.css", "src/lib/angular-toastr/dist/angular-toastr.css" ],
+        "fonts": [ "src/client/fonts/*" ],
+        "images": [ "src/client/img/*", "!src/client/img/resources" ],
+        "indexHtml": [ "src/client/index2.html" ],
+        "templates": [ "src/**/*.html", "!src/client/index.html", "!src/lib/**" ]
+    },
     "dist": {
         "root": "./dist/",
         "js": "./dist/js/",
         "css": "./dist/css/",
         "fonts": "./dist/fonts/",
         "images": "./dist/img/"
-    },
-    "src": {
-        "js": {
-            "all": ["src/**/*.js", "!src/lib/**", "!src/aug-reality/**"],
-            "browser": [],
-            "device": ["!src/polyfill/ng-cordova-mock.js"]
-        },
-        "css": ["src/css/app.css"],
-        "vendorCss": ["src/lib/ionic/release/css/ionic.css", "src/lib/angular-toastr/dist/angular-toastr.css"],
-        "vendorJs": {
-            "all": [
-                "src/lib/ionic/release/js/ionic.bundle.js",
-                "src/lib/lodash/lodash.js",
-                "src/lib/moment/moment.js",
-                "src/lib/angular-moment/angular-moment.js",
-                "src/lib/angular-toastr/dist/angular-toastr.tpls.js",
-                "src/lib/google-map-v3-infobox/infobox.js"
-            ],
-            "browser": ["src/lib/ngCordova/dist/ng-cordova-mocks.js"],
-            "device": ["src/lib/ngCordova/dist/ng-cordova.js"]
-        },
-        "fonts": ["src/fonts/*", "src/lib/ionic/release/fonts/*"],
-        "images": ["src/img/**/*"],
-        "indexHtml": ["src/index.html"],        
-        "templates": ["src/**/*.html", "!src/index.html", "!src/lib/**", "!src/aug-reality/**"]
     }
 }
