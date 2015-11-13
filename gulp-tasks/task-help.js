@@ -27,9 +27,7 @@ module.exports = function (gulp) {
 
 	    banner();
 
-	    showHelpByPriority(true);
-	    wl('');
-	    showHelpByPriority(false);
+	    dumpRegisteredHelp();
 	    wl('');
 	    wl('');
 	}
@@ -52,7 +50,7 @@ module.exports = function (gulp) {
 	    wl('');
 	}
 
-    function showHelpByPriority(primary) {
+    function dumpRegisteredHelp() {
         var col1Width = 15;
 
         var keys = Object.keys(help),
@@ -61,8 +59,6 @@ module.exports = function (gulp) {
 
         for (i = 0; i < len; i++) {
             var taskHelp = help[keys[i]];
-            if (primary !== (!!taskHelp.primary)) continue;
-            if (taskHelp.isInternalTask) continue;
             var dotWidth = col1Width - keys[i].length;
             w(chalk.green.bold('   ' + keys[i] + '  '));
             w(chalk.gray.bold(pad('', dotWidth, '.')));

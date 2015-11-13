@@ -5,7 +5,6 @@ module.exports = function (gulp, plugin, help, utils) {
 
     help.registerHelp('dist', {
         description: 'Copies over the js/html/css files to the dist folder. The files are bundled, minified and have cache busting in place, ready to be uploaded to public servers',
-        primary: true
     });
 
     gulp.task('dist', ['clean'], function (done) {
@@ -43,7 +42,7 @@ module.exports = function (gulp, plugin, help, utils) {
         */
 
         // Useref will gather all of the files from the HTML comments in index.html in Step 1 below 
-        var assets = plugin.useref.assets({ searchPath: './' });
+        var assets = plugin.useref.assets({ searchPath: './src/client/' });
 
         // Filters are named for the gulp-useref path
         var cssFilter = plugin.filter('**/*.css', { restore: true });
@@ -55,7 +54,7 @@ module.exports = function (gulp, plugin, help, utils) {
             // READ INDEX.HTML FILE --------------
             .src('./src/client/index2.html')
             .pipe(plugin.plumber()) // Provide better error messaging
-            .pipe(plugin.inject(templateFile))
+            .pipe(plugin.inject(templateFile, { relative: true}))
             .pipe(plugin.print(utils.logFileProgress))
 
             // STEP 1 - Gather assets 

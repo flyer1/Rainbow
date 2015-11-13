@@ -14,10 +14,11 @@ var help = require('./gulp-tasks/task-help.js')(gulp);
 var utils = plugin.rdcUtils.getUtils(plugin);
 
 // All our custom tasks
-require('./gulp-tasks/task-dist.js')(gulp, plugin, help, utils);
-require('./gulp-tasks/task-serve.js')(gulp, plugin, help, utils);
 require('./gulp-tasks/task-clean.js')(gulp, plugin, help, utils);
 require('./gulp-tasks/task-css.js')(gulp, plugin, help, utils);
+require('./gulp-tasks/task-dist.js')(gulp, plugin, help, utils);
+require('./gulp-tasks/task-serve.js')(gulp, plugin, help, utils);
+require('./gulp-tasks/task-test.js')(gulp, plugin, help, utils);
 
 gulp.task('default', ['help']);
 
