@@ -40,7 +40,7 @@
                     <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
                     <p>{{vm.site.address.addressLine1}}</p>
                     <p>{{vm.site.address.city}} {{vm.site.address.province}} {{vm.site.address.postalCode}}
-                        <p>
+                    <p>
                 </div>
             </div>
 
@@ -76,7 +76,8 @@
     <div class="container">
         <div class="section-details">
             <h2>Transportation</h2>
-            <p class="sub-title">This center provides bus service to
+            <p class="sub-title">
+                This center provides bus service to
                 <span>{{vm.site.schools.length}}</span>&nbsp;<ng-pluralize count="vm.site.schools.length" when="{'1': 'school','other': 'schools'}"></ng-pluralize>
             </p>
             <div class="row cards cards-light">
@@ -91,3 +92,35 @@
         </div>
     </div>
 </div>
+
+<div class="section section-dark-gray">
+    <div class="section-details">
+        <h2>Transportation</h2>
+        <p class="sub-title">
+            This center provides bus service to
+            <span>{{vm.site.schools.length}}</span>&nbsp;<ng-pluralize count="vm.site.schools.length" when="{'1': 'school','other': 'schools'}"></ng-pluralize>
+        </p>
+        <div class="business-cards clearfix">
+            <div class="business-card" ng-repeat="school in vm.site.schools">
+                <div>
+                    <div class="left">
+                        <div class="icon">
+                            <i class="fa fa-bus"></i>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2>{{school.school.name}}</h2>
+                        <p>
+                            {{school.school.address}}<br />
+                        </p>
+                        <p>
+                            <a ng-href="{{school.school.website}}" target="_blank">School Website</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
