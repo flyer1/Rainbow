@@ -125,34 +125,26 @@
 }
 
 // SOCIAL MEDIA ------------------
-.navbar .social-media-group a {
-    font-size: 28px;
-    color: rgba(255, 255, 255, 0.69);
-    margin-left: 0;
-    padding-top: 14px;
+.nav-menu-standard .social-menu {
+    margin-left: 50px;
+    font-size: 24px;
+    padding-top: 11px;
 }
 
-.nav > li .social-media-group a:hover {
-    background: initial;
+.nav-menu-standard .social-menu a {
+   color: #292929;
+    background: rgba(255, 255, 255, 0.64);
+    display: inline-block;
+    width: 39px;
+    border-radius: 100px;
+    text-align: center;
+    height: 39px;
+    line-height: 36px;
+    opacity: 0.6;
 }
 
-.navbar .social-media-group a:focus {
-    background: initial;
-    color: rgba(255, 255, 255, 0.69);
-}
-
-.nav > li .social-media-group a i {
-    -moz-transition: background-color 0.2s ease;
-    -o-transition: background-color 0.2s ease;
-    -webkit-transition: background-color 0.2s ease;
-    transition: background-color 0.2s ease;
-    border-radius: 20px;
-    line-height: 23px;
-}
-
-.nav > li .social-media-group a:hover i {
-    color: #6883bf;
-    background-color: white;
+.nav-menu-standard .social-menu a:hover {
+    opacity: 1;
 }
 
 // DROP DOWN MENU -------------------------------------
@@ -160,8 +152,12 @@
     border-bottom: none;
 }
 
+.navbar .nav-menu-standard .dropdown-menu li {
+    margin-left: 0;
+}
+
 .navbar .nav-menu-standard .dropdown-menu {
-    right: 0;
+    right: 0; 
     left: initial;
     padding: 0;
     border-radius: 0;
@@ -171,7 +167,7 @@
     box-shadow: 0 0 29px 18px rgba(0, 0, 0, 0.32);
 
     li a {
-        width: 100%;
+        width: 330px;
         color: #999;
         border-top: 1px solid #ddd;
         padding: 18px 30px 5px 25px;
@@ -233,7 +229,7 @@
     font-size: 18px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    background-color:  #404041;
+    background-color: #404041;
     -moz-transform: translateX(300px);
     -ms-transform: translateX(300px);
     -o-transform: translateX(300px);

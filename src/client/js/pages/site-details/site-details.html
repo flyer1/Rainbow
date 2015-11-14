@@ -45,8 +45,8 @@
             </div>
 
             <div class="col-md-6">
-                <div class="map-lg">
-                    <iframe width="{{vm.mapWidth}}" height="450" frameborder="0" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
+                <div class="map-lg" ng-style="{ width: vm.mapWidth + 'px'}">
+                    <iframe width="{{vm.mapWidth}}" height="450" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
                 </div>
             </div>
         </div>
@@ -83,42 +83,12 @@
             <div class="row cards cards-light">
                 <div class="col-md-4" ng-repeat="school in vm.site.schools">
                     <div class="card">
+                        <i class="icon fa fa-bus"></i>
                         <h3>{{school.school.name}}</h3>
                         <p>{{school.school.address}}</p>
                         <a ng-href="{{school.school.website}}" target="_blank">School Website</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="section section-dark-gray">
-    <div class="section-details">
-        <h2>Transportation</h2>
-        <p class="sub-title">
-            This center provides bus service to
-            <span>{{vm.site.schools.length}}</span>&nbsp;<ng-pluralize count="vm.site.schools.length" when="{'1': 'school','other': 'schools'}"></ng-pluralize>
-        </p>
-        <div class="business-cards clearfix">
-            <div class="business-card" ng-repeat="school in vm.site.schools">
-                <div>
-                    <div class="left">
-                        <div class="icon">
-                            <i class="fa fa-bus"></i>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <h2>{{school.school.name}}</h2>
-                        <p>
-                            {{school.school.address}}<br />
-                        </p>
-                        <p>
-                            <a ng-href="{{school.school.website}}" target="_blank">School Website</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="clear"></div>
             </div>
         </div>
     </div>

@@ -4,7 +4,6 @@
 <div class="main-banner">
     <div class="container" ng-class="{'has-banner-message' : vm.messages.banner.summary}">
         <div class="banner-image">
-            <img class="rainbow" src="/img/rainbow-text-lg.png">
         </div>
     </div>
 </div>
@@ -141,8 +140,7 @@
                                                     <p><a href="tel:{{site.phone}}">{{site.phone}}</a></p>
                                                     <p>&nbsp;</p>
                                                     <p class="secondary">With bus service to
-                                                        <span>{{site.schools.length}}</span> school
-                                                        <span ng-show="site.schools.length > 1">s</span>
+                                                        <span>{{site.schools.length}}</span> {{site.schools.length > 1 ? 'schools' : 'school' }}
                                                         <ul>
                                                             <li ng-repeat="school in site.schools">
                                                                 <span ng-class="{'highlight-text': vm.hasSchoolFilter() && vm.isCheckedSchool(school) }">{{school.school.name}}</span>
