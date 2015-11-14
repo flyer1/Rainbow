@@ -14,7 +14,7 @@
 
         var routes = getRoutes();
 
-        $urlRouterProvider.otherwise("/shell/home");
+        $urlRouterProvider.otherwise('/shell/home');
 
         routes.forEach(function (route) {
             $stateProvider.state(route.stateName, route.config);
@@ -32,10 +32,10 @@
                     abstract: true,
                     views: {
                         'shell': {
-                            templateUrl: "/js/pages/layout/shell.html",
-                            controller: "ShellController as vm",
-                        },
-                    },
+                            templateUrl: '/js/pages/layout/shell.html',
+                            controller: 'ShellController as vm'
+                        }
+                    }
                 }
             },
             {

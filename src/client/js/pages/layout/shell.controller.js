@@ -5,18 +5,24 @@
         .module('app.pages')
         .controller('ShellController', ShellController);
 
-    ShellController.$inject = ['$location', 'datacontext'];
+    ShellController.$inject = ['$location', '$document', 'datacontext'];
 
-    function ShellController($location, datacontext) {
+    function ShellController($location, $document, datacontext) {
         var vm = this;
 
         var siteRepo = datacontext.getSiteRepository();
+
+        // Properties
         vm.sites = siteRepo.sites;
         vm.currNavItem = '';
+
+        // Functions
         vm.setActive = setActive;
         vm.isActive = isActive;
+        vm.scrollToTop = scrollToTop;
 
         init();
+
         return;
 
         /////////// IMPLEMENTATION /////////////////
@@ -33,6 +39,10 @@
 
         function isActive(navItem) {
             return vm.currNavItem === navItem.code;
+        }
+
+        function scrollToTop() {
+            $document.scrollTopAnimated(0, 5000);
         }
     }
 })();

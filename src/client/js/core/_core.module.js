@@ -6,8 +6,7 @@
         //'ngAnimate',
         'app.directives',
         /* 3rd Party modules */
-        //'ui.bootstrap',
-        // 'duParallax',
+        'duScroll',
         'ui.router'
     ]);
 })();
