@@ -48,7 +48,7 @@
                                 sites: sites,
                                 schools: schools,
                                 siteSchools: siteSchools,
-                                messages: messages,
+                                messages: messages
                             };
 
             return siteRepository;
@@ -99,12 +99,12 @@
             return siteSchools;
         }
 
-        function addSchool(newSite, school, transportType) {
-            var newSchool = $.extend({}, school, {
-                transportType: transportType
-            });
-            newSite.schools.push(newSchool);
-        };
+        //function addSchool(newSite, school, transportType) {
+        //    var newSchool = $.extend({}, school, {
+        //        transportType: transportType
+        //    });
+        //    newSite.schools.push(newSchool);
+        //};
 
         // Add all of the school properties onto the array of schools associated with a given site
         function addSiteSchoolComputes(siteSchools, schools) {

@@ -50,7 +50,7 @@
 
                     // Turn the element into a modal popover using the 3rd party lib
                     scope.element.modalPopover({
-                        target: "#" + scope.targetId,
+                        target: '#' + scope.targetId,
                         placement: 'bottom',
                     });
 

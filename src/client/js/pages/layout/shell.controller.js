@@ -34,6 +34,11 @@
         }
 
         function setActive(navItem) {
+            // If the user re-selects the same nav item, scroll to top.
+            if (navItem.code === vm.currNavItem) {
+                scrollToTop();
+            }
+
             vm.currNavItem = navItem.code;
         }
 
@@ -42,7 +47,7 @@
         }
 
         function scrollToTop() {
-            $document.scrollTopAnimated(0, 5000);
+            $document.scrollTopAnimated(0, 2500);
         }
     }
 })();

@@ -46,7 +46,7 @@
                 },
                 {
                     code: 'VB',
-                    name: "Van Bellegham",
+                    name: 'Van Bellegham',
                     website: 'https://www.lrsd.net/schools/Belleghem/Pages/default.aspx',
                     address: '10 Vermillion Rd',
                     postalCode: 'R2J 2T1',
@@ -55,7 +55,7 @@
                 },
                 {
                     code: 'Ni',
-                    name: "Niakwa",
+                    name: 'Niakwa',
                     website: 'https://www.lrsd.net/schools/Niakwa/Pages/default.aspx',
                     address: '200 Pebble Beach Rd',
                     postalCode: 'R2J 3K3',
@@ -64,7 +64,7 @@
                 },
                 {
                     code: 'Ho',
-                    name: "Howden",
+                    name: 'Howden',
                     website: 'https://www.lrsd.net/schools/Howden/Pages/default.aspx',
                     address: '150 Howden Rd',
                     postalCode: 'R2J 1L3',
@@ -73,7 +73,7 @@
                 },
                 {
                     code: 'Fr',
-                    name: "Frontenac",
+                    name: 'Frontenac',
                     address: '866 Autumnwood Dr',
                     postalCode: 'R2J 1C1',
                     lat: null,  // TODO: Finish up the lat/lng

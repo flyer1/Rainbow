@@ -1,6 +1,26 @@
 <div class="site-banner">
     <div class="site-banner-background"></div>
-    <div class="section has-navbar">
+    <nav class="hidden-xs">
+        <a class="prev" ng-href="#/shell/site/{{vm.prevSite.code}}">
+            <span class="nav-button">
+                <i class="fa fa-angle-left"></i>
+            </span>
+            <span class="info">
+                <h3>Previous Site</h3>
+                <span class="sub-title">{{vm.prevSite.name}}</span>
+            </span>
+        </a>
+        <a class="next" ng-href="#/shell/site/{{vm.nextSite.code}}">
+            <span class="nav-button">
+                <i class="fa fa-angle-right"></i>
+            </span>
+            <span class="info">
+                <h3>Next Site</h3>
+                <span class="sub-title">{{vm.nextSite.name}}</span>
+            </span>
+        </a>
+    </nav>
+    <div class="section">
         <div class="container">
             <h1>
                 Rainbow {{vm.site.name}}

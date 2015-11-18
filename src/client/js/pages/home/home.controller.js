@@ -110,7 +110,7 @@
             var result = _.findWhere(vm.schools, {
                 isChecked: true
             });
-            return typeof result !== "undefined";
+            return typeof result !== 'undefined';
 
         }
 
