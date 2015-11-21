@@ -1,3 +1,4 @@
+<div class="site-overlay"></div>
 <!-- NAVIGATION -->
 <div class="navbar navbar-fixed-top">
     <div class="container">
@@ -6,11 +7,6 @@
             <a ui-sref="shell.home" class="logo" ng-click="vm.setActive({code: 'home'})"></a>
             <!-- only show standard menu at bigger resolutions -->
             <nav class="nav-menu-standard">
-                <span class="social-menu pull-right">
-                    <a href="http://www.facebook.com/rainbowdaynurseryinc" target="_blank">
-                        <i class="fa fa-facebook-f"></i>
-                    </a>
-                </span>
                 <ul class="pull-right">
                     <li>
                         <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})">Home</a>
@@ -41,24 +37,27 @@
             <!-- Only show toggle on mobile -->
             <rdc-hamburger-menu></rdc-hamburger-menu>
         </div>
-
         <!-- Mobile navbar content (hides until toggle translates it)-->
         <nav class="nav-menu-mobile">
             <div class="shadow"></div>
             <div>
-                <ul>
-                    <li>
-                        <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})"><i class="nav-image fa fa-home"></i>Home</a>
+                <ul class="main-nav">
+                    <li class="main-nav-item">
+                        <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})">Home</a>
                     </li>
-                    <li>
-                        <span><i class="nav-image fa fa-th-large"></i>Sites</span>
+                    <li class="main-nav-item">
+                        <span>Sites</span>
                     </li>
-                    <li role="presentation" ng-repeat="site in vm.sites" class="sub-nav">
-                        <a role="menuitem" tabindex="-1" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
-                            <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
-                            <span class="main">{{site.name}}</span>
-                            <span class="secondary">{{site.address.addressLine1}}</span>
-                        </a>
+                    <li class="sub-nav">
+                        <ul>
+                            <li role="presentation" ng-repeat="site in vm.sites">
+                                <a role="menuitem" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
+                                    <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
+                                    <span class="main">{{site.name}}</span>
+                                    <span class="secondary">{{site.address.addressLine1}}</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

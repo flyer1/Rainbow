@@ -1,8 +1,42 @@
-<!-- NAVIGATION -->
-<div class="footer">
-    <a class="top" ng-click="vm.scrollToTop()">
-        <i class="arrow-up fa fa-angle-up"></i>
-        <span>Top</span>
-    </a>
+<div class="main-footer">
+    <nav class="container">
+        <div class="footer-col">
+            <h3>CONTACT</h3>
+            <ul>
+                <li class="footer-col-item">
+                    <a href="mailto:inforainbowdn@gmail.com">
+                        <i class="footer-icon fa fa-envelope-square"></i> Email
+                    </a>
+                </li>
+                <li class="footer-col-item">
+                    <a href="http://www.facebook.com/rainbowdaynurseryinc" target="_blank">
+                        <i class="footer-icon fa fa-facebook-square"></i> Facebook
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>SITES</h3>
+            <ul>
+                <li class="footer-col-item" ng-repeat="site in vm.sites | limitTo: 3">
+                    <a ng-href="">
+                        {{site.name}}
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li class="footer-col-item" ng-repeat="site in vm.sites | limitTo: 10:3">
+                    <a ng-href="">
+                        {{site.name}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <footer>
+        <small class="text-caption">
+            AngularJS website. Code licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>. Code can be found at <a href="https://github.com/flyer1/Rainbow" target="_blank">GitHub</a>.
+        </small>
+    </footer>
 </div>
 

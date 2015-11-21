@@ -21,3 +21,19 @@
 h2, h3 {
     letter-spacing: -0.05em;
 }
+
+.site-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1010;
+    background: red;
+    opacity: 0.5;
+}
+
+.site-overlay.is-open {
+    display: block;
+}

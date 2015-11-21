@@ -39,7 +39,7 @@ git clone https://github.com/flyer1/Rainbow.git
 ```
 
 #### 2. Get NPM Packages
-We use npm (node package modules) to get node modules required in order to do development on the site. See the package.json file to see what is downloaded by npm when you run the following command (mainly gulp related files. gulp helps us run tasks like create our *.css file from *.less files, etc).
+I use npm (node package modules) to get node modules required in order to do development on the site. See the package.json file to see what is downloaded by npm when you run the following command (mainly gulp related files. gulp helps us run tasks like create our *.css file from *.less files, etc).
 
 CD to the Rainbow directory created during the clone and type the following:
 
@@ -48,7 +48,7 @@ npm install
 ```
 
 #### 3. Get Bower Packages
-Bower is like npm but it is used here to get the libs required by the website (angular, angular-bootstrap, etc).
+Bower is like npm but it is used here to get the libs required by the website (angular, bootstrap, etc).
 Get bower and install globally (via the -g switch).
 ```
 npm install bower -g
@@ -77,6 +77,13 @@ http-server
 
 (or run 'hs' for short)
 
+Or, you can use a gulp task to do the same thing, and it supports running in DEV mode or PROD mode
+```
+gulp serve
+```
+
+(do 'gulp serve --PROD' to run host the website from the ./dist folder if you've built the website for deployment vai 'gulp dist')
+
 
 #### 5. Get Gulp Task Runner (Optional)
 Gulp helps you run tasks. It needs to be install locally (which happened during the npm install step) and globably. Here it is install globably.
@@ -97,6 +104,13 @@ Or if you prefer to have this task continously watch for changes in your less fi
 ```
 gulp watch-less
 ```
+
+Just type gulp to see a list of custom Rainbow tasks that you can run to make your life easier.
+
+```
+gulp 
+```
+
 
 ### And Away You Go!
 Now you should be up and running in your browser of choice (as long as you don't choose IE), hosting the website in a nice light nodeJS module (http-server), and committing your code to your local git repository which later can be pushed up to the public repository on git-hub (using GitHub for [Windows|Mac]).

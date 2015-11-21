@@ -30,7 +30,7 @@
 
 // MAIN BANNER -------------------
 .main-banner {
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     padding-top: 10px;
     background: #f2f2f2;
     background: radial-gradient(circle farthest-side at center,#FFF 0,#dae4e4 100%);
@@ -53,10 +53,11 @@
 }
 
 .main-banner .banner-image {
-    background: url('../img/rainbow-text-lg.png');
+    /*background: url('../img/rainbow-text-lg.png');
     background-size: contain;
     background-repeat: no-repeat;
-    height: 440px;
+    height: 440px;*/
+    width: 100%;
 }
 
 .main-banner .title h1 {
@@ -73,12 +74,18 @@
     margin-right: 4px;
 }
 
-.main-banner .title .lead {
-    text-align: center;
-    font-size: 24px;
+.main-banner .lead {
+    font-size: 19px;
     color: #555;
     font-family: "Roboto";
-    margin-top: 5px;
+    max-width: 640px;
+    margin: 9px auto;
+}
+
+@media (max-width: 768px) {
+    .main-banner .lead {
+        font-size: 16px;
+    }
 }
 
 // SITE BANNER --------------------------
@@ -211,4 +218,3 @@
 .site-banner nav a .info .sub-title {
     font-size: 15px;
 }
-

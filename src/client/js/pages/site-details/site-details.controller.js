@@ -5,9 +5,9 @@
         .module('app.pages')
         .controller('SiteDetailsController', SiteDetailsController);
 
-    SiteDetailsController.$inject = ['$document', '$window', 'datacontext', '$sce', '$stateParams'];
+    SiteDetailsController.$inject = ['$document', '$window', '$sce', '$stateParams', 'datacontext'];
 
-    function SiteDetailsController($document, $window, datacontext, $sce, $stateParams) {
+    function SiteDetailsController($document, $window, $sce, $stateParams, datacontext) {
         var vm = this;
         var siteRepo = datacontext.getSiteRepository();
         vm.site = {};
@@ -23,6 +23,7 @@
         /******************** IMPLEMENTATION **********************/
 
         function init() {
+
             $document.scrollTo(top);
 
             var foundSite = _.findWhere(siteRepo.sites, { 'code': code });
@@ -40,7 +41,9 @@
             vm.nextSite = siteRepo.sites[nextIndex];
 
             vm.mapWidth = ($window.innerWidth / 2) - 50;
+
         }
 
+       
     }
 })();

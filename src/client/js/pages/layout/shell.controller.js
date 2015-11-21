@@ -5,9 +5,9 @@
         .module('app.pages')
         .controller('ShellController', ShellController);
 
-    ShellController.$inject = ['$location', '$document', 'datacontext'];
+    ShellController.$inject = ['$location', '$document', 'router', 'datacontext'];
 
-    function ShellController($location, $document, datacontext) {
+    function ShellController($location, $document, router, datacontext) {
         var vm = this;
 
         var siteRepo = datacontext.getSiteRepository();
@@ -28,6 +28,11 @@
         /////////// IMPLEMENTATION /////////////////
         function init() {
             // Default the current nav item based upon the URL
+            router.subscribeStateChange('shell', null, onStateChangeEntering);
+        }
+
+        // On every navigation, make sure that the currNavItem is updated properly
+        function onStateChangeEntering() {
             var urlAry = $location.url().split('/');
             var tailUrl = urlAry[urlAry.length - 1];
             vm.currNavItem = tailUrl;
@@ -47,7 +52,7 @@
         }
 
         function scrollToTop() {
-            $document.scrollTopAnimated(0, 2500);
+            $document.scrollTopAnimated(0, 1000);
         }
     }
 })();

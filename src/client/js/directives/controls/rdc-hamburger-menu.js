@@ -23,11 +23,21 @@
         function link(scope, element) {
 
             var navElement = angular.element(common.helpers.getBody().find('.navbar')[0]);
-
+            var siteOverlay = angular.element(angular.element('.site-overlay')[0]);
+            
             scope.onClick = function () {
+                toggleMenu();
+            };
+
+            siteOverlay.on('click', function() {
+                toggleMenu();
+            });
+
+            function toggleMenu() {
                 element.toggleClass('active');
                 navElement.toggleClass('mobile-menu-open');
-            };
+                siteOverlay.toggleClass('is-open');
+            }
         }
 
     }
