@@ -9,7 +9,7 @@
             <nav class="nav-menu-standard">
                 <ul class="pull-right">
                     <li>
-                        <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})">Home</a>
+                        <a ui-sref="shell.home" ng-click2="vm.setActive({code: 'home'})" ng-class="{'is-active' : vm.isActive('home')}">Home</a>
                     </li>
                     <li>
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -19,7 +19,7 @@
                         <ul class="dropdown-menu has-icons" role="menu">
                             <li role="presentation" ng-repeat="site in vm.sites">
                                 <a role="menuitem" tabindex="-1" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
-                                    <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
+                                    <span class="fa fa-check icon" ng-hide="!vm.isActive(site.code)"></span>
                                     <h4>
                                         <span>{{site.name}}</span>
                                     </h4>
@@ -46,13 +46,12 @@
                         <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})">Home</a>
                     </li>
                     <li class="main-nav-item">
-                        <span>Sites</span>
+                        <a>Sites</a>
                     </li>
                     <li class="sub-nav">
                         <ul>
                             <li role="presentation" ng-repeat="site in vm.sites">
                                 <a role="menuitem" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
-                                    <span class="fa fa-check icon" ng-hide="!vm.isActive(site)"></span>
                                     <span class="main">{{site.name}}</span>
                                     <span class="secondary">{{site.address.addressLine1}}</span>
                                 </a>

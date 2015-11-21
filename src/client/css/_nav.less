@@ -102,6 +102,9 @@
 
 .nav-menu-standard ul > li a:focus {
     text-decoration: none;
+}
+
+.nav-menu-standard ul > li a.is-active {
     color: white;
     background: #333;
 }
@@ -109,7 +112,7 @@
 .nav-menu-standard ul > li a:hover {
     text-decoration: none;
     color: white;
-    background: #2d2d2d;
+    background: #111;
 }
 
 .nav-menu-standard .open > a,
@@ -212,9 +215,9 @@
     &.has-icons > li > a > .icon {
         position: absolute;
         left: 9px;
-        top: 21px;
+        top: 13px;
         font-size: 18px;
-        color: #00be39;
+        color: #3C3D3D;
     }
 }
 
@@ -258,23 +261,26 @@
     height: 100%;
 }
 
-.nav-menu-mobile ul > li {
-    padding: 20px;
-    background-color: white;
+.nav-menu-mobile .main-nav > .main-nav-item {
     list-style: none;
     border-bottom: 1px solid #ccc;
-}
-
-.nav-menu-mobile .main-nav > .main-nav-item {
     -moz-transition: background-color .2s ease;
     -o-transition: background-color .2s ease;
     -webkit-transition: background-color .2s ease;
     transition: background-color .2s ease;
 }
 
-.nav-menu-mobile .main-nav > .main-nav-item:hover {
+.nav-menu-mobile .main-nav > .main-nav-item a:hover {
     background-color: #eee;
     cursor: pointer;
+}
+
+.nav-menu-mobile .main-nav > .main-nav-item a {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    font-weight: 600;
 }
 
 .nav-menu-mobile .sub-nav {
@@ -283,32 +289,35 @@
 
 .sub-nav ul li {
     background-color: #F9F9FB;
-    padding-left: 25px;
     -moz-transition: background-color .2s ease;
     -o-transition: background-color .2s ease;
     -webkit-transition: background-color .2s ease;
     transition: background-color .2s ease;
 }
 
+.sub-nav ul li:first-child {
+    box-shadow: 2px 2px 7px rgba(90, 74, 96, 0.16) inset;
+}
+
 .sub-nav ul li a {
+    width: 100%;
+    display: inline-block;
+    padding: 25px;
+    border-bottom: 1px solid #ccc;
     -moz-transition: color .2s ease;
     -o-transition: color .2s ease;
     -webkit-transition: color .2s ease;
     transition: color .2s ease;
 }
 
-.sub-nav ul li:first-child {
-    box-shadow: 2px 2px 7px rgba(90, 74, 96, 0.16) inset
-}
-
-.sub-nav ul li:hover {
+.sub-nav ul li a:hover {
     background-color: rgba(68, 81, 86, 0.13);
     border-color: #bbb;
+    color: black;
     cursor: pointer;
 }
 
 .sub-nav ul li:hover a {
-    color: black;
 }
 
 .nav-menu-mobile ul > li a {

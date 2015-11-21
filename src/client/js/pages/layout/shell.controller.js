@@ -28,27 +28,32 @@
         /////////// IMPLEMENTATION /////////////////
         function init() {
             // Default the current nav item based upon the URL
-            router.subscribeStateChange('shell', null, onStateChangeEntering);
+            router.registerStateChangedListener(onRouteChanged);
+            setActive(getCurrentCode());
         }
 
         // On every navigation, make sure that the currNavItem is updated properly
-        function onStateChangeEntering() {
-            var urlAry = $location.url().split('/');
-            var tailUrl = urlAry[urlAry.length - 1];
-            vm.currNavItem = tailUrl;
+        function onRouteChanged(event, toState, toParams, fromState, fromParams) {
+            setActive(getCurrentCode());
         }
 
-        function setActive(navItem) {
+        function setActive(code) {
             // If the user re-selects the same nav item, scroll to top.
-            if (navItem.code === vm.currNavItem) {
+            if (code === vm.currNavItem) {
                 scrollToTop();
             }
 
-            vm.currNavItem = navItem.code;
+            vm.currNavItem = code;
         }
 
-        function isActive(navItem) {
-            return vm.currNavItem === navItem.code;
+        function isActive(code) {
+            return vm.currNavItem === code;
+        }
+
+        function getCurrentCode() {
+            var urlAry = $location.url().split('/');
+            var code = urlAry[urlAry.length - 1];
+            return code;
         }
 
         function scrollToTop() {

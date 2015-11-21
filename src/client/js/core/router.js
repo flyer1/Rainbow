@@ -32,6 +32,7 @@
         var stateWatchers = [];
 
         var service = {
+            registerStateChangedListener: registerStateChangedListener,
             subscribeStateChange: subscribeStateChange,
             unsubscribeStateChange: unsubscribeStateChange
         };
@@ -75,6 +76,10 @@
 
         function watchStateChanges() {
             $rootScope.$on('$stateChangeStart', onStateChangeStart);
+        }
+
+        function registerStateChangedListener(callback) {
+            $rootScope.$on('$stateChangeSuccess', callback);
         }
 
         function onStateChangeStart(event, toState, toParams, fromState, fromParams) {

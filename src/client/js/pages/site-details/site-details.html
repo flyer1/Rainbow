@@ -50,47 +50,6 @@
     </div>
 </div>
 
-<!-- CONTACT -->
-<div class="section section-light-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="section-details">
-                    <h2>Location</h2>
-                    <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
-                    <p>{{vm.site.address.addressLine1}}</p>
-                    <p>{{vm.site.address.city}} {{vm.site.address.province}} {{vm.site.address.postalCode}}
-                    <p>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="map-lg" ng-style="{ width: vm.mapWidth + 'px'}">
-                    <iframe width="{{vm.mapWidth}}" height="450" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- PROGRAMS -->
-<div class="section section-dark">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="text-center">
-                Programs
-            </h2>
-        </div>
-        <div class="cards cards-dark">
-            <div ng-repeat="program in vm.site.programs" class="card">
-                <h4 class="card-header">{{program.name}}</h4>
-                <p>{{program.description}}</p>
-                <p>Count: {{program.count}}</p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- SERVICES -->
 <div class="section section-dark-gray">
     <div class="container">
@@ -114,3 +73,45 @@
     </div>
 </div>
 
+<!-- PROGRAMS -->
+<div class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="text-center">
+                Programs
+            </h2>
+        </div>
+        <div class="row">
+            <div class="cards cards-dark">
+                <div ng-repeat="program in vm.site.programs" class="card col-md-2">
+                    <h4 class="card-header">{{program.name}}</h4>
+                    <p>{{program.description}}</p>
+                    <p>Count: {{program.count}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LOCATION -->
+<div class="section section-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section-details">
+                    <h2>Location</h2>
+                    <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
+                    <p>{{vm.site.address.addressLine1}}</p>
+                    <p>{{vm.site.address.city}} {{vm.site.address.province}} {{vm.site.address.postalCode}}
+                    <p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="map-lg" ng-style="{ width: vm.mapWidth + 'px'}">
+                    <iframe width="{{vm.mapWidth}}" height="450" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

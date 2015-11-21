@@ -46,27 +46,12 @@
                 programs: [
                     {
                         name: 'Infant',
-                        description: 'Under 2 years old (CHECK!)',
-                        count: -1,
-                    },
-                    {
-                        name: 'Early Years',
-                        description: '2 year olds',
-                        count: -1,
-                    },
-                    {
-                        name: 'Preschool',
-                        description: '3/4 year olds',
-                        count: -1,
-                    },
-                    {
-                        name: 'Kinders',
-                        description: '4/5 year olds',
+                        description: 'Under 2 years old',
                         count: -1,
                     },
                     {
                         name: 'School Age',
-                        description: 'Grade 1 to Grade 12',
+                        description: 'Grades 1-12',
                         count: -1,
                     },
                 ],
@@ -100,7 +85,7 @@
                 programs: [
                     {
                         name: 'Infant',
-                        description: 'Under 2 years old (CHECK!)',
+                        description: 'Under 2 years old',
                         count: -1,
                     },
                     {
@@ -120,7 +105,7 @@
                     },
                     {
                         name: 'School Age',
-                        description: 'Grade 1 to Grade 12',
+                        description: 'Grades 1-12',
                         count: -1,
                     },
                 ],
@@ -130,12 +115,12 @@
             data.push(newSite);
 
             /*
-             * Define Phase IIIA Site **********************************************************
+             * Define Phase III Site **********************************************************
              */
             newSite = {
-                code: 'P3A',
+                code: 'P3',
                 shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase 3A',
+                name: 'Phase 3',
                 address: {
                     unitNumber: '180',
                     number: '50',
@@ -157,7 +142,7 @@
                 programs: [
                     {
                         name: 'Infant',
-                        description: 'Under 2 years old (CHECK!)',
+                        description: 'Under 2 years old',
                         count: -1,
                     },
                     {
@@ -177,7 +162,7 @@
                     },
                     {
                         name: 'School Age',
-                        description: 'Grade 1 to Grade 12',
+                        description: 'Grades 1-12',
                         count: -1,
                     },
                 ],
@@ -189,59 +174,60 @@
             /*
              * Define Phase IIIB Site **********************************************************************
              */
-            newSite = {
-                code: 'P3B',
-                shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
-                name: 'Phase 3B',
-                address: {
-                    unitNumber: '100',
-                    number: '40',
-                    street: 'Lakewood Blvd.',
-                    city: 'Winnipeg',
-                    province: 'MB',
-                    postalCode: 'R2J 2M6',
-                    lat: 49.854481,
-                    lng: -97.080346,
-                    markerColor: 'green'
-                },
-                phone: '204-257-6180',
-                schools: [
-                    { code: 'VB', transportType: 'CT' },
-                    { code: 'Ni', transportType: 'CT' },
-                    { code: 'Ho', transportType: 'CT' },
-                    { code: 'Fr', transportType: 'CT' }
-                ],
-                programs: [
-                    {
-                        name: 'Infant',
-                        description: 'Under 2 years old (CHECK!)',
-                        count: -1,
-                    },
-                    {
-                        name: 'Early Years',
-                        description: '2 year olds',
-                        count: -1,
-                    },
-                    {
-                        name: 'Preschool',
-                        description: '3/4 year olds',
-                        count: -1,
-                    },
-                    {
-                        name: 'Kinders',
-                        description: '4/5 year olds',
-                        count: -1,
-                    },
-                    {
-                        name: 'School Age',
-                        description: 'Grade 1 to Grade 12',
-                        count: -1,
-                    },
-                ],
-                order: 4,
-            };
+            // Don't show 3B - they don't have the capacity to answer the phones - merge with 3A
+            //newSite = {
+            //    code: 'P3B',
+            //    shortName: '3', // Note we can only use 1 character for the map markers so don't include the A/B/C here
+            //    name: 'Phase 3B',
+            //    address: {
+            //        unitNumber: '100',
+            //        number: '40',
+            //        street: 'Lakewood Blvd.',
+            //        city: 'Winnipeg',
+            //        province: 'MB',
+            //        postalCode: 'R2J 2M6',
+            //        lat: 49.854481,
+            //        lng: -97.080346,
+            //        markerColor: 'green'
+            //    },
+            //    phone: '204-257-6180',
+            //    schools: [
+            //        { code: 'VB', transportType: 'CT' },
+            //        { code: 'Ni', transportType: 'CT' },
+            //        { code: 'Ho', transportType: 'CT' },
+            //        { code: 'Fr', transportType: 'CT' }
+            //    ],
+            //    programs: [
+            //        {
+            //            name: 'Infant',
+            //            description: 'Under 2 years old',
+            //            count: -1,
+            //        },
+            //        {
+            //            name: 'Early Years',
+            //            description: '2 year olds',
+            //            count: -1,
+            //        },
+            //        {
+            //            name: 'Preschool',
+            //            description: '3/4 year olds',
+            //            count: -1,
+            //        },
+            //        {
+            //            name: 'Kinders',
+            //            description: '4/5 year olds',
+            //            count: -1,
+            //        },
+            //        {
+            //            name: 'School Age',
+            //            description: 'Grades 1-12',
+            //            count: -1,
+            //        },
+            //    ],
+            //    order: 4,
+            //};
 
-            data.push(newSite);
+            //data.push(newSite);
 
             /*
              * Define Phase IIIC Site *************************************************************************
@@ -272,28 +258,8 @@
                     ],
                     programs: [
                         {
-                            name: 'Infant',
-                            description: 'Under 2 years old (CHECK!)',
-                            count: -1,
-                        },
-                        {
-                            name: 'Early Years',
-                            description: '2 year olds',
-                            count: -1,
-                        },
-                        {
-                            name: 'Preschool',
-                            description: '3/4 year olds',
-                            count: -1,
-                        },
-                        {
-                            name: 'Kinders',
-                            description: '4/5 year olds',
-                            count: -1,
-                        },
-                        {
                             name: 'School Age',
-                            description: 'Grade 1 to Grade 12',
+                            description: 'Grades 1-12',
                             count: -1,
                         },
                     ],
@@ -329,7 +295,7 @@
                 programs: [
                     {
                         name: 'Infant',
-                        description: 'Under 2 years old (CHECK!)',
+                        description: 'Under 2 years old',
                         count: -1,
                     },
                     {
@@ -349,7 +315,7 @@
                     },
                     {
                         name: 'School Age',
-                        description: 'Grade 1 to Grade 12',
+                        description: 'Grades 1-12',
                         count: -1,
                     },
                 ],
@@ -383,7 +349,7 @@
                 programs: [
                     {
                         name: 'Infant',
-                        description: 'Under 2 years old (CHECK!)',
+                        description: 'Under 2 years old',
                         count: 16,
                     },
                     {
@@ -403,7 +369,7 @@
                     },
                     {
                         name: 'School Age',
-                        description: 'Grade 1 to Grade 12',
+                        description: 'Grades 1-12',
                         count: 30,
                     },
                 ],

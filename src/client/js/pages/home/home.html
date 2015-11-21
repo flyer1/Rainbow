@@ -67,8 +67,10 @@
             <div class="section-header">
                 <h2 class="text-center">
                     Sites
-                    <span class="subdued">(
-                        <span>{{vm.sites.length}}</span>)</span>
+                    <span class="subdued">
+                        (
+                        <span>{{vm.sites.length}}</span>)
+                    </span>
                 </h2>
             </div>
             <div class="section-body row">
@@ -130,16 +132,21 @@
                                         <div class="row">
                                             <div class="col-xs-12 col-md-6">
                                                 <div class="list-text">
-                                                    <p>
-                                                        <span>{{site.address.addressLine1}}</span>
-                                                    </p>
-                                                    <p>
-                                                        <span>{{site.address.addressLine2}}</span>
-                                                    </p>
-                                                    <br/>
-                                                    <p><a href="tel:{{site.phone}}">{{site.phone}}</a></p>
-                                                    <p>&nbsp;</p>
-                                                    <p class="secondary">With bus service to
+                                                    <div class="list-text-section">
+                                                        <p>
+                                                            <span>{{site.address.addressLine1}}</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>{{site.address.addressLine2}}</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="list-text-section">
+                                                        <p>
+                                                            <a href="tel:{{site.phone}}">{{site.phone}}</a>
+                                                        </p>
+                                                    </div>
+                                                    <p class="secondary">
+                                                        With bus service to
                                                         <span>{{site.schools.length}}</span> {{site.schools.length > 1 ? 'schools' : 'school' }}
                                                         <ul>
                                                             <li ng-repeat="school in site.schools">

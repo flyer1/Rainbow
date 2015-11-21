@@ -6,10 +6,16 @@
     display: inline-block;
     width: 100%;
     padding-top: 11px;
+    padding-bottom: 11px;
     font-size: 16px;
     color: white;
     font-weight: 600;
-    padding-bottom: 7px;
+}
+
+@media (max-width: 768px) {
+    .banner-message {
+        font-size: 14px;
+    }
 }
 
 .banner-message a {
@@ -95,6 +101,12 @@
     margin-top: 59px;
 }
 
+@media (max-width: 767px) {
+    .site-banner {
+        height: 280px;
+    }
+}
+
 .site-banner .site-banner-background {
     background-image: radial-gradient(rgba(14, 23, 36, 0.93), #000000);
     width: 100%;
@@ -114,10 +126,35 @@
     text-shadow: 1px 1px 10px black;
 }
 
+@media (max-width: 767px) {
+    .site-banner h1 {
+        padding-top: 5px;
+        font-size: 50px;
+        line-height: 1.1em;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 609px) and (max-width: 767px) {
+    .site-banner h1 {
+        padding-top: 35px;
+    }
+}
+
 .site-banner p {
     text-align: center;
     color: rgba(255, 255, 255, 0.92);
     font-size: 20px;
+}
+
+@media (max-width: 767px) {
+    .site-banner p {
+        font-size: 17px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 // BANNER NAV BUTTONS =================================
