@@ -4,12 +4,12 @@
     <div class="container">
         <div class="navbar-header">
             <!-- Logo is always shown (on standard and mobile menus) -->
-            <a ui-sref="shell.home" class="logo" ng-click="vm.setActive({code: 'home'})"></a>
+            <a ui-sref="shell.home" class="logo" ui-sref-opts="{reload: true}"></a>
             <!-- only show standard menu at bigger resolutions -->
             <nav class="nav-menu-standard">
                 <ul class="pull-right">
                     <li>
-                        <a ui-sref="shell.home" ng-click2="vm.setActive({code: 'home'})" ng-class="{'is-active' : vm.isActive('home')}">Home</a>
+                        <a ui-sref="shell.home" ui-sref-opts="{reload: true}" ng-class="{'is-active' : vm.isActive('home')}">Home</a>
                     </li>
                     <li>
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -18,7 +18,7 @@
                         </a>
                         <ul class="dropdown-menu has-icons" role="menu">
                             <li role="presentation" ng-repeat="site in vm.sites">
-                                <a role="menuitem" tabindex="-1" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
+                                <a role="menuitem" ui-sref="shell.site({id:site.code})" ui-sref-opts="{reload: true}">
                                     <span class="fa fa-check icon" ng-hide="!vm.isActive(site.code)"></span>
                                     <h4>
                                         <span>{{site.name}}</span>
@@ -43,7 +43,7 @@
             <div>
                 <ul class="main-nav">
                     <li class="main-nav-item">
-                        <a ui-sref="shell.home" ng-click="vm.setActive({code: 'home'})">Home</a>
+                        <a ui-sref="shell.home" ui-sref-opts="{reload: true}">Home</a>
                     </li>
                     <li class="main-nav-item">
                         <a>Sites</a>
@@ -51,7 +51,7 @@
                     <li class="sub-nav">
                         <ul>
                             <li role="presentation" ng-repeat="site in vm.sites">
-                                <a role="menuitem" ng-href="#/shell/site/{{site.code}}" ng-click="vm.setActive(site)">
+                                <a role="menuitem" ui-sref="shell.site({id:site.code})" ui-sref-opts="{reload: true}">
                                     <span class="main">{{site.name}}</span>
                                     <span class="secondary">{{site.address.addressLine1}}</span>
                                 </a>
