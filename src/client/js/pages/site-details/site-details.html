@@ -97,7 +97,7 @@
 <div class="section section-light-gray">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-sm-12 col-md-5 col-lg-4">
                 <div class="section-details">
                     <h2>Location</h2>
                     <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
@@ -107,10 +107,8 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="map-lg" ng-style="{ width: vm.mapWidth + 'px'}">
-                    <iframe width="{{vm.mapWidth}}" height="450" style="border:0" ng-src="{{vm.mapSrc}}"></iframe>
-                </div>
+            <div class="col-sm-12 col-md-7 col-lg-8">
+                <rdc-map site="vm.site"></rdc-map>
             </div>
         </div>
     </div>
