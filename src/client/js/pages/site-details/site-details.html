@@ -26,6 +26,7 @@
                 Rainbow {{vm.site.name}}
             </h1>
             <p class="normal">{{vm.site.address.addressLine1 + ' ' + vm.site.address.addressLine2}}</p>
+            <p ng-if="vm.site.messageSummary"><span class="callout">{{vm.site.messageSummary}}</span></p>
         </div>
     </div>
 </div>
@@ -84,8 +85,8 @@
         <div class="row">
             <div class="cards cards-dark">
                 <div ng-repeat="program in vm.site.programs" class="card col-md-2">
-                    <h4 class="card-header">{{program.name}}</h4>
-                    <p>{{program.description}}</p>
+                    <h4 class="card-header">{{program.program.name}}</h4>
+                    <p>{{program.program.description}}</p>
                     <p>Count: {{program.count}}</p>
                 </div>
             </div>

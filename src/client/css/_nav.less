@@ -56,6 +56,31 @@
     transform: scale(0.97);
 }
 
+// FACEBOOK -----------------------------------------
+.navbar .facebook {
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.64);
+    padding: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #3C3D3D;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: 0;
+    -moz-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+    line-height: 20px;
+}
+
+.navbar .facebook:hover {
+    background-color: white;
+}
+
 // STANDARD MENU -------------------------------------
 .navbar .nav-menu-standard {
     display: inline;
@@ -70,7 +95,9 @@
 .navbar .nav-menu-standard ul {
     list-style-type: none;
     margin: 0;
-    padding-right: 12%;
+    padding-right: 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    margin-right: 20px;
 }
 
 .navbar .nav-menu-standard ul > li {
@@ -80,7 +107,8 @@
 }
 
 .navbar .nav-menu-standard ul > li a {
-    font-size: 19px;
+    font-size: 17px;
+    font-weight: 600;
     color: white;
     line-height: 30px;
     cursor: pointer;
@@ -111,13 +139,6 @@
 
 .nav-menu-standard ul > li a:hover {
     text-decoration: none;
-    color: white;
-    background: #111;
-}
-
-.nav-menu-standard .open > a,
-.nav-menu-standard .open > a:hover {
-    background: #333;
 }
 
 .navbar .nav-menu-standard ul > li a i {
@@ -174,7 +195,7 @@
         width: 330px;
         color: #999;
         border-top: 1px solid #ddd;
-        padding: 18px 30px 5px 25px;
+        padding: 20px 30px 9px 25px;
         -ms-text-overflow: ellipsis;
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
@@ -187,8 +208,7 @@
     > li > a > h4 {
         font-size: 15px;
         margin: 0;
-        line-height: 7px;
-        color: #555;
+        line-height: 11px color: #555;
         font-weight: 800;
     }
 
@@ -201,6 +221,7 @@
         color: #666;
         font-size: 14px;
         text-transform: none;
+        font-weight: 100;
     }
 
     > li > a:hover {

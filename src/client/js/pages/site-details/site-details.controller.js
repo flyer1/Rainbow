@@ -5,11 +5,11 @@
         .module('app.pages')
         .controller('SiteDetailsController', SiteDetailsController);
 
-    SiteDetailsController.$inject = ['$document', '$stateParams', 'datacontext'];
+    SiteDetailsController.$inject = ['$document', '$stateParams', 'siteRepository'];
 
-    function SiteDetailsController($document, $stateParams, datacontext) {
+    function SiteDetailsController($document, $stateParams, siteRepository) {
         var vm = this;
-        var siteRepo = datacontext.getSiteRepository();
+        var siteRepo = siteRepository.getSiteRepository();
         vm.site = {};
         vm.prevSite = {};
         vm.nextSite = {};

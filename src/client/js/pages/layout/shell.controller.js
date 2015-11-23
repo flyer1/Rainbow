@@ -5,12 +5,12 @@
         .module('app.pages')
         .controller('ShellController', ShellController);
 
-    ShellController.$inject = ['$location', '$document', 'router', 'datacontext'];
+    ShellController.$inject = ['$location', '$document', 'router', 'siteRepository'];
 
-    function ShellController($location, $document, router, datacontext) {
+    function ShellController($location, $document, router, siteRepository) {
         var vm = this;
 
-        var siteRepo = datacontext.getSiteRepository();
+        var siteRepo = siteRepository.getSiteRepository();
 
         // Properties
         vm.sites = siteRepo.sites;
