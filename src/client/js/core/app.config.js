@@ -16,8 +16,9 @@
 
         var config = {
             // Key defined at https://console.developers.google.com under my personal account - free key, can be changed at any time.
-            googleApiKey: 'AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI'
-        };
+            googleApiKey: 'AIzaSyAXuaY3jzo_vEw-DwyBxmOi6orRLl7m2eI',
+            galleryRootUri: '/img/gallery/'
+    };
 
         return config;
     }

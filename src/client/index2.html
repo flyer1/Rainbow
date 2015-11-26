@@ -29,7 +29,9 @@
     <!--    <link rel="shortcut icon" href="/server/ccfavicon.ico" />-->
     <!-- build:css css/lib.css -->
     <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet" />
+    <link href="/lib/lightgallery/dist/css/lightgallery.css" rel="stylesheet" />
     <!-- endbuild -->
     <!-- build:css css/app.css-->
     <link href="/css/site.css" rel="stylesheet" />
@@ -62,8 +64,11 @@
         <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="/lib/bootstrap-modal-popover/src/bootstrap-modal-popover.js"></script>
         <script src="/lib/moment/moment.js"></script>
-        <script src="/lib/underscore/underscore.js"></script>
+        <script src="/lib/lodash/lodash.js"></script>
         <script src="/lib/angular-scroll/angular-scroll.js"></script>
+        <script src="/lib/flexslider/jquery.flexslider.js"></script>
+        <script src="/lib/angular-flexslider/angular-flexslider.js"></script>
+        <script src="/lib/lightgallery/dist/js/lightgallery-all.js"></script>
         <!-- endbuild -->
         <!-- build:js js/app.js-->
         <!-- Bootstrapping -->
@@ -87,6 +92,7 @@
 
         <!-- App data -->
         <script src="/js/data/_data.module.js"></script>
+        <script src="/js/data/database/image.data.js"></script>
         <script src="/js/data/database/message.data.js"></script>
         <script src="/js/data/database/program.data.js"></script>
         <script src="/js/data/database/school.data.js"></script>

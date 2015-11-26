@@ -7,6 +7,7 @@
         'app.directives',
         /* 3rd Party modules */
         'duScroll',
-        'ui.router'
+        'ui.router',
+        'angular-flexslider'
     ]);
 })();

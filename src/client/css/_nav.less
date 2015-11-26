@@ -56,31 +56,6 @@
     transform: scale(0.97);
 }
 
-// FACEBOOK -----------------------------------------
-.navbar .facebook {
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.64);
-    padding: 5px;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    color: #3C3D3D;
-    text-align: center;
-    margin-top: 15px;
-    font-size: 18px;
-    margin-right: 20px;
-    margin-left: 0;
-    -moz-transition: background-color 0.2s ease;
-    -o-transition: background-color 0.2s ease;
-    -webkit-transition: background-color 0.2s ease;
-    transition: background-color 0.2s ease;
-    line-height: 20px;
-}
-
-.navbar .facebook:hover {
-    background-color: white;
-}
-
 // STANDARD MENU -------------------------------------
 .navbar .nav-menu-standard {
     display: inline;
@@ -90,6 +65,10 @@
     .navbar .nav-menu-standard {
         display: none;
     }
+}
+
+.navbar .nav-menu-standard .contact-nav {
+    margin-left: 20px;
 }
 
 .navbar .nav-menu-standard ul {
@@ -149,8 +128,37 @@
     font-size: 16px;
 }
 
+// FACEBOOK -----------------------------------------
+.nav-menu-standard .contact-nav a {
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.64);
+    padding: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #3C3D3D;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: 0;
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+    line-height: 20px;
+}
+
+.nav-menu-standard .contact-nav a:hover {
+    background-color: white;
+}
+
+.nav-menu-standard .contact-nav a.contact-email {
+    font-size: 17px;
+}
+
 // SOCIAL MEDIA ------------------
-.nav-menu-standard .social-menu {
+/*.nav-menu-standard .social-menu {
     margin-left: 50px;
     font-size: 24px;
     padding-top: 11px;
@@ -170,7 +178,7 @@
 
 .nav-menu-standard .social-menu a:hover {
     opacity: 1;
-}
+}*/
 
 // DROP DOWN MENU -------------------------------------
 .dropdown-menu > li:last-child {

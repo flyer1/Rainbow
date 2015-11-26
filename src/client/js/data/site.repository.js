@@ -6,9 +6,9 @@
         .module('app.data')
         .factory('siteRepository', siteRepository);
 
-    siteRepository.$inject = ['siteData', 'schoolData', 'programData', 'messageData'];
+    siteRepository.$inject = ['siteData', 'schoolData', 'programData', 'messageData', 'imageData'];
 
-    function siteRepository(siteData, schoolData, programData, messageData) {
+    function siteRepository(siteData, schoolData, programData, messageData, imageData) {
 
         var siteRepository = null;
 
@@ -34,6 +34,7 @@
             var schools = schoolData.getSchools();
             var programs = programData.getPrograms();
             var messages = messageData.getMessages();
+            var coverPhotos = imageData.getSitePhotos('P0');
 
             // Add the relationship "table" between sites and schools. Useful to generate counts of sites for a given schools for eg, or when filtering the sites via a set of schools.
             // Basically flatten the relationship between sites and the schools they service.
@@ -54,7 +55,8 @@
                                 programs: programs,
                                 siteSchools: siteSchools,
                                 sitePrograms: sitePrograms,
-                                messages: messages
+                                messages: messages,
+                                coverPhotos: coverPhotos
                             };
 
             return siteRepository;
@@ -65,6 +67,7 @@
             _.forEach(sites, function (site) {
                 site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
                 site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
+                site.photos = imageData.getSitePhotos(site.code);
 
                 // Google maps API for a static map with marker
                 var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';

@@ -1,13 +1,13 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('app.pages')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$window', '$scope', 'siteRepository'];
+    HomeController.$inject = ['$window', '$scope', '$timeout', 'siteRepository'];
 
-    function HomeController($window, $scope, siteRepository) {
+    function HomeController($window, $scope, $timeout, siteRepository) {
         var vm = this;
 
         vm.sites = []; // Full list of sites (centres)
@@ -17,7 +17,7 @@
         vm.checkedPrograms = []; // List of program codes that has been checked off by the user.
         vm.siteCount = -1;
         vm.matchedSites = {}; // List of sites that match the given filter criteria set by the user
-
+        vm.photos = [];
         vm.toggleFilter = toggleFilter;
         vm.hasSchoolFilter = hasSchoolFilter;
         vm.hasProgramFilter = hasProgramFilter;
@@ -38,6 +38,12 @@
             vm.programs = siteRepo.programs;
             vm.siteSchools = siteRepo.siteSchools;
             vm.messages = siteRepo.messages;
+            vm.photos = siteRepo.coverPhotos;
+            _.each(siteRepo.sites, function (site) { vm.photos = vm.photos.concat(site.photos); });
+            $timeout(function () {
+                $("#jon").lightGallery();
+                $(".demo-gallery").lightGallery();
+            }, 2000);
 
             setMatchedSites(); // Array of site codes that match the filter criteria set by the user
             console.log(siteRepo); // TODO: remove later
@@ -64,11 +70,11 @@
                 checkedSchools = _.pluck(vm.schools, 'code');
             }
 
-            _.forEach(checkedSchools, function(school) {
+            _.forEach(checkedSchools, function (school) {
                 var results = _.where(vm.siteSchools, {
                     'schoolCode': school
                 });
-                _.forEach(results, function(item) {
+                _.forEach(results, function (item) {
                     // Check that the site's code has not yet been added.
                     if (!_.contains(matchedSites, item.siteCode)) {
                         // The site has not yet been added to the results. Add it now.
@@ -83,8 +89,8 @@
             vm.checkedSchools = checkedSchools;
 
             // Also set the boolean on each site to indicate if it contains at least 1 match to the filter criteria. This helps on deciding if the site should be shown/hidden.
-            _.forEach(vm.sites, function(site) {
-              site.isChecked = isMatchedSite(site);
+            _.forEach(vm.sites, function (site) {
+                site.isChecked = isMatchedSite(site);
             });
             console.log(matchedSites);
             return;
