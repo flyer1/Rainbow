@@ -5,15 +5,13 @@
         .module('app.pages')
         .controller('ShellController', ShellController);
 
-    ShellController.$inject = ['$location', '$document', 'router', 'siteRepository'];
+    ShellController.$inject = ['$location', '$document', 'router', 'siteData'];
 
-    function ShellController($location, $document, router, siteRepository) {
+    function ShellController($location, $document, router, siteData) {
         var vm = this;
 
-        var siteRepo = siteRepository.getSiteRepository();
-
         // Properties
-        vm.sites = siteRepo.sites;
+        vm.sites = [];
         vm.currNavItem = '';
 
         // Functions
@@ -21,12 +19,13 @@
         vm.isActive = isActive;
         vm.scrollToTop = scrollToTop;
 
-        init();
+        init(siteData);
 
         return;
 
         /////////// IMPLEMENTATION /////////////////
-        function init() {
+        function init(siteData) {
+            vm.sites = siteData.sites;
             // Default the current nav item based upon the URL
             router.registerStateChangedListener(onRouteChanged);
             setActive(getCurrentCode());

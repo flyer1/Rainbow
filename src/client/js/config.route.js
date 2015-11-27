@@ -35,6 +35,10 @@
                             templateUrl: '/js/pages/layout/shell.html',
                             controller: 'ShellController as vm'
                         }
+                    },
+                    // This resolve will run before any page loads (b/c it's part of this abstract state that has to run for every page) and then siteData can be injected into any controller
+                    resolve: {
+                        siteData: function(siteRepository) { return siteRepository.getSiteRepository(); }
                     }
                 }
             },

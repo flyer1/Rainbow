@@ -16,7 +16,7 @@ module.exports = function (gulp, plugin, help, utils) {
     gulp.task('dist', ['clean'], function (done) {
 
         utils.logMsg('Starting distrubtion task...');
-        runSequence('dist-template-cache', ['dist-main', 'dist-img', 'dist-fonts'], 'clean-tmp', done);
+        runSequence('dist-template-cache', ['dist-main', 'dist-img', 'dist-fonts', 'dist-data'], 'clean-tmp', done);
 
     });
 
@@ -46,7 +46,7 @@ module.exports = function (gulp, plugin, help, utils) {
 
             // Process JavaScript Files --------------
             .pipe(gulpIf('*.js', getHeader()))
-            .pipe(gulpIf('*.js', plugin.uglify()))          
+            //.pipe(gulpIf('*.js', plugin.uglify()))          
 
             // Look at the files in the pipeline and add a hash onto the end of their name, according to their content (a content hash).
             .pipe(gulpIf('!*.html', rev()))
@@ -81,7 +81,7 @@ module.exports = function (gulp, plugin, help, utils) {
         utils.logMsg('Copying images to dist folder');
 
         return gulp
-            .src(['./src/client/img/*', '!./src/client/img/resources'])
+            .src(['./src/client/img/**', '!./src/client/img/resources/**'])
             .pipe(gulp.dest('./dist/img'));
     });
 
@@ -90,8 +90,17 @@ module.exports = function (gulp, plugin, help, utils) {
         utils.logMsg('Copying fonts to dist folder');
 
         return gulp
-            .src(['./src/client/lib/font-awesome/fonts/*'])
+            .src(['./src/client/lib/font-awesome/fonts/*', './src/client/lib/flexslider/fonts/*', './src/client/lib/lightgallery/dist/fonts/*'])
             .pipe(gulp.dest('./dist/fonts'));
+    });
+
+    /******** TASK ********/
+    gulp.task('dist-data', function () {
+        utils.logMsg('Copying json data to dist folder');
+
+        return gulp
+            .src(['./src/client/data/*'])
+            .pipe(gulp.dest('./dist/data'));
     });
 
     /////////////////// HELPER FUNCTIONS ////////////////////

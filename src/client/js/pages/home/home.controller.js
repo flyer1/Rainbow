@@ -5,9 +5,9 @@
         .module('app.pages')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$window', '$scope', '$timeout', 'siteRepository'];
+    HomeController.$inject = ['$window', '$scope', '$timeout', '$sce', 'siteData'];
 
-    function HomeController($window, $scope, $timeout, siteRepository) {
+    function HomeController($window, $scope, $timeout, $sce, siteData) {
         var vm = this;
 
         vm.sites = []; // Full list of sites (centres)
@@ -25,28 +25,23 @@
         vm.isCheckedSchool = isCheckedSchool;
         vm.isCheckedProgram = isCheckedProgram;
 
-        init();
+        init(siteData);
 
         return vm;
 
         /******************** IMPLEMENTATION **********************/
-        function init() {
-            var siteRepo = siteRepository.getSiteRepository();
-
-            vm.sites = siteRepo.sites;
-            vm.schools = siteRepo.schools;
-            vm.programs = siteRepo.programs;
-            vm.siteSchools = siteRepo.siteSchools;
-            vm.messages = siteRepo.messages;
-            vm.photos = siteRepo.coverPhotos;
-            _.each(siteRepo.sites, function (site) { vm.photos = vm.photos.concat(site.photos); });
-            $timeout(function () {
-                $("#jon").lightGallery();
-                $(".demo-gallery").lightGallery();
-            }, 2000);
-
+        function init(siteData) {
+            vm.sites = siteData.sites;
+            vm.schools = siteData.schools;
+            vm.programs = siteData.programs;
+            vm.siteSchools = siteData.siteSchools;
+            vm.messages = siteData.messages;
+            vm.photos = siteData.coverPhotos;
+            _.each(siteData.sites, function (site) { vm.photos = vm.photos.concat(site.photos); });
+            for (var i = 0; i < vm.photos.length; i++) {
+                vm.photos[i] = $sce.trustAsResourceUrl(vm.photos[i]);
+            };
             setMatchedSites(); // Array of site codes that match the filter criteria set by the user
-            console.log(siteRepo); // TODO: remove later
             $window.jon = vm;
         }
 

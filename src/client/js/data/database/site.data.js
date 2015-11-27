@@ -30,6 +30,7 @@
                     unitNumber: '11',
                     number: '20',
                     street: 'Island Shore Blvd.',
+                    friendlyLocation: 'By Island Lakes Clock Tower',
                     city: 'Winnipeg',
                     province: 'MB',
                     postalCode: 'R3X 1N7',
@@ -47,7 +48,18 @@
                     { code: 'I', count: -1 },
                     { code: 'SA', count: -1 }
                 ],
-                order: 1,
+                photos: [
+                     '/img/gallery/phase-1/phase1-01.jpg',
+                    '/img/gallery/phase-1/phase1-02.jpg',
+                    '/img/gallery/phase-1/phase1-03.jpg',
+                    '/img/gallery/phase-1/phase1-04.jpg',
+                    '/img/gallery/phase-1/phase1-05.jpg',
+                    '/img/gallery/phase-1/phase1-06.jpg',
+                    '/img/gallery/phase-1/phase1-07.jpg',
+                    '/img/gallery/phase-1/phase1-08.jpg',
+                    '/img/gallery/phase-1/phase1-09.jpg'
+                ],
+                order: 1
             };
 
             data.push(newSite);
@@ -63,6 +75,7 @@
                     unitNumber: null,
                     number: '445',
                     street: 'Island Shore Blvd.',
+                    friendlyLocation: 'In Island Lakes School',
                     city: 'Winnipeg',
                     province: 'MB',
                     postalCode: 'R3X 2B4',
@@ -81,7 +94,16 @@
                     { code: 'K', count: -1 },
                     { code: 'SA', count: -1 }
                 ],
-                order: 2,
+                photos: [
+                    '/img/gallery/phase-2/phase2-01.jpg',
+                    '/img/gallery/phase-2/phase2-02.jpg',
+                    '/img/gallery/phase-2/phase2-03.jpg',
+                    '/img/gallery/phase-2/phase2-04.jpg',
+                    '/img/gallery/phase-2/phase2-05.jpg',
+                    '/img/gallery/phase-2/phase2-06.jpg',
+                    '/img/gallery/phase-2/phase2-07.jpg'
+                ],
+                order: 2
             };
 
             data.push(newSite);
@@ -97,6 +119,7 @@
                     unitNumber: '180',
                     number: '50',
                     street: 'Lakewood Blvd.',
+                    friendlyLocation: 'By Mac\'s Convenience Store in Southdale',
                     city: 'Winnipeg',
                     province: 'MB',
                     postalCode: 'R2J 2M7',
@@ -117,6 +140,19 @@
                     { code: 'P', count: -1 },
                     { code: 'K', count: -1 },
                     { code: 'SA', count: -1 }
+                ],
+                photos: [
+                        '/img/gallery/phase-3/phase3-01.jpg',
+                        '/img/gallery/phase-3/phase3-02.jpg',
+                        '/img/gallery/phase-3/phase3-03.jpg',
+                        '/img/gallery/phase-3/phase3-04.jpg',
+                        '/img/gallery/phase-3/phase3-05.jpg',
+                        '/img/gallery/phase-3/phase3-06.jpg',
+                        '/img/gallery/phase-3/phase3-07.jpg',
+                        '/img/gallery/phase-3/phase3-08.jpg',
+                        '/img/gallery/phase-3/phase3-09.jpg',
+                        '/img/gallery/phase-3/phase3-10.jpg',
+                        '/img/gallery/phase-3/phase3-11.jpg'
                 ],
                 order: 3
             };
@@ -192,6 +228,7 @@
                     unitNumber: '90',
                     number: '115',
                     street: 'Vermillion Rd.',
+                    friendlyLocation: 'By Shapes in Southdale',
                     city: 'Winnipeg',
                     province: 'MB',
                     postalCode: 'R2J 4A9',
@@ -207,10 +244,11 @@
                     { code: 'Fr', transportType: 'CT' },
                     { code: 'Gy', transportType: 'CT' },
                     { code: 'Sh', transportType: 'CT' }
-                    ],
-                    programs: [
-                        { code: 'SA', count: -1 }
-                    ],
+                ],
+                programs: [
+                    { code: 'SA', count: -1 }
+                ],
+                photos: [],
                 order: 5
             };
 
@@ -227,6 +265,7 @@
                     unitNumber: null,
                     number: '255',
                     street: 'Vermillion Rd.',
+                    friendlyLocation: 'By Giant Tiger in Southdale',
                     city: 'Winnipeg',
                     province: 'MB',
                     postalCode: 'R2J 3Z7',
@@ -247,6 +286,7 @@
                     { code: 'K', count: -1 },
                     { code: 'SA', count: -1 }
                 ],
+                photos: [],
                 order: 6
             };
 
@@ -263,6 +303,7 @@
                     unitNumber: null,
                     number: '340',
                     street: 'Sage Creek Blvd',
+                    friendlyLocation: 'In Sage Creek School (to be built)',
                     city: 'Winnipeg',
                     province: 'MB',
                     postalCode: 'R3X 0E1',
@@ -285,6 +326,7 @@
                 message: ['Rainbow is very excited to announce that we were the successful candidates in the RFP for the new Daycare opening at École Sage Creek. This daycare is projected to open in January of 2017 and will have 16 infant spots, 8 early years (age 2), 32 preschool (age 3/4), 10 Kindergarten (age 4/5) and 30 school age spots.',
                           'Rainbow will be using the Manitoba Government Online Child Care Registry to fill these spots. The projected date for signing up online is Summer of 2016. Rainbow will not be taking a list until that time. Parents who need Daycare prior to this are encouraged to register online at one of our other Rainbow locations.',
                           'Rainbow is committed to keeping the Community and our Families updated on our progress as we prepare for this exciting new opportunity.'],
+                photos: [],
                 order: 7
             };
 

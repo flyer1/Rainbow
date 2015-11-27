@@ -3,14 +3,19 @@
     'use strict';
 
     angular
-        .module('app.data')
+        .module('app.services')
         .factory('siteRepository', siteRepository);
 
-    siteRepository.$inject = ['siteData', 'schoolData', 'programData', 'messageData', 'imageData'];
+    siteRepository.$inject = ['$q', 'webDataService'];
 
-    function siteRepository(siteData, schoolData, programData, messageData, imageData) {
+    function siteRepository($q, webDataService) {
 
         var siteRepository = null;
+        var sites = null;
+        var schools = null;
+        var programs = null;
+        var messages = null;
+        var coverPhotos = null;
 
         var service = {
             getSiteRepository: getSiteRepository
@@ -23,19 +28,43 @@
         // Return the entire data repository for the entire site. Because the data structure is so small (and future growth is not expected to ever change that to a big enough degree),
         // the entire block of data can be returned to the client in one data structure. It is then "caches" in a siteReposity variable for fast retrieval afterwards
         function getSiteRepository() {
-
-            if (siteRepository !== null) {
-                // If the site repo has already been generated, then return the stored value.
-                return siteRepository;
-            }
+            var deferred = $q.defer();
 
             // Get the site and school data
-            var sites = siteData.getSites();
-            var schools = schoolData.getSchools();
-            var programs = programData.getPrograms();
-            var messages = messageData.getMessages();
-            var coverPhotos = imageData.getSitePhotos('P0');
+            if (siteRepository !== null) {
+                // If the site repo has already been generated, then return the stored value.
+                console.log('Resolving site repo from cache');
+                deferred.resolve(siteRepository);
+            } else {
+                console.log('Building up new site repo');
+                var promises = [
+                    webDataService.getSites().then(function (data) {
+                        sites = data;
+                    }),
+                    webDataService.getSchools().then(function (data) {
+                        schools = data;
+                    }),
+                    webDataService.getPrograms().then(function (data) {
+                        programs = data;
+                    }),
+                    webDataService.getMessages().then(function (data) {
+                        messages = data;
+                    }),
+                    webDataService.getCoverPhotos().then(function (data) {
+                        coverPhotos = data;
+                    })
+                ];
 
+                $q.all(promises).finally(function () {
+                    siteRepository = postProcessSiteRepo();
+                    deferred.resolve(siteRepository);
+                });
+            }
+
+            return deferred.promise;
+        }
+
+        function postProcessSiteRepo() {
             // Add the relationship "table" between sites and schools. Useful to generate counts of sites for a given schools for eg, or when filtering the sites via a set of schools.
             // Basically flatten the relationship between sites and the schools they service.
             var siteSchools = flattenSiteSchools(sites);
@@ -49,17 +78,17 @@
             // Then add on computed properties for each program
             addProgramComputes(programs, sitePrograms);
 
-            siteRepository = {
-                                sites: sites,
-                                schools: schools,
-                                programs: programs,
-                                siteSchools: siteSchools,
-                                sitePrograms: sitePrograms,
-                                messages: messages,
-                                coverPhotos: coverPhotos
-                            };
+            var repo = {
+                sites: sites,
+                schools: schools,
+                programs: programs,
+                siteSchools: siteSchools,
+                sitePrograms: sitePrograms,
+                messages: messages,
+                coverPhotos: coverPhotos
+            };
 
-            return siteRepository;
+            return repo;
         }
 
         // Add some computed properties onto the site object
@@ -67,7 +96,6 @@
             _.forEach(sites, function (site) {
                 site.address.addressLine1 = (site.address.unitNumber ? site.address.unitNumber + '-' : '') + site.address.number + ' ' + site.address.street;
                 site.address.addressLine2 = site.address.city + ', ' + site.address.province + ' ' + site.address.postalCode;
-                site.photos = imageData.getSitePhotos(site.code);
 
                 // Google maps API for a static map with marker
                 var baseUrl = 'https://maps.googleapis.com/maps/api/staticmap';
@@ -134,7 +162,7 @@
 
         // Add all of the school properties onto the array of schools associated with a given site
         function addSiteSchoolComputes(siteSchools, schools) {
-            _.forEach(siteSchools, function(siteSchool) {
+            _.forEach(siteSchools, function (siteSchool) {
                 // Lookup the school associated with the site in the list of schools
                 var foundSchool = _.findWhere(schools, { code: siteSchool.code });
 

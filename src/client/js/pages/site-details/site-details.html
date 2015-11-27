@@ -101,10 +101,13 @@
             <div class="col-sm-12 col-md-5 col-lg-4">
                 <div class="section-details">
                     <h2>Location</h2>
-                    <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
+                    <div class="details-lead">
+                        <p>{{vm.site.address.friendlyLocation}}</p>
+                    </div>
                     <p>{{vm.site.address.addressLine1}}</p>
-                    <p>{{vm.site.address.city}} {{vm.site.address.province}} {{vm.site.address.postalCode}}
-                    <p>
+                    <p>{{vm.site.address.city}} {{vm.site.address.province}}</p>
+                    <p>{{vm.site.address.postalCode}}</p>
+                    <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
                 </div>
             </div>
 

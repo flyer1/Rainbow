@@ -3,7 +3,7 @@
 
     angular.module('app', [
         'app.core',
-        'app.data',
+        'app.services',
         'app.pages'
     ]);
 })();

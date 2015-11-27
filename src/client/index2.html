@@ -67,8 +67,10 @@
         <script src="/lib/lodash/lodash.js"></script>
         <script src="/lib/angular-scroll/angular-scroll.js"></script>
         <script src="/lib/flexslider/jquery.flexslider.js"></script>
-        <script src="/lib/angular-flexslider/angular-flexslider.js"></script>
-        <script src="/lib/lightgallery/dist/js/lightgallery-all.js"></script>
+        <script src="lib/lightgallery/dist/js/lightgallery.js"></script>
+        <script src="lib/lightgallery/dist/js/lg-thumbnail.js"></script>
+        <script src="lib/lightgallery/dist/js/lg-zoom.js"></script>
+        <script src="lib/lightgallery/dist/js/lg-fullscreen.js"></script>
         <!-- endbuild -->
         <!-- build:js js/app.js-->
         <!-- Bootstrapping -->
@@ -85,25 +87,31 @@
         <script src="/js/directives/_directives.module.js"></script>
         <script src="/js/directives/behaviors/rdc-collapse.js"></script>
         <script src="/js/directives/controls/rdc-banner-message.js"></script>
+        <script src="js/directives/controls/rdc-flex-slider.js"></script>
         <script src="/js/directives/controls/rdc-hamburger-menu.js"></script>
+        <script src="/js/directives/controls/rdc-light-gallery.js"></script>
         <script src="/js/directives/controls/rdc-map.js"></script>
         <script src="/js/directives/controls/rdc-popover-message.js"></script>
         <script src="/js/directives/dynamic-controls/popover-message.service.js"></script>
 
         <!-- App data -->
-        <script src="/js/data/_data.module.js"></script>
-        <script src="/js/data/database/image.data.js"></script>
+        <!--<script src="/js/data/_data.module.js"></script>-->
+        <!--<script src="/js/data/database/image.data.js"></script>
         <script src="/js/data/database/message.data.js"></script>
         <script src="/js/data/database/program.data.js"></script>
         <script src="/js/data/database/school.data.js"></script>
-        <script src="/js/data/database/site.data.js"></script>
-        <script src="/js/data/site.repository.js"></script>
+        <script src="/js/data/database/site.data.js"></script>-->
 
         <!-- App - Pages -->
         <script src="/js/pages/_pages.module.js"></script>
         <script src="/js/pages/layout/shell.controller.js"></script>
         <script src="/js/pages/home/home.controller.js"></script>
         <script src="/js/pages/site-details/site-details.controller.js"></script>
+
+        <!-- App - Services -->
+        <script src="/js/services/_services.module.js"></script>
+        <script src="/js/services/site-repository.service.js"></script>
+        <script src="/js/services/web-data.service.js"></script>
 
         <!-- Placeholder for injected HTML templates during 'gulp dist' -->
         <!-- inject:js -->

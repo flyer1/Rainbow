@@ -5,49 +5,27 @@
         .module('app.data')
         .factory('imageData', imageData);
 
-    imageData.$inject = ['config'];
-
-    function imageData(config) {
+    function imageData() {
 
         var service = {
-            getSitePhotos: getSitePhotos
+            getCoverPhotos: getCoverPhotos
         };
 
         return service;
 
         /************************** DATA - IMAGES ************************************************/
-        function getSitePhotos(code) {
+        function getCoverPhotos() {
+            var photos = [
+                '/img/gallery/cover/cover-01.jpg',
+                '/img/gallery/cover/cover-02.jpg',
+                '/img/gallery/cover/cover-03.jpg',
+                '/img/gallery/cover/cover-04.jpg',
+                '/img/gallery/cover/cover-05.jpg',
+                '/img/gallery/cover/cover-06.jpg',
+                '/img/gallery/cover/cover-07.jpg'
+            ];
 
-            var files = [];
-
-            switch (code) {
-                case 'P0':
-                    files = getFileNames('cover', 'cover-', 7);
-                    break;
-                case 'P1':
-                    files = getFileNames('phase-1', 'phase1-', 9);
-                    break;
-                case 'P2':
-                    files = getFileNames('phase-2', 'phase2-', 7);
-                    break;
-                case 'P3':
-                    files = getFileNames('phase-3', 'phase3-', 11);
-                    break;
-                case 'P4':
-                    break;
-                case 'P5':
-                    break;
-            }
-            return files;
-        }
-
-        function getFileNames(folderName, filePrefix, photoCount) {
-            var files = [];
-            _.times(photoCount, function (n) {
-                files.push(config.galleryRootUri + folderName + '/' + filePrefix + _.padLeft(n + 1, 2, '0') + '.jpg');
-            });
-
-            return files;
+            return photos;
         }
     }
 })();

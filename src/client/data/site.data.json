@@ -1,0 +1,726 @@
+﻿[
+    {
+        "code": "P1",
+        "shortName": "1",
+        "name": "Phase 1",
+        "address": {
+            "unitNumber": "11",
+            "number": "20",
+            "street": "Island Shore Blvd.",
+            "friendlyLocation": "By Island Lakes Clock Tower",
+            "city": "Winnipeg",
+            "province": "MB",
+            "postalCode": "R3X 1N7",
+            "lat": 49.8396928,
+            "lng": -97.0661543,
+            "markerColor": "blue",
+            "addressLine1": "11-20 Island Shore Blvd.",
+            "addressLine2": "Winnipeg, MB R3X 1N7",
+            "staticMapSrc": "https://maps.googleapis.com/maps/api/staticmap?center=20+Island Shore Blvd.,Winnipeg,MB,R3X 1N7&zoom=16&size=450x350&maptype=roadmap&markers=color:blue%7Clabel:1%7C49.8396928 ,-97.0661543"
+        },
+        "phone": "204-255-6751",
+        "schools": [
+            {
+                "code": "IL",
+                "transportType": "CT",
+                "school": {
+                    "code": "IL",
+                    "name": "Island Lake School",
+                    "website": "https://www.lrsd.net/schools/Island/Pages/default.aspx",
+                    "address": "445 Island Shore Blvd",
+                    "postalCode": "R3X 2B4",
+                    "lat": 9.829775,
+                    "lng": -97.0618756,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Gy",
+                "transportType": "SB",
+                "school": {
+                    "code": "Gy",
+                    "name": "École Guyot",
+                    "website": "https://www.lrsd.net/schools/Guyot/Pages/default.aspx",
+                    "address": "400 Willowlake Crescent",
+                    "postalCode": "R2J 3K2",
+                    "lat": 49.844541,
+                    "lng": -97.084674,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Sh",
+                "transportType": "SB",
+                "school": {
+                    "code": "Sh",
+                    "name": "Shamrock School",
+                    "website": "https://www.lrsd.net/schools/Shamrock/Pages/default.aspx",
+                    "address": "831 Beaverhill Blvd",
+                    "postalCode": "R2J 3K1",
+                    "lat": 49.8465875,
+                    "lng": -97.063782,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            }
+        ],
+        "programs": [
+            {
+                "code": "I",
+                "count": -1,
+                "program": {
+                    "code": "I",
+                    "name": "Infant",
+                    "description": "Under 2 years old",
+                    "siteCount": 5,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "SA",
+                "count": -1,
+                "program": {
+                    "code": "SA",
+                    "name": "School Age",
+                    "description": "Grades 1-12 - WRONG!!!!!!!!!!",
+                    "siteCount": 6,
+                    "isChecked": false
+                }
+            }
+        ],
+        "photos": [
+            "/img/gallery/phase-1/phase1-01.jpg",
+            "/img/gallery/phase-1/phase1-02.jpg",
+            "/img/gallery/phase-1/phase1-03.jpg",
+            "/img/gallery/phase-1/phase1-04.jpg",
+            "/img/gallery/phase-1/phase1-05.jpg",
+            "/img/gallery/phase-1/phase1-06.jpg",
+            "/img/gallery/phase-1/phase1-07.jpg",
+            "/img/gallery/phase-1/phase1-08.jpg",
+            "/img/gallery/phase-1/phase1-09.jpg"
+        ],
+        "order": 1,
+        "isExpanded": true,
+        "isChecked": true
+    },
+    {
+        "code": "P2",
+        "shortName": "2",
+        "name": "Phase 2",
+        "address": {
+            "unitNumber": null,
+            "number": "445",
+            "street": "Island Shore Blvd.",
+            "friendlyLocation": "In Island Lakes School",
+            "city": "Winnipeg",
+            "province": "MB",
+            "postalCode": "R3X 2B4",
+            "lat": 49.829943,
+            "lng": -97.0672877,
+            "markerColor": "red",
+            "addressLine1": "445 Island Shore Blvd.",
+            "addressLine2": "Winnipeg, MB R3X 2B4",
+            "staticMapSrc": "https://maps.googleapis.com/maps/api/staticmap?center=445+Island Shore Blvd.,Winnipeg,MB,R3X 2B4&zoom=16&size=450x350&maptype=roadmap&markers=color:blue%7Clabel:2%7C49.829943 ,-97.0672877"
+        },
+        "phone": "204-256-6808",
+        "schools": [
+            {
+                "code": "IL",
+                "transportType": "???",
+                "school": {
+                    "code": "IL",
+                    "name": "Island Lake School",
+                    "website": "https://www.lrsd.net/schools/Island/Pages/default.aspx",
+                    "address": "445 Island Shore Blvd",
+                    "postalCode": "R3X 2B4",
+                    "lat": 9.829775,
+                    "lng": -97.0618756,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            }
+        ],
+        "programs": [
+            {
+                "code": "I",
+                "count": -1,
+                "program": {
+                    "code": "I",
+                    "name": "Infant",
+                    "description": "Under 2 years old",
+                    "siteCount": 5,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "EY",
+                "count": -1,
+                "program": {
+                    "code": "EY",
+                    "name": "Early Years",
+                    "description": "2 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "P",
+                "count": -1,
+                "program": {
+                    "code": "P",
+                    "name": "Preschool",
+                    "description": "3/4 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "K",
+                "count": -1,
+                "program": {
+                    "code": "K",
+                    "name": "Kinders",
+                    "description": "4/5 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "SA",
+                "count": -1,
+                "program": {
+                    "code": "SA",
+                    "name": "School Age",
+                    "description": "Grades 1-12 - WRONG!!!!!!!!!!",
+                    "siteCount": 6,
+                    "isChecked": false
+                }
+            }
+        ],
+        "photos": [
+            "/img/gallery/phase-2/phase2-01.jpg",
+            "/img/gallery/phase-2/phase2-02.jpg",
+            "/img/gallery/phase-2/phase2-03.jpg",
+            "/img/gallery/phase-2/phase2-04.jpg",
+            "/img/gallery/phase-2/phase2-05.jpg",
+            "/img/gallery/phase-2/phase2-06.jpg",
+            "/img/gallery/phase-2/phase2-07.jpg"
+        ],
+        "order": 2,
+        "isExpanded": true,
+        "isChecked": true
+    },
+    {
+        "code": "P3",
+        "shortName": "3",
+        "name": "Phase 3",
+        "address": {
+            "unitNumber": "180",
+            "number": "50",
+            "street": "Lakewood Blvd.",
+            "friendlyLocation": "By Mac's Convenience Store in Southdale",
+            "city": "Winnipeg",
+            "province": "MB",
+            "postalCode": "R2J 2M7",
+            "lat": 49.8538542,
+            "lng": -97.080153,
+            "markerColor": "green",
+            "addressLine1": "180-50 Lakewood Blvd.",
+            "addressLine2": "Winnipeg, MB R2J 2M7",
+            "staticMapSrc": "https://maps.googleapis.com/maps/api/staticmap?center=50+Lakewood Blvd.,Winnipeg,MB,R2J 2M7&zoom=16&size=450x350&maptype=roadmap&markers=color:blue%7Clabel:3%7C49.8538542 ,-97.080153"
+        },
+        "phone": "204-254-2774",
+        "schools": [
+            {
+                "code": "VB",
+                "transportType": "CT",
+                "school": {
+                    "code": "VB",
+                    "name": "Van Bellegham",
+                    "website": "https://www.lrsd.net/schools/Belleghem/Pages/default.aspx",
+                    "address": "10 Vermillion Rd",
+                    "postalCode": "R2J 2T1",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Ni",
+                "transportType": "CT",
+                "school": {
+                    "code": "Ni",
+                    "name": "Niakwa",
+                    "website": "https://www.lrsd.net/schools/Niakwa/Pages/default.aspx",
+                    "address": "200 Pebble Beach Rd",
+                    "postalCode": "R2J 3K3",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Ho",
+                "transportType": "CT",
+                "school": {
+                    "code": "Ho",
+                    "name": "Howden",
+                    "website": "https://www.lrsd.net/schools/Howden/Pages/default.aspx",
+                    "address": "150 Howden Rd",
+                    "postalCode": "R2J 1L3",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Fr",
+                "transportType": "CT",
+                "school": {
+                    "code": "Fr",
+                    "name": "Frontenac",
+                    "address": "866 Autumnwood Dr",
+                    "postalCode": "R2J 1C1",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            }
+        ],
+        "programs": [
+            {
+                "code": "I",
+                "count": -1,
+                "program": {
+                    "code": "I",
+                    "name": "Infant",
+                    "description": "Under 2 years old",
+                    "siteCount": 5,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "EY",
+                "count": -1,
+                "program": {
+                    "code": "EY",
+                    "name": "Early Years",
+                    "description": "2 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "P",
+                "count": -1,
+                "program": {
+                    "code": "P",
+                    "name": "Preschool",
+                    "description": "3/4 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "K",
+                "count": -1,
+                "program": {
+                    "code": "K",
+                    "name": "Kinders",
+                    "description": "4/5 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "SA",
+                "count": -1,
+                "program": {
+                    "code": "SA",
+                    "name": "School Age",
+                    "description": "Grades 1-12 - WRONG!!!!!!!!!!",
+                    "siteCount": 6,
+                    "isChecked": false
+                }
+            }
+        ],
+        "photos": [
+            "/img/gallery/phase-3/phase3-01.jpg",
+            "/img/gallery/phase-3/phase3-02.jpg",
+            "/img/gallery/phase-3/phase3-03.jpg",
+            "/img/gallery/phase-3/phase3-04.jpg",
+            "/img/gallery/phase-3/phase3-05.jpg",
+            "/img/gallery/phase-3/phase3-06.jpg",
+            "/img/gallery/phase-3/phase3-07.jpg",
+            "/img/gallery/phase-3/phase3-08.jpg",
+            "/img/gallery/phase-3/phase3-09.jpg",
+            "/img/gallery/phase-3/phase3-10.jpg",
+            "/img/gallery/phase-3/phase3-11.jpg"
+        ],
+        "order": 3,
+        "isExpanded": true,
+        "isChecked": true
+    },
+    {
+        "code": "P3C",
+        "shortName": "3",
+        "name": "Phase 3C",
+        "address": {
+            "unitNumber": "90",
+            "number": "115",
+            "street": "Vermillion Rd.",
+            "friendlyLocation": "By Shapes in Southdale",
+            "city": "Winnipeg",
+            "province": "MB",
+            "postalCode": "R2J 4A9",
+            "lat": 49.8543693,
+            "lng": -97.0734711,
+            "markerColor": "green",
+            "addressLine1": "90-115 Vermillion Rd.",
+            "addressLine2": "Winnipeg, MB R2J 4A9",
+            "staticMapSrc": "https://maps.googleapis.com/maps/api/staticmap?center=115+Vermillion Rd.,Winnipeg,MB,R2J 4A9&zoom=16&size=450x350&maptype=roadmap&markers=color:blue%7Clabel:3%7C49.8543693 ,-97.0734711"
+        },
+        "phone": "204-255-3985",
+        "schools": [
+            {
+                "code": "VB",
+                "transportType": "CT",
+                "school": {
+                    "code": "VB",
+                    "name": "Van Bellegham",
+                    "website": "https://www.lrsd.net/schools/Belleghem/Pages/default.aspx",
+                    "address": "10 Vermillion Rd",
+                    "postalCode": "R2J 2T1",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Ni",
+                "transportType": "CT",
+                "school": {
+                    "code": "Ni",
+                    "name": "Niakwa",
+                    "website": "https://www.lrsd.net/schools/Niakwa/Pages/default.aspx",
+                    "address": "200 Pebble Beach Rd",
+                    "postalCode": "R2J 3K3",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Ho",
+                "transportType": "CT",
+                "school": {
+                    "code": "Ho",
+                    "name": "Howden",
+                    "website": "https://www.lrsd.net/schools/Howden/Pages/default.aspx",
+                    "address": "150 Howden Rd",
+                    "postalCode": "R2J 1L3",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Fr",
+                "transportType": "CT",
+                "school": {
+                    "code": "Fr",
+                    "name": "Frontenac",
+                    "address": "866 Autumnwood Dr",
+                    "postalCode": "R2J 1C1",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 2,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Gy",
+                "transportType": "CT",
+                "school": {
+                    "code": "Gy",
+                    "name": "École Guyot",
+                    "website": "https://www.lrsd.net/schools/Guyot/Pages/default.aspx",
+                    "address": "400 Willowlake Crescent",
+                    "postalCode": "R2J 3K2",
+                    "lat": 49.844541,
+                    "lng": -97.084674,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Sh",
+                "transportType": "CT",
+                "school": {
+                    "code": "Sh",
+                    "name": "Shamrock School",
+                    "website": "https://www.lrsd.net/schools/Shamrock/Pages/default.aspx",
+                    "address": "831 Beaverhill Blvd",
+                    "postalCode": "R2J 3K1",
+                    "lat": 49.8465875,
+                    "lng": -97.063782,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            }
+        ],
+        "programs": [
+            {
+                "code": "SA",
+                "count": -1,
+                "program": {
+                    "code": "SA",
+                    "name": "School Age",
+                    "description": "Grades 1-12 - WRONG!!!!!!!!!!",
+                    "siteCount": 6,
+                    "isChecked": false
+                }
+            }
+        ],
+        "photos": [
+
+        ],
+        "order": 5,
+        "isExpanded": true,
+        "isChecked": true
+    },
+    {
+        "code": "P4",
+        "shortName": "4",
+        "name": "Phase 4",
+        "address": {
+            "unitNumber": null,
+            "number": "255",
+            "street": "Vermillion Rd.",
+            "friendlyLocation": "By Giant Tiger in Southdale",
+            "city": "Winnipeg",
+            "province": "MB",
+            "postalCode": "R2J 3Z7",
+            "lat": 49.854024,
+            "lng": -97.0679276,
+            "markerColor": "orange",
+            "addressLine1": "255 Vermillion Rd.",
+            "addressLine2": "Winnipeg, MB R2J 3Z7",
+            "staticMapSrc": "https://maps.googleapis.com/maps/api/staticmap?center=255+Vermillion Rd.,Winnipeg,MB,R2J 3Z7&zoom=16&size=450x350&maptype=roadmap&markers=color:blue%7Clabel:4%7C49.854024 ,-97.0679276"
+        },
+        "phone": "204-256-0672",
+        "schools": [
+            {
+                "code": "VB",
+                "transportType": "CT",
+                "school": {
+                    "code": "VB",
+                    "name": "Van Bellegham",
+                    "website": "https://www.lrsd.net/schools/Belleghem/Pages/default.aspx",
+                    "address": "10 Vermillion Rd",
+                    "postalCode": "R2J 2T1",
+                    "lat": null,
+                    "lng": null,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Gy",
+                "transportType": "CT",
+                "school": {
+                    "code": "Gy",
+                    "name": "École Guyot",
+                    "website": "https://www.lrsd.net/schools/Guyot/Pages/default.aspx",
+                    "address": "400 Willowlake Crescent",
+                    "postalCode": "R2J 3K2",
+                    "lat": 49.844541,
+                    "lng": -97.084674,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "Sh",
+                "transportType": "CT",
+                "school": {
+                    "code": "Sh",
+                    "name": "Shamrock School",
+                    "website": "https://www.lrsd.net/schools/Shamrock/Pages/default.aspx",
+                    "address": "831 Beaverhill Blvd",
+                    "postalCode": "R2J 3K1",
+                    "lat": 49.8465875,
+                    "lng": -97.063782,
+                    "siteCount": 3,
+                    "isChecked": false
+                }
+            }
+        ],
+        "programs": [
+            {
+                "code": "I",
+                "count": -1,
+                "program": {
+                    "code": "I",
+                    "name": "Infant",
+                    "description": "Under 2 years old",
+                    "siteCount": 5,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "EY",
+                "count": -1,
+                "program": {
+                    "code": "EY",
+                    "name": "Early Years",
+                    "description": "2 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "P",
+                "count": -1,
+                "program": {
+                    "code": "P",
+                    "name": "Preschool",
+                    "description": "3/4 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "K",
+                "count": -1,
+                "program": {
+                    "code": "K",
+                    "name": "Kinders",
+                    "description": "4/5 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "SA",
+                "count": -1,
+                "program": {
+                    "code": "SA",
+                    "name": "School Age",
+                    "description": "Grades 1-12 - WRONG!!!!!!!!!!",
+                    "siteCount": 6,
+                    "isChecked": false
+                }
+            }
+        ],
+        "photos": [
+
+        ],
+        "order": 6,
+        "isExpanded": true,
+        "isChecked": true
+    },
+    {
+        "code": "SC",
+        "shortName": "5",
+        "name": "Phase 5",
+        "address": {
+            "unitNumber": null,
+            "number": "340",
+            "street": "Sage Creek Blvd",
+            "friendlyLocation": "In Sage Creek School (to be built)",
+            "city": "Winnipeg",
+            "province": "MB",
+            "postalCode": "R3X 0E1",
+            "lat": 49.83339,
+            "lng": -97.033599,
+            "markerColor": "red",
+            "addressLine1": "340 Sage Creek Blvd",
+            "addressLine2": "Winnipeg, MB R3X 0E1",
+            "staticMapSrc": "https://maps.googleapis.com/maps/api/staticmap?center=340+Sage Creek Blvd,Winnipeg,MB,R3X 0E1&zoom=16&size=450x350&maptype=roadmap&markers=color:blue%7Clabel:5%7C49.83339 ,-97.033599"
+        },
+        "phone": "",
+        "schools": [
+
+        ],
+        "programs": [
+            {
+                "code": "I",
+                "count": 16,
+                "program": {
+                    "code": "I",
+                    "name": "Infant",
+                    "description": "Under 2 years old",
+                    "siteCount": 5,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "EY",
+                "count": 8,
+                "program": {
+                    "code": "EY",
+                    "name": "Early Years",
+                    "description": "2 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "P",
+                "count": 32,
+                "program": {
+                    "code": "P",
+                    "name": "Preschool",
+                    "description": "3/4 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "K",
+                "count": 10,
+                "program": {
+                    "code": "K",
+                    "name": "Kinders",
+                    "description": "4/5 year olds",
+                    "siteCount": 4,
+                    "isChecked": false
+                }
+            },
+            {
+                "code": "SA",
+                "count": 30,
+                "program": {
+                    "code": "SA",
+                    "name": "School Age",
+                    "description": "Grades 1-12 - WRONG!!!!!!!!!!",
+                    "siteCount": 6,
+                    "isChecked": false
+                }
+            }
+        ],
+        "introduction": "Expected opening date is January 2017",
+        "messageSummary": "Coming 2017!",
+        "message": [
+            "Rainbow is very excited to announce that we were the successful candidates in the RFP for the new Daycare opening at École Sage Creek. This daycare is projected to open in January of 2017 and will have 16 infant spots, 8 early years (age 2), 32 preschool (age 3/4), 10 Kindergarten (age 4/5) and 30 school age spots.",
+            "Rainbow will be using the Manitoba Government Online Child Care Registry to fill these spots. The projected date for signing up online is Summer of 2016. Rainbow will not be taking a list until that time. Parents who need Daycare prior to this are encouraged to register online at one of our other Rainbow locations.",
+            "Rainbow is committed to keeping the Community and our Families updated on our progress as we prepare for this exciting new opportunity."
+        ],
+        "photos": [
+
+        ],
+        "order": 7,
+        "isExpanded": true,
+        "isChecked": false
+    }
+]

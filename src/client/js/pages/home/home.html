@@ -63,46 +63,17 @@
 <!-- PHOTOS -->
 <div class="section">
     <div class="section-body">
-        <ul id="jon" flex-slider slide="photo in vm.photos"
-            animation="slide"
-            animation-loop="true"
-            item-width="150"
-            item-margin="0"
-            min-items="2"
-            max-items="99">
-            <li>
-                <img ng-src="{{photo}}">
-            </li>
-        </ul>
+        <div rdc-flex-slider class="flexslider">
+            <ul class="slides" rdc-light-gallery>
+                <li ng-repeat="photo in vm.photos" data-src="{{photo}}" 
+                    data-sub-html="<h4><a href='/#/shell/site/P1'>Somethig here</a></h4><p>Blah blah</p>">
+                    <img ng-src="{{photo}}" />
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
-<!--<div class="demo-gallery">
-    <ul id="lightgallery" class="list-unstyled row" ng-repeat="photo in vm.photos">
-        <li class="col-xs-6 col-sm-4 col-md-3" data-responsive="" data-src="{{photo}}" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
-            <a href="">
-                <img class="img-responsive" src="{{photo}}">
-            </a>
-        </li>
-    </ul>
-</div>-->
-<!--$(document).ready(function() {
-  $("#photo").lightGallery();
-
-  $('.open-popup-link').magnificPopup({
-    type:'inline',
-    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-  });
-
-   $('.flexslider').flexslider({
-      animation: "slide",
-      animationLoop: true,
-      itemWidth: 150,
-      itemMargin: 0,
-      minItems: 2,
-      maxItems: 99
-    });
-});-->
 <!-- SITES -->
 <div class="section section-dark">
     <div class="container">
