@@ -2,36 +2,26 @@
     {
         "code": "I",
         "name": "Infant",
-        "description": "Under 2 years old",
-        "siteCount": 5,
-        "isChecked": false
+        "description": "Under 2 years old"
     },
     {
         "code": "EY",
         "name": "Early Years",
-        "description": "2 year olds",
-        "siteCount": 4,
-        "isChecked": false
+        "description": "2 year olds"
     },
     {
         "code": "P",
         "name": "Preschool",
-        "description": "3/4 year olds",
-        "siteCount": 4,
-        "isChecked": false
+        "description": "3/4 year olds"
     },
     {
         "code": "K",
         "name": "Kinders",
-        "description": "4/5 year olds",
-        "siteCount": 4,
-        "isChecked": false
+        "description": "4/5 year olds"
     },
     {
         "code": "SA",
         "name": "School Age",
-        "description": "Grades 1-12 - WRONG!!!!!!!!!!",
-        "siteCount": 6,
-        "isChecked": false
+        "description": "Grades 1-12 - WRONG!!!!!!!!!!"
     }
 ]

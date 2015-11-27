@@ -36,13 +36,29 @@
             vm.programs = siteData.programs;
             vm.siteSchools = siteData.siteSchools;
             vm.messages = siteData.messages;
-            vm.photos = siteData.coverPhotos;
-            _.each(siteData.sites, function (site) { vm.photos = vm.photos.concat(site.photos); });
-            for (var i = 0; i < vm.photos.length; i++) {
-                vm.photos[i] = $sce.trustAsResourceUrl(vm.photos[i]);
-            };
+            vm.photos = initPhotos();
+
             setMatchedSites(); // Array of site codes that match the filter criteria set by the user
             $window.jon = vm;
+        }
+
+        function initPhotos() {
+            var photos = [];// = siteData.coverPhotos;
+            debugger;
+            _.each(siteData.sites, function (site) {
+                photos = photos.concat(_.map(site.photos, function (photo) {
+                    return {
+                        path: photo,
+                        title: site.name + ' - ' + site.address.friendlyLocation
+                    };
+                }));
+            });
+
+            //for (var i = 0; i < vm.photos.length; i++) {
+            //    vm.photos[i] = $sce.trustAsResourceUrl(vm.photos[i]);
+            //};
+
+            return photos;
         }
 
         function toggleFilter(item) {

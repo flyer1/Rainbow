@@ -65,9 +65,9 @@
     <div class="section-body">
         <div rdc-flex-slider class="flexslider">
             <ul class="slides" rdc-light-gallery>
-                <li ng-repeat="photo in vm.photos" data-src="{{photo}}" 
-                    data-sub-html="<h4><a href='/#/shell/site/P1'>Somethig here</a></h4><p>Blah blah</p>">
-                    <img ng-src="{{photo}}" />
+                <li ng-repeat="photo in vm.photos" data-src="{{photo.path}}" 
+                    data-sub-html="<h4><a href='/#/shell/site/P1'>{{photo.title}}</a></h4><p>Blah blah</p>">
+                    <img ng-src="{{photo.path}}" />
                 </li>
             </ul>
         </div>
