@@ -43,14 +43,10 @@
         }
 
         function initPhotos() {
-            var photos = [];// = siteData.coverPhotos;
-            debugger;
+            var photos = _.map(siteData.coverPhotos, function (photo) { return getPhotoInfo(null, photo); });
             _.each(siteData.sites, function (site) {
                 photos = photos.concat(_.map(site.photos, function (photo) {
-                    return {
-                        path: photo,
-                        title: site.name + ' - ' + site.address.friendlyLocation
-                    };
+                    return getPhotoInfo(site, photo);
                 }));
             });
 
@@ -58,7 +54,17 @@
             //    vm.photos[i] = $sce.trustAsResourceUrl(vm.photos[i]);
             //};
 
+            //var x = '<h4><a ui-sref='{{photo.uiSref}}'"> photo.title </a></h4>'
             return photos;
+            /////////
+            function getPhotoInfo(site, photo) {
+                var title = site ? site.name + ' - ' + site.address.friendlyLocation : '';
+                return {
+                    path: photo,
+                    title: title,
+                    titleTemplate: site ? '<h4><a href="/#/shell/site/P2">' + title + '</a></h4>' : ''
+                };
+            }
         }
 
         function toggleFilter(item) {

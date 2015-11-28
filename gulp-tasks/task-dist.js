@@ -90,7 +90,7 @@ module.exports = function (gulp, plugin, help, utils) {
         utils.logMsg('Copying fonts to dist folder');
 
         return gulp
-            .src(['./src/client/lib/font-awesome/fonts/*', './src/client/lib/flexslider/fonts/*', './src/client/lib/lightgallery/dist/fonts/*'])
+            .src(['./src/client/fonts/*'])
             .pipe(gulp.dest('./dist/fonts'));
     });
 

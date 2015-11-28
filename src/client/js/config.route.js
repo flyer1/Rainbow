@@ -32,7 +32,7 @@
                     abstract: true,
                     views: {
                         'shell': {
-                            templateUrl: '/js/pages/layout/shell.html',
+                            templateUrl: '/js/pages/shell/shell.html',
                             controller: 'ShellController as vm'
                         }
                     },
