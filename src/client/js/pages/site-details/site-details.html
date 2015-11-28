@@ -74,6 +74,22 @@
     </div>
 </div>
 
+<!-- PHOTOS -->
+<div ng-if="vm.photos.length > 0" class="section">
+    <div class="container">
+        <div class="section-body">
+            <div rdc-flex-slider class="flexslider">
+                <ul class="slides" rdc-light-gallery>
+                    <li ng-repeat="photo in vm.photos" data-src="{{photo.path}}"
+                        data-sub-html="{{photo.titleTemplate}}">
+                        <img ng-src="{{photo.path}}" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- PROGRAMS -->
 <div class="section section-dark">
     <div class="container">

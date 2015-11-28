@@ -5,9 +5,9 @@
         .module('app.pages')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$window', '$scope', '$timeout', '$sce', 'siteData'];
+    HomeController.$inject = ['$window', '$scope', '$timeout', '$sce', 'siteService', 'siteData'];
 
-    function HomeController($window, $scope, $timeout, $sce, siteData) {
+    function HomeController($window, $scope, $timeout, $sce, siteService, siteData) {
         var vm = this;
 
         vm.sites = []; // Full list of sites (centres)
@@ -43,28 +43,13 @@
         }
 
         function initPhotos() {
-            var photos = _.map(siteData.coverPhotos, function (photo) { return getPhotoInfo(null, photo); });
+
+            var photos = siteService.getSitePhotos(null, siteData.coverPhotos);
+
             _.each(siteData.sites, function (site) {
-                photos = photos.concat(_.map(site.photos, function (photo) {
-                    return getPhotoInfo(site, photo);
-                }));
+                photos = photos.concat(siteService.getSitePhotos(site, site.photos));
             });
-
-            //for (var i = 0; i < vm.photos.length; i++) {
-            //    vm.photos[i] = $sce.trustAsResourceUrl(vm.photos[i]);
-            //};
-
-            //var x = '<h4><a ui-sref='{{photo.uiSref}}'"> photo.title </a></h4>'
             return photos;
-            /////////
-            function getPhotoInfo(site, photo) {
-                var title = site ? site.name + ' - ' + site.address.friendlyLocation : '';
-                return {
-                    path: photo,
-                    title: title,
-                    titleTemplate: site ? '<h4><a href="/#/shell/site/P2">' + title + '</a></h4>' : ''
-                };
-            }
         }
 
         function toggleFilter(item) {
