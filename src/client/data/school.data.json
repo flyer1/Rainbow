@@ -1,28 +1,34 @@
 ﻿[
     {
         "code": "IL",
-        "name": "Island Lake School",
+        "name": "Island Lakes",
         "website": "https://www.lrsd.net/schools/Island/Pages/default.aspx",
         "address": "445 Island Shore Blvd",
         "postalCode": "R3X 2B4",
+        "type": "english",
+        "logo": "/img/school-logos/island-lakes.png",
         "lat": 9.829775,
         "lng": -97.0618756
     },
     {
         "code": "Gy",
-        "name": "École Guyot",
+        "name": "Guyot",
         "website": "https://www.lrsd.net/schools/Guyot/Pages/default.aspx",
         "address": "400 Willowlake Crescent",
         "postalCode": "R2J 3K2",
+        "type": "french-immersion",
+        "logo": "/img/school-logos/guyot.png",
         "lat": 49.844541,
         "lng": -97.084674
     },
     {
         "code": "Sh",
-        "name": "Shamrock School",
+        "name": "Shamrock",
         "website": "https://www.lrsd.net/schools/Shamrock/Pages/default.aspx",
         "address": "831 Beaverhill Blvd",
         "postalCode": "R2J 3K1",
+        "type": "english",
+        "logo": "/img/school-logos/shamrock.png",
         "lat": 49.8465875,
         "lng": -97.063782
     },
@@ -32,6 +38,8 @@
         "website": "https://www.lrsd.net/schools/Belleghem/Pages/default.aspx",
         "address": "10 Vermillion Rd",
         "postalCode": "R2J 2T1",
+        "type": "french-immersion",
+        "logo": "/img/school-logos/van-belleghem.png",
         "lat": null,
         "lng": null
     },
@@ -41,6 +49,8 @@
         "website": "https://www.lrsd.net/schools/Niakwa/Pages/default.aspx",
         "address": "200 Pebble Beach Rd",
         "postalCode": "R2J 3K3",
+        "type": "english",
+        "logo": "/img/school-logos/niakwa.png",
         "lat": null,
         "lng": null
     },
@@ -50,15 +60,31 @@
         "website": "https://www.lrsd.net/schools/Howden/Pages/default.aspx",
         "address": "150 Howden Rd",
         "postalCode": "R2J 1L3",
+        "type": "french-immersion",
+        "logo": "/img/school-logos/howden.png",
         "lat": null,
         "lng": null
     },
     {
         "code": "Fr",
         "name": "Frontenac",
+        "website": "https://www.lrsd.net/schools/Frontenac/Pages/default.aspx",
         "address": "866 Autumnwood Dr",
         "postalCode": "R2J 1C1",
+        "type": "english",
+        "logo": "/img/school-logos/frontenac.png",
         "lat": null,
         "lng": null
+    },
+    {
+        "code": "SC",
+        "name": "Sage Creek",
+        "website": "https://www.lrsd.net/School/sage-creek-updates/Pages/default.aspx",
+        "address": "Sage Creek Blvd.",
+        "postalCode": "",
+        "type": "dual-track",
+        "logo": "/img/school-logos/sage-creek.png",
+        "lat": 49.833159,
+        "lng": -97.033995
     }
 ]

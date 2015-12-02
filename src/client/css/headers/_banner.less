@@ -1,0 +1,62 @@
+// MAIN BANNER -------------------
+.main-banner {
+    padding-bottom: 25px;
+    padding-top: 10px;
+    background: #f2f2f2;
+    background: radial-gradient(circle farthest-side at center,#FFF 0,#dae4e4 100%);
+}
+
+/*.main-banner h1:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle farthest-side at top,rgba(255,255,255,0.45) 0,rgba(255,255,255,0) 100%);
+}*/
+
+.main-banner .banner-image {
+    /*background: url('../img/rainbow-text-lg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 440px;*/
+    width: 100%;
+}
+
+.main-banner h1 {
+    font-size: 60px;
+    font-weight: 800;
+    font-family: "Roboto";
+    text-shadow: 0 0 5px white;
+    color: #2C2C2C;
+    margin: 4px auto;
+    max-width: 700px;
+}
+
+@media (max-width: 768px) {
+    .main-banner h1 {
+        font-size: 40px;
+    }
+}
+
+.main-banner h1 .callout {
+    color: #FB7D26;
+    text-transform: uppercase;
+}
+
+.main-banner .lead {
+    font-size: 18px;
+    color: #555;
+    font-family: "Roboto";
+    max-width: 700px;
+    margin: 4px auto;
+}
+
+@media (max-width: 768px) {
+    .main-banner .lead {
+        font-size: 16px;
+    }
+}

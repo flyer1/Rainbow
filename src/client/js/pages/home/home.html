@@ -3,7 +3,10 @@
 <!-- MAIN BANNER -->
 <div class="main-banner">
     <div class="container" ng-class="{'has-banner-message' : vm.messages.banner.summary}">
-        <img class="banner-image" src="/img/rainbow-text-lg.png" />
+        <img class="banner-image" src="/img/rainbow-lg.png"/>
+        <h1>
+            <span class="callout">RAINBOW</span> Day Nursery
+        </h1>
         <p class="lead">Rainbow Day Nursery is one of the largest licensed daycare centres in Winnipeg with 4 full time locations and 2 before and after school locations</p>
     </div>
 </div>
@@ -46,14 +49,12 @@
 <!-- REGISTRY -->
 <div class="section section-dark-gray">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header-tight">
             <h2 class="text-center">Registry</h2>
         </div>
         <div class="section-body">
             <p class="center-text">Rainbow uses the Manitoba Governments Online Child Care Registry (OCCR). You can register below</p>
-        </div>
-        <div class="section-footer">
-            <p class="center-text">
+            <p class="center-text section-actions">
                 <a href="http://www.gov.mb.ca/fs/parentupdate/index.html" target="_blank" class="button-lg attention-grabber">ONLINE REGISTRY</a>
             </p>
         </div>
@@ -104,7 +105,7 @@
 
                     <hr />
 
-                    <h3>Programs Offered</h3>
+                    <!--<h3>Programs Offered</h3>
                     <ul>
                         <li ng-repeat="program in vm.programs" class="checkbox">
                             <label>
@@ -113,7 +114,7 @@
                             </label>
                             <span class="pull-right subdued" ng-show="program.isChecked || !vm.hasProgramFilter() ">{{program.siteCount}}</span>
                         </li>
-                    </ul>
+                    </ul>-->
                 </div>
 
                 <!-- LIST OF SITES -->

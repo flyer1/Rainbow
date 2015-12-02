@@ -5,9 +5,9 @@
         .module('app.pages')
         .controller('SiteDetailsController', SiteDetailsController);
 
-    SiteDetailsController.$inject = ['$document', '$stateParams', 'siteService', 'siteData'];
+    SiteDetailsController.$inject = ['$document', '$window', '$stateParams', 'siteService', 'siteData'];
 
-    function SiteDetailsController($document, $stateParams, siteService, siteData) {
+    function SiteDetailsController($document, $window, $stateParams, siteService, siteData) {
         var vm = this;
         vm.site = {};
         vm.photos = [];
@@ -28,10 +28,42 @@
 
             console.log(vm.site);
             initSiteNav();
+            initJon();
 
             vm.photos = siteService.getSitePhotos(vm.site, vm.site.photos);
 
             $document.scrollTo(top);
+        }
+
+        function initJon() {
+            var header = $('.site-banner');
+            var headerHeight = header.height();
+            var title = header.find('.section .container h1');
+            var y = title.position().top;
+            var titleHeight = title.height();
+
+            function stickyScroll(e) {
+
+                console.log($window.pageYOffset);
+                if ($window.pageYOffset > y) {
+                    header.addClass('fixed');
+                }
+
+                if ($window.pageYOffset > 270) {
+                    header.addClass('fixed-2');
+                }
+
+                if ($window.pageYOffset < y ) {
+                    header.removeClass('fixed');
+                }
+                if ($window.pageYOffset < 270) {
+                    header.removeClass('fixed-2');
+                }
+
+            }
+
+            // Scroll handler to toggle classes.
+            angular.element($window).bind('scroll', stickyScroll);
         }
 
         // Init the data that drives the prev/next buttons 
@@ -44,6 +76,6 @@
             vm.prevSite = siteData.sites[prevIndex];
             vm.nextSite = siteData.sites[nextIndex];
         }
-       
+
     }
 })();

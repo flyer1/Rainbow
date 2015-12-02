@@ -1,112 +1,5 @@
-// BANNER MESSAGE -------------------
-.banner-message {
-    margin-top: 59px;
-    background-color: #f1883f;
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    padding-top: 11px;
-    padding-bottom: 7px;
-    font-size: 16px;
-    color: white;
-    font-weight: 600;
-}
-
-@media (max-width: 850px) {
-    .banner-message {
-        font-size: 14px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-    }
-}
-
-@media (max-width: 640px) {
-    .banner-message {
-        font-size: 12px;
-    }
-}
-
-.banner-message a {
-    margin: 0;
-    color: white;
-    line-height: 11px;
-}
-
-.banner-message a:hover {
-    cursor: pointer;
-}
-
-.banner-message label {
-    color: rgba(19, 19, 19, 0.55);
-    text-transform: uppercase;
-    margin-right: 5px;
-    font-weight: 800;
-}
-
-// MAIN BANNER -------------------
-.main-banner {
-    padding-bottom: 25px;
-    padding-top: 10px;
-    background: #f2f2f2;
-    background: radial-gradient(circle farthest-side at center,#FFF 0,#dae4e4 100%);
-}
-
-/*.main-banner h1:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(circle farthest-side at top,rgba(255,255,255,0.45) 0,rgba(255,255,255,0) 100%);
-}*/
-
-.main-banner.has-banner-message {
-    margin-top: 0;
-}
-
-.main-banner .banner-image {
-    /*background: url('../img/rainbow-text-lg.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 440px;*/
-    width: 100%;
-}
-
-.main-banner .title h1 {
-    text-align: center;
-    font-size: 4em;
-    letter-spacing: -0.06em;
-    font-weight: bold;
-    font-family: "Roboto";
-    text-transform: uppercase;
-}
-
-.main-banner .title h1 .emphasis {
-    color: #f6883a;
-    margin-right: 4px;
-}
-
-.main-banner .lead {
-    font-size: 18px;
-    color: #555;
-    font-family: "Roboto";
-    max-width: 700px;
-    margin: 4px auto;
-}
-
-@media (max-width: 768px) {
-    .main-banner .lead {
-        font-size: 16px;
-    }
-}
-
 // SITE BANNER --------------------------
 .site-banner {
-    background: repeating-linear-gradient(45deg, rgba(228, 228, 228, 0.12), rgba(228, 228, 228, 0.1) 1px, rgba(16, 19, 35, 0) 1px, rgba(22, 26, 51, 0) 13px);
     height: 350px;
     margin-top: 59px;
 }
@@ -117,7 +10,31 @@
     }
 }
 
-.site-banner .site-banner-background {
+// SITE BANNER BACKGROUND --------------------------
+.site-banner-background {
+}
+
+.fixed-2 .site-banner-background {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.site-banner-background .background-stripes {
+    background: repeating-linear-gradient(45deg, rgba(228, 228, 228, 0.12), rgba(228, 228, 228, 0.1) 1px, rgba(16, 19, 35, 0) 1px, rgba(22, 26, 51, 0) 13px);
+    height: 350px;
+    position: absolute;
+    top: 59px;
+    left: 0;
+    width: 100%;
+}
+
+.fixed-2 .site-banner-background .background-stripes {
+    height: 80px;
+}
+
+.site-banner-background .background-spotlight {
     background-image: radial-gradient(rgba(14, 23, 36, 0.93), #000000);
     width: 100%;
     height: 350px;
@@ -125,6 +42,12 @@
     z-index: -1;
 }
 
+.fixed-2 .site-banner-background .background-spotlight {
+    height: 80px;
+    top: 0;
+}
+
+// BANNER CONTENT ----------------------------------------
 .site-banner h1 {
     font-size: 60px;
     font-weight: 800;
@@ -134,6 +57,11 @@
     text-transform: uppercase;
     padding-top: 70px;
     text-shadow: 1px 1px 10px black;
+    z-index: 2;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
 @media (max-width: 767px) {
@@ -178,6 +106,12 @@
     display: inline-block;
 }
 
+@media (max-width: 458px) {
+    .site-banner p .callout {
+        margin-top: 0;
+    }
+}
+
 // BANNER NAV BUTTONS =================================
 .site-banner nav a {
     position: absolute;
@@ -202,6 +136,31 @@
 
 .site-banner nav a.prev {
     left: 0;
+}
+
+.site-banner.fixed .section h1 {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 50px;
+    line-height: 1.5;
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -o-transform: translateY(-8px);
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+.site-banner.fixed nav a {
+    position: fixed;
+    top: 0;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
 }
 
 // Nav Button --
@@ -276,3 +235,4 @@
 .site-banner nav a .info .sub-title {
     font-size: 15px;
 }
+

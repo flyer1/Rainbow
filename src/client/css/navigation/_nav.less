@@ -1,5 +1,5 @@
 .navbar {
-    background: #3c3d3d none;
+    background: #443e3e none;
     height: 60px;
     border-bottom: 1px solid #333;
     margin-bottom: 0;
@@ -26,7 +26,7 @@
 // LOGO -------------------------------------
 .navbar .logo {
     opacity: 0.7;
-    background-image: url("../img/rainbow-logo-white-sm.png");
+    background-image: url("/img/rainbow-logo-white-sm.png");
     background-size: cover;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -131,34 +131,42 @@
 .nav-menu-standard .contact-nav a {
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.64);
-    padding: 5px;
+    padding: 5px 5px 5px 3px;
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
     color: #3C3D3D;
     text-align: center;
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 21px;
     margin-right: 20px;
     margin-left: 0;
-    -moz-transition: background-color 0.3s ease;
-    -o-transition: background-color 0.3s ease;
-    -webkit-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
     line-height: 20px;
 }
 
 .nav-menu-standard .contact-nav a:hover {
-    background-color: white;
+    color: white;
 }
 
 .nav-menu-standard .contact-nav a.contact-email {
-    font-size: 17px;
-    padding-left: 5px;
+    font-size: 18px;
+    padding-left: 5px;  
+}
+
+.nav-menu-standard .contact-nav a.contact-email:hover {
+    background-color: rgb(215,73,54);
 }
 
 .nav-menu-standard .contact-nav a.contact-facebook:hover {
-    background-color: rgb(126, 167, 253);
+    background-color: rgb(77,103,163);
+}
+
+.nav-menu-standard .contact-nav a.contact-phone:hover {
+    background-color: rgb(82,231,107);
 }
 
 // DROP DOWN MENU -------------------------------------
@@ -174,7 +182,7 @@
     right: 0;
     left: initial;
     padding: 0;
-    border-radius: 0;
+    border-radius: 5px;
     margin-top: 0;
     overflow: hidden;
     border: none;
@@ -206,7 +214,6 @@
         color: #f9be03;
     }
 
-
     > li > a > small {
         color: #000;
         font-size: 14px;
@@ -225,10 +232,14 @@
 
     &.has-icons > li > a > .icon {
         position: absolute;
-        left: 9px;
-        top: 13px;
-        font-size: 18px;
-        color: #3C3D3D;
+        left: 13px;
+        top: 17px;
+        font-size: 16px;
+        color: #52e76b;
+    }
+
+    li:first-child a {
+        border: none;
     }
 }
 

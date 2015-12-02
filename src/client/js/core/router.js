@@ -44,7 +44,8 @@
         /*************************** IMPLEMENTATION ***************************/
 
         function init() {
-            watchStateChanges();
+            $rootScope.$on('$stateChangeStart', onStateChangeStart);
+            $rootScope.$on('$stateChangeSuccess', onStateChangeSuccess);
         }
 
         // #region STATE CHANGE WATCHERS 
@@ -73,11 +74,20 @@
                 stateWatchers.splice(foundIndex, 1);
             }
         }
+        // #endregion
 
-        function watchStateChanges() {
-            $rootScope.$on('$stateChangeStart', onStateChangeStart);
+        function onStateChangeSuccess(event, toState, toParams, fromState, fromParams) {
+            // Unfortunately, bootstraps tooltips can get stuck. At least clear them when the user navigates.
+            clearAllTooltips();
         }
 
+        function clearAllTooltips() {
+            // When an item is removed from the DOM that has a tooltip, the tooltip can get stuck and never go away. 
+            // See https://github.com/twbs/bootstrap/issues/3084
+            // But I find that there are other ways in which toolstips can get stuck. This one liner ensures all are turned off.
+            $('.tooltip.in').remove();
+        }
+      
         function registerStateChangedListener(callback) {
             $rootScope.$on('$stateChangeSuccess', callback);
         }

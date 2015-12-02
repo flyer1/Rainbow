@@ -3,6 +3,7 @@
         "code": "P1",
         "shortName": "1",
         "name": "Phase 1",
+        "locatedInSchool": false,
         "address": {
             "unitNumber": "11",
             "number": "20",
@@ -18,12 +19,12 @@
         "phone": "204-255-6751",
         "schools": [
             {
-                "code": "IL",
-                "transportType": "CT"
-            },
-            {
                 "code": "Gy",
                 "transportType": "SB"
+            },
+            {
+                "code": "IL",
+                "transportType": "CT"
             },
             {
                 "code": "Sh",
@@ -57,6 +58,7 @@
         "code": "P2",
         "shortName": "2",
         "name": "Phase 2",
+        "locatedInSchool": true,
         "address": {
             "unitNumber": null,
             "number": "445",
@@ -113,6 +115,7 @@
         "code": "P3",
         "shortName": "3",
         "name": "Phase 3",
+        "locatedInSchool": false,
         "address": {
             "unitNumber": "180",
             "number": "50",
@@ -128,11 +131,7 @@
         "phone": "204-254-2774",
         "schools": [
             {
-                "code": "VB",
-                "transportType": "CT"
-            },
-            {
-                "code": "Ni",
+                "code": "Fr",
                 "transportType": "CT"
             },
             {
@@ -140,7 +139,11 @@
                 "transportType": "CT"
             },
             {
-                "code": "Fr",
+                "code": "Ni",
+                "transportType": "CT"
+            },
+            {
+                "code": "VB",
                 "transportType": "CT"
             }
         ],
@@ -185,6 +188,7 @@
         "code": "P3C",
         "shortName": "3",
         "name": "Phase 3C",
+        "locatedInSchool": false,
         "address": {
             "unitNumber": "90",
             "number": "115",
@@ -200,18 +204,6 @@
         "phone": "204-255-3985",
         "schools": [
             {
-                "code": "VB",
-                "transportType": "CT"
-            },
-            {
-                "code": "Ni",
-                "transportType": "CT"
-            },
-            {
-                "code": "Ho",
-                "transportType": "CT"
-            },
-            {
                 "code": "Fr",
                 "transportType": "CT"
             },
@@ -220,7 +212,19 @@
                 "transportType": "CT"
             },
             {
+                "code": "Ho",
+                "transportType": "CT"
+            },
+            {
+                "code": "Ni",
+                "transportType": "CT"
+            },
+            {
                 "code": "Sh",
+                "transportType": "CT"
+            },
+            {
+                "code": "VB",
                 "transportType": "CT"
             }
         ],
@@ -239,6 +243,7 @@
         "code": "P4",
         "shortName": "4",
         "name": "Phase 4",
+        "locatedInSchool": false,
         "address": {
             "unitNumber": null,
             "number": "255",
@@ -254,15 +259,15 @@
         "phone": "204-256-0672",
         "schools": [
             {
-                "code": "VB",
-                "transportType": "CT"
-            },
-            {
                 "code": "Gy",
                 "transportType": "CT"
             },
             {
                 "code": "Sh",
+                "transportType": "CT"
+            },
+            {
+                "code": "VB",
                 "transportType": "CT"
             }
         ],
@@ -297,21 +302,25 @@
         "code": "SC",
         "shortName": "5",
         "name": "Phase 5",
+        "locatedInSchool": true,
         "address": {
             "unitNumber": null,
-            "number": "340",
+            "number": "",
             "street": "Sage Creek Blvd",
             "friendlyLocation": "In Sage Creek School (to be built)",
             "city": "Winnipeg",
             "province": "MB",
             "postalCode": "R3X 0E1",
-            "lat": 49.83339,
-            "lng": -97.033599,
+            "lat": 49.833159,
+            "lng": -97.033995,
             "markerColor": "red"
         },
         "phone": "",
         "schools": [
-
+            {
+                "code": "SC",
+                "transportType": ""
+            }
         ],
         "programs": [
             {
@@ -338,8 +347,8 @@
         "introduction": "Expected opening date is January 2017",
         "messageSummary": "Coming 2017!",
         "message": [
-            "Rainbow is very excited to announce that we were the successful candidates in the RFP for the new Daycare opening at École Sage Creek. This daycare is projected to open in January of 2017 and will have 16 infant spots, 8 early years (age 2), 32 preschool (age 3/4), 10 Kindergarten (age 4/5) and 30 school age spots.",
-            "Rainbow will be using the Manitoba Government Online Child Care Registry to fill these spots. The projected date for signing up online is Summer of 2016. Rainbow will not be taking a list until that time. Parents who need Daycare prior to this are encouraged to register online at one of our other Rainbow locations.",
+            "Rainbow is very excited to announce that we were the successful candidates in the RFP for the new Daycare opening at École Sage Creek. This daycare is projected to open in July of 2017 and will have 16 infant spots, 8 early years (age 2), 32 preschool (age 3/4), 10 Kindergarten (age 4/5) and 30 school age spots.",
+            "Rainbow will be using the Manitoba Government Online Child Care Registry to fill these spots. Rainbow will be starting a wait list in Feburary of 2017. Parents who need Daycare prior to this are encouraged to register online at one of our other Rainbow locations.",
             "Rainbow is committed to keeping the Community and our Families updated on our progress as we prepare for this exciting new opportunity."
         ],
         "photos": [

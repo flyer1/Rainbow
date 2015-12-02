@@ -1,5 +1,9 @@
 <div class="site-banner">
-    <div class="site-banner-background"></div>
+    <div class="site-banner-background">
+        <div class="background-stripes">
+            <div class="background-spotlight"></div>
+        </div>
+    </div>
     <nav class="hidden-xs">
         <a class="prev" ng-href="#/shell/site/{{vm.prevSite.code}}">
             <span class="nav-button">
@@ -51,23 +55,28 @@
     </div>
 </div>
 
-<!-- SERVICES -->
+<!-- SCHOOLS -->
 <div class="section section-dark-gray">
     <div class="container">
         <div class="section-details">
-            <h2>Transportation</h2>
-            <p class="sub-title">
-                This center provides bus service to
+            <h2>Schools</h2>
+            <p ng-if="!vm.site.locatedInSchool" class="sub-title">
+                {{vm.site.name}} provides bus service to
                 <span>{{vm.site.schools.length}}</span>&nbsp;<ng-pluralize count="vm.site.schools.length" when="{'1': 'school','other': 'schools'}"></ng-pluralize>
+            </p>
+            <p ng-if="vm.site.locatedInSchool" class="sub-title">
+                {{vm.site.name}} is located inside of {{vm.site.schools[0].school.name}} school
             </p>
             <div class="row cards cards-light">
                 <div class="col-md-4" ng-repeat="school in vm.site.schools">
-                    <div class="card">
-                        <i class="icon fa fa-bus"></i>
-                        <h3>{{school.school.name}}</h3>
+                    <a class="card" ng-href="{{school.school.website}}" target="_blank">
+                        <span class="card-header" rdc-background-image="{{school.school.logo}}"></span>
+                        <p class="card-body">
+                            <h3><span ng-if="school.school.type ==='french-immersion'">&Eacute;cole</span> {{school.school.name}} <span ng-if="school.school.type !== 'french-immersion'">School</span></h3>
                         <p>{{school.school.address}}</p>
-                        <a ng-href="{{school.school.website}}" target="_blank">School Website</a>
-                    </div>
+                        <span class="link">School Website</span>
+                        </p>
+                    </a>
                 </div>
             </div>
         </div>

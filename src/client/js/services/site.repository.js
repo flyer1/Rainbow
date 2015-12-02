@@ -113,6 +113,20 @@
         }
 
         function addSchoolComputes(schools, siteSchools) {
+            //var flattenedSchools = [];
+            //debugger
+            //_.each(siteRepository.sites, function(site) {
+            //    flattenedSchools = _.map(site.schools, function(school) {
+            //        return {
+            //            siteCode: site.code,
+            //            schoolCode: school.code
+            //        };
+            //    });
+            //});
+            
+            //_.each(schools, function (school) {
+
+            //});
             _.forEach(schools, function (school) {
                 // For each school, add a count of how many sites service it
                 school.siteCount = _.where(siteSchools, { 'schoolCode': school.code }).length;

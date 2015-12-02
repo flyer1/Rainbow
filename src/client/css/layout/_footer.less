@@ -1,4 +1,5 @@
-﻿// MAIN FOOTER ----------------------------
+﻿// TODO: clean up this guy too.
+// MAIN FOOTER ----------------------------
 .main-footer {
     background: #36474F;
 }
@@ -56,4 +57,45 @@ footer {
     background: #353535;
     color: rgba(255, 255, 255, 0.5);
     font-size: 16px;
+}
+
+// FOOTER CONTACT ----------------------------
+.footer-contact {
+    display: none;
+}
+
+@media (max-width: 740px) {
+    .footer-contact {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.footer-contact ul {
+    list-style-type: none;
+    margin: 0 auto;
+    width: 210px;
+}
+
+.footer-contact ul li {
+    float: left;
+}
+
+.footer-contact ul li a {
+    background-color: rgb(0, 0, 0);
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    color: white;
+    padding-top: 6px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.footer-contact ul li a.contact-email {
+    font-size: 17px;
+    padding-top: 7px;
 }
