@@ -29,7 +29,7 @@ module.exports = function (gulp, plugin, help, utils) {
 
         return gulp
             // READ INDEX.HTML FILE --------------
-            .src('./src/client/index2.html')
+            .src('./src/client/index.html')
             .pipe(plumber()) // Provide better error messaging
 
             .pipe(plugin.print(utils.logFileProgress))

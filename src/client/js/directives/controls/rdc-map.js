@@ -25,7 +25,7 @@
             scope.mapWidth = undefined;
             resizeMap();
 
-            angular.element($window).on('resize', resizeMap);
+            angular.element($window).on('resize', _.debounce(resizeMap, 200));
             scope.$on('$destroy', onDestroy);
 
             return;

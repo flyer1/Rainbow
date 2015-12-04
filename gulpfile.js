@@ -17,6 +17,7 @@ var utils = plugin.rdcUtils.getUtils(plugin);
 require('./gulp-tasks/task-clean.js')(gulp, plugin, help, utils);
 require('./gulp-tasks/task-css.js')(gulp, plugin, help, utils);
 require('./gulp-tasks/task-dist.js')(gulp, plugin, help, utils);
+require('./gulp-tasks/task-ftp.js')(gulp, plugin, help, utils);
 require('./gulp-tasks/task-serve.js')(gulp, plugin, help, utils);
 require('./gulp-tasks/task-test.js')(gulp, plugin, help, utils);
 

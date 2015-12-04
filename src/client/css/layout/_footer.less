@@ -1,101 +1,105 @@
-﻿// TODO: clean up this guy too.
-// MAIN FOOTER ----------------------------
-.main-footer {
-    background: #36474F;
-}
-
-// MAIN FOOTER NAV ----------------------------
-.main-footer nav {
-    padding: 48px;
-    color: #fff;
-}
-
-// FOOTER COLUMN ----------------------------
-.main-footer nav .footer-col {
-    float: left;
-    margin-right: 40px;
-}
-
-// FOOTER COLUMN BODY ----------------------------
-.main-footer nav ul {
-    list-style-type: none;
-}
-
-// FOOTER HEADER ----------------------------
-.main-footer nav h3 {
-    font-family: "Roboto";
-    font-weight: 100;
-    margin: 0 0 16px 0;
-    font-size: 32px;
-    opacity: .87;
-    line-height: 32px;
-    color: rgba(255, 255, 255, 0.49);
-    letter-spacing: 0;
-}
-
-// FOOTER ITEM ----------------------------
-
-// FOOTER ITEM ANCHOR ----------------------------
-.footer-col .footer-col-item a {
-    font-family: 'Roboto';
-    font-size: 16px;
-    line-height: 28px;
-    color: #e5e5e5;
-}
-
-// FOOTER ITEM ICON ----------------------------
-.footer-col .footer-col-item .footer-icon {
-    font-size: 22px;
-    margin-right: 6px;
-}
-
-// FOOTER (small footer) ----------------------------
-footer {
+﻿footer {
+    // FOOTER  ----------------------------
     text-align: center;
     padding: 16px;
     position: relative;
     background: #353535;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 16px;
-}
-
-// FOOTER CONTACT ----------------------------
-.footer-contact {
-    display: none;
-}
-
-@media (max-width: 740px) {
-    .footer-contact {
-        display: block;
-        margin-bottom: 10px;
+    font-size: 13px;
+    //FOOTER TO TOP ----------------------------
+    .to-top {
+        position: fixed;
+        bottom: 0;
+        right: 25px;
+        -moz-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        -o-transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
     }
-}
 
-.footer-contact ul {
-    list-style-type: none;
-    margin: 0 auto;
-    width: 210px;
-}
+    .has-to-top .to-top {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 
-.footer-contact ul li {
-    float: left;
-}
+    .to-top a {
+        background: #ccc;
+        width: 42px;
+        display: inline-block;
+        opacity: 0.75;
+        text-transform: uppercase;
+        box-shadow: 3px 4px 10px rgba(0,0,0,0.5);
+        color: black;
+        height: 27px;
+        cursor: pointer;
+        text-decoration: none;
+    }
 
-.footer-contact ul li a {
-    background-color: rgb(0, 0, 0);
-    border-radius: 30px;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    color: white;
-    padding-top: 6px;
-    margin-left: 15px;
-    margin-right: 15px;
-    font-size: 20px;
-    opacity: 0.5;
-}
+    .to-top a:after {
+        border-bottom: 17px solid #CCCCCC;
+        border-left: 21px solid transparent;
+        border-right: 21px solid transparent;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: -17px;
+        width: 0;
+    }
+    // FOOTER CONTACT ----------------------------
+    .footer-contact {
+        display: none;
+    }
 
-.footer-contact ul li a.contact-email {
-    font-size: 17px;
-    padding-top: 7px;
+    @media (max-width: 740px) {
+        .footer-contact {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer-contact ul {
+        list-style-type: none;
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .footer-contact ul li {
+        float: left;
+    }
+
+    .footer-contact ul li a {
+        background-color: rgb(0, 0, 0);
+        border-radius: 30px;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        color: white;
+        padding-top: 6px;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 20px;
+        opacity: 0.5;
+        -moz-transition: opacity 0.2s ease;
+        -o-transition: opacity 0.2s ease;
+        -webkit-transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease;
+    }
+
+    .footer-contact ul li a:hover {
+        opacity: 0.85;
+    }
+
+    .footer-contact ul li a.contact-email {
+        font-size: 17px;
+        padding-top: 7px;
+    }
 }

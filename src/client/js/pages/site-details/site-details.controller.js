@@ -35,35 +35,52 @@
             $document.scrollTo(top);
         }
 
+        // TODO: fix up this mess...
+        // Also when do you turn off the event listener? 
         function initJon() {
             var header = $('.site-banner');
             var headerHeight = header.height();
             var title = header.find('.section .container h1');
             var y = title.position().top;
             var titleHeight = title.height();
+            var lastAction = '';
+            var action = '';
 
             function stickyScroll(e) {
+                var className = '';
 
-                console.log($window.pageYOffset);
+                if ($window.innerWidth < 767) return;
+
                 if ($window.pageYOffset > y) {
-                    header.addClass('fixed');
+                    action = 'addClass';
+                    className = 'fixed';
+                }
+
+                if ($window.pageYOffset < y ) {
+                    action = 'removeClass';
+                    className = 'fixed';
+
                 }
 
                 if ($window.pageYOffset > 270) {
                     header.addClass('fixed-2');
                 }
 
-                if ($window.pageYOffset < y ) {
-                    header.removeClass('fixed');
-                }
                 if ($window.pageYOffset < 270) {
                     header.removeClass('fixed-2');
+                }
+
+                if (action !== lastAction) {
+                    console.log('performing action')
+                    header[action](className);
+                    lastAction = action;
                 }
 
             }
 
             // Scroll handler to toggle classes.
-            angular.element($window).bind('scroll', stickyScroll);
+            console.log('binding to scroll...') // TODO: Yeah, gotta unblind this sucka as I'm hooking up additional listeners with each nav to site details..
+            angular.element($window).bind('scroll', _.throttle(stickyScroll, 50));
         }
 
         // Init the data that drives the prev/next buttons 

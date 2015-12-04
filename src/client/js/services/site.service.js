@@ -18,10 +18,11 @@
         function getSitePhotos(site, photos) {
             var result = _.map(photos, function (photo) {
                 var title = site ? site.name + ' - ' + site.address.friendlyLocation : '';
+                var template = _.template('<h4><a href="/#/shell/site/<%= siteCode %>"><%= title %></a></h4>');
                 return {
                     path: photo,
                     title: title,
-                    titleTemplate: site ? '<h4><a href="/#/shell/site/P2">' + title + '</a></h4>' : ''
+                    titleTemplate: site ? template({siteCode: site.code, title: title}) : ''
                 };
             });
 

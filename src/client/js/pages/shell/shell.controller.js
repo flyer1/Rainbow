@@ -58,5 +58,6 @@
         function scrollToTop() {
             $document.scrollTopAnimated(0, 1000);
         }
+
     }
 })();

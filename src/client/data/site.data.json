@@ -253,7 +253,7 @@
             "province": "MB",
             "postalCode": "R2J 3Z7",
             "lat": 49.854024,
-            "lng": -97.0679276,
+            "lng": -97.065739,
             "markerColor": "orange"
         },
         "phone": "204-256-0672",
@@ -306,13 +306,13 @@
         "address": {
             "unitNumber": null,
             "number": "",
-            "street": "Sage Creek Blvd",
+            "street": "328 Sage Creek Blvd",
             "friendlyLocation": "In Sage Creek School (to be built)",
             "city": "Winnipeg",
             "province": "MB",
             "postalCode": "R3X 0E1",
-            "lat": 49.833159,
-            "lng": -97.033995,
+            "lat": 49.833454,
+            "lng": -97.034234,
             "markerColor": "red"
         },
         "phone": "",
@@ -333,7 +333,7 @@
             },
             {
                 "code": "P",
-                "count": 32
+                "count": 48
             },
             {
                 "code": "K",
@@ -344,11 +344,11 @@
                 "count": 30
             }
         ],
-        "introduction": "Expected opening date is January 2017",
+        "introduction": "Expected opening date is July 2017",
         "messageSummary": "Coming 2017!",
         "message": [
-            "Rainbow is very excited to announce that we were the successful candidates in the RFP for the new Daycare opening at École Sage Creek. This daycare is projected to open in July of 2017 and will have 16 infant spots, 8 early years (age 2), 32 preschool (age 3/4), 10 Kindergarten (age 4/5) and 30 school age spots.",
-            "Rainbow will be using the Manitoba Government Online Child Care Registry to fill these spots. Rainbow will be starting a wait list in Feburary of 2017. Parents who need Daycare prior to this are encouraged to register online at one of our other Rainbow locations.",
+            "Rainbow is very excited to announce that we were the successful candidates in the RFP for the new Daycare opening at École Sage Creek. This daycare is projected to open in the spring of 2017 and will have 16 infant spots, 8 early years (age 2), three preschool rooms (age 3/4) with 16 each (48 total), 10 Kindergarten (age 4/5) and 30 school age spots.",
+            "Rainbow will be using the Manitoba Government Online Child Care Registry to fill these spots for the new daycare. The online registry is estimated to go into effect fall of 2016. Parents who need Daycare prior to this are encouraged to register online at one of our other Rainbow locations.",
             "Rainbow is committed to keeping the Community and our Families updated on our progress as we prepare for this exciting new opportunity."
         ],
         "photos": [

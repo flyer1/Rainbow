@@ -49,5 +49,7 @@
     "wiredep": "^3.0.0-beta",
     "yargs": "^3.6.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vinyl-ftp": "^0.4.5"
+  }
 }

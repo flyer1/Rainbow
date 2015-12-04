@@ -67,7 +67,7 @@
             <p ng-if="vm.site.locatedInSchool" class="sub-title">
                 {{vm.site.name}} is located inside of {{vm.site.schools[0].school.name}} school
             </p>
-            <div class="row cards cards-light">
+            <div class="row business-cards">
                 <div class="col-md-4" ng-repeat="school in vm.site.schools">
                     <a class="card" ng-href="{{school.school.website}}" target="_blank">
                         <span class="card-header" rdc-background-image="{{school.school.logo}}"></span>
@@ -132,7 +132,9 @@
                     <p>{{vm.site.address.addressLine1}}</p>
                     <p>{{vm.site.address.city}} {{vm.site.address.province}}</p>
                     <p>{{vm.site.address.postalCode}}</p>
-                    <p><a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a></p>
+                    <p class="details-trail">
+                        <a href="tel:{{vm.site.phone}}">{{vm.site.phone}}</a>
+                    </p>
                 </div>
             </div>
 
