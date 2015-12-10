@@ -105,7 +105,7 @@
 
                     <hr />
 
-                    <!--<h3>Programs Offered</h3>
+                    <h3>Programs Offered</h3>
                     <ul>
                         <li ng-repeat="program in vm.programs" class="checkbox">
                             <label>
@@ -114,7 +114,7 @@
                             </label>
                             <span class="pull-right subdued" ng-show="program.isChecked || !vm.hasProgramFilter() ">{{program.siteCount}}</span>
                         </li>
-                    </ul>-->
+                    </ul>
                 </div>
 
                 <!-- LIST OF SITES -->
@@ -156,7 +156,7 @@
                                                         <span>{{site.schools.length}}</span> {{site.schools.length > 1 ? 'schools' : 'school' }}
                                                         <ul>
                                                             <li ng-repeat="school in site.schools">
-                                                                <span ng-class="{'highlight-text': vm.hasSchoolFilter() && vm.isCheckedSchool(school) }">{{school.school.name}}</span>
+                                                                <span ng-class="{'highlight-text': vm.hasSchoolFilter() && vm.isCheckedSchool(school) }">{{school.name}}</span>
                                                             </li>
                                                         </ul>
                                                     </p>
@@ -164,7 +164,7 @@
                                                         Programs
                                                         <ul>
                                                             <li ng-repeat="program in site.programs">
-                                                                <span ng-class="{'highlight-text': vm.hasProgramFilter() && vm.isCheckedProgram(program) }">{{program.program.name}}</span>
+                                                                <span ng-class="{'highlight-text': vm.hasProgramFilter() && vm.isCheckedProgram(program) }">{{program.name}}</span>
                                                             </li>
                                                         </ul>
                                                     </p>

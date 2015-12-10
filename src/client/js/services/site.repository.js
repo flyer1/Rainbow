@@ -65,25 +65,19 @@
         }
 
         function postProcessSiteRepo() {
-            // Add the relationship "table" between sites and schools. Useful to generate counts of sites for a given schools for eg, or when filtering the sites via a set of schools.
-            // Basically flatten the relationship between sites and the schools they service.
-            var siteSchools = flattenSiteSchools(sites);
-            var sitePrograms = flattenSitePrograms(sites);
-
             // Then add on computed properties for each site
             addSiteComputes(sites, schools, programs);
 
             // Then add on computed properties for each school
-            addSchoolComputes(schools, siteSchools);
+            addSchoolComputes(schools);
+
             // Then add on computed properties for each program
-            addProgramComputes(programs, sitePrograms);
+            addProgramComputes(programs);
 
             var repo = {
                 sites: sites,
                 schools: schools,
                 programs: programs,
-                siteSchools: siteSchools,
-                sitePrograms: sitePrograms,
                 messages: messages,
                 coverPhotos: coverPhotos
             };
@@ -112,66 +106,24 @@
             });
         }
 
-        function addSchoolComputes(schools, siteSchools) {
-            //var flattenedSchools = [];
-            //debugger
-            //_.each(siteRepository.sites, function(site) {
-            //    flattenedSchools = _.map(site.schools, function(school) {
-            //        return {
-            //            siteCode: site.code,
-            //            schoolCode: school.code
-            //        };
-            //    });
-            //});
-            
-            //_.each(schools, function (school) {
-
-            //});
+        function addSchoolComputes(schools) {
             _.forEach(schools, function (school) {
                 // For each school, add a count of how many sites service it
-                school.siteCount = _.where(siteSchools, { 'schoolCode': school.code }).length;
+                school.siteCount = _.filter(sites, function (site) {
+                    return _.findWhere(site.schools, { code: school.code });
+                }).length;
                 school.isChecked = false;
             });
         }
 
-        function addProgramComputes(programs, sitePrograms) {
+        function addProgramComputes(programs) {
             _.forEach(programs, function (program) {
                 // For each program, add a count of how many sites service it
-                program.siteCount = _.where(sitePrograms, { 'programCode': program.code }).length;
+                program.siteCount = _.filter(sites, function (site) {
+                    return _.findWhere(site.programs, { code: program.code });
+                }).length;
                 program.isChecked = false;
             });
-        }
-
-        function flattenSiteSchools(sites) {
-            var siteSchools = [];
-
-            _.forEach(sites, function (site) {
-                _.forEach(site.schools, function (school) {
-                    var newItem = {
-                        siteCode: site.code,
-                        schoolCode: school.code
-                    };
-                    siteSchools.push(newItem);
-                });
-            });
-
-            return siteSchools;
-        }
-
-        function flattenSitePrograms(sites) {
-            var sitePrograms = [];
-
-            _.forEach(sites, function (site) {
-                _.forEach(site.programs, function (program) {
-                    var newItem = {
-                        siteCode: site.code,
-                        programCode: program.code
-                    };
-                    sitePrograms.push(newItem);
-                });
-            });
-
-            return sitePrograms;
         }
 
         // Add all of the school properties onto the array of schools associated with a given site
@@ -181,7 +133,7 @@
                 var foundSchool = _.findWhere(schools, { code: siteSchool.code });
 
                 if (foundSchool) {
-                    siteSchool.school = foundSchool;
+                    _.merge(siteSchool, foundSchool);
                 }
             });
         }
@@ -193,7 +145,7 @@
                 var foundProgram = _.findWhere(programs, { code: siteProgram.code });
 
                 if (foundProgram) {
-                    siteProgram.program = foundProgram;
+                    _.merge(siteProgram, foundProgram);
                 }
             });
         }

@@ -10,18 +10,19 @@
     function HomeController($window, $scope, $timeout, $sce, siteService, siteData) {
         var vm = this;
 
+        // Properties
         vm.sites = []; // Full list of sites (centres)
         vm.schools = []; // Full list of schools
         vm.programs = []; // Full list of schools
-        vm.checkedSchools = []; // List of school codes that has been checked off by the user.
-        vm.checkedPrograms = []; // List of program codes that has been checked off by the user.
-        vm.siteCount = -1;
-        vm.matchedSites = {}; // List of sites that match the given filter criteria set by the user
+        vm.checkedSchoolCodes = []; // List of school codes that has been checked off by the user.
+        vm.checkedProgramCodes = []; // List of program codes that has been checked off by the user.
+        vm.matchedSites = []; // List of sites that match the given filter criteria set by the user
         vm.photos = [];
+
+        // Functions
         vm.toggleFilter = toggleFilter;
         vm.hasSchoolFilter = hasSchoolFilter;
         vm.hasProgramFilter = hasProgramFilter;
-        vm.isMatchedSite = isMatchedSite;
         vm.isCheckedSchool = isCheckedSchool;
         vm.isCheckedProgram = isCheckedProgram;
 
@@ -52,6 +53,7 @@
             return photos;
         }
 
+        // #region FILTER METHODS --------------------
         function toggleFilter(item) {
             item.isChecked = !item.isChecked;
             // An option has been changed, re-calculate the find options
@@ -60,60 +62,48 @@
 
         // Every time a find option changes, store the matched sites so they don't have to be recomputed for each site.
         function setMatchedSites() {
-            var checkedSchools = [];
-            var checkedPrograms = [];
-            var matchedSites = [];
+            var checkedSchoolCodes = [];
+            var checkedProgramCodes = [];
 
             // Grab the list of the checked schools
-            checkedSchools = _.pluck(_.filter(vm.schools, { isChecked: true }), 'code');
+            checkedSchoolCodes = _.pluck(_.filter(vm.schools, { isChecked: true }), 'code');
 
-            if (checkedSchools.length === 0) {
-                // No schools checked. Return sites for all schools.
-                checkedSchools = _.pluck(vm.schools, 'code');
+            if (checkedSchoolCodes.length === 0) {
+                // No schools checked so all schools are to be considered
+                checkedSchoolCodes = _.pluck(vm.schools, 'code');
             }
 
-            _.forEach(checkedSchools, function (school) {
-                var results = _.where(vm.siteSchools, {
-                    'schoolCode': school
-                });
-                _.forEach(results, function (item) {
-                    // Check that the site's code has not yet been added.
-                    if (!_.contains(matchedSites, item.siteCode)) {
-                        // The site has not yet been added to the results. Add it now.
-                        matchedSites.push(item.siteCode);
-                    }
-                });
+            // Grab the list of the checked programs
+            checkedProgramCodes = _.pluck(_.filter(vm.programs, { isChecked: true }), 'code');
 
-            });
+            if (checkedProgramCodes.length === 0) {
+                // No programs checked so all programs are to be considered
+                checkedProgramCodes = _.pluck(vm.programs, 'code');
+            }
+
+            vm.matchedSites = siteService.getMatchedSites(vm.sites, checkedSchoolCodes, checkedProgramCodes);
 
             // The matched sites now contains an array of site codes that match the user's find options.
-            vm.matchedSites = matchedSites;
-            vm.checkedSchools = checkedSchools;
+            vm.checkedSchoolCodes = checkedSchoolCodes;
+            vm.checkedProgramCodes = checkedProgramCodes;
 
             // Also set the boolean on each site to indicate if it contains at least 1 match to the filter criteria. This helps on deciding if the site should be shown/hidden.
-            _.forEach(vm.sites, function (site) {
-                site.isChecked = isMatchedSite(site);
+            _.each(vm.sites, function (site) {
+                site.isChecked = _.contains(vm.matchedSites, site.code);
             });
-            console.log(matchedSites);
-            return;
-        }
 
-        // Returns true if the find options match a given site
-        function isMatchedSite(site) {
-            var result = (_.contains(vm.matchedSites, site.code));
-            return result;
+            return;
         }
 
         // Returns true if the passed in school is also in the list of checked schools
         function isCheckedSchool(school) {
-            return _.contains(vm.checkedSchools, school.code);
+            return _.contains(vm.checkedSchoolCodes, school.code);
         }
 
         // Returns true if the passed in program is also in the list of checked programs
         function isCheckedProgram(program) {
-            return _.contains(vm.checkedPrograms, program.code);
+            return _.contains(vm.checkedProgramCodes, program.code);
         }
-
 
         // Returns true if the user has checked off at least 1 school in the find options.
         function hasSchoolFilter() {
@@ -132,13 +122,7 @@
             return typeof result !== 'undefined';
         }
 
-        //function siteCount() {
-
-        //    var totalLength = vm.sites.length;
-        //    var filteredLength = vm.filteredSites().length;
-
-        //    return totalLength === filteredLength ? totalLength.toString() : filteredLength.toString() + '/' + totalLength.toString();
-        //}
+        // #endregion
     }
 })();
 
