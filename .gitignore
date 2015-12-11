@@ -71,6 +71,6 @@ Thumbs.db
 
 # Project Specific #
 ####################
-dist
+/dist
 src/client/css/site.css
 
