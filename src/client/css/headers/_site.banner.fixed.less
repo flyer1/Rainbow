@@ -1,0 +1,49 @@
+.site-banner-fixed {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.96);
+    top: 59px;
+    height: 56px;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.31);
+    -moz-transform: translateY(-100px);
+    -ms-transform: translateY(-100px);
+    -o-transform: translateY(-100px);
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.site-banner-fixed.active {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.site-banner-fixed h1 {
+    font-size: 29px;
+    line-height: 53px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.site-banner-fixed nav a {
+    position: absolute;
+    top: 160px;
+    height: 132px;
+    width: 52px;
+}
+
+.site-banner-fixed nav a.next {
+    right: 0;
+}
+
+.site-banner-fixed nav a.prev {
+    left: 0;
+}

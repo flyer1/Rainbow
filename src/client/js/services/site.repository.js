@@ -14,6 +14,7 @@
         var sites = null;
         var schools = null;
         var programs = null;
+        var refTransport = null;
         var messages = null;
         var coverPhotos = null;
 
@@ -50,6 +51,9 @@
                     webDataService.getMessages().then(function (data) {
                         messages = data;
                     }),
+                     webDataService.getRefTransport().then(function (data) {
+                         refTransport = data;
+                     }),
                     webDataService.getCoverPhotos().then(function (data) {
                         coverPhotos = data;
                     })
@@ -134,6 +138,11 @@
 
                 if (foundSchool) {
                     _.merge(siteSchool, foundSchool);
+                }
+
+                var foundTransport = _.findWhere(refTransport, { code: siteSchool.transportType });
+                if (foundTransport) {
+                    siteSchool.transport = foundTransport;
                 }
             });
         }

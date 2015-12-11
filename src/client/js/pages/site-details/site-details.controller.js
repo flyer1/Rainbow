@@ -28,11 +28,32 @@
 
             console.log(vm.site);
             initSiteNav();
-            initJon();
+            initBanner();
 
             vm.photos = siteService.getSitePhotos(vm.site, vm.site.photos);
 
             $document.scrollTo(top);
+        }
+
+        function initBanner() {
+            var lastAction = '';
+            var fixedBanner = angular.element('.site-banner-fixed');
+            angular.element($window).bind('scroll', _.throttle(onScroll, 100));
+
+            function onScroll() {
+                var triggerY = 350;
+                var action = '';
+
+                if ($window.innerWidth < 767) return;
+
+                action = $window.pageYOffset > triggerY ? 'addClass' : 'removeClass';
+
+                if (action !== lastAction) {
+                    lastAction = action;
+                    console.log('performing action', action)
+                    fixedBanner[action]('active');
+                }
+            }
         }
 
         // TODO: fix up this mess...
@@ -56,7 +77,7 @@
                     className = 'fixed';
                 }
 
-                if ($window.pageYOffset < y ) {
+                if ($window.pageYOffset < y) {
                     action = 'removeClass';
                     className = 'fixed';
 

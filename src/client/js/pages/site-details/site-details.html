@@ -35,6 +35,26 @@
     </div>
 </div>
 
+<div class="site-banner-fixed">
+    <!--<nav>
+        <a class="prev" ng-href="#/shell/site/{{vm.prevSite.code}}">
+            <span class="nav-button">
+                <i class="fa fa-angle-left"></i>
+            </span>
+        </a>
+        <a class="next" ng-href="#/shell/site/{{vm.nextSite.code}}">
+            <span class="nav-button">
+                <i class="fa fa-angle-right"></i>
+            </span>
+        </a>
+    </nav>-->
+    <div class="container">
+        <h1>
+            Rainbow {{vm.site.name}}
+        </h1>
+    </div>
+</div>
+
 <!-- ANNOUNCEMENTS -->
 <div class="section section-orange" ng-if="vm.site.message">
     <div class="container">
@@ -61,11 +81,8 @@
         <div class="section-details">
             <h2>Schools</h2>
             <p ng-if="!vm.site.locatedInSchool" class="sub-title">
-                {{vm.site.name}} provides bus service to
+                {{vm.site.name}} provides transportation service to
                 <span>{{vm.site.schools.length}}</span>&nbsp;<ng-pluralize count="vm.site.schools.length" when="{'1': 'school','other': 'schools'}"></ng-pluralize>
-            </p>
-            <p ng-if="vm.site.locatedInSchool" class="sub-title">
-                {{vm.site.name}} is located inside of {{vm.site.schools[0].name}} school
             </p>
             <div class="row business-cards">
                 <div class="col-md-4" ng-repeat="school in vm.site.schools">
@@ -74,8 +91,9 @@
                         <p class="card-body">
                             <h3><span ng-if="school.type ==='french-immersion'">&Eacute;cole</span> {{school.name}} <span ng-if="school.type !== 'french-immersion'">School</span></h3>
                         <p>{{school.address}}</p>
-                        <span class="link">School Website</span>
-                        </p>
+                        <p class="link">School Website</p>
+                        <p ng-if="!vm.site.locatedInSchool" class="footnote">Transportation via {{school.transport.name}}</p>
+                        <p ng-if="vm.site.locatedInSchool" class="footnote">Does not transport, children are within the school</p>
                     </a>
                 </div>
             </div>
@@ -109,7 +127,7 @@
         </div>
         <div class="row">
             <div class="cards cards-dark">
-                <div ng-repeat="program in vm.site.programs" class="card col-md-2">
+                <div ng-repeat="program in vm.site.programs" class="card col-md-3">
                     <h4 class="card-header">{{program.name}}</h4>
                     <p>{{program.description}}</p>
                     <p ng-if="program.count">Count: {{program.count}}</p>

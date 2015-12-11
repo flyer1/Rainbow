@@ -81,13 +81,7 @@
                 "code": "I"
             },
             {
-                "code": "EY"
-            },
-            {
                 "code": "P"
-            },
-            {
-                "code": "K"
             },
             {
                 "code": "SA"
@@ -145,13 +139,7 @@
                 "code": "I"
             },
             {
-                "code": "EY"
-            },
-            {
                 "code": "P"
-            },
-            {
-                "code": "K"
             },
             {
                 "code": "SA"
@@ -263,13 +251,7 @@
                 "code": "I"
             },
             {
-                "code": "EY"
-            },
-            {
                 "code": "P"
-            },
-            {
-                "code": "K"
             },
             {
                 "code": "SA"
@@ -307,19 +289,11 @@
         "programs": [
             {
                 "code": "I",
-                "count": 16
-            },
-            {
-                "code": "EY",
-                "count": 8
+                "count": 24
             },
             {
                 "code": "P",
-                "count": 48
-            },
-            {
-                "code": "K",
-                "count": 10
+                "count": 58
             },
             {
                 "code": "SA",

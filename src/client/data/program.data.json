@@ -2,22 +2,12 @@
     {
         "code": "I",
         "name": "Infant",
-        "description": "Under 2 years old"
-    },
-    {
-        "code": "EY",
-        "name": "Early Years",
-        "description": "2 year olds"
+        "description": "Under 3 years old"
     },
     {
         "code": "P",
         "name": "Preschool",
-        "description": "3/4 year olds"
-    },
-    {
-        "code": "K",
-        "name": "Kinders",
-        "description": "4/5 year olds"
+        "description": "3-5 year olds"
     },
     {
         "code": "SA",

@@ -14,6 +14,7 @@
             getSchools: getSchools,
             getPrograms: getPrograms,
             getMessages: getMessages,
+            getRefTransport: getRefTransport,
             getCoverPhotos: getCoverPhotos
         };
 
@@ -29,6 +30,10 @@
 
         function getPrograms() {
             return get('/data/program.data.json');
+        }
+
+        function getRefTransport() {
+            return get('/data/ref-transport.data.json');
         }
 
         function getMessages() {
