@@ -5,14 +5,15 @@
         .module('app.pages')
         .controller('ShellController', ShellController);
 
-    ShellController.$inject = ['$location', '$document', 'router', 'siteData'];
+    ShellController.$inject = ['$location', '$document', 'router', 'siteData', 'performanceMonitorService'];
 
-    function ShellController($location, $document, router, siteData) {
+    function ShellController($location, $document, router, siteData, performanceMonitorService) {
         var vm = this;
 
         // Properties
         vm.sites = [];
         vm.currNavItem = '';
+        vm.performanceData = {};
 
         // Functions
         vm.setActive = setActive;
@@ -29,6 +30,7 @@
             // Default the current nav item based upon the URL
             router.registerStateChangedListener(onRouteChanged);
             setActive(getCurrentCode());
+            vm.performanceData = performanceMonitorService.getPerformanceData();
         }
 
         // On every navigation, make sure that the currNavItem is updated properly

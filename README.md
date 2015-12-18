@@ -117,6 +117,20 @@ Now you should be up and running in your browser of choice (as long as you don't
 
 Isn't life grand? And all these tools are free free free. As in free beer! (is there such a thing?). Or, are you confused? There is a lot to learn up there. Git, AngularJS, JavaScript, CSS... Oh my! Or maybe; Oh my what fun! - if you are tech enthusiast. Dive in. Google. Watch videos. Learn.
 
+### Just For Fun
+Here is a gource visualization of the checkins on this repository. 
+
+![Gource Visualization](https://github.com/flyer1/Rainbow/blob/master/gource.png "Gource Visualization")
+
+[https://www.youtube.com/watch?v=PyDM6jXQL-0](https://www.youtube.com/watch?v=PyDM6jXQL-0)
+
+Find gource at: [https://github.com/acaudwell/Gource](https://github.com/acaudwell/Gource)
+
+```
+Command used to generate visualization:
+gource --date-format "%b %e, %Y" --key  --logo logo.png --title "Rainbow Day Nursery" --hide filenames --seconds-per-day 1 --auto-skip-seconds 1 -1280x720 [PATH_TO_RAINBOW_SOURCE_CODE]
+```
+
 
 ##Authors
 Just me [Jon Kroeker](https://github.com/flyer1)
