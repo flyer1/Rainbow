@@ -120,9 +120,10 @@ Isn't life grand? And all these tools are free free free. As in free beer! (is t
 ### Just For Fun
 Here is a gource visualization of the checkins on this repository. 
 
+Screenshot:
 ![Gource Visualization](https://github.com/flyer1/Rainbow/blob/master/gource.png "Gource Visualization")
 
-[https://www.youtube.com/watch?v=PyDM6jXQL-0](https://www.youtube.com/watch?v=PyDM6jXQL-0)
+Video: [https://www.youtube.com/watch?v=PyDM6jXQL-0](https://www.youtube.com/watch?v=PyDM6jXQL-0)
 
 Find gource at: [https://github.com/acaudwell/Gource](https://github.com/acaudwell/Gource)
 
