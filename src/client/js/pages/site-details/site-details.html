@@ -35,23 +35,19 @@
     </div>
 </div>
 
-<div class="site-banner-fixed">
-    <!--<nav>
-        <a class="prev" ng-href="#/shell/site/{{vm.prevSite.code}}">
-            <span class="nav-button">
-                <i class="fa fa-angle-left"></i>
-            </span>
-        </a>
-        <a class="next" ng-href="#/shell/site/{{vm.nextSite.code}}">
-            <span class="nav-button">
-                <i class="fa fa-angle-right"></i>
-            </span>
-        </a>
-    </nav>-->
+<div class="site-banner-fixed hidden-xs">
     <div class="container">
-        <h1>
-            Rainbow {{vm.site.name}}
-        </h1>
+        <div class="title">
+            <a class="nav-button prev" ng-href="#/shell/site/{{vm.prevSite.code}}">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <h1 ng-click="vm.toTop(true)">
+                Rainbow {{vm.site.name}}
+            </h1>
+            <a class="nav-button next" ng-href="#/shell/site/{{vm.nextSite.code}}">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
     </div>
 </div>
 

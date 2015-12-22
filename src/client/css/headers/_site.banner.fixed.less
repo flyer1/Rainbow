@@ -1,8 +1,8 @@
 .site-banner-fixed {
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.96);
+    background-color: #2b2d32;
     top: 59px;
-    height: 56px;
+    height: 63px;
     width: 100%;
     z-index: 1;
     text-align: center;
@@ -12,38 +12,61 @@
     -o-transform: translateY(-100px);
     -webkit-transform: translateY(-100px);
     transform: translateY(-100px);
-    -moz-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-}
+    -moz-transition: transform 1.5s cubic-bezier(.19,1,.22,1);
+    -o-transition: transform 1.5s cubic-bezier(.19,1,.22,1);
+    -webkit-transition: transform 1.5s cubic-bezier(.19,1,.22,1);
+    transition: transform 1.5s cubic-bezier(.19,1,.22,1);
 
-.site-banner-fixed.active {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-}
+    &.active {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 
-.site-banner-fixed h1 {
-    font-size: 29px;
-    line-height: 53px;
-    text-transform: uppercase;
-    color: #666;
-}
+    .title {
+        width: 100%;
+        cursor: pointer;
+    }
 
-.site-banner-fixed nav a {
-    position: absolute;
-    top: 160px;
-    height: 132px;
-    width: 52px;
-}
+    .title h1 {
+        display: inline-block;
+        font-size: 36px;
+        line-height: 64px;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 600;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 
-.site-banner-fixed nav a.next {
-    right: 0;
-}
+    .title .nav-button {
+        background-color: rgba(255, 255, 255, 0.16);
+        border-radius: 50px;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        font-size: 34px;
+        text-align: center;
+        color: white;
+        opacity: 0.5;
+        -moz-transition: opacity .3s ease;
+        -o-transition: opacity .3s ease;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
+    }
 
-.site-banner-fixed nav a.prev {
-    left: 0;
+    .title .nav-button:hover {
+        opacity: 1;
+    }
+
+    .title .nav-button.prev {
+        padding-right: 4px;
+    }
+
+    .title .nav-button.next {
+        padding-left: 4px;
+    }
 }

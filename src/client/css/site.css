@@ -207,6 +207,13 @@ h3 {
 .no-scroll {
   overflow-y: hidden;
 }
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 body {
   font-family: "Open Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
   -webkit-user-select: text;
@@ -302,11 +309,11 @@ ul {
   text-transform: uppercase;
 }
 .main-banner .lead {
-  font-size: 18px;
-  color: #333;
+  font-size: 17px;
+  color: #555;
   font-family: "Roboto";
   max-width: 700px;
-  margin: 4px auto;
+  margin: 10px auto;
 }
 @media (max-width: 768px) {
   .main-banner .lead {
@@ -556,9 +563,9 @@ ul {
 }
 .site-banner-fixed {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: #2b2d32;
   top: 59px;
-  height: 56px;
+  height: 63px;
   width: 100%;
   z-index: 1;
   text-align: center;
@@ -568,10 +575,10 @@ ul {
   -o-transform: translateY(-100px);
   -webkit-transform: translateY(-100px);
   transform: translateY(-100px);
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -moz-transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .site-banner-fixed.active {
   -moz-transform: translateY(0);
@@ -580,23 +587,44 @@ ul {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-.site-banner-fixed h1 {
-  font-size: 29px;
-  line-height: 53px;
+.site-banner-fixed .title {
+  width: 100%;
+  cursor: pointer;
+}
+.site-banner-fixed .title h1 {
+  display: inline-block;
+  font-size: 36px;
+  line-height: 64px;
   text-transform: uppercase;
-  color: #666;
+  color: white;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.site-banner-fixed nav a {
-  position: absolute;
-  top: 160px;
-  height: 132px;
-  width: 52px;
+.site-banner-fixed .title .nav-button {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 50px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  font-size: 34px;
+  text-align: center;
+  color: white;
+  opacity: 0.5;
+  -moz-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
 }
-.site-banner-fixed nav a.next {
-  right: 0;
+.site-banner-fixed .title .nav-button:hover {
+  opacity: 1;
 }
-.site-banner-fixed nav a.prev {
-  left: 0;
+.site-banner-fixed .title .nav-button.prev {
+  padding-right: 4px;
+}
+.site-banner-fixed .title .nav-button.next {
+  padding-left: 4px;
 }
 .business-cards .card {
   display: block;
@@ -1020,12 +1048,11 @@ footer .footer-contact ul li a.contact-email {
 }
 .nav-menu-standard .contact-nav a {
   border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.64);
   padding: 5px 5px 5px 3px;
   display: inline-block;
   width: 31px;
   height: 31px;
-  color: #3C3D3D;
+  color: rgba(255, 255, 255, 0.64);
   text-align: center;
   margin-top: 15px;
   font-size: 21px;
@@ -1045,13 +1072,13 @@ footer .footer-contact ul li a.contact-email {
   padding-left: 5px;
 }
 .nav-menu-standard .contact-nav a.contact-email:hover {
-  background-color: #d74936;
+  color: #FF6B57;
 }
 .nav-menu-standard .contact-nav a.contact-facebook:hover {
-  background-color: #4d67a3;
+  color: #268FFF;
 }
 .nav-menu-standard .contact-nav a.contact-phone:hover {
-  background-color: #52e76b;
+  color: #52e76b;
 }
 .dropdown-menu > li:last-child {
   border-bottom: none;
