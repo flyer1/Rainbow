@@ -17,8 +17,11 @@
 
         /////////////////// IMPLEMENTATION /////////////////////////
         function link(scope, element) {
-            $timeout(function() {
-                element.lightGallery();
+            $timeout(function () {
+                var options = {
+                    mode: 'lg-slide-circular'
+                };
+                element.lightGallery(options);
             }, 0);
         }
     }
