@@ -45,11 +45,11 @@
     },
     {
         "code": "Ni",
-        "name": "Niakwa",
+        "name": "Niakwa Place",
         "website": "https://www.lrsd.net/schools/Niakwa/Pages/default.aspx",
         "address": "200 Pebble Beach Rd",
         "postalCode": "R2J 3K3",
-        "type": "english",
+        "type": "custom",
         "logo": "/img/school-logos/niakwa.png",
         "lat": null,
         "lng": null
@@ -82,7 +82,7 @@
         "website": "https://www.lrsd.net/School/sage-creek-updates/Pages/default.aspx",
         "address": "Sage Creek Blvd.",
         "postalCode": "",
-        "type": "dual-track",
+        "type": "french-immersion",
         "logo": "/img/school-logos/sage-creek.png",
         "lat": 49.833159,
         "lng": -97.033995

@@ -8,5 +8,10 @@
         "code": "SB",
         "name": "LSRD School Bus",
         "description": "LSRD transport"
+    },
+    {
+        "code": "WK",
+        "name": "Walk",
+        "description": "walked"
     }
 ]

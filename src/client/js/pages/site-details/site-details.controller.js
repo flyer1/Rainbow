@@ -19,6 +19,7 @@
 
         // Functions
         vm.toTop = toTop;
+        vm.getTransportMethod = getTransportMethod;
 
         var code = $stateParams.id;
 
@@ -56,7 +57,6 @@
 
                 if (action !== lastAction) {
                     lastAction = action;
-                    console.log('performing action', action)
                     fixedBanner[action]('active');
                 }
             }
@@ -80,6 +80,20 @@
             } else {
                 $document.scrollTo(top);
             }
+        }
+
+        function getTransportMethod(transport) {
+            var result = '';
+            switch (transport.code) {
+                case 'WK':
+                    result = 'Children are walked to school';
+                    break;
+                default:
+                    result = 'Transportation via ' + transport.name;
+                    break;
+            }
+
+            return result;
         }
 
     }

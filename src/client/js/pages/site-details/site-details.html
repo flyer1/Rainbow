@@ -85,10 +85,10 @@
                     <a class="card" ng-href="{{school.website}}" target="_blank">
                         <span class="card-header" rdc-background-image="{{school.logo}}"></span>
                         <p class="card-body">
-                            <h3><span ng-if="school.type ==='french-immersion'">&Eacute;cole</span> {{school.name}} <span ng-if="school.type !== 'french-immersion'">School</span></h3>
+                            <h3><span ng-if="school.type ==='french-immersion'">&Eacute;cole</span> {{school.name}} <span ng-if="school.type === 'english'">School</span></h3>
                         <p>{{school.address}}</p>
                         <p class="link">School Website</p>
-                        <p ng-if="!vm.site.locatedInSchool" class="footnote">Transportation via {{school.transport.name}}</p>
+                        <p ng-if="!vm.site.locatedInSchool" class="footnote">{{vm.getTransportMethod(school.transport)}}</p>
                         <p ng-if="vm.site.locatedInSchool" class="footnote">Does not transport, children are within the school</p>
                     </a>
                 </div>
