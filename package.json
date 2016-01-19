@@ -3,9 +3,6 @@
   "version": "0.5.0",
   "description": "Daycare website done in AngularJS",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/flyer1/Rainbow.git"
