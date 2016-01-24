@@ -79,10 +79,10 @@
     {
         "code": "SC",
         "name": "Sage Creek",
-        "website": "https://www.lrsd.net/School/sage-creek-updates/Pages/default.aspx",
+        "website": "https://www.lrsd.net/schools/sage/Pages/default.aspx",
         "address": "Sage Creek Blvd.",
         "postalCode": "",
-        "type": "french-immersion",
+        "type": "dual-track",
         "logo": "/img/school-logos/sage-creek.png",
         "lat": 49.833159,
         "lng": -97.033995

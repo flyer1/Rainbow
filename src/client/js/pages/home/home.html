@@ -66,7 +66,7 @@
     <div class="section-body">
         <div rdc-flex-slider class="flexslider">
             <ul class="slides" rdc-light-gallery>
-                <li ng-repeat="photo in vm.photos" data-src="{{photo.path}}" 
+                <li ng-repeat="photo in vm.photos" data-src="{{photo.path}}"
                     data-sub-html="{{photo.titleTemplate}}">
                     <img ng-src="{{photo.path}}" />
                 </li>
@@ -152,8 +152,7 @@
                                                         </p>
                                                     </div>
                                                     <p class="secondary">
-                                                        With bus service to
-                                                        <span>{{site.schools.length}}</span> {{site.schools.length > 1 ? 'schools' : 'school' }}
+                                                        {{site.schools.length > 1 ? 'Schools' : 'School' }}
                                                         <ul>
                                                             <li ng-repeat="school in site.schools">
                                                                 <span ng-class="{'highlight-text': vm.hasSchoolFilter() && vm.isCheckedSchool(school) }">{{school.name}}</span>
@@ -191,4 +190,3 @@
         </div>
     </div>
 </div>
-
