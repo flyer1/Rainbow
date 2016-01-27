@@ -16,7 +16,7 @@ module.exports = function (gulp, plugin, help, utils) {
     gulp.task('dist', ['clean'], function (done) {
 
         utils.logMsg('Starting distrubtion task...');
-        runSequence('dist-template-cache', ['dist-main', 'dist-img', 'dist-fonts', 'dist-data'], 'clean-tmp', done);
+        runSequence('dist-template-cache', ['dist-main', 'dist-img', 'dist-fonts', 'dist-data', 'dist-sitemap'], 'clean-tmp', done);
 
     });
 
@@ -103,6 +103,14 @@ module.exports = function (gulp, plugin, help, utils) {
             .pipe(gulp.dest('./dist/data'));
     });
 
+    /******** TASK ********/
+    gulp.task('dist-sitemap', function () {
+        utils.logMsg('Copying sitemap to dist folder');
+
+        return gulp
+            .src(['./*.sitemap'])
+            .pipe(gulp.dest('./dist'));
+    });
     /////////////////// HELPER FUNCTIONS ////////////////////
 
     function getHeader() {

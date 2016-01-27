@@ -12,6 +12,7 @@
 
         // Properties
         vm.sites = [];
+        vm.lastUpdateDate = '';
         vm.currNavItem = '';
         vm.performanceData = {};
 
@@ -27,12 +28,23 @@
         /////////// IMPLEMENTATION /////////////////
         function init(siteData) {
             vm.sites = siteData.sites;
+            vm.lastUpdateDate = getLastUpdated(siteData.changeLog);
+
             // Default the current nav item based upon the URL
             router.registerStateChangedListener(onRouteChanged);
             setActive(getCurrentCode());
             vm.performanceData = performanceMonitorService.getPerformanceData();
         }
 
+        function getLastUpdated(changeLog) {
+            var result = '';
+            // The data is assumed to have the most recent entry at the top.
+            if (changeLog && changeLog.length > 0) {
+                result = changeLog[0].date; // Date stored as string
+            }
+
+            return result;
+        }
         // On every navigation, make sure that the currNavItem is updated properly
         function onRouteChanged(event, toState, toParams, fromState, fromParams) {
             setActive(getCurrentCode());
