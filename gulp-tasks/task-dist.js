@@ -108,7 +108,7 @@ module.exports = function (gulp, plugin, help, utils) {
         utils.logMsg('Copying sitemap to dist folder');
 
         return gulp
-            .src(['./*.sitemap'])
+            .src(['./*.sitemap.xml'])
             .pipe(gulp.dest('./dist'));
     });
     /////////////////// HELPER FUNCTIONS ////////////////////
