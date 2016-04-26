@@ -17,6 +17,7 @@
         var refTransport = null;
         var messages = null;
         var coverPhotos = null;
+        var changeLog = null;
 
         var service = {
             getSiteRepository: getSiteRepository
@@ -56,7 +57,10 @@
                      }),
                     webDataService.getCoverPhotos().then(function (data) {
                         coverPhotos = data;
-                    })
+                    }),
+                     webDataService.getChangeLog().then(function (data) {
+                         changeLog = data;
+                     })
                 ];
 
                 $q.all(promises).finally(function () {
@@ -83,7 +87,8 @@
                 schools: schools,
                 programs: programs,
                 messages: messages,
-                coverPhotos: coverPhotos
+                coverPhotos: coverPhotos,
+                changeLog: changeLog
             };
 
             return repo;

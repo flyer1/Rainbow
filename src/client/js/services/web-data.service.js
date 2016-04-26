@@ -15,7 +15,8 @@
             getPrograms: getPrograms,
             getMessages: getMessages,
             getRefTransport: getRefTransport,
-            getCoverPhotos: getCoverPhotos
+            getCoverPhotos: getCoverPhotos,
+            getChangeLog: getChangeLog
         };
 
         return service;
@@ -42,6 +43,10 @@
 
         function getCoverPhotos() {
             return get('/data/cover-photo.data.json');
+        }
+
+        function getChangeLog() {
+            return get('/data/change-log.data.json');
         }
 
         function get(url) {
