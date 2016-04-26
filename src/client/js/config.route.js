@@ -14,7 +14,7 @@
 
         var routes = getRoutes();
 
-        $urlRouterProvider.otherwise('/shell/home');
+        $urlRouterProvider.otherwise('/shell/home?ver=1');
 
         routes.forEach(function (route) {
             $stateProvider.state(route.stateName, route.config);

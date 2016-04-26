@@ -1,6 +1,11 @@
 ﻿[
     {
+        "date": "04/25/2016",
+        "description": "Added FAQ section to phase 5"
+    },
+    {
         "date": "01/27/2016",
         "description": "Added sitemap. Some metadata to help bots crawl the site better"
     }
+
 ]
