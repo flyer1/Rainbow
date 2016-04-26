@@ -19,7 +19,7 @@ module.exports = function (gulp, plugin, help, utils) {
             .pipe(gulp.dest('./src/client/css/'));
     });
 
-    help.registerHelp('watch-css', {
+    help.registerHelp('watch-less', {
         description: 'Creates a new css file when any of the LESS files change'
     });
 

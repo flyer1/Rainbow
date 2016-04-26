@@ -34,7 +34,7 @@
             // Get the site and school data
             if (siteRepository !== null) {
                 // If the site repo has already been generated, then return the stored value.
-                console.log('Resolving site repo from cache');
+                //console.log('Resolving site repo from cache');
                 deferred.resolve(siteRepository);
             } else {
                 console.log('Building up new site repo');

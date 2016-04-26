@@ -7,11 +7,11 @@
     {
         "code": "P",
         "name": "Preschool",
-        "description": "3-5 year olds"
+        "description": "3-6 year olds"
     },
     {
         "code": "SA",
         "name": "School Age",
-        "description": "Ages 5-12"
+        "description": "Ages 6-12"
     }
 ]

@@ -158,3 +158,25 @@
         </div>
     </div>
 </div>
+
+<!-- FAQS -->
+<div ng-if="vm.site.faq" class="section section-dark-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-details faq">
+                    <h2>FAQ</h2>
+                    <div class="details-lead">
+                        <p>The following are frequently asked questions about {{vm.site.name}}</p>
+                    </div>
+                    <ol>
+                        <li ng-repeat="item in vm.site.faq">
+                            <p class="question"><label class="first-letter">Q</label><label>uestion:</label><span class="value">{{item.question}}</span></p>
+                            <p class="answer"><label class="first-letter">A</label><label>nswer:</label><span class="value" ng-bind-html="item.answer"></span></p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

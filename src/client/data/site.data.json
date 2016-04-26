@@ -314,6 +314,32 @@
         "photos": [
 
         ],
-        "order": 7
+        "order": 7,
+        "faq": [
+            {
+                "question": "When will Rainbow open their newest location at Ecole Sage Creek School?",
+                "answer": "The school is scheduled to open for the start of the school year in September 2017. However, it is possible that our day care centre may open earlier depending on the construction schedule.  We will be providing updates here on our website regarding dates."
+            },
+            {
+                "question": "How many spaces will be available at Rainbow Sage Creek?",
+                "answer": "<br>16 infant spaces (12 wks - 2 years old)<br>8 early years (ages 2 - 3)<br>48 preschool (ages 2 - 5)<br>10 kindergarten (ages 5 - 6)<br>30 school age spaces (Grades 1 - 6)"
+            },
+            {
+                "question": "How do I register for space at Rainbow Sage Creek?",
+                "answer": "Rainbow will be using the Manitoba Government Online Child Care Registry to fill spaces for families who do not already have a child at another one of our locations. Rainbow Sage Creek will become available as an option on the registry 6 months prior to the anticipated opening date.  We will continue to update our website as we have more information on exact dates.  Parents who need Child Care spaces sooner are encouraged to register online at one of our other Rainbow locations. Visit the Online Child Care Registry at : <a href=\"https://onlinechildcareregistry.gov.mb.ca/occrweb\" target=\"_blank\">https://onlinechildcareregistry.gov.mb.ca/occrweb</a>"
+            },
+            {
+                "question": "How will spaces be filled at Rainbow Sage Creek?",
+                "answer": "Rainbow has 6 locations in the Island Lakes/Southdale area and every year we ask our parents of preschool children where their children will be attending school. As not all of our centres provide transportation to all of the schools in the area, we do our best to transfer children to the Centre that transports to their school of choice, prior to starting Kindergarten.  When Rainbow Sage Creek opens the same process will be used to transfer children currently at our other centres, who will attend Ecole Sage Creek School, to the daycare.  Internal transfers are always based on the date the family started at Rainbow; families who have been with us the longest get priority.  After we have determined how many children are transferring, the online registry will be used to fill all remaining spaces including the new ones that will become available at other Rainbow locations.  It is important to note that Rainbow will have a total of 112 new spaces spread across 7 locations in the area once the Sage Creek Centre opens.  Families can register for any Rainbow location and we will do our best to do internal transfers when spaces become available."
+            },
+            {
+                "question": "Can I register for Rainbow Sage Creek even though I don't live in the area?",
+                "answer": "No. To be eligible, families must live in Sage Creek and fall under the catchment area of the Ecole Sage Creek School.  the centre will not accept registrations from parents who do not meet these criteria."
+            },
+            {
+                "question": "Will there be transportation to Ecole Sage Creek from other Rainbow locations?",
+                "answer": "No. Rainbow does not have capacity or vehicles to transport to this school.  Every effort will be made to place children attending the school at the daycare, as spaces are available.  Should your child not be placed prior to starting school it will then be the parent's responsibility to arrange transportation."
+            }
+        ]
     }
 ]
