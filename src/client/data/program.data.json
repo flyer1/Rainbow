@@ -2,16 +2,26 @@
     {
         "code": "I",
         "name": "Infant",
-        "description": "Under 3 years old"
+        "description": "12 wks - 2 years old"
+    },
+    {
+        "code": "EY",
+        "name": "Early Years",
+        "description": "Ages 2-3"
     },
     {
         "code": "P",
         "name": "Preschool",
-        "description": "3-6 year olds"
+        "description": "Ages 2-5"
+    },
+    {
+        "code": "K",
+        "name": "Kindergarden",
+        "description": "Ages 5-6"
     },
     {
         "code": "SA",
         "name": "School Age",
-        "description": "Ages 6-12"
+        "description": "Grades 1-6"
     }
 ]

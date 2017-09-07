@@ -311,7 +311,7 @@ ul {
   text-transform: uppercase;
 }
 .site-list .panel-heading h4 a .callout {
-  background: orange;
+  background: #00be39;
   color: white;
   padding: 2px 12px;
   border-radius: 3px;
@@ -475,7 +475,7 @@ ul {
 }
 .banner-message {
   margin-top: 59px;
-  background-color: #f1883f;
+  background-color: #00be39;
   text-align: center;
   display: inline-block;
   width: 100%;
@@ -596,7 +596,7 @@ ul {
   }
 }
 .site-banner p .callout {
-  background: orange;
+  background: #00be39;
   color: white;
   padding: 5px 12px;
   border-radius: 3px;
@@ -847,6 +847,7 @@ ul {
   font-size: 14px;
   text-decoration: underline;
   cursor: pointer;
+  color: #605ce6;
 }
 .business-cards .card .footnote {
   font-size: 12px;
@@ -1065,9 +1066,9 @@ footer .minor-text {
 }
 .section .section-details .details-lead p {
   font-size: 16px;
-  color: #333;
-  margin-bottom: 15px;
-  line-height: 22px;
+  color: #999;
+  margin-bottom: 20px;
+  font-style: italic;
 }
 .section .section-details p {
   color: #333;
@@ -1076,7 +1077,7 @@ footer .minor-text {
   margin-bottom: 8px;
 }
 .section .section-details .details-trail {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 .section .section-paragraph {
   font-size: 18px;

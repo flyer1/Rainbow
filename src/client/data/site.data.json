@@ -273,16 +273,16 @@
         "address": {
             "unitNumber": null,
             "number": "",
-            "street": "328 Sage Creek Blvd",
-            "friendlyLocation": "In Sage Creek School (to be built)",
+            "street": "315 Sage Creek Blvd",
+            "friendlyLocation": "In Sage Creek School",
             "city": "Winnipeg",
             "province": "MB",
-            "postalCode": "R3X 0E1",
-            "lat": 49.833454,
-            "lng": -97.034234,
+            "postalCode": "R3X 0G4",
+            "lat": 49.833616, 
+            "lng": -97.034198,
             "markerColor": "red"
         },
-        "phone": "",
+        "phone": "204-254-3550",
         "schools": [
             {
                 "code": "SC",
@@ -292,34 +292,33 @@
         "programs": [
             {
                 "code": "I",
-                "count": 24
+                "count": 16
+            },
+            {
+                "code": "EY",
+                "count": 8
             },
             {
                 "code": "P",
-                "count": 58
+                "count": 48
+            },
+            {
+                "code": "K",
+                "count": 10
             },
             {
                 "code": "SA",
                 "count": 30
             }
         ],
-        "introduction": "Expected opening date is July 2017",
-        "messageSummary": "Coming 2017!",
-        "message": [
-            "Rainbow is very excited to announce that we were the successful candidates in the RFP for the new Daycare opening at École Sage Creek. This daycare is projected to open in July of 2017 and will have 16 infant spots, 8 early years (age 2), three preschool rooms (age 3/4) with 16 each (48 total), 10 Kindergarten (age 4/5) and 30 school age spots.",
-            "Rainbow will be using the Manitoba Government Online Child Care Registry to fill these spots for the new daycare. The online registry is estimated to go into effect February 2017. Parents who need Daycare prior to this are encouraged to register online at one of our other Rainbow locations. The daycare will only take residents that fall in the schools catchment area.",
-            "",
-            "Rainbow is committed to keeping the Community and our Families updated on our progress as we prepare for this exciting new opportunity."
-        ],
+        "introduction": "",
+        "messageSummary": "Now Open!",
+        "message": null,
         "photos": [
 
         ],
         "order": 7,
         "faq": [
-            {
-                "question": "When will Rainbow open their newest location at Ecole Sage Creek School?",
-                "answer": "The school is scheduled to open for the start of the school year in September 2017. However, it is possible that our day care centre may open earlier depending on the construction schedule.  We will be providing updates here on our website regarding dates."
-            },
             {
                 "question": "How many spaces will be available at Rainbow Sage Creek?",
                 "answer": "<br>16 infant spaces (12 wks - 2 years old)<br>8 early years (ages 2 - 3)<br>48 preschool (ages 2 - 5)<br>10 kindergarten (ages 5 - 6)<br>30 school age spaces (Grades 1 - 6)"
