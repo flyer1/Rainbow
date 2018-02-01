@@ -73,7 +73,7 @@ a.attention-grabber {
   color: white;
   font-weight: 700;
   font-size: 16px;
-  text-shadow: 0 -1px 1px #b06339;
+  text-shadow: 0 -1px 1px #B06339;
   border: 1px solid #B06339;
   line-height: 48px;
 }
@@ -438,7 +438,7 @@ ul {
   padding-bottom: 25px;
   padding-top: 25px;
   background: #f2f2f2;
-  background: radial-gradient(circle farthest-side at center, #ffffff 0, #dae4e4 100%);
+  background: radial-gradient(circle farthest-side at center, #FFF 0, #dae4e4 100%);
 }
 .main-banner .banner-image {
   width: 100%;
@@ -474,7 +474,6 @@ ul {
   }
 }
 .banner-message {
-  margin-top: 59px;
   background-color: #00be39;
   text-align: center;
   display: inline-block;
@@ -484,6 +483,9 @@ ul {
   font-size: 16px;
   color: white;
   font-weight: 600;
+}
+.banner-message.has-message {
+  margin-top: 59px;
 }
 @media (max-width: 850px) {
   .banner-message {
@@ -782,6 +784,7 @@ ul {
 .business-cards .card {
   display: block;
   color: #363f4d;
+  background: white;
   font-size: 18px;
   line-height: 23px;
   margin-bottom: 26px;
@@ -797,7 +800,6 @@ ul {
   .business-cards .card {
     box-shadow: none;
     border: none;
-    border-top: 1px solid #ccc;
     margin-bottom: 0;
   }
 }
@@ -831,6 +833,9 @@ ul {
   background-size: contain;
   width: 100%;
   background-repeat: no-repeat;
+}
+.business-cards .card .card-header.card-header-lg {
+  height: 70px;
 }
 .business-cards .card .card-body {
   display: block;

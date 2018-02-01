@@ -24,30 +24,30 @@
         //////////////////////// IMPLEMENTATION /////////////////////
         // WARNING!!! Because I don't have cache busting in place for json files - the v paramater below in all of the service calls has to be bumped up whenever the data changes. Certainly not a great strategy but it's what we have right now.
         function getSites() {
-            return get('/data/site.data.json?v1.1');
+            return get('/data/site.data.json?v1.2');
         }
         function getSchools() {
-            return get('/data/school.data.json?v1.1');
+            return get('/data/school.data.json?v1.2');
         }
 
         function getPrograms() {
-            return get('/data/program.data.json?v1.1');
+            return get('/data/program.data.json?v1.2');
         }
 
         function getRefTransport() {
-            return get('/data/ref-transport.data.json?v1.1');
+            return get('/data/ref-transport.data.json?v1.2');
         }
 
         function getMessages() {
-            return get('/data/message.data.json?v1.1');
+            return get('/data/message.data.json?v1.2');
         }
 
         function getCoverPhotos() {
-            return get('/data/cover-photo.data.json?v1.1');
+            return get('/data/cover-photo.data.json?v1.2');
         }
 
         function getChangeLog() {
-            return get('/data/change-log.data.json?v1.1');
+            return get('/data/change-log.data.json?v1.2');
         }
 
         function get(url) {

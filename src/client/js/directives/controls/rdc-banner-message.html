@@ -1,4 +1,4 @@
-<div class="container banner-message" ng-if="data.summary">
+<div class="container banner-message" ng-class="{'has-message': data.summary.displayMessage}">
     <a ng-href="{{data.targetUrl}}">
         <label>Announcements:</label>
         <span>{{data.summary}}</span>

@@ -1,6 +1,7 @@
 ﻿{
     "banner": {
         "summary": "Rainbow Daycare Phase 5 in Sage Creek is now open!",
-        "targetUrl": "#/shell/site/P5"
+        "targetUrl": "#/shell/site/P5",
+        "displayMessage": false
     }
 }
